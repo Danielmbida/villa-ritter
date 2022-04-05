@@ -1,0 +1,12 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:injectable/injectable.dart';
+
+// const lazySingleton = LazySingleton();
+
+@module
+abstract class FirebaseInjectableModule {
+  @lazySingleton
+  FirebaseAuth get firebaseAuth => FirebaseAuth.instance;
+  FirebaseFirestore get firebaseFirestore => FirebaseFirestore.instance;
+}

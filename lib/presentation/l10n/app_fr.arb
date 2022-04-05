@@ -1,0 +1,79 @@
+{
+  "login_string": "Se Connecter",
+    "@login_string": {
+        "description": "Le titre qui est affiché sous le logo de la page de connexion"
+    },
+  "register_string": "Créer un nouveau compte",
+    "@register_string": {
+        "description": "Le lien à suivre pour s'inscrire"
+    },
+  "password_string": "Mot de passe",
+    "@password_string": {
+        "description": "le text sur le champ mot de passe"
+    },
+  "name_string": "Nom",
+    "@name_string": {
+        "description": "le text sur le champ nom"
+    },
+  "birthday_string": "Date de naissance",
+    "@birthday_string": {
+        "description": "le text sur le champ date de naissance"
+   },
+  "locality_string": "Localité",
+    "@locality_string":{
+      "description": "Le text sur le champ Localité"
+    },
+   "wommen_string": "Femme",
+    "@wommen_string":{
+      "description": "Le text de la checkbox femme"
+    },
+   "men_string": "Homme",
+    "@men_string":{
+      "description": "Le text de la checkbox homme"
+    },
+    "non_binary_string": "Non-Binaire",
+    "@non_binary_string":{
+      "description": "Le text de la checkbox non-binaire"
+    },
+    "email_string": "Email",
+    "@email_string":{
+      "description": "Le text sur le champ email"
+    },
+    "gender_string": "Genre",
+    "@gender_string":{
+      "description": "Le text pour le genre"
+    },
+    "date_format_string": "JJ/MM/AAAA",
+    "@date_format_string":{
+      "description": "Le text pour le format de date"
+    },
+    "invalid_email_and_password_string": "Mot de passe ou email incorrect",
+    "@invalid_email_and_password_string":{
+      "description": "le text pour l'email ou le mot de passe incorrect"
+    },
+    "invalid_name_string": "Ce nom n'est pas valide, pas de chiffre",
+    "@invalid_name_string":{
+      "description": "le text pour un nom invalid"
+    },
+    "invalid_password_string": "Mot de passe incorrect",
+    "@invalid_password_string":{
+      "description": "le text pour mot de passe incorrect"
+    },
+    "invalid_email_string": "Cette email n'est pas valide",
+    "@invalid_email_string":{
+      "description": "le text pour un email incorrect"
+    },
+    "invalid_birthday_string": "Le format de date DD/MM/AAAA n'est pas respecté",
+    "@invalid_birthday_string":{
+      "description": "le text pour le format incorrect de la date de naissance"
+    },
+    "invalid_locality_string": "Cette ville n'est pas valide",
+    "@invalid_locality_string":{
+      "description": "le text pour une ville incorrect"
+    },
+    "invalid_gender_string": "Selectionner un genre",
+    "@invalid_gender_string":{
+      "description": "le text pour le genre"
+    }
+
+}

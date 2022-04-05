@@ -1,0 +1,24 @@
+{
+ "login_string": "sich anmelden",
+ "register_string": "Neues Konto erstellen",
+ "password_string": "Passwort",
+ "name_string": "Name",
+ "locality_string" : "Ortschaft",
+ "wommen_string": "Frau",
+ "men_string": "Männlich",
+ "email_string": "E-mail",
+ "gender_string" : "Geschlecht",
+ "date_format_string" : "TT/MM/JJJJ",
+ "invalid_email_and_password_string": "Falsches Passwort oder falsche E-Mail",
+ "birthday_string" : "Geburtsdatum",
+ "invalid_email_and_password_string" : "Ungültige Kombination aus Name und Passwort",
+ "non_binary_string" : "Nicht-binär",
+ "invalid_email_string" : "Dieser Name ist ungültig, keine Zahl",
+ "invalid_locality_string" : "Diese Stadt ist ungültig",
+ "invalid_birthday_string" : "Das Datumsformat DD/MM/JJJJ wird nicht eingehalten",
+ "invalid_password_string" : "Falsches Passwort",
+ "invalid_name_string" : "Dieser Name ist ungültig, keine Zahl",
+ "invalid_gender_string" : "Wählen Sie ein Genre"
+
+}
+

@@ -1,0 +1,23 @@
+{
+ "login_string": "Login",
+ "register_string": "Create new account",
+ "password_string": "Password",
+ "name_string": "Name",
+ "locality_string" : "Locality",
+ "wommen_string": "Wommen",
+ "men_string": "Men",
+ "email_string" : "E-mail",
+ "birthday_string" : "Birthday",
+ "gender_string" : "Gender",
+ "date_format_string" : "DD/MM/YYYY",
+ "invalid_email_and_password_string" : "Invalid name and password combination",
+ "non_binary_string" : "Non-binary",
+ "invalid_email_string" : "Invalid name",
+ "invalid_locality_string" : "Invalid Locality",
+ "invalid_birthday_string" : "Invalid Birthday",
+ "invalid_password_string" : "Invalid password",
+ "invalid_name_string" : "Invalid name",
+ "invalid_gender_string" : "Select gender"
+
+
+}
