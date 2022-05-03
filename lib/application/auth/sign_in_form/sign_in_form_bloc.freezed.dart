@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'sign_in_form_bloc.dart';
 
@@ -105,6 +106,22 @@ mixin _$SignInFormEvent {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String lastNameStr)? lastNameChanged,
+    TResult Function(String fisrtNameStr)? firstNameChanged,
+    TResult Function(String passwordStr)? passwordChanged,
+    TResult Function(bool isMen)? menGenderChanged,
+    TResult Function(bool isWommen)? wommenGenderChanged,
+    TResult Function(String localityStr)? localityChanged,
+    TResult Function(String emailAddress)? emailAddressChanged,
+    TResult Function(String birthDate)? birthDateChanged,
+    TResult Function()? signInWithNameAndPasswordPressed,
+    TResult Function(String genderStr)? genderChanged,
+    TResult Function()? registerWithUserFields,
+    TResult Function()? switchRegisterAndLoginPressed,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String lastNameStr)? lastNameChanged,
     TResult Function(String fisrtNameStr)? firstNameChanged,
@@ -137,6 +154,24 @@ mixin _$SignInFormEvent {
     required TResult Function(_RegisterWithUserFields value)
         registerWithUserFields,
     required TResult Function(_SwitchRegisterAndLoginPressed value)
+        switchRegisterAndLoginPressed,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_LastNameChanged value)? lastNameChanged,
+    TResult Function(_FirstNameChanged value)? firstNameChanged,
+    TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult Function(_MenGenderChanged value)? menGenderChanged,
+    TResult Function(_WommenGenderChanged value)? wommenGenderChanged,
+    TResult Function(_LocalityChanged value)? localityChanged,
+    TResult Function(_EmailAddressChanged value)? emailAddressChanged,
+    TResult Function(_BirthDateChanged value)? birthDateChanged,
+    TResult Function(_SignInWithNameAndPasswordPressed value)?
+        signInWithNameAndPasswordPressed,
+    TResult Function(_GenderChanged value)? genderChanged,
+    TResult Function(_RegisterWithUserFields value)? registerWithUserFields,
+    TResult Function(_SwitchRegisterAndLoginPressed value)?
         switchRegisterAndLoginPressed,
   }) =>
       throw _privateConstructorUsedError;
@@ -272,6 +307,25 @@ class _$_LastNameChanged
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String lastNameStr)? lastNameChanged,
+    TResult Function(String fisrtNameStr)? firstNameChanged,
+    TResult Function(String passwordStr)? passwordChanged,
+    TResult Function(bool isMen)? menGenderChanged,
+    TResult Function(bool isWommen)? wommenGenderChanged,
+    TResult Function(String localityStr)? localityChanged,
+    TResult Function(String emailAddress)? emailAddressChanged,
+    TResult Function(String birthDate)? birthDateChanged,
+    TResult Function()? signInWithNameAndPasswordPressed,
+    TResult Function(String genderStr)? genderChanged,
+    TResult Function()? registerWithUserFields,
+    TResult Function()? switchRegisterAndLoginPressed,
+  }) {
+    return lastNameChanged?.call(lastNameStr);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String lastNameStr)? lastNameChanged,
     TResult Function(String fisrtNameStr)? firstNameChanged,
@@ -313,6 +367,27 @@ class _$_LastNameChanged
         switchRegisterAndLoginPressed,
   }) {
     return lastNameChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_LastNameChanged value)? lastNameChanged,
+    TResult Function(_FirstNameChanged value)? firstNameChanged,
+    TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult Function(_MenGenderChanged value)? menGenderChanged,
+    TResult Function(_WommenGenderChanged value)? wommenGenderChanged,
+    TResult Function(_LocalityChanged value)? localityChanged,
+    TResult Function(_EmailAddressChanged value)? emailAddressChanged,
+    TResult Function(_BirthDateChanged value)? birthDateChanged,
+    TResult Function(_SignInWithNameAndPasswordPressed value)?
+        signInWithNameAndPasswordPressed,
+    TResult Function(_GenderChanged value)? genderChanged,
+    TResult Function(_RegisterWithUserFields value)? registerWithUserFields,
+    TResult Function(_SwitchRegisterAndLoginPressed value)?
+        switchRegisterAndLoginPressed,
+  }) {
+    return lastNameChanged?.call(this);
   }
 
   @override
@@ -444,6 +519,25 @@ class _$_FirstNameChanged
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String lastNameStr)? lastNameChanged,
+    TResult Function(String fisrtNameStr)? firstNameChanged,
+    TResult Function(String passwordStr)? passwordChanged,
+    TResult Function(bool isMen)? menGenderChanged,
+    TResult Function(bool isWommen)? wommenGenderChanged,
+    TResult Function(String localityStr)? localityChanged,
+    TResult Function(String emailAddress)? emailAddressChanged,
+    TResult Function(String birthDate)? birthDateChanged,
+    TResult Function()? signInWithNameAndPasswordPressed,
+    TResult Function(String genderStr)? genderChanged,
+    TResult Function()? registerWithUserFields,
+    TResult Function()? switchRegisterAndLoginPressed,
+  }) {
+    return firstNameChanged?.call(fisrtNameStr);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String lastNameStr)? lastNameChanged,
     TResult Function(String fisrtNameStr)? firstNameChanged,
@@ -485,6 +579,27 @@ class _$_FirstNameChanged
         switchRegisterAndLoginPressed,
   }) {
     return firstNameChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_LastNameChanged value)? lastNameChanged,
+    TResult Function(_FirstNameChanged value)? firstNameChanged,
+    TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult Function(_MenGenderChanged value)? menGenderChanged,
+    TResult Function(_WommenGenderChanged value)? wommenGenderChanged,
+    TResult Function(_LocalityChanged value)? localityChanged,
+    TResult Function(_EmailAddressChanged value)? emailAddressChanged,
+    TResult Function(_BirthDateChanged value)? birthDateChanged,
+    TResult Function(_SignInWithNameAndPasswordPressed value)?
+        signInWithNameAndPasswordPressed,
+    TResult Function(_GenderChanged value)? genderChanged,
+    TResult Function(_RegisterWithUserFields value)? registerWithUserFields,
+    TResult Function(_SwitchRegisterAndLoginPressed value)?
+        switchRegisterAndLoginPressed,
+  }) {
+    return firstNameChanged?.call(this);
   }
 
   @override
@@ -616,6 +731,25 @@ class _$_PasswordChanged
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String lastNameStr)? lastNameChanged,
+    TResult Function(String fisrtNameStr)? firstNameChanged,
+    TResult Function(String passwordStr)? passwordChanged,
+    TResult Function(bool isMen)? menGenderChanged,
+    TResult Function(bool isWommen)? wommenGenderChanged,
+    TResult Function(String localityStr)? localityChanged,
+    TResult Function(String emailAddress)? emailAddressChanged,
+    TResult Function(String birthDate)? birthDateChanged,
+    TResult Function()? signInWithNameAndPasswordPressed,
+    TResult Function(String genderStr)? genderChanged,
+    TResult Function()? registerWithUserFields,
+    TResult Function()? switchRegisterAndLoginPressed,
+  }) {
+    return passwordChanged?.call(passwordStr);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String lastNameStr)? lastNameChanged,
     TResult Function(String fisrtNameStr)? firstNameChanged,
@@ -657,6 +791,27 @@ class _$_PasswordChanged
         switchRegisterAndLoginPressed,
   }) {
     return passwordChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_LastNameChanged value)? lastNameChanged,
+    TResult Function(_FirstNameChanged value)? firstNameChanged,
+    TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult Function(_MenGenderChanged value)? menGenderChanged,
+    TResult Function(_WommenGenderChanged value)? wommenGenderChanged,
+    TResult Function(_LocalityChanged value)? localityChanged,
+    TResult Function(_EmailAddressChanged value)? emailAddressChanged,
+    TResult Function(_BirthDateChanged value)? birthDateChanged,
+    TResult Function(_SignInWithNameAndPasswordPressed value)?
+        signInWithNameAndPasswordPressed,
+    TResult Function(_GenderChanged value)? genderChanged,
+    TResult Function(_RegisterWithUserFields value)? registerWithUserFields,
+    TResult Function(_SwitchRegisterAndLoginPressed value)?
+        switchRegisterAndLoginPressed,
+  }) {
+    return passwordChanged?.call(this);
   }
 
   @override
@@ -787,6 +942,25 @@ class _$_MenGenderChanged
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String lastNameStr)? lastNameChanged,
+    TResult Function(String fisrtNameStr)? firstNameChanged,
+    TResult Function(String passwordStr)? passwordChanged,
+    TResult Function(bool isMen)? menGenderChanged,
+    TResult Function(bool isWommen)? wommenGenderChanged,
+    TResult Function(String localityStr)? localityChanged,
+    TResult Function(String emailAddress)? emailAddressChanged,
+    TResult Function(String birthDate)? birthDateChanged,
+    TResult Function()? signInWithNameAndPasswordPressed,
+    TResult Function(String genderStr)? genderChanged,
+    TResult Function()? registerWithUserFields,
+    TResult Function()? switchRegisterAndLoginPressed,
+  }) {
+    return menGenderChanged?.call(isMen);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String lastNameStr)? lastNameChanged,
     TResult Function(String fisrtNameStr)? firstNameChanged,
@@ -828,6 +1002,27 @@ class _$_MenGenderChanged
         switchRegisterAndLoginPressed,
   }) {
     return menGenderChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_LastNameChanged value)? lastNameChanged,
+    TResult Function(_FirstNameChanged value)? firstNameChanged,
+    TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult Function(_MenGenderChanged value)? menGenderChanged,
+    TResult Function(_WommenGenderChanged value)? wommenGenderChanged,
+    TResult Function(_LocalityChanged value)? localityChanged,
+    TResult Function(_EmailAddressChanged value)? emailAddressChanged,
+    TResult Function(_BirthDateChanged value)? birthDateChanged,
+    TResult Function(_SignInWithNameAndPasswordPressed value)?
+        signInWithNameAndPasswordPressed,
+    TResult Function(_GenderChanged value)? genderChanged,
+    TResult Function(_RegisterWithUserFields value)? registerWithUserFields,
+    TResult Function(_SwitchRegisterAndLoginPressed value)?
+        switchRegisterAndLoginPressed,
+  }) {
+    return menGenderChanged?.call(this);
   }
 
   @override
@@ -960,6 +1155,25 @@ class _$_WommenGenderChanged
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String lastNameStr)? lastNameChanged,
+    TResult Function(String fisrtNameStr)? firstNameChanged,
+    TResult Function(String passwordStr)? passwordChanged,
+    TResult Function(bool isMen)? menGenderChanged,
+    TResult Function(bool isWommen)? wommenGenderChanged,
+    TResult Function(String localityStr)? localityChanged,
+    TResult Function(String emailAddress)? emailAddressChanged,
+    TResult Function(String birthDate)? birthDateChanged,
+    TResult Function()? signInWithNameAndPasswordPressed,
+    TResult Function(String genderStr)? genderChanged,
+    TResult Function()? registerWithUserFields,
+    TResult Function()? switchRegisterAndLoginPressed,
+  }) {
+    return wommenGenderChanged?.call(isWommen);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String lastNameStr)? lastNameChanged,
     TResult Function(String fisrtNameStr)? firstNameChanged,
@@ -1001,6 +1215,27 @@ class _$_WommenGenderChanged
         switchRegisterAndLoginPressed,
   }) {
     return wommenGenderChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_LastNameChanged value)? lastNameChanged,
+    TResult Function(_FirstNameChanged value)? firstNameChanged,
+    TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult Function(_MenGenderChanged value)? menGenderChanged,
+    TResult Function(_WommenGenderChanged value)? wommenGenderChanged,
+    TResult Function(_LocalityChanged value)? localityChanged,
+    TResult Function(_EmailAddressChanged value)? emailAddressChanged,
+    TResult Function(_BirthDateChanged value)? birthDateChanged,
+    TResult Function(_SignInWithNameAndPasswordPressed value)?
+        signInWithNameAndPasswordPressed,
+    TResult Function(_GenderChanged value)? genderChanged,
+    TResult Function(_RegisterWithUserFields value)? registerWithUserFields,
+    TResult Function(_SwitchRegisterAndLoginPressed value)?
+        switchRegisterAndLoginPressed,
+  }) {
+    return wommenGenderChanged?.call(this);
   }
 
   @override
@@ -1132,6 +1367,25 @@ class _$_LocalityChanged
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String lastNameStr)? lastNameChanged,
+    TResult Function(String fisrtNameStr)? firstNameChanged,
+    TResult Function(String passwordStr)? passwordChanged,
+    TResult Function(bool isMen)? menGenderChanged,
+    TResult Function(bool isWommen)? wommenGenderChanged,
+    TResult Function(String localityStr)? localityChanged,
+    TResult Function(String emailAddress)? emailAddressChanged,
+    TResult Function(String birthDate)? birthDateChanged,
+    TResult Function()? signInWithNameAndPasswordPressed,
+    TResult Function(String genderStr)? genderChanged,
+    TResult Function()? registerWithUserFields,
+    TResult Function()? switchRegisterAndLoginPressed,
+  }) {
+    return localityChanged?.call(localityStr);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String lastNameStr)? lastNameChanged,
     TResult Function(String fisrtNameStr)? firstNameChanged,
@@ -1173,6 +1427,27 @@ class _$_LocalityChanged
         switchRegisterAndLoginPressed,
   }) {
     return localityChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_LastNameChanged value)? lastNameChanged,
+    TResult Function(_FirstNameChanged value)? firstNameChanged,
+    TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult Function(_MenGenderChanged value)? menGenderChanged,
+    TResult Function(_WommenGenderChanged value)? wommenGenderChanged,
+    TResult Function(_LocalityChanged value)? localityChanged,
+    TResult Function(_EmailAddressChanged value)? emailAddressChanged,
+    TResult Function(_BirthDateChanged value)? birthDateChanged,
+    TResult Function(_SignInWithNameAndPasswordPressed value)?
+        signInWithNameAndPasswordPressed,
+    TResult Function(_GenderChanged value)? genderChanged,
+    TResult Function(_RegisterWithUserFields value)? registerWithUserFields,
+    TResult Function(_SwitchRegisterAndLoginPressed value)?
+        switchRegisterAndLoginPressed,
+  }) {
+    return localityChanged?.call(this);
   }
 
   @override
@@ -1305,6 +1580,25 @@ class _$_EmailAddressChanged
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String lastNameStr)? lastNameChanged,
+    TResult Function(String fisrtNameStr)? firstNameChanged,
+    TResult Function(String passwordStr)? passwordChanged,
+    TResult Function(bool isMen)? menGenderChanged,
+    TResult Function(bool isWommen)? wommenGenderChanged,
+    TResult Function(String localityStr)? localityChanged,
+    TResult Function(String emailAddress)? emailAddressChanged,
+    TResult Function(String birthDate)? birthDateChanged,
+    TResult Function()? signInWithNameAndPasswordPressed,
+    TResult Function(String genderStr)? genderChanged,
+    TResult Function()? registerWithUserFields,
+    TResult Function()? switchRegisterAndLoginPressed,
+  }) {
+    return emailAddressChanged?.call(emailAddress);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String lastNameStr)? lastNameChanged,
     TResult Function(String fisrtNameStr)? firstNameChanged,
@@ -1346,6 +1640,27 @@ class _$_EmailAddressChanged
         switchRegisterAndLoginPressed,
   }) {
     return emailAddressChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_LastNameChanged value)? lastNameChanged,
+    TResult Function(_FirstNameChanged value)? firstNameChanged,
+    TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult Function(_MenGenderChanged value)? menGenderChanged,
+    TResult Function(_WommenGenderChanged value)? wommenGenderChanged,
+    TResult Function(_LocalityChanged value)? localityChanged,
+    TResult Function(_EmailAddressChanged value)? emailAddressChanged,
+    TResult Function(_BirthDateChanged value)? birthDateChanged,
+    TResult Function(_SignInWithNameAndPasswordPressed value)?
+        signInWithNameAndPasswordPressed,
+    TResult Function(_GenderChanged value)? genderChanged,
+    TResult Function(_RegisterWithUserFields value)? registerWithUserFields,
+    TResult Function(_SwitchRegisterAndLoginPressed value)?
+        switchRegisterAndLoginPressed,
+  }) {
+    return emailAddressChanged?.call(this);
   }
 
   @override
@@ -1478,6 +1793,25 @@ class _$_BirthDateChanged
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String lastNameStr)? lastNameChanged,
+    TResult Function(String fisrtNameStr)? firstNameChanged,
+    TResult Function(String passwordStr)? passwordChanged,
+    TResult Function(bool isMen)? menGenderChanged,
+    TResult Function(bool isWommen)? wommenGenderChanged,
+    TResult Function(String localityStr)? localityChanged,
+    TResult Function(String emailAddress)? emailAddressChanged,
+    TResult Function(String birthDate)? birthDateChanged,
+    TResult Function()? signInWithNameAndPasswordPressed,
+    TResult Function(String genderStr)? genderChanged,
+    TResult Function()? registerWithUserFields,
+    TResult Function()? switchRegisterAndLoginPressed,
+  }) {
+    return birthDateChanged?.call(birthDate);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String lastNameStr)? lastNameChanged,
     TResult Function(String fisrtNameStr)? firstNameChanged,
@@ -1519,6 +1853,27 @@ class _$_BirthDateChanged
         switchRegisterAndLoginPressed,
   }) {
     return birthDateChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_LastNameChanged value)? lastNameChanged,
+    TResult Function(_FirstNameChanged value)? firstNameChanged,
+    TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult Function(_MenGenderChanged value)? menGenderChanged,
+    TResult Function(_WommenGenderChanged value)? wommenGenderChanged,
+    TResult Function(_LocalityChanged value)? localityChanged,
+    TResult Function(_EmailAddressChanged value)? emailAddressChanged,
+    TResult Function(_BirthDateChanged value)? birthDateChanged,
+    TResult Function(_SignInWithNameAndPasswordPressed value)?
+        signInWithNameAndPasswordPressed,
+    TResult Function(_GenderChanged value)? genderChanged,
+    TResult Function(_RegisterWithUserFields value)? registerWithUserFields,
+    TResult Function(_SwitchRegisterAndLoginPressed value)?
+        switchRegisterAndLoginPressed,
+  }) {
+    return birthDateChanged?.call(this);
   }
 
   @override
@@ -1593,9 +1948,8 @@ class _$_SignInWithNameAndPasswordPressed
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty(
-          'type', 'SignInFormEvent.signInWithNameAndPasswordPressed'));
+    properties.add(DiagnosticsProperty(
+        'type', 'SignInFormEvent.signInWithNameAndPasswordPressed'));
   }
 
   @override
@@ -1624,6 +1978,25 @@ class _$_SignInWithNameAndPasswordPressed
     required TResult Function() switchRegisterAndLoginPressed,
   }) {
     return signInWithNameAndPasswordPressed();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String lastNameStr)? lastNameChanged,
+    TResult Function(String fisrtNameStr)? firstNameChanged,
+    TResult Function(String passwordStr)? passwordChanged,
+    TResult Function(bool isMen)? menGenderChanged,
+    TResult Function(bool isWommen)? wommenGenderChanged,
+    TResult Function(String localityStr)? localityChanged,
+    TResult Function(String emailAddress)? emailAddressChanged,
+    TResult Function(String birthDate)? birthDateChanged,
+    TResult Function()? signInWithNameAndPasswordPressed,
+    TResult Function(String genderStr)? genderChanged,
+    TResult Function()? registerWithUserFields,
+    TResult Function()? switchRegisterAndLoginPressed,
+  }) {
+    return signInWithNameAndPasswordPressed?.call();
   }
 
   @override
@@ -1669,6 +2042,27 @@ class _$_SignInWithNameAndPasswordPressed
         switchRegisterAndLoginPressed,
   }) {
     return signInWithNameAndPasswordPressed(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_LastNameChanged value)? lastNameChanged,
+    TResult Function(_FirstNameChanged value)? firstNameChanged,
+    TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult Function(_MenGenderChanged value)? menGenderChanged,
+    TResult Function(_WommenGenderChanged value)? wommenGenderChanged,
+    TResult Function(_LocalityChanged value)? localityChanged,
+    TResult Function(_EmailAddressChanged value)? emailAddressChanged,
+    TResult Function(_BirthDateChanged value)? birthDateChanged,
+    TResult Function(_SignInWithNameAndPasswordPressed value)?
+        signInWithNameAndPasswordPressed,
+    TResult Function(_GenderChanged value)? genderChanged,
+    TResult Function(_RegisterWithUserFields value)? registerWithUserFields,
+    TResult Function(_SwitchRegisterAndLoginPressed value)?
+        switchRegisterAndLoginPressed,
+  }) {
+    return signInWithNameAndPasswordPressed?.call(this);
   }
 
   @override
@@ -1794,6 +2188,25 @@ class _$_GenderChanged with DiagnosticableTreeMixin implements _GenderChanged {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String lastNameStr)? lastNameChanged,
+    TResult Function(String fisrtNameStr)? firstNameChanged,
+    TResult Function(String passwordStr)? passwordChanged,
+    TResult Function(bool isMen)? menGenderChanged,
+    TResult Function(bool isWommen)? wommenGenderChanged,
+    TResult Function(String localityStr)? localityChanged,
+    TResult Function(String emailAddress)? emailAddressChanged,
+    TResult Function(String birthDate)? birthDateChanged,
+    TResult Function()? signInWithNameAndPasswordPressed,
+    TResult Function(String genderStr)? genderChanged,
+    TResult Function()? registerWithUserFields,
+    TResult Function()? switchRegisterAndLoginPressed,
+  }) {
+    return genderChanged?.call(genderStr);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String lastNameStr)? lastNameChanged,
     TResult Function(String fisrtNameStr)? firstNameChanged,
@@ -1835,6 +2248,27 @@ class _$_GenderChanged with DiagnosticableTreeMixin implements _GenderChanged {
         switchRegisterAndLoginPressed,
   }) {
     return genderChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_LastNameChanged value)? lastNameChanged,
+    TResult Function(_FirstNameChanged value)? firstNameChanged,
+    TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult Function(_MenGenderChanged value)? menGenderChanged,
+    TResult Function(_WommenGenderChanged value)? wommenGenderChanged,
+    TResult Function(_LocalityChanged value)? localityChanged,
+    TResult Function(_EmailAddressChanged value)? emailAddressChanged,
+    TResult Function(_BirthDateChanged value)? birthDateChanged,
+    TResult Function(_SignInWithNameAndPasswordPressed value)?
+        signInWithNameAndPasswordPressed,
+    TResult Function(_GenderChanged value)? genderChanged,
+    TResult Function(_RegisterWithUserFields value)? registerWithUserFields,
+    TResult Function(_SwitchRegisterAndLoginPressed value)?
+        switchRegisterAndLoginPressed,
+  }) {
+    return genderChanged?.call(this);
   }
 
   @override
@@ -1906,9 +2340,8 @@ class _$_RegisterWithUserFields
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty(
-          'type', 'SignInFormEvent.registerWithUserFields'));
+    properties.add(
+        DiagnosticsProperty('type', 'SignInFormEvent.registerWithUserFields'));
   }
 
   @override
@@ -1936,6 +2369,25 @@ class _$_RegisterWithUserFields
     required TResult Function() switchRegisterAndLoginPressed,
   }) {
     return registerWithUserFields();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String lastNameStr)? lastNameChanged,
+    TResult Function(String fisrtNameStr)? firstNameChanged,
+    TResult Function(String passwordStr)? passwordChanged,
+    TResult Function(bool isMen)? menGenderChanged,
+    TResult Function(bool isWommen)? wommenGenderChanged,
+    TResult Function(String localityStr)? localityChanged,
+    TResult Function(String emailAddress)? emailAddressChanged,
+    TResult Function(String birthDate)? birthDateChanged,
+    TResult Function()? signInWithNameAndPasswordPressed,
+    TResult Function(String genderStr)? genderChanged,
+    TResult Function()? registerWithUserFields,
+    TResult Function()? switchRegisterAndLoginPressed,
+  }) {
+    return registerWithUserFields?.call();
   }
 
   @override
@@ -1981,6 +2433,27 @@ class _$_RegisterWithUserFields
         switchRegisterAndLoginPressed,
   }) {
     return registerWithUserFields(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_LastNameChanged value)? lastNameChanged,
+    TResult Function(_FirstNameChanged value)? firstNameChanged,
+    TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult Function(_MenGenderChanged value)? menGenderChanged,
+    TResult Function(_WommenGenderChanged value)? wommenGenderChanged,
+    TResult Function(_LocalityChanged value)? localityChanged,
+    TResult Function(_EmailAddressChanged value)? emailAddressChanged,
+    TResult Function(_BirthDateChanged value)? birthDateChanged,
+    TResult Function(_SignInWithNameAndPasswordPressed value)?
+        signInWithNameAndPasswordPressed,
+    TResult Function(_GenderChanged value)? genderChanged,
+    TResult Function(_RegisterWithUserFields value)? registerWithUserFields,
+    TResult Function(_SwitchRegisterAndLoginPressed value)?
+        switchRegisterAndLoginPressed,
+  }) {
+    return registerWithUserFields?.call(this);
   }
 
   @override
@@ -2050,9 +2523,8 @@ class _$_SwitchRegisterAndLoginPressed
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty(
-          'type', 'SignInFormEvent.switchRegisterAndLoginPressed'));
+    properties.add(DiagnosticsProperty(
+        'type', 'SignInFormEvent.switchRegisterAndLoginPressed'));
   }
 
   @override
@@ -2080,6 +2552,25 @@ class _$_SwitchRegisterAndLoginPressed
     required TResult Function() switchRegisterAndLoginPressed,
   }) {
     return switchRegisterAndLoginPressed();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String lastNameStr)? lastNameChanged,
+    TResult Function(String fisrtNameStr)? firstNameChanged,
+    TResult Function(String passwordStr)? passwordChanged,
+    TResult Function(bool isMen)? menGenderChanged,
+    TResult Function(bool isWommen)? wommenGenderChanged,
+    TResult Function(String localityStr)? localityChanged,
+    TResult Function(String emailAddress)? emailAddressChanged,
+    TResult Function(String birthDate)? birthDateChanged,
+    TResult Function()? signInWithNameAndPasswordPressed,
+    TResult Function(String genderStr)? genderChanged,
+    TResult Function()? registerWithUserFields,
+    TResult Function()? switchRegisterAndLoginPressed,
+  }) {
+    return switchRegisterAndLoginPressed?.call();
   }
 
   @override
@@ -2125,6 +2616,27 @@ class _$_SwitchRegisterAndLoginPressed
         switchRegisterAndLoginPressed,
   }) {
     return switchRegisterAndLoginPressed(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_LastNameChanged value)? lastNameChanged,
+    TResult Function(_FirstNameChanged value)? firstNameChanged,
+    TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult Function(_MenGenderChanged value)? menGenderChanged,
+    TResult Function(_WommenGenderChanged value)? wommenGenderChanged,
+    TResult Function(_LocalityChanged value)? localityChanged,
+    TResult Function(_EmailAddressChanged value)? emailAddressChanged,
+    TResult Function(_BirthDateChanged value)? birthDateChanged,
+    TResult Function(_SignInWithNameAndPasswordPressed value)?
+        signInWithNameAndPasswordPressed,
+    TResult Function(_GenderChanged value)? genderChanged,
+    TResult Function(_RegisterWithUserFields value)? registerWithUserFields,
+    TResult Function(_SwitchRegisterAndLoginPressed value)?
+        switchRegisterAndLoginPressed,
+  }) {
+    return switchRegisterAndLoginPressed?.call(this);
   }
 
   @override
