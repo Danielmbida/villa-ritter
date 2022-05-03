@@ -1,6 +1,5 @@
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'user_actor_bloc.dart';
 
@@ -44,12 +43,6 @@ mixin _$UserActorEvent {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(User user)? present,
-    TResult Function(User user)? left,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(User user)? present,
     TResult Function(User user)? left,
@@ -60,12 +53,6 @@ mixin _$UserActorEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(_Present value) present,
     required TResult Function(_Left value) left,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Present value)? present,
-    TResult Function(_Left value)? left,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -195,15 +182,6 @@ class _$_Present implements _Present {
 
   @override
   @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(User user)? present,
-    TResult Function(User user)? left,
-  }) {
-    return present?.call(user);
-  }
-
-  @override
-  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(User user)? present,
     TResult Function(User user)? left,
@@ -222,15 +200,6 @@ class _$_Present implements _Present {
     required TResult Function(_Left value) left,
   }) {
     return present(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Present value)? present,
-    TResult Function(_Left value)? left,
-  }) {
-    return present?.call(this);
   }
 
   @override
@@ -332,15 +301,6 @@ class _$_Left implements _Left {
 
   @override
   @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(User user)? present,
-    TResult Function(User user)? left,
-  }) {
-    return left?.call(user);
-  }
-
-  @override
-  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(User user)? present,
     TResult Function(User user)? left,
@@ -359,15 +319,6 @@ class _$_Left implements _Left {
     required TResult Function(_Left value) left,
   }) {
     return left(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Present value)? present,
-    TResult Function(_Left value)? left,
-  }) {
-    return left?.call(this);
   }
 
   @override
@@ -436,15 +387,6 @@ mixin _$UserActorState {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? updatedSuccess,
-    TResult Function(UserFailure f)? updatedFailure,
-    TResult Function()? actionInProgress,
-    TResult Function()? isLeft,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? updatedSuccess,
@@ -461,15 +403,6 @@ mixin _$UserActorState {
     required TResult Function(_UpdatedFailure value) updatedFailure,
     required TResult Function(ActionInProgress value) actionInProgress,
     required TResult Function(IsLeft value) isLeft,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_UpdatedSuccess value)? updatedSuccess,
-    TResult Function(_UpdatedFailure value)? updatedFailure,
-    TResult Function(ActionInProgress value)? actionInProgress,
-    TResult Function(IsLeft value)? isLeft,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -549,18 +482,6 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? updatedSuccess,
-    TResult Function(UserFailure f)? updatedFailure,
-    TResult Function()? actionInProgress,
-    TResult Function()? isLeft,
-  }) {
-    return initial?.call();
-  }
-
-  @override
-  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? updatedSuccess,
@@ -585,18 +506,6 @@ class _$_Initial implements _Initial {
     required TResult Function(IsLeft value) isLeft,
   }) {
     return initial(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_UpdatedSuccess value)? updatedSuccess,
-    TResult Function(_UpdatedFailure value)? updatedFailure,
-    TResult Function(ActionInProgress value)? actionInProgress,
-    TResult Function(IsLeft value)? isLeft,
-  }) {
-    return initial?.call(this);
   }
 
   @override
@@ -671,18 +580,6 @@ class _$_UpdatedSuccess implements _UpdatedSuccess {
 
   @override
   @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? updatedSuccess,
-    TResult Function(UserFailure f)? updatedFailure,
-    TResult Function()? actionInProgress,
-    TResult Function()? isLeft,
-  }) {
-    return updatedSuccess?.call();
-  }
-
-  @override
-  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? updatedSuccess,
@@ -707,18 +604,6 @@ class _$_UpdatedSuccess implements _UpdatedSuccess {
     required TResult Function(IsLeft value) isLeft,
   }) {
     return updatedSuccess(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_UpdatedSuccess value)? updatedSuccess,
-    TResult Function(_UpdatedFailure value)? updatedFailure,
-    TResult Function(ActionInProgress value)? actionInProgress,
-    TResult Function(IsLeft value)? isLeft,
-  }) {
-    return updatedSuccess?.call(this);
   }
 
   @override
@@ -827,18 +712,6 @@ class _$_UpdatedFailure implements _UpdatedFailure {
 
   @override
   @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? updatedSuccess,
-    TResult Function(UserFailure f)? updatedFailure,
-    TResult Function()? actionInProgress,
-    TResult Function()? isLeft,
-  }) {
-    return updatedFailure?.call(f);
-  }
-
-  @override
-  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? updatedSuccess,
@@ -863,18 +736,6 @@ class _$_UpdatedFailure implements _UpdatedFailure {
     required TResult Function(IsLeft value) isLeft,
   }) {
     return updatedFailure(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_UpdatedSuccess value)? updatedSuccess,
-    TResult Function(_UpdatedFailure value)? updatedFailure,
-    TResult Function(ActionInProgress value)? actionInProgress,
-    TResult Function(IsLeft value)? isLeft,
-  }) {
-    return updatedFailure?.call(this);
   }
 
   @override
@@ -954,18 +815,6 @@ class _$ActionInProgress implements ActionInProgress {
 
   @override
   @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? updatedSuccess,
-    TResult Function(UserFailure f)? updatedFailure,
-    TResult Function()? actionInProgress,
-    TResult Function()? isLeft,
-  }) {
-    return actionInProgress?.call();
-  }
-
-  @override
-  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? updatedSuccess,
@@ -990,18 +839,6 @@ class _$ActionInProgress implements ActionInProgress {
     required TResult Function(IsLeft value) isLeft,
   }) {
     return actionInProgress(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_UpdatedSuccess value)? updatedSuccess,
-    TResult Function(_UpdatedFailure value)? updatedFailure,
-    TResult Function(ActionInProgress value)? actionInProgress,
-    TResult Function(IsLeft value)? isLeft,
-  }) {
-    return actionInProgress?.call(this);
   }
 
   @override
@@ -1073,18 +910,6 @@ class _$IsLeft implements IsLeft {
 
   @override
   @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? updatedSuccess,
-    TResult Function(UserFailure f)? updatedFailure,
-    TResult Function()? actionInProgress,
-    TResult Function()? isLeft,
-  }) {
-    return isLeft?.call();
-  }
-
-  @override
-  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? updatedSuccess,
@@ -1109,18 +934,6 @@ class _$IsLeft implements IsLeft {
     required TResult Function(IsLeft value) isLeft,
   }) {
     return isLeft(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_UpdatedSuccess value)? updatedSuccess,
-    TResult Function(_UpdatedFailure value)? updatedFailure,
-    TResult Function(ActionInProgress value)? actionInProgress,
-    TResult Function(IsLeft value)? isLeft,
-  }) {
-    return isLeft?.call(this);
   }
 
   @override

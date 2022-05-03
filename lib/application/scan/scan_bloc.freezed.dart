@@ -1,6 +1,5 @@
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'scan_bloc.dart';
 
@@ -45,13 +44,6 @@ mixin _$ScanEvent {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String codeQR)? scanCheckRequested,
-    TResult Function()? scanDisplayErrorRequested,
-    TResult Function()? scanResetted,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String codeQR)? scanCheckRequested,
     TResult Function()? scanDisplayErrorRequested,
@@ -65,14 +57,6 @@ mixin _$ScanEvent {
     required TResult Function(_ScanDisplaErrorRequested value)
         scanDisplayErrorRequested,
     required TResult Function(_ScanResetted value) scanResetted,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_ScanCheckRequested value)? scanCheckRequested,
-    TResult Function(_ScanDisplaErrorRequested value)?
-        scanDisplayErrorRequested,
-    TResult Function(_ScanResetted value)? scanResetted,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -185,16 +169,6 @@ class _$_ScanCheckRequested
 
   @override
   @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String codeQR)? scanCheckRequested,
-    TResult Function()? scanDisplayErrorRequested,
-    TResult Function()? scanResetted,
-  }) {
-    return scanCheckRequested?.call(codeQR);
-  }
-
-  @override
-  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String codeQR)? scanCheckRequested,
     TResult Function()? scanDisplayErrorRequested,
@@ -216,17 +190,6 @@ class _$_ScanCheckRequested
     required TResult Function(_ScanResetted value) scanResetted,
   }) {
     return scanCheckRequested(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_ScanCheckRequested value)? scanCheckRequested,
-    TResult Function(_ScanDisplaErrorRequested value)?
-        scanDisplayErrorRequested,
-    TResult Function(_ScanResetted value)? scanResetted,
-  }) {
-    return scanCheckRequested?.call(this);
   }
 
   @override
@@ -289,8 +252,8 @@ class _$_ScanDisplaErrorRequested
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties.add(
-        DiagnosticsProperty('type', 'ScanEvent.scanDisplayErrorRequested'));
+    properties
+      ..add(DiagnosticsProperty('type', 'ScanEvent.scanDisplayErrorRequested'));
   }
 
   @override
@@ -309,16 +272,6 @@ class _$_ScanDisplaErrorRequested
     required TResult Function() scanResetted,
   }) {
     return scanDisplayErrorRequested();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String codeQR)? scanCheckRequested,
-    TResult Function()? scanDisplayErrorRequested,
-    TResult Function()? scanResetted,
-  }) {
-    return scanDisplayErrorRequested?.call();
   }
 
   @override
@@ -344,17 +297,6 @@ class _$_ScanDisplaErrorRequested
     required TResult Function(_ScanResetted value) scanResetted,
   }) {
     return scanDisplayErrorRequested(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_ScanCheckRequested value)? scanCheckRequested,
-    TResult Function(_ScanDisplaErrorRequested value)?
-        scanDisplayErrorRequested,
-    TResult Function(_ScanResetted value)? scanResetted,
-  }) {
-    return scanDisplayErrorRequested?.call(this);
   }
 
   @override
@@ -408,7 +350,7 @@ class _$_ScanResetted with DiagnosticableTreeMixin implements _ScanResetted {
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties.add(DiagnosticsProperty('type', 'ScanEvent.scanResetted'));
+    properties..add(DiagnosticsProperty('type', 'ScanEvent.scanResetted'));
   }
 
   @override
@@ -427,16 +369,6 @@ class _$_ScanResetted with DiagnosticableTreeMixin implements _ScanResetted {
     required TResult Function() scanResetted,
   }) {
     return scanResetted();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String codeQR)? scanCheckRequested,
-    TResult Function()? scanDisplayErrorRequested,
-    TResult Function()? scanResetted,
-  }) {
-    return scanResetted?.call();
   }
 
   @override
@@ -462,17 +394,6 @@ class _$_ScanResetted with DiagnosticableTreeMixin implements _ScanResetted {
     required TResult Function(_ScanResetted value) scanResetted,
   }) {
     return scanResetted(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_ScanCheckRequested value)? scanCheckRequested,
-    TResult Function(_ScanDisplaErrorRequested value)?
-        scanDisplayErrorRequested,
-    TResult Function(_ScanResetted value)? scanResetted,
-  }) {
-    return scanResetted?.call(this);
   }
 
   @override
@@ -532,14 +453,6 @@ mixin _$ScanState {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? scanFail,
-    TResult Function(String code)? sucess,
-    TResult Function()? scanTimeout,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? scanFail,
@@ -554,14 +467,6 @@ mixin _$ScanState {
     required TResult Function(_ScanFail value) scanFail,
     required TResult Function(_Sucess value) sucess,
     required TResult Function(_ScanTimeout value) scanTimeout,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_ScanFail value)? scanFail,
-    TResult Function(_Sucess value)? sucess,
-    TResult Function(_ScanTimeout value)? scanTimeout,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -619,7 +524,7 @@ class _$_Initial with DiagnosticableTreeMixin implements _Initial {
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties.add(DiagnosticsProperty('type', 'ScanState.initial'));
+    properties..add(DiagnosticsProperty('type', 'ScanState.initial'));
   }
 
   @override
@@ -639,17 +544,6 @@ class _$_Initial with DiagnosticableTreeMixin implements _Initial {
     required TResult Function() scanTimeout,
   }) {
     return initial();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? scanFail,
-    TResult Function(String code)? sucess,
-    TResult Function()? scanTimeout,
-  }) {
-    return initial?.call();
   }
 
   @override
@@ -676,17 +570,6 @@ class _$_Initial with DiagnosticableTreeMixin implements _Initial {
     required TResult Function(_ScanTimeout value) scanTimeout,
   }) {
     return initial(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_ScanFail value)? scanFail,
-    TResult Function(_Sucess value)? sucess,
-    TResult Function(_ScanTimeout value)? scanTimeout,
-  }) {
-    return initial?.call(this);
   }
 
   @override
@@ -738,7 +621,7 @@ class _$_ScanFail with DiagnosticableTreeMixin implements _ScanFail {
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties.add(DiagnosticsProperty('type', 'ScanState.scanFail'));
+    properties..add(DiagnosticsProperty('type', 'ScanState.scanFail'));
   }
 
   @override
@@ -758,17 +641,6 @@ class _$_ScanFail with DiagnosticableTreeMixin implements _ScanFail {
     required TResult Function() scanTimeout,
   }) {
     return scanFail();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? scanFail,
-    TResult Function(String code)? sucess,
-    TResult Function()? scanTimeout,
-  }) {
-    return scanFail?.call();
   }
 
   @override
@@ -795,17 +667,6 @@ class _$_ScanFail with DiagnosticableTreeMixin implements _ScanFail {
     required TResult Function(_ScanTimeout value) scanTimeout,
   }) {
     return scanFail(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_ScanFail value)? scanFail,
-    TResult Function(_Sucess value)? sucess,
-    TResult Function(_ScanTimeout value)? scanTimeout,
-  }) {
-    return scanFail?.call(this);
   }
 
   @override
@@ -908,17 +769,6 @@ class _$_Sucess with DiagnosticableTreeMixin implements _Sucess {
 
   @override
   @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? scanFail,
-    TResult Function(String code)? sucess,
-    TResult Function()? scanTimeout,
-  }) {
-    return sucess?.call(code);
-  }
-
-  @override
-  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? scanFail,
@@ -941,17 +791,6 @@ class _$_Sucess with DiagnosticableTreeMixin implements _Sucess {
     required TResult Function(_ScanTimeout value) scanTimeout,
   }) {
     return sucess(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_ScanFail value)? scanFail,
-    TResult Function(_Sucess value)? sucess,
-    TResult Function(_ScanTimeout value)? scanTimeout,
-  }) {
-    return sucess?.call(this);
   }
 
   @override
@@ -1009,7 +848,7 @@ class _$_ScanTimeout with DiagnosticableTreeMixin implements _ScanTimeout {
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties.add(DiagnosticsProperty('type', 'ScanState.scanTimeout'));
+    properties..add(DiagnosticsProperty('type', 'ScanState.scanTimeout'));
   }
 
   @override
@@ -1029,17 +868,6 @@ class _$_ScanTimeout with DiagnosticableTreeMixin implements _ScanTimeout {
     required TResult Function() scanTimeout,
   }) {
     return scanTimeout();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? scanFail,
-    TResult Function(String code)? sucess,
-    TResult Function()? scanTimeout,
-  }) {
-    return scanTimeout?.call();
   }
 
   @override
@@ -1066,17 +894,6 @@ class _$_ScanTimeout with DiagnosticableTreeMixin implements _ScanTimeout {
     required TResult Function(_ScanTimeout value) scanTimeout,
   }) {
     return scanTimeout(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_ScanFail value)? scanFail,
-    TResult Function(_Sucess value)? sucess,
-    TResult Function(_ScanTimeout value)? scanTimeout,
-  }) {
-    return scanTimeout?.call(this);
   }
 
   @override
