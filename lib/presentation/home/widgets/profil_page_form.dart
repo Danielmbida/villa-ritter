@@ -199,7 +199,7 @@ class _ProfileViewState extends State<ProfileView> {
 
   ///Sauvegarde l'image de profile de l'utilisateur
   ///dans les sharedPreferences
-  Future<Future<bool>> _setImageFromPreferences(String key, String value) async {
+  Future<Future<bool>> _setImageFromPreferences(String key, var value) async {
     final SharedPreferences prefs = await SharedPreferences.getInstance();
     return prefs.setString(key, value);
   }
@@ -286,7 +286,7 @@ class _ProfileViewState extends State<ProfileView> {
 
   ///Ouvre la modal permettant à l'utilisateur de choisir la provenance de
   ///sa photo de profile (galerie ou prendre une photo)
-  void _showPicker(BuildContext context) {
+  void _showPicker(context) {
     const String gellerySource = "Sélectionner dans la galerie";
     const String cameraSource = "Prendre une photo";
     const String cancel = "Annuler";

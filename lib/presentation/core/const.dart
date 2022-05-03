@@ -7,7 +7,6 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:kt_dart/collection.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-// ignore: avoid_classes_with_only_static_members
 class Const {
   ///Mise en forme de la modal appellée
   ///quand il n y a plus de connexion
