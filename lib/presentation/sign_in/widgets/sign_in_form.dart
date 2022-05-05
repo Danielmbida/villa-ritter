@@ -1,14 +1,16 @@
 import 'package:another_flushbar/flushbar.dart';
-import 'package:apptest/application/auth/auth_bloc.dart';
-import 'package:apptest/application/connect/connectivity_cubit.dart';
-import 'package:apptest/presentation/core/const.dart';
-import 'package:apptest/presentation/routes/router.gr.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
+import 'package:apptest/application/auth/auth_bloc.dart';
+import 'package:apptest/application/connect/connectivity_cubit.dart';
+import 'package:apptest/presentation/core/const.dart';
+import 'package:apptest/presentation/routes/router.gr.dart';
+
 import '../../../application/auth/sign_in_form/sign_in_form_bloc.dart';
 
 class SignInForm extends StatefulWidget {
@@ -47,7 +49,7 @@ class _SignInFormState extends State<SignInForm> {
                     invalidNameAndPasswordCombination: (_) =>
                         // 'Invalid name and password combination',
                         AppLocalizations.of(context)!
-                            .invalid_email_and_password_string),
+                            .invalid_email_and_password_string,),
                 duration: const Duration(seconds: 3),
               ).show(context);
             },
@@ -81,13 +83,6 @@ class _SignInFormState extends State<SignInForm> {
               blendMode: BlendMode.darken,
               child: Scaffold(
                 backgroundColor: Colors.transparent,
-                // bottomNavigationBar: BottomAppBar(
-                //   color: Colors.black.withOpacity(0.1),
-                //   elevation: 0,
-                //   child: !state.isRegister
-                //       ? txtButton(btnColor, mediaHeight, context, "Inscrivez-vous")
-                //       : txtButton(btnColor, mediaHeight, context, "login"),
-                // ),
                 body: SingleChildScrollView(
                   child: Container(
                     height: mediaHeight,
@@ -172,14 +167,14 @@ class _SignInFormState extends State<SignInForm> {
                                     ],
                                     if (state.isRegister) ...[
                                       elvButton(btnColor, context, "register",
-                                          isConnected),
+                                          isConnected,),
                                       txtButton(btnColor, mediaHeight, context,
-                                          "login")
+                                          "login",)
                                     ] else ...[
                                       elvButton(btnColor, context, "login",
-                                          isConnected),
+                                          isConnected,),
                                       txtButton(btnColor, mediaHeight, context,
-                                          "register")
+                                          "register",)
                                     ],
                                     if (state.isSubmitting) ...[
                                       SizedBox(
@@ -208,7 +203,7 @@ class _SignInFormState extends State<SignInForm> {
   ///Met en place le button pour switcher
   ///entre la connexion et l'inscription
   TextButton txtButton(
-      Color btnColor, double mediaHeight, BuildContext context, String action) {
+      Color btnColor, double mediaHeight, BuildContext context, String action,) {
     return TextButton(
       style: TextButton.styleFrom(
         primary: btnColor,
@@ -278,7 +273,7 @@ class _SignInFormState extends State<SignInForm> {
   ///Met en place la séléction de la
   ///date d'anniverssaire dans le formulaire d'inscription
   Padding bithdayFormField(double paddingFormElems,
-      double radiusBorderFormElems, BuildContext context) {
+      double radiusBorderFormElems, BuildContext context,) {
     return Padding(
       padding: EdgeInsets.all(paddingFormElems),
       child: TextFormField(
@@ -327,7 +322,7 @@ class _SignInFormState extends State<SignInForm> {
   ///Met en place le champs de la sélection du genre
   ///dans le formulaire
   Padding genderFormField(double paddingFormElems, double radiusBorderFormElems,
-      BuildContext context, double iconSize) {
+      BuildContext context, double iconSize,) {
     return Padding(
       padding: EdgeInsets.all(paddingFormElems),
       child: Row(

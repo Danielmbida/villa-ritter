@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'failures.dart';
 
@@ -92,6 +93,19 @@ mixin _$ValueFailure<T> {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(T failedValue)? invalidFirstName,
+    TResult Function(T failedValue)? invalidLastName,
+    TResult Function(T failedValue)? invalidLocality,
+    TResult Function(T failedValue)? invalidGender,
+    TResult Function(T failedValue)? invalidPassword,
+    TResult Function(T failedValue)? invalidQR,
+    TResult Function(T failedValue)? invalidEmailAddress,
+    TResult Function(T failedValue)? invalidBirthDate,
+    TResult Function(T failedValue)? invalidTextField,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(T failedValue)? invalidFirstName,
     TResult Function(T failedValue)? invalidLastName,
@@ -116,6 +130,19 @@ mixin _$ValueFailure<T> {
     required TResult Function(InvalidEmailAddress<T> value) invalidEmailAddress,
     required TResult Function(InvalidBirthDate<T> value) invalidBirthDate,
     required TResult Function(InvalidTextField<T> value) invalidTextField,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InvalidFirstName<T> value)? invalidFirstName,
+    TResult Function(InvalidLastName<T> value)? invalidLastName,
+    TResult Function(InvalidLocality<T> value)? invalidLocality,
+    TResult Function(InvalidGender<T> value)? invalidGender,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(InvalidQR<T> value)? invalidQR,
+    TResult Function(InvalidEmailAddress<T> value)? invalidEmailAddress,
+    TResult Function(InvalidBirthDate<T> value)? invalidBirthDate,
+    TResult Function(InvalidTextField<T> value)? invalidTextField,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -261,6 +288,22 @@ class _$InvalidFirstName<T>
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(T failedValue)? invalidFirstName,
+    TResult Function(T failedValue)? invalidLastName,
+    TResult Function(T failedValue)? invalidLocality,
+    TResult Function(T failedValue)? invalidGender,
+    TResult Function(T failedValue)? invalidPassword,
+    TResult Function(T failedValue)? invalidQR,
+    TResult Function(T failedValue)? invalidEmailAddress,
+    TResult Function(T failedValue)? invalidBirthDate,
+    TResult Function(T failedValue)? invalidTextField,
+  }) {
+    return invalidFirstName?.call(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(T failedValue)? invalidFirstName,
     TResult Function(T failedValue)? invalidLastName,
@@ -293,6 +336,22 @@ class _$InvalidFirstName<T>
     required TResult Function(InvalidTextField<T> value) invalidTextField,
   }) {
     return invalidFirstName(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InvalidFirstName<T> value)? invalidFirstName,
+    TResult Function(InvalidLastName<T> value)? invalidLastName,
+    TResult Function(InvalidLocality<T> value)? invalidLocality,
+    TResult Function(InvalidGender<T> value)? invalidGender,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(InvalidQR<T> value)? invalidQR,
+    TResult Function(InvalidEmailAddress<T> value)? invalidEmailAddress,
+    TResult Function(InvalidBirthDate<T> value)? invalidBirthDate,
+    TResult Function(InvalidTextField<T> value)? invalidTextField,
+  }) {
+    return invalidFirstName?.call(this);
   }
 
   @override
@@ -421,6 +480,22 @@ class _$InvalidLastName<T>
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(T failedValue)? invalidFirstName,
+    TResult Function(T failedValue)? invalidLastName,
+    TResult Function(T failedValue)? invalidLocality,
+    TResult Function(T failedValue)? invalidGender,
+    TResult Function(T failedValue)? invalidPassword,
+    TResult Function(T failedValue)? invalidQR,
+    TResult Function(T failedValue)? invalidEmailAddress,
+    TResult Function(T failedValue)? invalidBirthDate,
+    TResult Function(T failedValue)? invalidTextField,
+  }) {
+    return invalidLastName?.call(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(T failedValue)? invalidFirstName,
     TResult Function(T failedValue)? invalidLastName,
@@ -453,6 +528,22 @@ class _$InvalidLastName<T>
     required TResult Function(InvalidTextField<T> value) invalidTextField,
   }) {
     return invalidLastName(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InvalidFirstName<T> value)? invalidFirstName,
+    TResult Function(InvalidLastName<T> value)? invalidLastName,
+    TResult Function(InvalidLocality<T> value)? invalidLocality,
+    TResult Function(InvalidGender<T> value)? invalidGender,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(InvalidQR<T> value)? invalidQR,
+    TResult Function(InvalidEmailAddress<T> value)? invalidEmailAddress,
+    TResult Function(InvalidBirthDate<T> value)? invalidBirthDate,
+    TResult Function(InvalidTextField<T> value)? invalidTextField,
+  }) {
+    return invalidLastName?.call(this);
   }
 
   @override
@@ -581,6 +672,22 @@ class _$InvalidLocality<T>
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(T failedValue)? invalidFirstName,
+    TResult Function(T failedValue)? invalidLastName,
+    TResult Function(T failedValue)? invalidLocality,
+    TResult Function(T failedValue)? invalidGender,
+    TResult Function(T failedValue)? invalidPassword,
+    TResult Function(T failedValue)? invalidQR,
+    TResult Function(T failedValue)? invalidEmailAddress,
+    TResult Function(T failedValue)? invalidBirthDate,
+    TResult Function(T failedValue)? invalidTextField,
+  }) {
+    return invalidLocality?.call(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(T failedValue)? invalidFirstName,
     TResult Function(T failedValue)? invalidLastName,
@@ -613,6 +720,22 @@ class _$InvalidLocality<T>
     required TResult Function(InvalidTextField<T> value) invalidTextField,
   }) {
     return invalidLocality(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InvalidFirstName<T> value)? invalidFirstName,
+    TResult Function(InvalidLastName<T> value)? invalidLastName,
+    TResult Function(InvalidLocality<T> value)? invalidLocality,
+    TResult Function(InvalidGender<T> value)? invalidGender,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(InvalidQR<T> value)? invalidQR,
+    TResult Function(InvalidEmailAddress<T> value)? invalidEmailAddress,
+    TResult Function(InvalidBirthDate<T> value)? invalidBirthDate,
+    TResult Function(InvalidTextField<T> value)? invalidTextField,
+  }) {
+    return invalidLocality?.call(this);
   }
 
   @override
@@ -741,6 +864,22 @@ class _$InvalidGender<T>
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(T failedValue)? invalidFirstName,
+    TResult Function(T failedValue)? invalidLastName,
+    TResult Function(T failedValue)? invalidLocality,
+    TResult Function(T failedValue)? invalidGender,
+    TResult Function(T failedValue)? invalidPassword,
+    TResult Function(T failedValue)? invalidQR,
+    TResult Function(T failedValue)? invalidEmailAddress,
+    TResult Function(T failedValue)? invalidBirthDate,
+    TResult Function(T failedValue)? invalidTextField,
+  }) {
+    return invalidGender?.call(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(T failedValue)? invalidFirstName,
     TResult Function(T failedValue)? invalidLastName,
@@ -773,6 +912,22 @@ class _$InvalidGender<T>
     required TResult Function(InvalidTextField<T> value) invalidTextField,
   }) {
     return invalidGender(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InvalidFirstName<T> value)? invalidFirstName,
+    TResult Function(InvalidLastName<T> value)? invalidLastName,
+    TResult Function(InvalidLocality<T> value)? invalidLocality,
+    TResult Function(InvalidGender<T> value)? invalidGender,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(InvalidQR<T> value)? invalidQR,
+    TResult Function(InvalidEmailAddress<T> value)? invalidEmailAddress,
+    TResult Function(InvalidBirthDate<T> value)? invalidBirthDate,
+    TResult Function(InvalidTextField<T> value)? invalidTextField,
+  }) {
+    return invalidGender?.call(this);
   }
 
   @override
@@ -900,6 +1055,22 @@ class _$InvalidPassword<T>
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(T failedValue)? invalidFirstName,
+    TResult Function(T failedValue)? invalidLastName,
+    TResult Function(T failedValue)? invalidLocality,
+    TResult Function(T failedValue)? invalidGender,
+    TResult Function(T failedValue)? invalidPassword,
+    TResult Function(T failedValue)? invalidQR,
+    TResult Function(T failedValue)? invalidEmailAddress,
+    TResult Function(T failedValue)? invalidBirthDate,
+    TResult Function(T failedValue)? invalidTextField,
+  }) {
+    return invalidPassword?.call(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(T failedValue)? invalidFirstName,
     TResult Function(T failedValue)? invalidLastName,
@@ -932,6 +1103,22 @@ class _$InvalidPassword<T>
     required TResult Function(InvalidTextField<T> value) invalidTextField,
   }) {
     return invalidPassword(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InvalidFirstName<T> value)? invalidFirstName,
+    TResult Function(InvalidLastName<T> value)? invalidLastName,
+    TResult Function(InvalidLocality<T> value)? invalidLocality,
+    TResult Function(InvalidGender<T> value)? invalidGender,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(InvalidQR<T> value)? invalidQR,
+    TResult Function(InvalidEmailAddress<T> value)? invalidEmailAddress,
+    TResult Function(InvalidBirthDate<T> value)? invalidBirthDate,
+    TResult Function(InvalidTextField<T> value)? invalidTextField,
+  }) {
+    return invalidPassword?.call(this);
   }
 
   @override
@@ -1058,6 +1245,22 @@ class _$InvalidQR<T> with DiagnosticableTreeMixin implements InvalidQR<T> {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(T failedValue)? invalidFirstName,
+    TResult Function(T failedValue)? invalidLastName,
+    TResult Function(T failedValue)? invalidLocality,
+    TResult Function(T failedValue)? invalidGender,
+    TResult Function(T failedValue)? invalidPassword,
+    TResult Function(T failedValue)? invalidQR,
+    TResult Function(T failedValue)? invalidEmailAddress,
+    TResult Function(T failedValue)? invalidBirthDate,
+    TResult Function(T failedValue)? invalidTextField,
+  }) {
+    return invalidQR?.call(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(T failedValue)? invalidFirstName,
     TResult Function(T failedValue)? invalidLastName,
@@ -1090,6 +1293,22 @@ class _$InvalidQR<T> with DiagnosticableTreeMixin implements InvalidQR<T> {
     required TResult Function(InvalidTextField<T> value) invalidTextField,
   }) {
     return invalidQR(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InvalidFirstName<T> value)? invalidFirstName,
+    TResult Function(InvalidLastName<T> value)? invalidLastName,
+    TResult Function(InvalidLocality<T> value)? invalidLocality,
+    TResult Function(InvalidGender<T> value)? invalidGender,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(InvalidQR<T> value)? invalidQR,
+    TResult Function(InvalidEmailAddress<T> value)? invalidEmailAddress,
+    TResult Function(InvalidBirthDate<T> value)? invalidBirthDate,
+    TResult Function(InvalidTextField<T> value)? invalidTextField,
+  }) {
+    return invalidQR?.call(this);
   }
 
   @override
@@ -1218,6 +1437,22 @@ class _$InvalidEmailAddress<T>
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(T failedValue)? invalidFirstName,
+    TResult Function(T failedValue)? invalidLastName,
+    TResult Function(T failedValue)? invalidLocality,
+    TResult Function(T failedValue)? invalidGender,
+    TResult Function(T failedValue)? invalidPassword,
+    TResult Function(T failedValue)? invalidQR,
+    TResult Function(T failedValue)? invalidEmailAddress,
+    TResult Function(T failedValue)? invalidBirthDate,
+    TResult Function(T failedValue)? invalidTextField,
+  }) {
+    return invalidEmailAddress?.call(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(T failedValue)? invalidFirstName,
     TResult Function(T failedValue)? invalidLastName,
@@ -1250,6 +1485,22 @@ class _$InvalidEmailAddress<T>
     required TResult Function(InvalidTextField<T> value) invalidTextField,
   }) {
     return invalidEmailAddress(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InvalidFirstName<T> value)? invalidFirstName,
+    TResult Function(InvalidLastName<T> value)? invalidLastName,
+    TResult Function(InvalidLocality<T> value)? invalidLocality,
+    TResult Function(InvalidGender<T> value)? invalidGender,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(InvalidQR<T> value)? invalidQR,
+    TResult Function(InvalidEmailAddress<T> value)? invalidEmailAddress,
+    TResult Function(InvalidBirthDate<T> value)? invalidBirthDate,
+    TResult Function(InvalidTextField<T> value)? invalidTextField,
+  }) {
+    return invalidEmailAddress?.call(this);
   }
 
   @override
@@ -1378,6 +1629,22 @@ class _$InvalidBirthDate<T>
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(T failedValue)? invalidFirstName,
+    TResult Function(T failedValue)? invalidLastName,
+    TResult Function(T failedValue)? invalidLocality,
+    TResult Function(T failedValue)? invalidGender,
+    TResult Function(T failedValue)? invalidPassword,
+    TResult Function(T failedValue)? invalidQR,
+    TResult Function(T failedValue)? invalidEmailAddress,
+    TResult Function(T failedValue)? invalidBirthDate,
+    TResult Function(T failedValue)? invalidTextField,
+  }) {
+    return invalidBirthDate?.call(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(T failedValue)? invalidFirstName,
     TResult Function(T failedValue)? invalidLastName,
@@ -1410,6 +1677,22 @@ class _$InvalidBirthDate<T>
     required TResult Function(InvalidTextField<T> value) invalidTextField,
   }) {
     return invalidBirthDate(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InvalidFirstName<T> value)? invalidFirstName,
+    TResult Function(InvalidLastName<T> value)? invalidLastName,
+    TResult Function(InvalidLocality<T> value)? invalidLocality,
+    TResult Function(InvalidGender<T> value)? invalidGender,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(InvalidQR<T> value)? invalidQR,
+    TResult Function(InvalidEmailAddress<T> value)? invalidEmailAddress,
+    TResult Function(InvalidBirthDate<T> value)? invalidBirthDate,
+    TResult Function(InvalidTextField<T> value)? invalidTextField,
+  }) {
+    return invalidBirthDate?.call(this);
   }
 
   @override
@@ -1538,6 +1821,22 @@ class _$InvalidTextField<T>
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(T failedValue)? invalidFirstName,
+    TResult Function(T failedValue)? invalidLastName,
+    TResult Function(T failedValue)? invalidLocality,
+    TResult Function(T failedValue)? invalidGender,
+    TResult Function(T failedValue)? invalidPassword,
+    TResult Function(T failedValue)? invalidQR,
+    TResult Function(T failedValue)? invalidEmailAddress,
+    TResult Function(T failedValue)? invalidBirthDate,
+    TResult Function(T failedValue)? invalidTextField,
+  }) {
+    return invalidTextField?.call(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(T failedValue)? invalidFirstName,
     TResult Function(T failedValue)? invalidLastName,
@@ -1570,6 +1869,22 @@ class _$InvalidTextField<T>
     required TResult Function(InvalidTextField<T> value) invalidTextField,
   }) {
     return invalidTextField(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InvalidFirstName<T> value)? invalidFirstName,
+    TResult Function(InvalidLastName<T> value)? invalidLastName,
+    TResult Function(InvalidLocality<T> value)? invalidLocality,
+    TResult Function(InvalidGender<T> value)? invalidGender,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(InvalidQR<T> value)? invalidQR,
+    TResult Function(InvalidEmailAddress<T> value)? invalidEmailAddress,
+    TResult Function(InvalidBirthDate<T> value)? invalidBirthDate,
+    TResult Function(InvalidTextField<T> value)? invalidTextField,
+  }) {
+    return invalidTextField?.call(this);
   }
 
   @override

@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'connectivity_cubit.dart';
 
@@ -43,6 +44,12 @@ mixin _$InternetState {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(InternetType type)? connected,
+    TResult Function(InternetType type)? disconnected,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(InternetType type)? connected,
     TResult Function(InternetType type)? disconnected,
@@ -53,6 +60,12 @@ mixin _$InternetState {
   TResult map<TResult extends Object?>({
     required TResult Function(_Connected value) connected,
     required TResult Function(_Disconnected value) disconnected,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Connected value)? connected,
+    TResult Function(_Disconnected value)? disconnected,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -183,6 +196,15 @@ class _$_Connected implements _Connected {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(InternetType type)? connected,
+    TResult Function(InternetType type)? disconnected,
+  }) {
+    return connected?.call(type);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(InternetType type)? connected,
     TResult Function(InternetType type)? disconnected,
@@ -201,6 +223,15 @@ class _$_Connected implements _Connected {
     required TResult Function(_Disconnected value) disconnected,
   }) {
     return connected(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Connected value)? connected,
+    TResult Function(_Disconnected value)? disconnected,
+  }) {
+    return connected?.call(this);
   }
 
   @override
@@ -306,6 +337,15 @@ class _$_Disconnected implements _Disconnected {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(InternetType type)? connected,
+    TResult Function(InternetType type)? disconnected,
+  }) {
+    return disconnected?.call(type);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(InternetType type)? connected,
     TResult Function(InternetType type)? disconnected,
@@ -324,6 +364,15 @@ class _$_Disconnected implements _Disconnected {
     required TResult Function(_Disconnected value) disconnected,
   }) {
     return disconnected(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Connected value)? connected,
+    TResult Function(_Disconnected value)? disconnected,
+  }) {
+    return disconnected?.call(this);
   }
 
   @override
@@ -381,6 +430,13 @@ mixin _$InternetType {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? wifi,
+    TResult Function()? mobileData,
+    TResult Function()? none,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? wifi,
     TResult Function()? mobileData,
@@ -393,6 +449,13 @@ mixin _$InternetType {
     required TResult Function(_Wifi value) wifi,
     required TResult Function(_MobileData value) mobileData,
     required TResult Function(_None value) none,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Wifi value)? wifi,
+    TResult Function(_MobileData value)? mobileData,
+    TResult Function(_None value)? none,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -467,6 +530,16 @@ class _$_Wifi implements _Wifi {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? wifi,
+    TResult Function()? mobileData,
+    TResult Function()? none,
+  }) {
+    return wifi?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? wifi,
     TResult Function()? mobileData,
@@ -487,6 +560,16 @@ class _$_Wifi implements _Wifi {
     required TResult Function(_None value) none,
   }) {
     return wifi(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Wifi value)? wifi,
+    TResult Function(_MobileData value)? mobileData,
+    TResult Function(_None value)? none,
+  }) {
+    return wifi?.call(this);
   }
 
   @override
@@ -556,6 +639,16 @@ class _$_MobileData implements _MobileData {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? wifi,
+    TResult Function()? mobileData,
+    TResult Function()? none,
+  }) {
+    return mobileData?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? wifi,
     TResult Function()? mobileData,
@@ -576,6 +669,16 @@ class _$_MobileData implements _MobileData {
     required TResult Function(_None value) none,
   }) {
     return mobileData(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Wifi value)? wifi,
+    TResult Function(_MobileData value)? mobileData,
+    TResult Function(_None value)? none,
+  }) {
+    return mobileData?.call(this);
   }
 
   @override
@@ -643,6 +746,16 @@ class _$_None implements _None {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? wifi,
+    TResult Function()? mobileData,
+    TResult Function()? none,
+  }) {
+    return none?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? wifi,
     TResult Function()? mobileData,
@@ -663,6 +776,16 @@ class _$_None implements _None {
     required TResult Function(_None value) none,
   }) {
     return none(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Wifi value)? wifi,
+    TResult Function(_MobileData value)? mobileData,
+    TResult Function(_None value)? none,
+  }) {
+    return none?.call(this);
   }
 
   @override

@@ -20,13 +20,13 @@ extension FirebaseUserDomainX on firebase.User {
     
     return User(
       id: UniqueId.fromUniqueString(uid),
-      locality: userInfo['localite'],
-      genre: userInfo['genre'],
-      name: userInfo['nom'],
-      email: userInfo['email'],
-      birthDate: userInfo['naissance'],
-      present: userInfo['present'],
-      hour: userInfo['arrive']
+      locality: userInfo['localite'] as String,
+      genre: userInfo['genre'] as String,
+      name: userInfo['nom'] as String,
+      email: userInfo['email'] as String,
+      birthDate: userInfo['naissance'] as String,
+      present: userInfo['present'] as bool,
+      hour: userInfo['arrive'] as String
     );
   }
 }
