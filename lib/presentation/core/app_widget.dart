@@ -1,6 +1,7 @@
 import 'package:apptest/application/auth/auth_bloc.dart';
 import 'package:apptest/application/connect/connectiv_class.dart';
 import 'package:apptest/application/connect/connectivity_cubit.dart';
+import 'package:apptest/application/news/bloc/watcher_news_bloc.dart';
 import 'package:apptest/application/scan/scan_bloc.dart';
 import 'package:apptest/application/user_actor/user_actor_bloc.dart';
 import 'package:apptest/application/user_watcher_me/user_watcher_me_bloc.dart';
@@ -49,6 +50,10 @@ class AppWidget extends StatelessWidget {
         ),
         BlocProvider(
           create: (context) => InternetCubit(connectivity: Connectivity()),
+        ),
+        BlocProvider(
+          create: (context) => getIt<WatcherNewsBloc>()
+            ..add(const WatcherNewsEvent.watchNewsStarted()),
         ),
       ],
       child: MaterialApp.router(

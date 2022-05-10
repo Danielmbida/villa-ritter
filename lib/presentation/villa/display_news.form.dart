@@ -1,4 +1,5 @@
 import 'package:apptest/application/connect/connectivity_cubit.dart';
+import 'package:apptest/application/news/bloc/watcher_news_bloc.dart';
 import 'package:apptest/presentation/routes/router.gr.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -25,73 +26,37 @@ class _DisplayNewsState extends State<DisplayNews> {
   @override
   Widget build(BuildContext context) {
     final double mediaHeight = MediaQuery.of(context).size.height;
-    return SizedBox(
-      height: mediaHeight * 0.56, //447 56%
-      width: MediaQuery.of(context).size.width,
-      child: SizedBox(
-        child: FutureBuilder(
-          future: fetchPost(),
-          builder: (BuildContext context, AsyncSnapshot<List<Post>> snapshot) {
-            if (snapshot.connectionState == ConnectionState.none) {
-              return const Center(
-                child: Text("Pas de nouvelle pour le moment"),
-              );
-            }
-            if (snapshot.connectionState == ConnectionState.waiting) {
-              return const Center(
-                child: CircularProgressIndicator(),
-              );
-            }
-            if (!snapshot.hasData) {
-              return RefreshIndicator(
-                onRefresh: fetchPost,
-                child: Center(
-                  child: Stack(
-                    children: [
-                      Align(
-                        child: Image.asset(
-                          "assets/images/logo.png",
-                          height: MediaQuery.of(context).size.height * 0.5,
-                          color: Colors.grey[100],
-                        ),
-                      ),
-                      const Align(
-                        child: Text(
-                          "Bientôt du nouveau",
-                          style: TextStyle(
-                            fontSize: 25,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              );
-            }
-            return RefreshIndicator(
-              onRefresh: fetchPost,
+    return BlocBuilder<WatcherNewsBloc, WatcherNewsState>(
+      builder: (context, state) {
+        return state.maybeMap(
+          orElse: () => Container(),
+          loadFailure: (_) {
+            return const Text("erreur");
+          },
+          loadSuccess: (data) {
+            return SizedBox(
+              height: mediaHeight * 0.56, //447 56%
+              width: MediaQuery.of(context).size.width,
               child: ListView.builder(
-                itemCount: snapshot.data!.length,
+                itemCount: data.listPosts.size,
                 itemBuilder: (content, index) {
-                  final Post post = snapshot.data![index];
-
-                  if (post.title != "Site en construction") {
+                  final Post actPost = data.listPosts[index];
+                  if (actPost.title != "Site en construction") {
                     return Card(
                       child: GestureDetector(
                         onTap: () {
-                    
                           context.router.push(
-                            PostRoute(post: post, imageurl: post.title!),
+                            PostRoute(post: actPost, imageurl: actPost.title!),
                           );
                         },
                         child: SizedBox(
                           height: mediaHeight * 0.5, //450,
-                          child: post.featuredMedia! > 0
+                          child: actPost.featuredMedia! > 0
                               ? _displayImage(
-                                  snapshot.data![index].featuredMedia!,
+                                  actPost.featuredMedia!,
                                 )
                               : _displayTitle(
-                                  post.title!,
+                                  actPost.title!,
                                 ),
                         ),
                       ),
@@ -103,8 +68,8 @@ class _DisplayNewsState extends State<DisplayNews> {
               ),
             );
           },
-        ),
-      ),
+        );
+      },
     );
   }
 
@@ -116,7 +81,7 @@ class _DisplayNewsState extends State<DisplayNews> {
         builder: (BuildContext context, AsyncSnapshot<Media?> snapshot) {
           imgUrl = snapshot.data?.sourceUrl;
           if (imgUrl == null) {
-            return  Center(
+            return Center(
               child: _displayTitle("Article"),
             );
           }
@@ -172,7 +137,6 @@ class _DisplayNewsState extends State<DisplayNews> {
     for (final post in res.data as List<Post>) {
       news.add(post);
       // print(post.featuredMedia);
-      print(WPUtils.parseHtml(post.content));
     }
     return news;
   }
@@ -180,11 +144,13 @@ class _DisplayNewsState extends State<DisplayNews> {
   /// Cette méthode permet de récupére l'image d'un arcticle
   Future<Media> fetchWpPostImageUrl(int mediaID) async {
     final response = await http.get(
-        Uri.parse(
-            "https://www.villa-ritter.ch/?rest_route=/wp/v2/media/$mediaID"),
-        // Uri.parse("https://dand.cidisi.ch/wp-json/wp/v2/media/$mediaID"),
-        headers: {"Accept": "application/json"});
-        print(response.body);
+      Uri.parse(
+        "https://www.villa-ritter.ch/?rest_route=/wp/v2/media/$mediaID",
+      ),
+      // Uri.parse("https://dand.cidisi.ch/wp-json/wp/v2/media/$mediaID"),
+      headers: {"Accept": "application/json"},
+    );
+    print(response.body);
     return Media.fromJson(response.body);
   }
 }
