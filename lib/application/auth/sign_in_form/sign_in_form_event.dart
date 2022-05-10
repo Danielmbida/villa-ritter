@@ -11,12 +11,6 @@ class SignInFormEvent with _$SignInFormEvent {
   const factory SignInFormEvent.passwordChanged(String passwordStr) =
       _PasswordChanged;
 
-  const factory SignInFormEvent.menGenderChanged(bool isMen) =
-      _MenGenderChanged;
-
-  const factory SignInFormEvent.wommenGenderChanged(bool isWommen) =
-      _WommenGenderChanged;
-
   const factory SignInFormEvent.localityChanged(String localityStr) =
       _LocalityChanged;
 

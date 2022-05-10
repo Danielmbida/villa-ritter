@@ -135,25 +135,15 @@ class __$ScanCheckRequestedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_ScanCheckRequested
-    with DiagnosticableTreeMixin
-    implements _ScanCheckRequested {
+class _$_ScanCheckRequested implements _ScanCheckRequested {
   const _$_ScanCheckRequested(this.codeQR);
 
   @override
   final String codeQR;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'ScanEvent.scanCheckRequested(codeQR: $codeQR)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'ScanEvent.scanCheckRequested'))
-      ..add(DiagnosticsProperty('codeQR', codeQR));
   }
 
   @override
@@ -276,21 +266,12 @@ class __$ScanDisplaErrorRequestedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_ScanDisplaErrorRequested
-    with DiagnosticableTreeMixin
-    implements _ScanDisplaErrorRequested {
+class _$_ScanDisplaErrorRequested implements _ScanDisplaErrorRequested {
   const _$_ScanDisplaErrorRequested();
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'ScanEvent.scanDisplayErrorRequested()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties.add(
-        DiagnosticsProperty('type', 'ScanEvent.scanDisplayErrorRequested'));
   }
 
   @override
@@ -397,18 +378,12 @@ class __$ScanResettedCopyWithImpl<$Res> extends _$ScanEventCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_ScanResetted with DiagnosticableTreeMixin implements _ScanResetted {
+class _$_ScanResetted implements _ScanResetted {
   const _$_ScanResetted();
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'ScanEvent.scanResetted()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties.add(DiagnosticsProperty('type', 'ScanEvent.scanResetted'));
   }
 
   @override
@@ -608,18 +583,12 @@ class __$InitialCopyWithImpl<$Res> extends _$ScanStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_Initial with DiagnosticableTreeMixin implements _Initial {
+class _$_Initial implements _Initial {
   const _$_Initial();
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'ScanState.initial()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties.add(DiagnosticsProperty('type', 'ScanState.initial'));
   }
 
   @override
@@ -727,18 +696,12 @@ class __$ScanFailCopyWithImpl<$Res> extends _$ScanStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_ScanFail with DiagnosticableTreeMixin implements _ScanFail {
+class _$_ScanFail implements _ScanFail {
   const _$_ScanFail();
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'ScanState.scanFail()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties.add(DiagnosticsProperty('type', 'ScanState.scanFail'));
   }
 
   @override
@@ -859,23 +822,15 @@ class __$SucessCopyWithImpl<$Res> extends _$ScanStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_Sucess with DiagnosticableTreeMixin implements _Sucess {
+class _$_Sucess implements _Sucess {
   const _$_Sucess(this.code);
 
   @override
   final String code;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'ScanState.sucess(code: $code)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'ScanState.sucess'))
-      ..add(DiagnosticsProperty('code', code));
   }
 
   @override
@@ -998,18 +953,12 @@ class __$ScanTimeoutCopyWithImpl<$Res> extends _$ScanStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_ScanTimeout with DiagnosticableTreeMixin implements _ScanTimeout {
+class _$_ScanTimeout implements _ScanTimeout {
   const _$_ScanTimeout();
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'ScanState.scanTimeout()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties.add(DiagnosticsProperty('type', 'ScanState.scanTimeout'));
   }
 
   @override

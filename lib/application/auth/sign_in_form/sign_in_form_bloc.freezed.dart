@@ -35,18 +35,6 @@ class _$SignInFormEventTearOff {
     );
   }
 
-  _MenGenderChanged menGenderChanged(bool isMen) {
-    return _MenGenderChanged(
-      isMen,
-    );
-  }
-
-  _WommenGenderChanged wommenGenderChanged(bool isWommen) {
-    return _WommenGenderChanged(
-      isWommen,
-    );
-  }
-
   _LocalityChanged localityChanged(String localityStr) {
     return _LocalityChanged(
       localityStr,
@@ -94,8 +82,6 @@ mixin _$SignInFormEvent {
     required TResult Function(String lastNameStr) lastNameChanged,
     required TResult Function(String fisrtNameStr) firstNameChanged,
     required TResult Function(String passwordStr) passwordChanged,
-    required TResult Function(bool isMen) menGenderChanged,
-    required TResult Function(bool isWommen) wommenGenderChanged,
     required TResult Function(String localityStr) localityChanged,
     required TResult Function(String emailAddress) emailAddressChanged,
     required TResult Function(String birthDate) birthDateChanged,
@@ -110,8 +96,6 @@ mixin _$SignInFormEvent {
     TResult Function(String lastNameStr)? lastNameChanged,
     TResult Function(String fisrtNameStr)? firstNameChanged,
     TResult Function(String passwordStr)? passwordChanged,
-    TResult Function(bool isMen)? menGenderChanged,
-    TResult Function(bool isWommen)? wommenGenderChanged,
     TResult Function(String localityStr)? localityChanged,
     TResult Function(String emailAddress)? emailAddressChanged,
     TResult Function(String birthDate)? birthDateChanged,
@@ -126,8 +110,6 @@ mixin _$SignInFormEvent {
     TResult Function(String lastNameStr)? lastNameChanged,
     TResult Function(String fisrtNameStr)? firstNameChanged,
     TResult Function(String passwordStr)? passwordChanged,
-    TResult Function(bool isMen)? menGenderChanged,
-    TResult Function(bool isWommen)? wommenGenderChanged,
     TResult Function(String localityStr)? localityChanged,
     TResult Function(String emailAddress)? emailAddressChanged,
     TResult Function(String birthDate)? birthDateChanged,
@@ -143,8 +125,6 @@ mixin _$SignInFormEvent {
     required TResult Function(_LastNameChanged value) lastNameChanged,
     required TResult Function(_FirstNameChanged value) firstNameChanged,
     required TResult Function(_PasswordChanged value) passwordChanged,
-    required TResult Function(_MenGenderChanged value) menGenderChanged,
-    required TResult Function(_WommenGenderChanged value) wommenGenderChanged,
     required TResult Function(_LocalityChanged value) localityChanged,
     required TResult Function(_EmailAddressChanged value) emailAddressChanged,
     required TResult Function(_BirthDateChanged value) birthDateChanged,
@@ -162,8 +142,6 @@ mixin _$SignInFormEvent {
     TResult Function(_LastNameChanged value)? lastNameChanged,
     TResult Function(_FirstNameChanged value)? firstNameChanged,
     TResult Function(_PasswordChanged value)? passwordChanged,
-    TResult Function(_MenGenderChanged value)? menGenderChanged,
-    TResult Function(_WommenGenderChanged value)? wommenGenderChanged,
     TResult Function(_LocalityChanged value)? localityChanged,
     TResult Function(_EmailAddressChanged value)? emailAddressChanged,
     TResult Function(_BirthDateChanged value)? birthDateChanged,
@@ -180,8 +158,6 @@ mixin _$SignInFormEvent {
     TResult Function(_LastNameChanged value)? lastNameChanged,
     TResult Function(_FirstNameChanged value)? firstNameChanged,
     TResult Function(_PasswordChanged value)? passwordChanged,
-    TResult Function(_MenGenderChanged value)? menGenderChanged,
-    TResult Function(_WommenGenderChanged value)? wommenGenderChanged,
     TResult Function(_LocalityChanged value)? localityChanged,
     TResult Function(_EmailAddressChanged value)? emailAddressChanged,
     TResult Function(_BirthDateChanged value)? birthDateChanged,
@@ -247,25 +223,15 @@ class __$LastNameChangedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_LastNameChanged
-    with DiagnosticableTreeMixin
-    implements _LastNameChanged {
+class _$_LastNameChanged implements _LastNameChanged {
   const _$_LastNameChanged(this.lastNameStr);
 
   @override
   final String lastNameStr;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'SignInFormEvent.lastNameChanged(lastNameStr: $lastNameStr)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'SignInFormEvent.lastNameChanged'))
-      ..add(DiagnosticsProperty('lastNameStr', lastNameStr));
   }
 
   @override
@@ -292,8 +258,6 @@ class _$_LastNameChanged
     required TResult Function(String lastNameStr) lastNameChanged,
     required TResult Function(String fisrtNameStr) firstNameChanged,
     required TResult Function(String passwordStr) passwordChanged,
-    required TResult Function(bool isMen) menGenderChanged,
-    required TResult Function(bool isWommen) wommenGenderChanged,
     required TResult Function(String localityStr) localityChanged,
     required TResult Function(String emailAddress) emailAddressChanged,
     required TResult Function(String birthDate) birthDateChanged,
@@ -311,8 +275,6 @@ class _$_LastNameChanged
     TResult Function(String lastNameStr)? lastNameChanged,
     TResult Function(String fisrtNameStr)? firstNameChanged,
     TResult Function(String passwordStr)? passwordChanged,
-    TResult Function(bool isMen)? menGenderChanged,
-    TResult Function(bool isWommen)? wommenGenderChanged,
     TResult Function(String localityStr)? localityChanged,
     TResult Function(String emailAddress)? emailAddressChanged,
     TResult Function(String birthDate)? birthDateChanged,
@@ -330,8 +292,6 @@ class _$_LastNameChanged
     TResult Function(String lastNameStr)? lastNameChanged,
     TResult Function(String fisrtNameStr)? firstNameChanged,
     TResult Function(String passwordStr)? passwordChanged,
-    TResult Function(bool isMen)? menGenderChanged,
-    TResult Function(bool isWommen)? wommenGenderChanged,
     TResult Function(String localityStr)? localityChanged,
     TResult Function(String emailAddress)? emailAddressChanged,
     TResult Function(String birthDate)? birthDateChanged,
@@ -353,8 +313,6 @@ class _$_LastNameChanged
     required TResult Function(_LastNameChanged value) lastNameChanged,
     required TResult Function(_FirstNameChanged value) firstNameChanged,
     required TResult Function(_PasswordChanged value) passwordChanged,
-    required TResult Function(_MenGenderChanged value) menGenderChanged,
-    required TResult Function(_WommenGenderChanged value) wommenGenderChanged,
     required TResult Function(_LocalityChanged value) localityChanged,
     required TResult Function(_EmailAddressChanged value) emailAddressChanged,
     required TResult Function(_BirthDateChanged value) birthDateChanged,
@@ -375,8 +333,6 @@ class _$_LastNameChanged
     TResult Function(_LastNameChanged value)? lastNameChanged,
     TResult Function(_FirstNameChanged value)? firstNameChanged,
     TResult Function(_PasswordChanged value)? passwordChanged,
-    TResult Function(_MenGenderChanged value)? menGenderChanged,
-    TResult Function(_WommenGenderChanged value)? wommenGenderChanged,
     TResult Function(_LocalityChanged value)? localityChanged,
     TResult Function(_EmailAddressChanged value)? emailAddressChanged,
     TResult Function(_BirthDateChanged value)? birthDateChanged,
@@ -396,8 +352,6 @@ class _$_LastNameChanged
     TResult Function(_LastNameChanged value)? lastNameChanged,
     TResult Function(_FirstNameChanged value)? firstNameChanged,
     TResult Function(_PasswordChanged value)? passwordChanged,
-    TResult Function(_MenGenderChanged value)? menGenderChanged,
-    TResult Function(_WommenGenderChanged value)? wommenGenderChanged,
     TResult Function(_LocalityChanged value)? localityChanged,
     TResult Function(_EmailAddressChanged value)? emailAddressChanged,
     TResult Function(_BirthDateChanged value)? birthDateChanged,
@@ -459,25 +413,15 @@ class __$FirstNameChangedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_FirstNameChanged
-    with DiagnosticableTreeMixin
-    implements _FirstNameChanged {
+class _$_FirstNameChanged implements _FirstNameChanged {
   const _$_FirstNameChanged(this.fisrtNameStr);
 
   @override
   final String fisrtNameStr;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'SignInFormEvent.firstNameChanged(fisrtNameStr: $fisrtNameStr)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'SignInFormEvent.firstNameChanged'))
-      ..add(DiagnosticsProperty('fisrtNameStr', fisrtNameStr));
   }
 
   @override
@@ -504,8 +448,6 @@ class _$_FirstNameChanged
     required TResult Function(String lastNameStr) lastNameChanged,
     required TResult Function(String fisrtNameStr) firstNameChanged,
     required TResult Function(String passwordStr) passwordChanged,
-    required TResult Function(bool isMen) menGenderChanged,
-    required TResult Function(bool isWommen) wommenGenderChanged,
     required TResult Function(String localityStr) localityChanged,
     required TResult Function(String emailAddress) emailAddressChanged,
     required TResult Function(String birthDate) birthDateChanged,
@@ -523,8 +465,6 @@ class _$_FirstNameChanged
     TResult Function(String lastNameStr)? lastNameChanged,
     TResult Function(String fisrtNameStr)? firstNameChanged,
     TResult Function(String passwordStr)? passwordChanged,
-    TResult Function(bool isMen)? menGenderChanged,
-    TResult Function(bool isWommen)? wommenGenderChanged,
     TResult Function(String localityStr)? localityChanged,
     TResult Function(String emailAddress)? emailAddressChanged,
     TResult Function(String birthDate)? birthDateChanged,
@@ -542,8 +482,6 @@ class _$_FirstNameChanged
     TResult Function(String lastNameStr)? lastNameChanged,
     TResult Function(String fisrtNameStr)? firstNameChanged,
     TResult Function(String passwordStr)? passwordChanged,
-    TResult Function(bool isMen)? menGenderChanged,
-    TResult Function(bool isWommen)? wommenGenderChanged,
     TResult Function(String localityStr)? localityChanged,
     TResult Function(String emailAddress)? emailAddressChanged,
     TResult Function(String birthDate)? birthDateChanged,
@@ -565,8 +503,6 @@ class _$_FirstNameChanged
     required TResult Function(_LastNameChanged value) lastNameChanged,
     required TResult Function(_FirstNameChanged value) firstNameChanged,
     required TResult Function(_PasswordChanged value) passwordChanged,
-    required TResult Function(_MenGenderChanged value) menGenderChanged,
-    required TResult Function(_WommenGenderChanged value) wommenGenderChanged,
     required TResult Function(_LocalityChanged value) localityChanged,
     required TResult Function(_EmailAddressChanged value) emailAddressChanged,
     required TResult Function(_BirthDateChanged value) birthDateChanged,
@@ -587,8 +523,6 @@ class _$_FirstNameChanged
     TResult Function(_LastNameChanged value)? lastNameChanged,
     TResult Function(_FirstNameChanged value)? firstNameChanged,
     TResult Function(_PasswordChanged value)? passwordChanged,
-    TResult Function(_MenGenderChanged value)? menGenderChanged,
-    TResult Function(_WommenGenderChanged value)? wommenGenderChanged,
     TResult Function(_LocalityChanged value)? localityChanged,
     TResult Function(_EmailAddressChanged value)? emailAddressChanged,
     TResult Function(_BirthDateChanged value)? birthDateChanged,
@@ -608,8 +542,6 @@ class _$_FirstNameChanged
     TResult Function(_LastNameChanged value)? lastNameChanged,
     TResult Function(_FirstNameChanged value)? firstNameChanged,
     TResult Function(_PasswordChanged value)? passwordChanged,
-    TResult Function(_MenGenderChanged value)? menGenderChanged,
-    TResult Function(_WommenGenderChanged value)? wommenGenderChanged,
     TResult Function(_LocalityChanged value)? localityChanged,
     TResult Function(_EmailAddressChanged value)? emailAddressChanged,
     TResult Function(_BirthDateChanged value)? birthDateChanged,
@@ -671,25 +603,15 @@ class __$PasswordChangedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_PasswordChanged
-    with DiagnosticableTreeMixin
-    implements _PasswordChanged {
+class _$_PasswordChanged implements _PasswordChanged {
   const _$_PasswordChanged(this.passwordStr);
 
   @override
   final String passwordStr;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'SignInFormEvent.passwordChanged(passwordStr: $passwordStr)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'SignInFormEvent.passwordChanged'))
-      ..add(DiagnosticsProperty('passwordStr', passwordStr));
   }
 
   @override
@@ -716,8 +638,6 @@ class _$_PasswordChanged
     required TResult Function(String lastNameStr) lastNameChanged,
     required TResult Function(String fisrtNameStr) firstNameChanged,
     required TResult Function(String passwordStr) passwordChanged,
-    required TResult Function(bool isMen) menGenderChanged,
-    required TResult Function(bool isWommen) wommenGenderChanged,
     required TResult Function(String localityStr) localityChanged,
     required TResult Function(String emailAddress) emailAddressChanged,
     required TResult Function(String birthDate) birthDateChanged,
@@ -735,8 +655,6 @@ class _$_PasswordChanged
     TResult Function(String lastNameStr)? lastNameChanged,
     TResult Function(String fisrtNameStr)? firstNameChanged,
     TResult Function(String passwordStr)? passwordChanged,
-    TResult Function(bool isMen)? menGenderChanged,
-    TResult Function(bool isWommen)? wommenGenderChanged,
     TResult Function(String localityStr)? localityChanged,
     TResult Function(String emailAddress)? emailAddressChanged,
     TResult Function(String birthDate)? birthDateChanged,
@@ -754,8 +672,6 @@ class _$_PasswordChanged
     TResult Function(String lastNameStr)? lastNameChanged,
     TResult Function(String fisrtNameStr)? firstNameChanged,
     TResult Function(String passwordStr)? passwordChanged,
-    TResult Function(bool isMen)? menGenderChanged,
-    TResult Function(bool isWommen)? wommenGenderChanged,
     TResult Function(String localityStr)? localityChanged,
     TResult Function(String emailAddress)? emailAddressChanged,
     TResult Function(String birthDate)? birthDateChanged,
@@ -777,8 +693,6 @@ class _$_PasswordChanged
     required TResult Function(_LastNameChanged value) lastNameChanged,
     required TResult Function(_FirstNameChanged value) firstNameChanged,
     required TResult Function(_PasswordChanged value) passwordChanged,
-    required TResult Function(_MenGenderChanged value) menGenderChanged,
-    required TResult Function(_WommenGenderChanged value) wommenGenderChanged,
     required TResult Function(_LocalityChanged value) localityChanged,
     required TResult Function(_EmailAddressChanged value) emailAddressChanged,
     required TResult Function(_BirthDateChanged value) birthDateChanged,
@@ -799,8 +713,6 @@ class _$_PasswordChanged
     TResult Function(_LastNameChanged value)? lastNameChanged,
     TResult Function(_FirstNameChanged value)? firstNameChanged,
     TResult Function(_PasswordChanged value)? passwordChanged,
-    TResult Function(_MenGenderChanged value)? menGenderChanged,
-    TResult Function(_WommenGenderChanged value)? wommenGenderChanged,
     TResult Function(_LocalityChanged value)? localityChanged,
     TResult Function(_EmailAddressChanged value)? emailAddressChanged,
     TResult Function(_BirthDateChanged value)? birthDateChanged,
@@ -820,8 +732,6 @@ class _$_PasswordChanged
     TResult Function(_LastNameChanged value)? lastNameChanged,
     TResult Function(_FirstNameChanged value)? firstNameChanged,
     TResult Function(_PasswordChanged value)? passwordChanged,
-    TResult Function(_MenGenderChanged value)? menGenderChanged,
-    TResult Function(_WommenGenderChanged value)? wommenGenderChanged,
     TResult Function(_LocalityChanged value)? localityChanged,
     TResult Function(_EmailAddressChanged value)? emailAddressChanged,
     TResult Function(_BirthDateChanged value)? birthDateChanged,
@@ -846,430 +756,6 @@ abstract class _PasswordChanged implements SignInFormEvent {
   String get passwordStr => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   _$PasswordChangedCopyWith<_PasswordChanged> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$MenGenderChangedCopyWith<$Res> {
-  factory _$MenGenderChangedCopyWith(
-          _MenGenderChanged value, $Res Function(_MenGenderChanged) then) =
-      __$MenGenderChangedCopyWithImpl<$Res>;
-  $Res call({bool isMen});
-}
-
-/// @nodoc
-class __$MenGenderChangedCopyWithImpl<$Res>
-    extends _$SignInFormEventCopyWithImpl<$Res>
-    implements _$MenGenderChangedCopyWith<$Res> {
-  __$MenGenderChangedCopyWithImpl(
-      _MenGenderChanged _value, $Res Function(_MenGenderChanged) _then)
-      : super(_value, (v) => _then(v as _MenGenderChanged));
-
-  @override
-  _MenGenderChanged get _value => super._value as _MenGenderChanged;
-
-  @override
-  $Res call({
-    Object? isMen = freezed,
-  }) {
-    return _then(_MenGenderChanged(
-      isMen == freezed
-          ? _value.isMen
-          : isMen // ignore: cast_nullable_to_non_nullable
-              as bool,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$_MenGenderChanged
-    with DiagnosticableTreeMixin
-    implements _MenGenderChanged {
-  const _$_MenGenderChanged(this.isMen);
-
-  @override
-  final bool isMen;
-
-  @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'SignInFormEvent.menGenderChanged(isMen: $isMen)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'SignInFormEvent.menGenderChanged'))
-      ..add(DiagnosticsProperty('isMen', isMen));
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is _MenGenderChanged &&
-            (identical(other.isMen, isMen) ||
-                const DeepCollectionEquality().equals(other.isMen, isMen)));
-  }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(isMen);
-
-  @JsonKey(ignore: true)
-  @override
-  _$MenGenderChangedCopyWith<_MenGenderChanged> get copyWith =>
-      __$MenGenderChangedCopyWithImpl<_MenGenderChanged>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(String lastNameStr) lastNameChanged,
-    required TResult Function(String fisrtNameStr) firstNameChanged,
-    required TResult Function(String passwordStr) passwordChanged,
-    required TResult Function(bool isMen) menGenderChanged,
-    required TResult Function(bool isWommen) wommenGenderChanged,
-    required TResult Function(String localityStr) localityChanged,
-    required TResult Function(String emailAddress) emailAddressChanged,
-    required TResult Function(String birthDate) birthDateChanged,
-    required TResult Function() signInWithNameAndPasswordPressed,
-    required TResult Function(String genderStr) genderChanged,
-    required TResult Function() registerWithUserFields,
-    required TResult Function() switchRegisterAndLoginPressed,
-  }) {
-    return menGenderChanged(isMen);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String lastNameStr)? lastNameChanged,
-    TResult Function(String fisrtNameStr)? firstNameChanged,
-    TResult Function(String passwordStr)? passwordChanged,
-    TResult Function(bool isMen)? menGenderChanged,
-    TResult Function(bool isWommen)? wommenGenderChanged,
-    TResult Function(String localityStr)? localityChanged,
-    TResult Function(String emailAddress)? emailAddressChanged,
-    TResult Function(String birthDate)? birthDateChanged,
-    TResult Function()? signInWithNameAndPasswordPressed,
-    TResult Function(String genderStr)? genderChanged,
-    TResult Function()? registerWithUserFields,
-    TResult Function()? switchRegisterAndLoginPressed,
-  }) {
-    return menGenderChanged?.call(isMen);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String lastNameStr)? lastNameChanged,
-    TResult Function(String fisrtNameStr)? firstNameChanged,
-    TResult Function(String passwordStr)? passwordChanged,
-    TResult Function(bool isMen)? menGenderChanged,
-    TResult Function(bool isWommen)? wommenGenderChanged,
-    TResult Function(String localityStr)? localityChanged,
-    TResult Function(String emailAddress)? emailAddressChanged,
-    TResult Function(String birthDate)? birthDateChanged,
-    TResult Function()? signInWithNameAndPasswordPressed,
-    TResult Function(String genderStr)? genderChanged,
-    TResult Function()? registerWithUserFields,
-    TResult Function()? switchRegisterAndLoginPressed,
-    required TResult orElse(),
-  }) {
-    if (menGenderChanged != null) {
-      return menGenderChanged(isMen);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_LastNameChanged value) lastNameChanged,
-    required TResult Function(_FirstNameChanged value) firstNameChanged,
-    required TResult Function(_PasswordChanged value) passwordChanged,
-    required TResult Function(_MenGenderChanged value) menGenderChanged,
-    required TResult Function(_WommenGenderChanged value) wommenGenderChanged,
-    required TResult Function(_LocalityChanged value) localityChanged,
-    required TResult Function(_EmailAddressChanged value) emailAddressChanged,
-    required TResult Function(_BirthDateChanged value) birthDateChanged,
-    required TResult Function(_SignInWithNameAndPasswordPressed value)
-        signInWithNameAndPasswordPressed,
-    required TResult Function(_GenderChanged value) genderChanged,
-    required TResult Function(_RegisterWithUserFields value)
-        registerWithUserFields,
-    required TResult Function(_SwitchRegisterAndLoginPressed value)
-        switchRegisterAndLoginPressed,
-  }) {
-    return menGenderChanged(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_LastNameChanged value)? lastNameChanged,
-    TResult Function(_FirstNameChanged value)? firstNameChanged,
-    TResult Function(_PasswordChanged value)? passwordChanged,
-    TResult Function(_MenGenderChanged value)? menGenderChanged,
-    TResult Function(_WommenGenderChanged value)? wommenGenderChanged,
-    TResult Function(_LocalityChanged value)? localityChanged,
-    TResult Function(_EmailAddressChanged value)? emailAddressChanged,
-    TResult Function(_BirthDateChanged value)? birthDateChanged,
-    TResult Function(_SignInWithNameAndPasswordPressed value)?
-        signInWithNameAndPasswordPressed,
-    TResult Function(_GenderChanged value)? genderChanged,
-    TResult Function(_RegisterWithUserFields value)? registerWithUserFields,
-    TResult Function(_SwitchRegisterAndLoginPressed value)?
-        switchRegisterAndLoginPressed,
-  }) {
-    return menGenderChanged?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_LastNameChanged value)? lastNameChanged,
-    TResult Function(_FirstNameChanged value)? firstNameChanged,
-    TResult Function(_PasswordChanged value)? passwordChanged,
-    TResult Function(_MenGenderChanged value)? menGenderChanged,
-    TResult Function(_WommenGenderChanged value)? wommenGenderChanged,
-    TResult Function(_LocalityChanged value)? localityChanged,
-    TResult Function(_EmailAddressChanged value)? emailAddressChanged,
-    TResult Function(_BirthDateChanged value)? birthDateChanged,
-    TResult Function(_SignInWithNameAndPasswordPressed value)?
-        signInWithNameAndPasswordPressed,
-    TResult Function(_GenderChanged value)? genderChanged,
-    TResult Function(_RegisterWithUserFields value)? registerWithUserFields,
-    TResult Function(_SwitchRegisterAndLoginPressed value)?
-        switchRegisterAndLoginPressed,
-    required TResult orElse(),
-  }) {
-    if (menGenderChanged != null) {
-      return menGenderChanged(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _MenGenderChanged implements SignInFormEvent {
-  const factory _MenGenderChanged(bool isMen) = _$_MenGenderChanged;
-
-  bool get isMen => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  _$MenGenderChangedCopyWith<_MenGenderChanged> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$WommenGenderChangedCopyWith<$Res> {
-  factory _$WommenGenderChangedCopyWith(_WommenGenderChanged value,
-          $Res Function(_WommenGenderChanged) then) =
-      __$WommenGenderChangedCopyWithImpl<$Res>;
-  $Res call({bool isWommen});
-}
-
-/// @nodoc
-class __$WommenGenderChangedCopyWithImpl<$Res>
-    extends _$SignInFormEventCopyWithImpl<$Res>
-    implements _$WommenGenderChangedCopyWith<$Res> {
-  __$WommenGenderChangedCopyWithImpl(
-      _WommenGenderChanged _value, $Res Function(_WommenGenderChanged) _then)
-      : super(_value, (v) => _then(v as _WommenGenderChanged));
-
-  @override
-  _WommenGenderChanged get _value => super._value as _WommenGenderChanged;
-
-  @override
-  $Res call({
-    Object? isWommen = freezed,
-  }) {
-    return _then(_WommenGenderChanged(
-      isWommen == freezed
-          ? _value.isWommen
-          : isWommen // ignore: cast_nullable_to_non_nullable
-              as bool,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$_WommenGenderChanged
-    with DiagnosticableTreeMixin
-    implements _WommenGenderChanged {
-  const _$_WommenGenderChanged(this.isWommen);
-
-  @override
-  final bool isWommen;
-
-  @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'SignInFormEvent.wommenGenderChanged(isWommen: $isWommen)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'SignInFormEvent.wommenGenderChanged'))
-      ..add(DiagnosticsProperty('isWommen', isWommen));
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is _WommenGenderChanged &&
-            (identical(other.isWommen, isWommen) ||
-                const DeepCollectionEquality()
-                    .equals(other.isWommen, isWommen)));
-  }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(isWommen);
-
-  @JsonKey(ignore: true)
-  @override
-  _$WommenGenderChangedCopyWith<_WommenGenderChanged> get copyWith =>
-      __$WommenGenderChangedCopyWithImpl<_WommenGenderChanged>(
-          this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(String lastNameStr) lastNameChanged,
-    required TResult Function(String fisrtNameStr) firstNameChanged,
-    required TResult Function(String passwordStr) passwordChanged,
-    required TResult Function(bool isMen) menGenderChanged,
-    required TResult Function(bool isWommen) wommenGenderChanged,
-    required TResult Function(String localityStr) localityChanged,
-    required TResult Function(String emailAddress) emailAddressChanged,
-    required TResult Function(String birthDate) birthDateChanged,
-    required TResult Function() signInWithNameAndPasswordPressed,
-    required TResult Function(String genderStr) genderChanged,
-    required TResult Function() registerWithUserFields,
-    required TResult Function() switchRegisterAndLoginPressed,
-  }) {
-    return wommenGenderChanged(isWommen);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String lastNameStr)? lastNameChanged,
-    TResult Function(String fisrtNameStr)? firstNameChanged,
-    TResult Function(String passwordStr)? passwordChanged,
-    TResult Function(bool isMen)? menGenderChanged,
-    TResult Function(bool isWommen)? wommenGenderChanged,
-    TResult Function(String localityStr)? localityChanged,
-    TResult Function(String emailAddress)? emailAddressChanged,
-    TResult Function(String birthDate)? birthDateChanged,
-    TResult Function()? signInWithNameAndPasswordPressed,
-    TResult Function(String genderStr)? genderChanged,
-    TResult Function()? registerWithUserFields,
-    TResult Function()? switchRegisterAndLoginPressed,
-  }) {
-    return wommenGenderChanged?.call(isWommen);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String lastNameStr)? lastNameChanged,
-    TResult Function(String fisrtNameStr)? firstNameChanged,
-    TResult Function(String passwordStr)? passwordChanged,
-    TResult Function(bool isMen)? menGenderChanged,
-    TResult Function(bool isWommen)? wommenGenderChanged,
-    TResult Function(String localityStr)? localityChanged,
-    TResult Function(String emailAddress)? emailAddressChanged,
-    TResult Function(String birthDate)? birthDateChanged,
-    TResult Function()? signInWithNameAndPasswordPressed,
-    TResult Function(String genderStr)? genderChanged,
-    TResult Function()? registerWithUserFields,
-    TResult Function()? switchRegisterAndLoginPressed,
-    required TResult orElse(),
-  }) {
-    if (wommenGenderChanged != null) {
-      return wommenGenderChanged(isWommen);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_LastNameChanged value) lastNameChanged,
-    required TResult Function(_FirstNameChanged value) firstNameChanged,
-    required TResult Function(_PasswordChanged value) passwordChanged,
-    required TResult Function(_MenGenderChanged value) menGenderChanged,
-    required TResult Function(_WommenGenderChanged value) wommenGenderChanged,
-    required TResult Function(_LocalityChanged value) localityChanged,
-    required TResult Function(_EmailAddressChanged value) emailAddressChanged,
-    required TResult Function(_BirthDateChanged value) birthDateChanged,
-    required TResult Function(_SignInWithNameAndPasswordPressed value)
-        signInWithNameAndPasswordPressed,
-    required TResult Function(_GenderChanged value) genderChanged,
-    required TResult Function(_RegisterWithUserFields value)
-        registerWithUserFields,
-    required TResult Function(_SwitchRegisterAndLoginPressed value)
-        switchRegisterAndLoginPressed,
-  }) {
-    return wommenGenderChanged(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_LastNameChanged value)? lastNameChanged,
-    TResult Function(_FirstNameChanged value)? firstNameChanged,
-    TResult Function(_PasswordChanged value)? passwordChanged,
-    TResult Function(_MenGenderChanged value)? menGenderChanged,
-    TResult Function(_WommenGenderChanged value)? wommenGenderChanged,
-    TResult Function(_LocalityChanged value)? localityChanged,
-    TResult Function(_EmailAddressChanged value)? emailAddressChanged,
-    TResult Function(_BirthDateChanged value)? birthDateChanged,
-    TResult Function(_SignInWithNameAndPasswordPressed value)?
-        signInWithNameAndPasswordPressed,
-    TResult Function(_GenderChanged value)? genderChanged,
-    TResult Function(_RegisterWithUserFields value)? registerWithUserFields,
-    TResult Function(_SwitchRegisterAndLoginPressed value)?
-        switchRegisterAndLoginPressed,
-  }) {
-    return wommenGenderChanged?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_LastNameChanged value)? lastNameChanged,
-    TResult Function(_FirstNameChanged value)? firstNameChanged,
-    TResult Function(_PasswordChanged value)? passwordChanged,
-    TResult Function(_MenGenderChanged value)? menGenderChanged,
-    TResult Function(_WommenGenderChanged value)? wommenGenderChanged,
-    TResult Function(_LocalityChanged value)? localityChanged,
-    TResult Function(_EmailAddressChanged value)? emailAddressChanged,
-    TResult Function(_BirthDateChanged value)? birthDateChanged,
-    TResult Function(_SignInWithNameAndPasswordPressed value)?
-        signInWithNameAndPasswordPressed,
-    TResult Function(_GenderChanged value)? genderChanged,
-    TResult Function(_RegisterWithUserFields value)? registerWithUserFields,
-    TResult Function(_SwitchRegisterAndLoginPressed value)?
-        switchRegisterAndLoginPressed,
-    required TResult orElse(),
-  }) {
-    if (wommenGenderChanged != null) {
-      return wommenGenderChanged(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _WommenGenderChanged implements SignInFormEvent {
-  const factory _WommenGenderChanged(bool isWommen) = _$_WommenGenderChanged;
-
-  bool get isWommen => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  _$WommenGenderChangedCopyWith<_WommenGenderChanged> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -1307,25 +793,15 @@ class __$LocalityChangedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_LocalityChanged
-    with DiagnosticableTreeMixin
-    implements _LocalityChanged {
+class _$_LocalityChanged implements _LocalityChanged {
   const _$_LocalityChanged(this.localityStr);
 
   @override
   final String localityStr;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'SignInFormEvent.localityChanged(localityStr: $localityStr)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'SignInFormEvent.localityChanged'))
-      ..add(DiagnosticsProperty('localityStr', localityStr));
   }
 
   @override
@@ -1352,8 +828,6 @@ class _$_LocalityChanged
     required TResult Function(String lastNameStr) lastNameChanged,
     required TResult Function(String fisrtNameStr) firstNameChanged,
     required TResult Function(String passwordStr) passwordChanged,
-    required TResult Function(bool isMen) menGenderChanged,
-    required TResult Function(bool isWommen) wommenGenderChanged,
     required TResult Function(String localityStr) localityChanged,
     required TResult Function(String emailAddress) emailAddressChanged,
     required TResult Function(String birthDate) birthDateChanged,
@@ -1371,8 +845,6 @@ class _$_LocalityChanged
     TResult Function(String lastNameStr)? lastNameChanged,
     TResult Function(String fisrtNameStr)? firstNameChanged,
     TResult Function(String passwordStr)? passwordChanged,
-    TResult Function(bool isMen)? menGenderChanged,
-    TResult Function(bool isWommen)? wommenGenderChanged,
     TResult Function(String localityStr)? localityChanged,
     TResult Function(String emailAddress)? emailAddressChanged,
     TResult Function(String birthDate)? birthDateChanged,
@@ -1390,8 +862,6 @@ class _$_LocalityChanged
     TResult Function(String lastNameStr)? lastNameChanged,
     TResult Function(String fisrtNameStr)? firstNameChanged,
     TResult Function(String passwordStr)? passwordChanged,
-    TResult Function(bool isMen)? menGenderChanged,
-    TResult Function(bool isWommen)? wommenGenderChanged,
     TResult Function(String localityStr)? localityChanged,
     TResult Function(String emailAddress)? emailAddressChanged,
     TResult Function(String birthDate)? birthDateChanged,
@@ -1413,8 +883,6 @@ class _$_LocalityChanged
     required TResult Function(_LastNameChanged value) lastNameChanged,
     required TResult Function(_FirstNameChanged value) firstNameChanged,
     required TResult Function(_PasswordChanged value) passwordChanged,
-    required TResult Function(_MenGenderChanged value) menGenderChanged,
-    required TResult Function(_WommenGenderChanged value) wommenGenderChanged,
     required TResult Function(_LocalityChanged value) localityChanged,
     required TResult Function(_EmailAddressChanged value) emailAddressChanged,
     required TResult Function(_BirthDateChanged value) birthDateChanged,
@@ -1435,8 +903,6 @@ class _$_LocalityChanged
     TResult Function(_LastNameChanged value)? lastNameChanged,
     TResult Function(_FirstNameChanged value)? firstNameChanged,
     TResult Function(_PasswordChanged value)? passwordChanged,
-    TResult Function(_MenGenderChanged value)? menGenderChanged,
-    TResult Function(_WommenGenderChanged value)? wommenGenderChanged,
     TResult Function(_LocalityChanged value)? localityChanged,
     TResult Function(_EmailAddressChanged value)? emailAddressChanged,
     TResult Function(_BirthDateChanged value)? birthDateChanged,
@@ -1456,8 +922,6 @@ class _$_LocalityChanged
     TResult Function(_LastNameChanged value)? lastNameChanged,
     TResult Function(_FirstNameChanged value)? firstNameChanged,
     TResult Function(_PasswordChanged value)? passwordChanged,
-    TResult Function(_MenGenderChanged value)? menGenderChanged,
-    TResult Function(_WommenGenderChanged value)? wommenGenderChanged,
     TResult Function(_LocalityChanged value)? localityChanged,
     TResult Function(_EmailAddressChanged value)? emailAddressChanged,
     TResult Function(_BirthDateChanged value)? birthDateChanged,
@@ -1519,25 +983,15 @@ class __$EmailAddressChangedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_EmailAddressChanged
-    with DiagnosticableTreeMixin
-    implements _EmailAddressChanged {
+class _$_EmailAddressChanged implements _EmailAddressChanged {
   const _$_EmailAddressChanged(this.emailAddress);
 
   @override
   final String emailAddress;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'SignInFormEvent.emailAddressChanged(emailAddress: $emailAddress)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'SignInFormEvent.emailAddressChanged'))
-      ..add(DiagnosticsProperty('emailAddress', emailAddress));
   }
 
   @override
@@ -1565,8 +1019,6 @@ class _$_EmailAddressChanged
     required TResult Function(String lastNameStr) lastNameChanged,
     required TResult Function(String fisrtNameStr) firstNameChanged,
     required TResult Function(String passwordStr) passwordChanged,
-    required TResult Function(bool isMen) menGenderChanged,
-    required TResult Function(bool isWommen) wommenGenderChanged,
     required TResult Function(String localityStr) localityChanged,
     required TResult Function(String emailAddress) emailAddressChanged,
     required TResult Function(String birthDate) birthDateChanged,
@@ -1584,8 +1036,6 @@ class _$_EmailAddressChanged
     TResult Function(String lastNameStr)? lastNameChanged,
     TResult Function(String fisrtNameStr)? firstNameChanged,
     TResult Function(String passwordStr)? passwordChanged,
-    TResult Function(bool isMen)? menGenderChanged,
-    TResult Function(bool isWommen)? wommenGenderChanged,
     TResult Function(String localityStr)? localityChanged,
     TResult Function(String emailAddress)? emailAddressChanged,
     TResult Function(String birthDate)? birthDateChanged,
@@ -1603,8 +1053,6 @@ class _$_EmailAddressChanged
     TResult Function(String lastNameStr)? lastNameChanged,
     TResult Function(String fisrtNameStr)? firstNameChanged,
     TResult Function(String passwordStr)? passwordChanged,
-    TResult Function(bool isMen)? menGenderChanged,
-    TResult Function(bool isWommen)? wommenGenderChanged,
     TResult Function(String localityStr)? localityChanged,
     TResult Function(String emailAddress)? emailAddressChanged,
     TResult Function(String birthDate)? birthDateChanged,
@@ -1626,8 +1074,6 @@ class _$_EmailAddressChanged
     required TResult Function(_LastNameChanged value) lastNameChanged,
     required TResult Function(_FirstNameChanged value) firstNameChanged,
     required TResult Function(_PasswordChanged value) passwordChanged,
-    required TResult Function(_MenGenderChanged value) menGenderChanged,
-    required TResult Function(_WommenGenderChanged value) wommenGenderChanged,
     required TResult Function(_LocalityChanged value) localityChanged,
     required TResult Function(_EmailAddressChanged value) emailAddressChanged,
     required TResult Function(_BirthDateChanged value) birthDateChanged,
@@ -1648,8 +1094,6 @@ class _$_EmailAddressChanged
     TResult Function(_LastNameChanged value)? lastNameChanged,
     TResult Function(_FirstNameChanged value)? firstNameChanged,
     TResult Function(_PasswordChanged value)? passwordChanged,
-    TResult Function(_MenGenderChanged value)? menGenderChanged,
-    TResult Function(_WommenGenderChanged value)? wommenGenderChanged,
     TResult Function(_LocalityChanged value)? localityChanged,
     TResult Function(_EmailAddressChanged value)? emailAddressChanged,
     TResult Function(_BirthDateChanged value)? birthDateChanged,
@@ -1669,8 +1113,6 @@ class _$_EmailAddressChanged
     TResult Function(_LastNameChanged value)? lastNameChanged,
     TResult Function(_FirstNameChanged value)? firstNameChanged,
     TResult Function(_PasswordChanged value)? passwordChanged,
-    TResult Function(_MenGenderChanged value)? menGenderChanged,
-    TResult Function(_WommenGenderChanged value)? wommenGenderChanged,
     TResult Function(_LocalityChanged value)? localityChanged,
     TResult Function(_EmailAddressChanged value)? emailAddressChanged,
     TResult Function(_BirthDateChanged value)? birthDateChanged,
@@ -1733,25 +1175,15 @@ class __$BirthDateChangedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_BirthDateChanged
-    with DiagnosticableTreeMixin
-    implements _BirthDateChanged {
+class _$_BirthDateChanged implements _BirthDateChanged {
   const _$_BirthDateChanged(this.birthDate);
 
   @override
   final String birthDate;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'SignInFormEvent.birthDateChanged(birthDate: $birthDate)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'SignInFormEvent.birthDateChanged'))
-      ..add(DiagnosticsProperty('birthDate', birthDate));
   }
 
   @override
@@ -1778,8 +1210,6 @@ class _$_BirthDateChanged
     required TResult Function(String lastNameStr) lastNameChanged,
     required TResult Function(String fisrtNameStr) firstNameChanged,
     required TResult Function(String passwordStr) passwordChanged,
-    required TResult Function(bool isMen) menGenderChanged,
-    required TResult Function(bool isWommen) wommenGenderChanged,
     required TResult Function(String localityStr) localityChanged,
     required TResult Function(String emailAddress) emailAddressChanged,
     required TResult Function(String birthDate) birthDateChanged,
@@ -1797,8 +1227,6 @@ class _$_BirthDateChanged
     TResult Function(String lastNameStr)? lastNameChanged,
     TResult Function(String fisrtNameStr)? firstNameChanged,
     TResult Function(String passwordStr)? passwordChanged,
-    TResult Function(bool isMen)? menGenderChanged,
-    TResult Function(bool isWommen)? wommenGenderChanged,
     TResult Function(String localityStr)? localityChanged,
     TResult Function(String emailAddress)? emailAddressChanged,
     TResult Function(String birthDate)? birthDateChanged,
@@ -1816,8 +1244,6 @@ class _$_BirthDateChanged
     TResult Function(String lastNameStr)? lastNameChanged,
     TResult Function(String fisrtNameStr)? firstNameChanged,
     TResult Function(String passwordStr)? passwordChanged,
-    TResult Function(bool isMen)? menGenderChanged,
-    TResult Function(bool isWommen)? wommenGenderChanged,
     TResult Function(String localityStr)? localityChanged,
     TResult Function(String emailAddress)? emailAddressChanged,
     TResult Function(String birthDate)? birthDateChanged,
@@ -1839,8 +1265,6 @@ class _$_BirthDateChanged
     required TResult Function(_LastNameChanged value) lastNameChanged,
     required TResult Function(_FirstNameChanged value) firstNameChanged,
     required TResult Function(_PasswordChanged value) passwordChanged,
-    required TResult Function(_MenGenderChanged value) menGenderChanged,
-    required TResult Function(_WommenGenderChanged value) wommenGenderChanged,
     required TResult Function(_LocalityChanged value) localityChanged,
     required TResult Function(_EmailAddressChanged value) emailAddressChanged,
     required TResult Function(_BirthDateChanged value) birthDateChanged,
@@ -1861,8 +1285,6 @@ class _$_BirthDateChanged
     TResult Function(_LastNameChanged value)? lastNameChanged,
     TResult Function(_FirstNameChanged value)? firstNameChanged,
     TResult Function(_PasswordChanged value)? passwordChanged,
-    TResult Function(_MenGenderChanged value)? menGenderChanged,
-    TResult Function(_WommenGenderChanged value)? wommenGenderChanged,
     TResult Function(_LocalityChanged value)? localityChanged,
     TResult Function(_EmailAddressChanged value)? emailAddressChanged,
     TResult Function(_BirthDateChanged value)? birthDateChanged,
@@ -1882,8 +1304,6 @@ class _$_BirthDateChanged
     TResult Function(_LastNameChanged value)? lastNameChanged,
     TResult Function(_FirstNameChanged value)? firstNameChanged,
     TResult Function(_PasswordChanged value)? passwordChanged,
-    TResult Function(_MenGenderChanged value)? menGenderChanged,
-    TResult Function(_WommenGenderChanged value)? wommenGenderChanged,
     TResult Function(_LocalityChanged value)? localityChanged,
     TResult Function(_EmailAddressChanged value)? emailAddressChanged,
     TResult Function(_BirthDateChanged value)? birthDateChanged,
@@ -1936,20 +1356,12 @@ class __$SignInWithNameAndPasswordPressedCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_SignInWithNameAndPasswordPressed
-    with DiagnosticableTreeMixin
     implements _SignInWithNameAndPasswordPressed {
   const _$_SignInWithNameAndPasswordPressed();
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'SignInFormEvent.signInWithNameAndPasswordPressed()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties.add(DiagnosticsProperty(
-        'type', 'SignInFormEvent.signInWithNameAndPasswordPressed'));
   }
 
   @override
@@ -1967,8 +1379,6 @@ class _$_SignInWithNameAndPasswordPressed
     required TResult Function(String lastNameStr) lastNameChanged,
     required TResult Function(String fisrtNameStr) firstNameChanged,
     required TResult Function(String passwordStr) passwordChanged,
-    required TResult Function(bool isMen) menGenderChanged,
-    required TResult Function(bool isWommen) wommenGenderChanged,
     required TResult Function(String localityStr) localityChanged,
     required TResult Function(String emailAddress) emailAddressChanged,
     required TResult Function(String birthDate) birthDateChanged,
@@ -1986,8 +1396,6 @@ class _$_SignInWithNameAndPasswordPressed
     TResult Function(String lastNameStr)? lastNameChanged,
     TResult Function(String fisrtNameStr)? firstNameChanged,
     TResult Function(String passwordStr)? passwordChanged,
-    TResult Function(bool isMen)? menGenderChanged,
-    TResult Function(bool isWommen)? wommenGenderChanged,
     TResult Function(String localityStr)? localityChanged,
     TResult Function(String emailAddress)? emailAddressChanged,
     TResult Function(String birthDate)? birthDateChanged,
@@ -2005,8 +1413,6 @@ class _$_SignInWithNameAndPasswordPressed
     TResult Function(String lastNameStr)? lastNameChanged,
     TResult Function(String fisrtNameStr)? firstNameChanged,
     TResult Function(String passwordStr)? passwordChanged,
-    TResult Function(bool isMen)? menGenderChanged,
-    TResult Function(bool isWommen)? wommenGenderChanged,
     TResult Function(String localityStr)? localityChanged,
     TResult Function(String emailAddress)? emailAddressChanged,
     TResult Function(String birthDate)? birthDateChanged,
@@ -2028,8 +1434,6 @@ class _$_SignInWithNameAndPasswordPressed
     required TResult Function(_LastNameChanged value) lastNameChanged,
     required TResult Function(_FirstNameChanged value) firstNameChanged,
     required TResult Function(_PasswordChanged value) passwordChanged,
-    required TResult Function(_MenGenderChanged value) menGenderChanged,
-    required TResult Function(_WommenGenderChanged value) wommenGenderChanged,
     required TResult Function(_LocalityChanged value) localityChanged,
     required TResult Function(_EmailAddressChanged value) emailAddressChanged,
     required TResult Function(_BirthDateChanged value) birthDateChanged,
@@ -2050,8 +1454,6 @@ class _$_SignInWithNameAndPasswordPressed
     TResult Function(_LastNameChanged value)? lastNameChanged,
     TResult Function(_FirstNameChanged value)? firstNameChanged,
     TResult Function(_PasswordChanged value)? passwordChanged,
-    TResult Function(_MenGenderChanged value)? menGenderChanged,
-    TResult Function(_WommenGenderChanged value)? wommenGenderChanged,
     TResult Function(_LocalityChanged value)? localityChanged,
     TResult Function(_EmailAddressChanged value)? emailAddressChanged,
     TResult Function(_BirthDateChanged value)? birthDateChanged,
@@ -2071,8 +1473,6 @@ class _$_SignInWithNameAndPasswordPressed
     TResult Function(_LastNameChanged value)? lastNameChanged,
     TResult Function(_FirstNameChanged value)? firstNameChanged,
     TResult Function(_PasswordChanged value)? passwordChanged,
-    TResult Function(_MenGenderChanged value)? menGenderChanged,
-    TResult Function(_WommenGenderChanged value)? wommenGenderChanged,
     TResult Function(_LocalityChanged value)? localityChanged,
     TResult Function(_EmailAddressChanged value)? emailAddressChanged,
     TResult Function(_BirthDateChanged value)? birthDateChanged,
@@ -2130,23 +1530,15 @@ class __$GenderChangedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_GenderChanged with DiagnosticableTreeMixin implements _GenderChanged {
+class _$_GenderChanged implements _GenderChanged {
   const _$_GenderChanged(this.genderStr);
 
   @override
   final String genderStr;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'SignInFormEvent.genderChanged(genderStr: $genderStr)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'SignInFormEvent.genderChanged'))
-      ..add(DiagnosticsProperty('genderStr', genderStr));
   }
 
   @override
@@ -2173,8 +1565,6 @@ class _$_GenderChanged with DiagnosticableTreeMixin implements _GenderChanged {
     required TResult Function(String lastNameStr) lastNameChanged,
     required TResult Function(String fisrtNameStr) firstNameChanged,
     required TResult Function(String passwordStr) passwordChanged,
-    required TResult Function(bool isMen) menGenderChanged,
-    required TResult Function(bool isWommen) wommenGenderChanged,
     required TResult Function(String localityStr) localityChanged,
     required TResult Function(String emailAddress) emailAddressChanged,
     required TResult Function(String birthDate) birthDateChanged,
@@ -2192,8 +1582,6 @@ class _$_GenderChanged with DiagnosticableTreeMixin implements _GenderChanged {
     TResult Function(String lastNameStr)? lastNameChanged,
     TResult Function(String fisrtNameStr)? firstNameChanged,
     TResult Function(String passwordStr)? passwordChanged,
-    TResult Function(bool isMen)? menGenderChanged,
-    TResult Function(bool isWommen)? wommenGenderChanged,
     TResult Function(String localityStr)? localityChanged,
     TResult Function(String emailAddress)? emailAddressChanged,
     TResult Function(String birthDate)? birthDateChanged,
@@ -2211,8 +1599,6 @@ class _$_GenderChanged with DiagnosticableTreeMixin implements _GenderChanged {
     TResult Function(String lastNameStr)? lastNameChanged,
     TResult Function(String fisrtNameStr)? firstNameChanged,
     TResult Function(String passwordStr)? passwordChanged,
-    TResult Function(bool isMen)? menGenderChanged,
-    TResult Function(bool isWommen)? wommenGenderChanged,
     TResult Function(String localityStr)? localityChanged,
     TResult Function(String emailAddress)? emailAddressChanged,
     TResult Function(String birthDate)? birthDateChanged,
@@ -2234,8 +1620,6 @@ class _$_GenderChanged with DiagnosticableTreeMixin implements _GenderChanged {
     required TResult Function(_LastNameChanged value) lastNameChanged,
     required TResult Function(_FirstNameChanged value) firstNameChanged,
     required TResult Function(_PasswordChanged value) passwordChanged,
-    required TResult Function(_MenGenderChanged value) menGenderChanged,
-    required TResult Function(_WommenGenderChanged value) wommenGenderChanged,
     required TResult Function(_LocalityChanged value) localityChanged,
     required TResult Function(_EmailAddressChanged value) emailAddressChanged,
     required TResult Function(_BirthDateChanged value) birthDateChanged,
@@ -2256,8 +1640,6 @@ class _$_GenderChanged with DiagnosticableTreeMixin implements _GenderChanged {
     TResult Function(_LastNameChanged value)? lastNameChanged,
     TResult Function(_FirstNameChanged value)? firstNameChanged,
     TResult Function(_PasswordChanged value)? passwordChanged,
-    TResult Function(_MenGenderChanged value)? menGenderChanged,
-    TResult Function(_WommenGenderChanged value)? wommenGenderChanged,
     TResult Function(_LocalityChanged value)? localityChanged,
     TResult Function(_EmailAddressChanged value)? emailAddressChanged,
     TResult Function(_BirthDateChanged value)? birthDateChanged,
@@ -2277,8 +1659,6 @@ class _$_GenderChanged with DiagnosticableTreeMixin implements _GenderChanged {
     TResult Function(_LastNameChanged value)? lastNameChanged,
     TResult Function(_FirstNameChanged value)? firstNameChanged,
     TResult Function(_PasswordChanged value)? passwordChanged,
-    TResult Function(_MenGenderChanged value)? menGenderChanged,
-    TResult Function(_WommenGenderChanged value)? wommenGenderChanged,
     TResult Function(_LocalityChanged value)? localityChanged,
     TResult Function(_EmailAddressChanged value)? emailAddressChanged,
     TResult Function(_BirthDateChanged value)? birthDateChanged,
@@ -2327,21 +1707,12 @@ class __$RegisterWithUserFieldsCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_RegisterWithUserFields
-    with DiagnosticableTreeMixin
-    implements _RegisterWithUserFields {
+class _$_RegisterWithUserFields implements _RegisterWithUserFields {
   const _$_RegisterWithUserFields();
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'SignInFormEvent.registerWithUserFields()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties.add(
-        DiagnosticsProperty('type', 'SignInFormEvent.registerWithUserFields'));
   }
 
   @override
@@ -2358,8 +1729,6 @@ class _$_RegisterWithUserFields
     required TResult Function(String lastNameStr) lastNameChanged,
     required TResult Function(String fisrtNameStr) firstNameChanged,
     required TResult Function(String passwordStr) passwordChanged,
-    required TResult Function(bool isMen) menGenderChanged,
-    required TResult Function(bool isWommen) wommenGenderChanged,
     required TResult Function(String localityStr) localityChanged,
     required TResult Function(String emailAddress) emailAddressChanged,
     required TResult Function(String birthDate) birthDateChanged,
@@ -2377,8 +1746,6 @@ class _$_RegisterWithUserFields
     TResult Function(String lastNameStr)? lastNameChanged,
     TResult Function(String fisrtNameStr)? firstNameChanged,
     TResult Function(String passwordStr)? passwordChanged,
-    TResult Function(bool isMen)? menGenderChanged,
-    TResult Function(bool isWommen)? wommenGenderChanged,
     TResult Function(String localityStr)? localityChanged,
     TResult Function(String emailAddress)? emailAddressChanged,
     TResult Function(String birthDate)? birthDateChanged,
@@ -2396,8 +1763,6 @@ class _$_RegisterWithUserFields
     TResult Function(String lastNameStr)? lastNameChanged,
     TResult Function(String fisrtNameStr)? firstNameChanged,
     TResult Function(String passwordStr)? passwordChanged,
-    TResult Function(bool isMen)? menGenderChanged,
-    TResult Function(bool isWommen)? wommenGenderChanged,
     TResult Function(String localityStr)? localityChanged,
     TResult Function(String emailAddress)? emailAddressChanged,
     TResult Function(String birthDate)? birthDateChanged,
@@ -2419,8 +1784,6 @@ class _$_RegisterWithUserFields
     required TResult Function(_LastNameChanged value) lastNameChanged,
     required TResult Function(_FirstNameChanged value) firstNameChanged,
     required TResult Function(_PasswordChanged value) passwordChanged,
-    required TResult Function(_MenGenderChanged value) menGenderChanged,
-    required TResult Function(_WommenGenderChanged value) wommenGenderChanged,
     required TResult Function(_LocalityChanged value) localityChanged,
     required TResult Function(_EmailAddressChanged value) emailAddressChanged,
     required TResult Function(_BirthDateChanged value) birthDateChanged,
@@ -2441,8 +1804,6 @@ class _$_RegisterWithUserFields
     TResult Function(_LastNameChanged value)? lastNameChanged,
     TResult Function(_FirstNameChanged value)? firstNameChanged,
     TResult Function(_PasswordChanged value)? passwordChanged,
-    TResult Function(_MenGenderChanged value)? menGenderChanged,
-    TResult Function(_WommenGenderChanged value)? wommenGenderChanged,
     TResult Function(_LocalityChanged value)? localityChanged,
     TResult Function(_EmailAddressChanged value)? emailAddressChanged,
     TResult Function(_BirthDateChanged value)? birthDateChanged,
@@ -2462,8 +1823,6 @@ class _$_RegisterWithUserFields
     TResult Function(_LastNameChanged value)? lastNameChanged,
     TResult Function(_FirstNameChanged value)? firstNameChanged,
     TResult Function(_PasswordChanged value)? passwordChanged,
-    TResult Function(_MenGenderChanged value)? menGenderChanged,
-    TResult Function(_WommenGenderChanged value)? wommenGenderChanged,
     TResult Function(_LocalityChanged value)? localityChanged,
     TResult Function(_EmailAddressChanged value)? emailAddressChanged,
     TResult Function(_BirthDateChanged value)? birthDateChanged,
@@ -2511,20 +1870,12 @@ class __$SwitchRegisterAndLoginPressedCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_SwitchRegisterAndLoginPressed
-    with DiagnosticableTreeMixin
     implements _SwitchRegisterAndLoginPressed {
   const _$_SwitchRegisterAndLoginPressed();
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'SignInFormEvent.switchRegisterAndLoginPressed()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties.add(DiagnosticsProperty(
-        'type', 'SignInFormEvent.switchRegisterAndLoginPressed'));
   }
 
   @override
@@ -2541,8 +1892,6 @@ class _$_SwitchRegisterAndLoginPressed
     required TResult Function(String lastNameStr) lastNameChanged,
     required TResult Function(String fisrtNameStr) firstNameChanged,
     required TResult Function(String passwordStr) passwordChanged,
-    required TResult Function(bool isMen) menGenderChanged,
-    required TResult Function(bool isWommen) wommenGenderChanged,
     required TResult Function(String localityStr) localityChanged,
     required TResult Function(String emailAddress) emailAddressChanged,
     required TResult Function(String birthDate) birthDateChanged,
@@ -2560,8 +1909,6 @@ class _$_SwitchRegisterAndLoginPressed
     TResult Function(String lastNameStr)? lastNameChanged,
     TResult Function(String fisrtNameStr)? firstNameChanged,
     TResult Function(String passwordStr)? passwordChanged,
-    TResult Function(bool isMen)? menGenderChanged,
-    TResult Function(bool isWommen)? wommenGenderChanged,
     TResult Function(String localityStr)? localityChanged,
     TResult Function(String emailAddress)? emailAddressChanged,
     TResult Function(String birthDate)? birthDateChanged,
@@ -2579,8 +1926,6 @@ class _$_SwitchRegisterAndLoginPressed
     TResult Function(String lastNameStr)? lastNameChanged,
     TResult Function(String fisrtNameStr)? firstNameChanged,
     TResult Function(String passwordStr)? passwordChanged,
-    TResult Function(bool isMen)? menGenderChanged,
-    TResult Function(bool isWommen)? wommenGenderChanged,
     TResult Function(String localityStr)? localityChanged,
     TResult Function(String emailAddress)? emailAddressChanged,
     TResult Function(String birthDate)? birthDateChanged,
@@ -2602,8 +1947,6 @@ class _$_SwitchRegisterAndLoginPressed
     required TResult Function(_LastNameChanged value) lastNameChanged,
     required TResult Function(_FirstNameChanged value) firstNameChanged,
     required TResult Function(_PasswordChanged value) passwordChanged,
-    required TResult Function(_MenGenderChanged value) menGenderChanged,
-    required TResult Function(_WommenGenderChanged value) wommenGenderChanged,
     required TResult Function(_LocalityChanged value) localityChanged,
     required TResult Function(_EmailAddressChanged value) emailAddressChanged,
     required TResult Function(_BirthDateChanged value) birthDateChanged,
@@ -2624,8 +1967,6 @@ class _$_SwitchRegisterAndLoginPressed
     TResult Function(_LastNameChanged value)? lastNameChanged,
     TResult Function(_FirstNameChanged value)? firstNameChanged,
     TResult Function(_PasswordChanged value)? passwordChanged,
-    TResult Function(_MenGenderChanged value)? menGenderChanged,
-    TResult Function(_WommenGenderChanged value)? wommenGenderChanged,
     TResult Function(_LocalityChanged value)? localityChanged,
     TResult Function(_EmailAddressChanged value)? emailAddressChanged,
     TResult Function(_BirthDateChanged value)? birthDateChanged,
@@ -2645,8 +1986,6 @@ class _$_SwitchRegisterAndLoginPressed
     TResult Function(_LastNameChanged value)? lastNameChanged,
     TResult Function(_FirstNameChanged value)? firstNameChanged,
     TResult Function(_PasswordChanged value)? passwordChanged,
-    TResult Function(_MenGenderChanged value)? menGenderChanged,
-    TResult Function(_WommenGenderChanged value)? wommenGenderChanged,
     TResult Function(_LocalityChanged value)? localityChanged,
     TResult Function(_EmailAddressChanged value)? emailAddressChanged,
     TResult Function(_BirthDateChanged value)? birthDateChanged,
@@ -2943,9 +2282,7 @@ class __$SignInFormStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_SignInFormState
-    with DiagnosticableTreeMixin
-    implements _SignInFormState {
+class _$_SignInFormState implements _SignInFormState {
   const _$_SignInFormState(
       {required this.lastName,
       required this.firstName,
@@ -2989,29 +2326,8 @@ class _$_SignInFormState
   final bool isRegister;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'SignInFormState(lastName: $lastName, firstName: $firstName, locality: $locality, emailAddress: $emailAddress, birthDate: $birthDate, gender: $gender, password: $password, showErrorMessages: $showErrorMessages, isSubmitting: $isSubmitting, isMen: $isMen, isWommen: $isWommen, authFailureOrSuccessOption: $authFailureOrSuccessOption, isRegister: $isRegister)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'SignInFormState'))
-      ..add(DiagnosticsProperty('lastName', lastName))
-      ..add(DiagnosticsProperty('firstName', firstName))
-      ..add(DiagnosticsProperty('locality', locality))
-      ..add(DiagnosticsProperty('emailAddress', emailAddress))
-      ..add(DiagnosticsProperty('birthDate', birthDate))
-      ..add(DiagnosticsProperty('gender', gender))
-      ..add(DiagnosticsProperty('password', password))
-      ..add(DiagnosticsProperty('showErrorMessages', showErrorMessages))
-      ..add(DiagnosticsProperty('isSubmitting', isSubmitting))
-      ..add(DiagnosticsProperty('isMen', isMen))
-      ..add(DiagnosticsProperty('isWommen', isWommen))
-      ..add(DiagnosticsProperty(
-          'authFailureOrSuccessOption', authFailureOrSuccessOption))
-      ..add(DiagnosticsProperty('isRegister', isRegister));
   }
 
   @override
