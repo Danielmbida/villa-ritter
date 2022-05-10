@@ -1,11 +1,8 @@
-import 'dart:async';
-
 import 'package:apptest/domain/auth/auth_failure.dart';
 import 'package:apptest/domain/auth/i_auth_facade.dart';
 import 'package:apptest/domain/auth/value_objects.dart';
-import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
-import 'package:flutter/foundation.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:intl/intl.dart';
@@ -18,114 +15,127 @@ part 'sign_in_form_state.dart';
 class SignInFormBloc extends Bloc<SignInFormEvent, SignInFormState> {
   final IAuthFacade _authFacade;
 
-  SignInFormBloc(this._authFacade) : super(SignInFormState.initial());
+  SignInFormBloc(this._authFacade) : super(SignInFormState.initial()) {
+    on<_LastNameChanged>((event, emit) {
+      emit(
+        state.copyWith(
+          lastName: LastName(event.lastNameStr),
+          authFailureOrSuccessOption: none(),
+        ),
+      );
+    });
+    on<_FirstNameChanged>((event, emit) {
+      emit(
+        state.copyWith(
+          firstName: FirstName(event.fisrtNameStr),
+          authFailureOrSuccessOption: none(),
+        ),
+      );
+    });
+    on<_LocalityChanged>((event, emit) {
+      emit(
+        state.copyWith(
+          locality: Locality(event.localityStr),
+          authFailureOrSuccessOption: none(),
+        ),
+      );
+    });
+    on<_EmailAddressChanged>((event, emit) {
+      emit(
+        state.copyWith(
+          emailAddress: EmailAddress(event.emailAddress),
+          authFailureOrSuccessOption: none(),
+        ),
+      );
+    });
 
-  @override
-  Stream<SignInFormState> mapEventToState(
-    SignInFormEvent event,
-  ) async* {
-    yield* event.map(
-      lastNameChanged: (e) async* {
-        yield state.copyWith(
-          lastName: LastName(e.lastNameStr),
+    on<_PasswordChanged>((event, emit) {
+      emit(
+        state.copyWith(
+          password: Password(event.passwordStr),
           authFailureOrSuccessOption: none(),
-        );
-      },
-      firstNameChanged: (e) async* {
-        yield state.copyWith(
-          firstName: FirstName(e.fisrtNameStr),
+        ),
+      );
+    });
+    on<_BirthDateChanged>((event, emit) {
+      emit(
+        state.copyWith(
+          birthDate: BirthDate(event.birthDate),
           authFailureOrSuccessOption: none(),
-        );
-      },
-      localityChanged: (e) async* {
-        yield state.copyWith(
-          locality: Locality(e.localityStr),
+        ),
+      );
+    });
+    on<_GenderChanged>((event, emit) {
+      emit(
+        state.copyWith(
+          gender: Gender(event.genderStr),
           authFailureOrSuccessOption: none(),
-        );
-      },
-      emailAddressChanged: (e) async* {
-        yield state.copyWith(
-          emailAddress: EmailAddress(e.emailAddress),
-          authFailureOrSuccessOption: none(),
-        );
-      },
-      menGenderChanged: (e) async* {
-        yield state.copyWith(
-          isMen: !state.isMen,
-          isWommen: !state.isWommen,
-        );
-      },
-      genderChanged: (e) async* {
-        yield state.copyWith(
-          gender: Gender(e.genderStr),
-          authFailureOrSuccessOption: none(),
-        );
-      },
-      wommenGenderChanged: (e) async* {
-        yield state.copyWith(isWommen: !state.isWommen, isMen: !state.isMen);
-      },
-      switchRegisterAndLoginPressed: (e) async* {
-        yield state.copyWith(
+        ),
+      );
+    });
+
+    on<_SwitchRegisterAndLoginPressed>((event, emit) {
+      emit(
+        state.copyWith(
           isRegister: !state.isRegister,
           showErrorMessages: false,
-        );
-      },
-      passwordChanged: (e) async* {
-        yield state.copyWith(
-            password: Password(e.passwordStr),
-            authFailureOrSuccessOption: none());
-      },
-      birthDateChanged: (e) async* {
-        yield state.copyWith(
-          birthDate: BirthDate(e.birthDate),
-          authFailureOrSuccessOption: none(),
-        );
-      },
-      registerWithUserFields: (e) async* {
-        Either<AuthFailure, Unit>? failureOrSuccess;
-        final islastNameValid = state.lastName.isValid();
-        final isPasswordValid = state.password.isValid();
-        final isLocalityValid = state.locality.isValid();
-        if (islastNameValid && isPasswordValid && isLocalityValid) {
-          yield state.copyWith(
+        ),
+      );
+    });
+
+    on<_RegisterWithUserFields>((event, emit) async {
+      Either<AuthFailure, Unit>? failureOrSuccess;
+      final islastNameValid = state.lastName.isValid();
+      final isPasswordValid = state.password.isValid();
+      final isLocalityValid = state.locality.isValid();
+      if (islastNameValid && isPasswordValid && isLocalityValid) {
+        emit(
+          state.copyWith(
             isRegister: true,
             authFailureOrSuccessOption: none(),
-          );
-          //a revoir
-          failureOrSuccess =
-              await _authFacade.registerWithEmailAndPasswordPressed(
-            emailAddress: state.emailAddress,
-            password: state.password,
-            name: state.lastName,
-            locality: state.locality,
-            birthDate: state.birthDate,
-            gender: state.gender,
-            present: false,
-            hour: DateFormat('HH:mm').format(DateTime.now()),
-          );
-        }
-        yield state.copyWith(
+          ),
+        );
+        //a revoir
+        failureOrSuccess =
+            await _authFacade.registerWithEmailAndPasswordPressed(
+          emailAddress: state.emailAddress,
+          password: state.password,
+          name: state.lastName,
+          locality: state.locality,
+          birthDate: state.birthDate,
+          gender: state.gender,
+          present: false,
+          hour: DateFormat('HH:mm').format(DateTime.now()),
+        );
+      }
+      emit(
+        state.copyWith(
           showErrorMessages: true,
           authFailureOrSuccessOption: optionOf(failureOrSuccess),
-        );
-      },
-      signInWithNameAndPasswordPressed: (e) async* {
+        ),
+      );
+    });
+    on<_SignInWithNameAndPasswordPressed>(
+      (event, emit) async {
         Either<AuthFailure, Unit>? failureOrSuccess;
         final isEmailValid = state.emailAddress.isValid();
         final isPasswordValid = state.password.isValid();
         if (isEmailValid && isPasswordValid) {
-          yield state.copyWith(
-            isSubmitting: true,
-            authFailureOrSuccessOption: none(),
+          emit(
+            state.copyWith(
+              isSubmitting: true,
+              authFailureOrSuccessOption: none(),
+            ),
           );
-          // a revoir
           failureOrSuccess = await _authFacade.signInWithEmailAndPassword(
               emailAddress: state.emailAddress, password: state.password);
         }
-        yield state.copyWith(
-          isSubmitting: false,
-          showErrorMessages: true,
-          authFailureOrSuccessOption: optionOf(failureOrSuccess),
+        emit(
+          state.copyWith(
+            isSubmitting: false,
+            showErrorMessages: true,
+            authFailureOrSuccessOption: optionOf(failureOrSuccess),
+          ),
         );
       },
     );
