@@ -21,6 +21,7 @@ class WatcherNewsBloc extends Bloc<WatcherNewsEvent, WatcherNewsState> {
 
   WatcherNewsBloc(this._iNewsrepository) : super(const _Initial()) {
     on<_WatchNewsStarted>((event, emit) async {
+      emit(const WatcherNewsState.loadInProgress());
       await _newsStreamSubscription?.cancel();
       _newsStreamSubscription =
           _iNewsrepository.watchAllNews().asStream().listen(
