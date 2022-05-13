@@ -32,7 +32,7 @@ class _NewsPageState extends State<NewsPage> {
             builder:(BuildContext context, AsyncSnapshot<List<Post>> snapshot) {
               if (snapshot.connectionState == ConnectionState.none) {
                 return const Center(
-                    child: Text("Pas de nouvelle pour le moment"));
+                    child: Text("Pas de nouvelle pour le moment"),);
               }
               if (snapshot.connectionState == ConnectionState.waiting) {
                 return const Center(

@@ -1,15 +1,15 @@
-import 'package:apptest/application/connect/connectivity_cubit.dart';
 import 'package:apptest/application/news/bloc/watcher_news_bloc.dart';
+import 'package:apptest/injection.dart';
+import 'package:apptest/presentation/core/const.dart';
 import 'package:apptest/presentation/routes/router.gr.dart';
-import 'package:flutter/cupertino.dart';
+// ignore: depend_on_referenced_packages
+import 'package:auto_route/auto_route.dart';
+// ignore: depend_on_referenced_packages
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:wordpress_api/wordpress_api.dart';
 import 'package:http/http.dart' as http;
-import 'package:auto_route/auto_route.dart';
-
-import '../core/const.dart';
+import 'package:wordpress_api/wordpress_api.dart';
 
 class DisplayNews extends StatefulWidget {
   const DisplayNews({
@@ -26,22 +26,27 @@ class _DisplayNewsState extends State<DisplayNews> {
   @override
   Widget build(BuildContext context) {
     final double mediaHeight = MediaQuery.of(context).size.height;
-    return BlocBuilder<WatcherNewsBloc, WatcherNewsState>(
-      builder: (context, state) {
-        return state.maybeMap(
-          orElse: () => Container(),
-          loadFailure: (_) {
-            return const Text("erreur");
-          },
-          loadSuccess: (data) {
-            return SizedBox(
-              height: mediaHeight * 0.56, //447 56%
-              width: MediaQuery.of(context).size.width,
-              child: ListView.builder(
-                itemCount: data.listPosts.size,
-                itemBuilder: (content, index) {
-                  final Post actPost = data.listPosts[index];
-                  if (actPost.title != "Site en construction") {
+    return BlocProvider(
+      create: (context) => getIt<WatcherNewsBloc>()
+        ..add(const WatcherNewsEvent.watchNewsStarted()),
+      child: BlocBuilder<WatcherNewsBloc, WatcherNewsState>(
+        builder: (context, state) {
+          return state.maybeMap(
+            orElse: () => Container(),
+            loadFailure: (_) {
+              return const Text("erreur");
+            },
+            loadInProgress: (_) {
+              return const Center(child: CircularProgressIndicator());
+            },
+            loadSuccess: (data) {
+              return SizedBox(
+                height: mediaHeight * 0.56, //447 56%
+                width: MediaQuery.of(context).size.width,
+                child: ListView.builder(
+                  itemCount: data.listPosts.size,
+                  itemBuilder: (content, index) {
+                    final Post actPost = data.listPosts[index];
                     return Card(
                       child: GestureDetector(
                         onTap: () {
@@ -61,15 +66,13 @@ class _DisplayNewsState extends State<DisplayNews> {
                         ),
                       ),
                     );
-                  } else {
-                    return const Text("");
-                  }
-                },
-              ),
-            );
-          },
-        );
-      },
+                  },
+                ),
+              );
+            },
+          );
+        },
+      ),
     );
   }
 
@@ -105,8 +108,7 @@ class _DisplayNewsState extends State<DisplayNews> {
           children: [
             Text(
               Const.capitalize(
-                // ignore: avoid_escaping_inner_quotes
-                title.replaceAll('&rsquo;', '\''),
+                title.replaceAll('&rsquo;', "'"),
               ),
               style: TextStyle(
                 fontSize: mediaWidth * 0.09,
@@ -126,21 +128,6 @@ class _DisplayNewsState extends State<DisplayNews> {
     );
   }
 
-  ///Cette méthode permet de récupérer les articles du site
-  ///villa ritter
-  Future<List<Post>> fetchPost() async {
-    // final api = WordPressAPI('https://dand.cidisi.ch/');
-    final api = WordPressAPI('https://www.villa-ritter.ch/');
-    final res = await api.posts.fetch();
-    final List<Post> news = [];
-
-    for (final post in res.data as List<Post>) {
-      news.add(post);
-      // print(post.featuredMedia);
-    }
-    return news;
-  }
-
   /// Cette méthode permet de récupére l'image d'un arcticle
   Future<Media> fetchWpPostImageUrl(int mediaID) async {
     final response = await http.get(
@@ -150,7 +137,6 @@ class _DisplayNewsState extends State<DisplayNews> {
       // Uri.parse("https://dand.cidisi.ch/wp-json/wp/v2/media/$mediaID"),
       headers: {"Accept": "application/json"},
     );
-    print(response.body);
     return Media.fromJson(response.body);
   }
 }

@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:another_flushbar/flushbar.dart';
 import 'package:apptest/application/connect/connectivity_cubit.dart';
+import 'package:apptest/application/news/bloc/watcher_news_bloc.dart';
 import 'package:apptest/application/user_actor/user_actor_bloc.dart';
 import 'package:apptest/application/user_watcher_me/user_watcher_me_bloc.dart';
 import 'package:apptest/application/watch_all_users/watch_all_users_bloc.dart';
@@ -8,7 +9,7 @@ import 'package:apptest/application/watch_all_users_present/user_watch_all_bloc.
 import 'package:apptest/presentation/home/widgets/profil_page_form.dart';
 import 'package:apptest/presentation/routes/router.gr.dart';
 import 'package:apptest/presentation/core/const.dart';
-import 'package:apptest/presentation/villa/display_news.form.dart';
+import 'package:apptest/presentation/villa/news/display_news.form.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -57,141 +58,125 @@ class _HomePageFormState extends State<HomePageForm> {
               create: (context) => getIt<UserWatcherMeBloc>()
                 ..add(const UserWatcherMeEvent.watcherMeStarted()),
             ),
+         
           ],
           child: BlocBuilder<InternetCubit, InternetState>(
             builder: (context, state) {
-              state.maybeMap(
+              return state.maybeMap(
                 orElse: () => Container(),
-                connected: (s) {
-                  isConnected = true;
-                },
                 disconnected: (_) {
-                  isConnected = false;
+                  return Const.displayNotInternetState();
                 },
-              );
-              return MultiBlocListener(
-                listeners: [
-                  BlocListener<ScanBloc, ScanState>(
-                    listener: (context, state) {
-                      state.map(
-                        initial: (_) {},
-                        sucess: (scan) {
-                          BlocProvider.of<UserActorBloc>(context).add(
-                            UserActorEvent.present(
-                              widget.user.copyWith(
-                                present: true,
-                                hour: DateFormat("HH:mm").format(
-                                  DateTime.now(),
+                connected: (s) {
+                  return MultiBlocListener(
+                    listeners: [
+                      BlocListener<ScanBloc, ScanState>(
+                        listener: (context, state) {
+                          state.map(
+                            initial: (_) {},
+                            sucess: (scan) {
+                              BlocProvider.of<UserActorBloc>(context).add(
+                                UserActorEvent.present(
+                                  widget.user.copyWith(
+                                    present: true,
+                                    hour: DateFormat("HH:mm").format(
+                                      DateTime.now(),
+                                    ),
+                                  ),
                                 ),
-                              ),
-                            ),
-                          );
-                          context.read<ScanBloc>().add(
-                                const ScanEvent.scanResetted(),
                               );
-                        },
-                        scanFail: (_) {
-                          context.read<ScanBloc>().add(
-                                const ScanEvent.scanResetted(),
-                              );
-                          Flushbar(
-                            title: 'Echec du scan',
-                            // ignore: avoid_escaping_inner_quotes
-                            message: 'Vous n\'avez pas scanné le bon code qr',
-                            duration: const Duration(seconds: 3),
-                            backgroundColor: Colors.white,
-                            titleColor: Colors.blue,
-                            messageColor: Colors.blue,
-                          ).show(context);
-                        },
-                        scanTimeout: (_) {
-                          context
-                              .read<ScanBloc>()
-                              .add(const ScanEvent.scanResetted());
-                          Flushbar(
-                            title: 'Fermeture du scan',
-                            message:
+                              context.read<ScanBloc>().add(
+                                    const ScanEvent.scanResetted(),
+                                  );
+                            },
+                            scanFail: (_) {
+                              context.read<ScanBloc>().add(
+                                    const ScanEvent.scanResetted(),
+                                  );
+                              Flushbar(
+                                title: 'Echec du scan',
                                 // ignore: avoid_escaping_inner_quotes
-                                'La page de scan s\'est fermés par manque d\'activité',
-                            backgroundColor: Colors.white,
-                            titleColor: Colors.blue,
-                            messageColor: Colors.blue,
-                            duration: const Duration(seconds: 3),
-                          ).show(context);
+                                message:
+                                    'Vous n\'avez pas scanné le bon code qr',
+                                duration: const Duration(seconds: 3),
+                                backgroundColor: Colors.white,
+                                titleColor: Colors.blue,
+                                messageColor: Colors.blue,
+                              ).show(context);
+                            },
+                            scanTimeout: (_) {
+                              context
+                                  .read<ScanBloc>()
+                                  .add(const ScanEvent.scanResetted());
+                              Flushbar(
+                                title: 'Fermeture du scan',
+                                message:
+                                    // ignore: avoid_escaping_inner_quotes
+                                    'La page de scan s\'est fermés par manque d\'activité',
+                                backgroundColor: Colors.white,
+                                titleColor: Colors.blue,
+                                messageColor: Colors.blue,
+                                duration: const Duration(seconds: 3),
+                              ).show(context);
+                            },
+                          );
                         },
-                      );
-                    },
-                  ),
-                ],
-                child: Scaffold(
-                  // backgroundColor: Colors.blueGrey,
-                  body: Container(
-                    height: MediaQuery.of(context).size.height,
-                    //   decoration: const BoxDecoration(
-                    //   image: DecorationImage(
-                    //     image: AssetImage(
-                    //       'assets/images/porte2.jpg',
-                    //     ),
-                    //     fit: BoxFit.fill,
-                    //     // colorFilter:
-                    //     //     ColorFilter.mode(Color(0xff20544c), BlendMode.darken),
-                    //   ),
-                    // ),
-
-                    child: Column(
-                      children: [
-                        SizedBox(
-                          height: MediaQuery.of(context).size.height * 0.38,
-                          child: SizedBox(
-                            child: Stack(
-                              children: [
-                                ProfileView(user: widget.user),
-                                Positioned(
-                                  top: mediaHeight * 0.03,
-                                  left: mediaWidth * 0.02,
-                                  child: Image.asset(
-                                    "assets/images/logo.png",
-                                    color: Colors.black,
-                                    width: mediaWidth * 0.15,
-                                    height: mediaHeight * 0.12,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                        Expanded(
-                          flex: 2,
-                          child: Stack(
-                            children: [
-                              Positioned(
-                                left: 8 / mediaHeight * mediaHeight,
-                                child: Text(
-                                  "ACTUALITÉS",
-                                  style: TextStyle(
-                                    fontSize: 35 / mediaHeight * mediaHeight,
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.grey[400],
-                                  ),
+                      ),
+                    ],
+                    child: Scaffold(
+                      body: SizedBox(
+                        height: MediaQuery.of(context).size.height,
+                        child: Column(
+                          children: [
+                            SizedBox(
+                              height: MediaQuery.of(context).size.height * 0.38,
+                              child: SizedBox(
+                                child: Stack(
+                                  children: [
+                                    ProfileView(user: widget.user),
+                                    Positioned(
+                                      top: mediaHeight * 0.03,
+                                      left: mediaWidth * 0.02,
+                                      child: Image.asset(
+                                        "assets/images/logo.png",
+                                        color: Colors.black,
+                                        width: mediaWidth * 0.15,
+                                        height: mediaHeight * 0.12,
+                                      ),
+                                    ),
+                                  ],
                                 ),
                               ),
-                              if (isConnected)
-                                const Positioned(
-                                  top: 30,
-                                  child: DisplayNews(),
-                                )
-                              else
-                                SizedBox(
-                                  width: MediaQuery.of(context).size.width,
-                                  child: Const.displayNotInternetState(),
-                                ),
-                            ],
-                          ),
-                        )
-                      ],
+                            ),
+                            Expanded(
+                              flex: 2,
+                              child: Stack(
+                                children: [
+                                  Positioned(
+                                    left: 8 / mediaHeight * mediaHeight,
+                                    child: Text(
+                                      "ACTUALITÉS",
+                                      style: TextStyle(
+                                        fontSize:
+                                            35 / mediaHeight * mediaHeight,
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.grey[400],
+                                      ),
+                                    ),
+                                  ),
+                                  const Positioned(
+                                    top: 30,
+                                    child: DisplayNews(),
+                                  )
+                                ],
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
                     ),
-                  ),
-                ),
+                  );
+                },
               );
             },
           ),
@@ -265,7 +250,7 @@ Future<String> _networkAction(String iconName, BuildContext context) async {
       break;
     case "phone":
       context.router.push(
-        const ContactRoute(),
+        const ContactHoursRoute(),
       );
       break;
   }

@@ -2,13 +2,12 @@ import 'package:apptest/application/user_actor/user_actor_bloc.dart';
 import 'package:apptest/application/user_watcher_me/user_watcher_me_bloc.dart';
 import 'package:apptest/application/watch_all_users/watch_all_users_bloc.dart';
 import 'package:apptest/application/watch_all_users_present/user_watch_all_bloc.dart';
-import 'package:apptest/presentation/villa/display_all_user_page.dart';
-import 'package:apptest/presentation/villa/user_present_page.dart';
+import 'package:apptest/presentation/villa/users/display_all_user_page.dart';
+import 'package:apptest/presentation/villa/users/user_present_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-import '../../injection.dart';
 
 class UserManagePage extends StatefulWidget {
   const UserManagePage({Key? key}) : super(key: key);

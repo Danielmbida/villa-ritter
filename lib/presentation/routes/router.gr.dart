@@ -19,11 +19,11 @@ import '../home/widgets/test_page.dart' as _i9;
 import '../scan/scan_page.dart' as _i10;
 import '../sign_in/sign_in_page.dart' as _i2;
 import '../splash/splash_page.dart' as _i1;
-import '../villa/contact_page.dart' as _i7;
-import '../villa/news_page.dart' as _i6;
-import '../villa/post_page.dart' as _i8;
-import '../villa/user_manage_user.dart' as _i4;
-import '../villa/user_present_page.dart' as _i5;
+import '../villa/contact_hours_page.dart' as _i7;
+import '../villa/news/news_page.dart' as _i6;
+import '../villa/news/post_page.dart' as _i8;
+import '../villa/users/user_manage_user.dart' as _i4;
+import '../villa/users/user_present_page.dart' as _i5;
 
 class AppRouter extends _i11.RootStackRouter {
   AppRouter([_i12.GlobalKey<_i12.NavigatorState>? navigatorKey])
@@ -55,9 +55,9 @@ class AppRouter extends _i11.RootStackRouter {
       return _i11.MaterialPageX<dynamic>(
           routeData: routeData, child: _i6.NewsPage());
     },
-    ContactRoute.name: (routeData) {
+    ContactHoursRoute.name: (routeData) {
       return _i11.MaterialPageX<dynamic>(
-          routeData: routeData, child: _i7.ContactPage());
+          routeData: routeData, child: _i7.ContactHoursPage());
     },
     PostRoute.name: (routeData) {
       final args = routeData.argsAs<PostRouteArgs>();
@@ -86,7 +86,7 @@ class AppRouter extends _i11.RootStackRouter {
         _i11.RouteConfig(UserManageRoute.name, path: '/user-manage-page'),
         _i11.RouteConfig(UserPresentRoute.name, path: '/user-present-page'),
         _i11.RouteConfig(NewsRoute.name, path: '/news-page'),
-        _i11.RouteConfig(ContactRoute.name, path: '/contact-page'),
+        _i11.RouteConfig(ContactHoursRoute.name, path: '/contact-hours-page'),
         _i11.RouteConfig(PostRoute.name, path: '/post-page'),
         _i11.RouteConfig(TestRoute.name, path: '/test-page'),
         _i11.RouteConfig(ScanRoute.name, path: '/scan-page')
@@ -144,11 +144,12 @@ class NewsRoute extends _i11.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i7.ContactPage]
-class ContactRoute extends _i11.PageRouteInfo<void> {
-  const ContactRoute() : super(ContactRoute.name, path: '/contact-page');
+/// [_i7.ContactHoursPage]
+class ContactHoursRoute extends _i11.PageRouteInfo<void> {
+  const ContactHoursRoute()
+      : super(ContactHoursRoute.name, path: '/contact-hours-page');
 
-  static const String name = 'ContactRoute';
+  static const String name = 'ContactHoursRoute';
 }
 
 /// generated route for

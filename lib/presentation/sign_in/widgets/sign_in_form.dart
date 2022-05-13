@@ -19,6 +19,14 @@ class SignInForm extends StatefulWidget {
 }
 
 class _SignInFormState extends State<SignInForm> {
+  ImageProvider? backgroundImage;
+  @override
+  void didChangeDependencies() {
+    backgroundImage = const AssetImage('assets/images/porte2.jpg');
+    precacheImage(backgroundImage!, context);
+    super.didChangeDependencies();
+  }
+
   @override
   Widget build(BuildContext context) {
     final mediaHeight = MediaQuery.of(context).size.height;
@@ -45,11 +53,12 @@ class _SignInFormState extends State<SignInForm> {
                 messageColor: Colors.red,
                 // title:  AppLocalizations.of(context)!.email_string,//'Error',
                 message: failure.map(
-                    serverError: (_) => 'Server Error',
-                    invalidNameAndPasswordCombination: (_) =>
-                        // 'Invalid name and password combination',
-                        AppLocalizations.of(context)!
-                            .invalid_email_and_password_string,),
+                  serverError: (_) => 'Server Error',
+                  invalidNameAndPasswordCombination: (_) =>
+                      // 'Invalid name and password combination',
+                      AppLocalizations.of(context)!
+                          .invalid_email_and_password_string,
+                ),
                 duration: const Duration(seconds: 3),
               ).show(context);
             },
@@ -86,21 +95,23 @@ class _SignInFormState extends State<SignInForm> {
                 body: SingleChildScrollView(
                   child: Container(
                     height: mediaHeight,
-                    decoration: const BoxDecoration(
+                    decoration: BoxDecoration(
                       image: DecorationImage(
-                        image: AssetImage(
-                          'assets/images/porte2.jpg',
-                        ),
+                        image: backgroundImage!,
+                        // AssetImage(
+                        //   // 'assets/images/porte2.jpg',
+
+                        // ),
                         fit: BoxFit.fill,
-                        colorFilter:
-                            ColorFilter.mode(Colors.black45, BlendMode.darken),
+                        colorFilter: const ColorFilter.mode(
+                          Colors.black45,
+                          BlendMode.darken,
+                        ),
                       ),
                     ),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        // Text("Connexion",style: TextStyle(color: Colors.white,fontSize: 30),),
-
                         Center(
                           child: Padding(
                             padding: !state.isRegister
@@ -166,15 +177,31 @@ class _SignInFormState extends State<SignInForm> {
                                       ),
                                     ],
                                     if (state.isRegister) ...[
-                                      elvButton(btnColor, context, "register",
-                                          isConnected,),
-                                      txtButton(btnColor, mediaHeight, context,
-                                          "login",)
+                                      elvButton(
+                                        btnColor,
+                                        context,
+                                        "register",
+                                        isConnected,
+                                      ),
+                                      txtButton(
+                                        btnColor,
+                                        mediaHeight,
+                                        context,
+                                        "login",
+                                      )
                                     ] else ...[
-                                      elvButton(btnColor, context, "login",
-                                          isConnected,),
-                                      txtButton(btnColor, mediaHeight, context,
-                                          "register",)
+                                      elvButton(
+                                        btnColor,
+                                        context,
+                                        "login",
+                                        isConnected,
+                                      ),
+                                      txtButton(
+                                        btnColor,
+                                        mediaHeight,
+                                        context,
+                                        "register",
+                                      )
                                     ],
                                     if (state.isSubmitting) ...[
                                       SizedBox(
@@ -203,7 +230,11 @@ class _SignInFormState extends State<SignInForm> {
   ///Met en place le button pour switcher
   ///entre la connexion et l'inscription
   TextButton txtButton(
-      Color btnColor, double mediaHeight, BuildContext context, String action,) {
+    Color btnColor,
+    double mediaHeight,
+    BuildContext context,
+    String action,
+  ) {
     return TextButton(
       style: TextButton.styleFrom(
         primary: btnColor,
@@ -272,8 +303,11 @@ class _SignInFormState extends State<SignInForm> {
 
   ///Met en place la séléction de la
   ///date d'anniverssaire dans le formulaire d'inscription
-  Padding bithdayFormField(double paddingFormElems,
-      double radiusBorderFormElems, BuildContext context,) {
+  Padding bithdayFormField(
+    double paddingFormElems,
+    double radiusBorderFormElems,
+    BuildContext context,
+  ) {
     return Padding(
       padding: EdgeInsets.all(paddingFormElems),
       child: TextFormField(
@@ -321,8 +355,12 @@ class _SignInFormState extends State<SignInForm> {
 
   ///Met en place le champs de la sélection du genre
   ///dans le formulaire
-  Padding genderFormField(double paddingFormElems, double radiusBorderFormElems,
-      BuildContext context, double iconSize,) {
+  Padding genderFormField(
+    double paddingFormElems,
+    double radiusBorderFormElems,
+    BuildContext context,
+    double iconSize,
+  ) {
     return Padding(
       padding: EdgeInsets.all(paddingFormElems),
       child: Row(

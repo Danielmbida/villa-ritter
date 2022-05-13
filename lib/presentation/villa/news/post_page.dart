@@ -1,11 +1,12 @@
+import 'package:apptest/presentation/core/const.dart';
+// ignore: depend_on_referenced_packages
 import 'package:flutter/material.dart';
+
 import 'package:flutter_html/flutter_html.dart';
+// ignore: depend_on_referenced_packages
+import 'package:html/dom.dart' as dom;
 import 'package:url_launcher/url_launcher.dart';
 import 'package:wordpress_api/wordpress_api.dart';
-import 'package:flutter/widgets.dart';
-import 'package:html/dom.dart' as dom;
-
-import '../core/const.dart';
 
 // ignore: must_be_immutable
 class PostPage extends StatelessWidget {
@@ -53,9 +54,14 @@ class PostPage extends StatelessWidget {
               //   thickness: 5,
               // ),
               Html(
-                data: post.content!.replaceAll("\n", " "),
-                onLinkTap: (String? url, RenderContext context,
-                    Map<String, String> attributes, dom.Element? element) {
+                data: post.content!.replaceAll('\n', " "),
+                // style: {".elementor-widget-container": Style(padding: EdgeInsets.zero,)},
+                onLinkTap: (
+                  String? url,
+                  RenderContext context,
+                  Map<String, String> attributes,
+                  dom.Element? element,
+                ) {
                   _launchUrl(url!);
                 },
               )
