@@ -128,7 +128,7 @@ class SignInFormBloc extends Bloc<SignInFormEvent, SignInFormState> {
             ),
           );
           failureOrSuccess = await _authFacade.signInWithEmailAndPassword(
-              emailAddress: state.emailAddress, password: state.password);
+              emailAddress: state.emailAddress, password: state.password,);
         }
         emit(
           state.copyWith(

@@ -1,5 +1,5 @@
+import 'package:apptest/domain/core/failures.dart';
 import 'package:dartz/dartz.dart';
-import 'failures.dart';
 
 //validation lastName
 Either<ValueFailure<String>, String> validateLastName(String input) {
@@ -42,12 +42,6 @@ Either<ValueFailure<String>, String> validateLocality(String input) {
     return left(ValueFailure.invalidTextField(failedValue: input));
   }
 
-  // if (RegExp(localityRegex).hasMatch(input)) {
-  //   return right(input);
-  // } else {
-  //   return left(ValueFailure.invalidLocality(failedValue: input));
-  // }
-  // return right(input);
 }
 
 Either<ValueFailure<String>, String> validateGender(String input) {

@@ -1,4 +1,4 @@
-import 'failures.dart';
+import 'package:apptest/domain/core/failures.dart';
 
 class NotAuthenticatedError extends Error {}
 class UnexpectedValueError extends Error {

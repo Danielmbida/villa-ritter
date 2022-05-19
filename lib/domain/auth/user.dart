@@ -1,5 +1,5 @@
+import 'package:apptest/domain/core/value_objects.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import '../core/value_objects.dart';
 part 'user.freezed.dart';
 @freezed
 class User with _$User {

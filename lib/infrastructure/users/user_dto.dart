@@ -1,16 +1,15 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
+// ignore_for_file: invalid_annotation_target
 
 import 'package:apptest/domain/auth/user.dart';
 import 'package:apptest/domain/core/value_objects.dart';
-
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 part 'user_dto.freezed.dart';
 part 'user_dto.g.dart';
 
 @freezed
 abstract class UserDto implements _$UserDto {
  
-
   const factory UserDto({
    @JsonKey(ignore: true) String? id,
     required String nom,

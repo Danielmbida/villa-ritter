@@ -2,15 +2,14 @@ import 'package:apptest/domain/auth/auth_failure.dart';
 import 'package:apptest/domain/auth/i_auth_facade.dart';
 import 'package:apptest/domain/auth/user.dart';
 import 'package:apptest/domain/auth/value_objects.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart' hide User;
 import 'package:apptest/infrastructure/auth/firebase_user_mapper.dart'
     as firebase_user_domain_x;
-
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
+import 'package:firebase_auth/firebase_auth.dart' hide User;
 import 'package:injectable/injectable.dart';
 import 'package:intl/intl.dart';
-import '../../domain/auth/i_auth_facade.dart';
+
 
 @LazySingleton(as: IAuthFacade)
 class FirebaseAuthFacade implements IAuthFacade {
@@ -69,11 +68,11 @@ class FirebaseAuthFacade implements IAuthFacade {
     final hourStr = DateFormat('HH:mm').format(DateTime.now());
     try {
       await _firebaseAuth.createUserWithEmailAndPassword(
-          email: emailAddressStr, password: passwordStr);
+          email: emailAddressStr, password: passwordStr,);
 
       final authResult = await _firebaseAuth.signInWithEmailAndPassword(
-        email: emailAddressStr.toString().trim(),
-        password: passwordStr.toString(),
+        email: emailAddressStr.trim(),
+        password: passwordStr,
       );
 
       await FirebaseFirestore.instance

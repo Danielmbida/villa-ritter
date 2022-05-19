@@ -11,7 +11,7 @@ part of 'auth_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods',);
 
 /// @nodoc
 class _$AuthEventTearOff {
@@ -89,7 +89,7 @@ class _$AuthEventCopyWithImpl<$Res> implements $AuthEventCopyWith<$Res> {
 /// @nodoc
 abstract class _$AuthCheckRequestedCopyWith<$Res> {
   factory _$AuthCheckRequestedCopyWith(
-          _AuthCheckRequested value, $Res Function(_AuthCheckRequested) then) =
+          _AuthCheckRequested value, $Res Function(_AuthCheckRequested) then,) =
       __$AuthCheckRequestedCopyWithImpl<$Res>;
 }
 
@@ -98,7 +98,7 @@ class __$AuthCheckRequestedCopyWithImpl<$Res>
     extends _$AuthEventCopyWithImpl<$Res>
     implements _$AuthCheckRequestedCopyWith<$Res> {
   __$AuthCheckRequestedCopyWithImpl(
-      _AuthCheckRequested _value, $Res Function(_AuthCheckRequested) _then)
+      _AuthCheckRequested _value, $Res Function(_AuthCheckRequested) _then,)
       : super(_value, (v) => _then(v as _AuthCheckRequested));
 
   @override
@@ -193,7 +193,7 @@ abstract class _AuthCheckRequested implements AuthEvent {
 /// @nodoc
 abstract class _$SignedOutCopyWith<$Res> {
   factory _$SignedOutCopyWith(
-          _SignedOut value, $Res Function(_SignedOut) then) =
+          _SignedOut value, $Res Function(_SignedOut) then,) =
       __$SignedOutCopyWithImpl<$Res>;
 }
 
@@ -487,7 +487,7 @@ abstract class _Initial implements AuthState {
 /// @nodoc
 abstract class _$AuthenticatedCopyWith<$Res> {
   factory _$AuthenticatedCopyWith(
-          _Authenticated value, $Res Function(_Authenticated) then) =
+          _Authenticated value, $Res Function(_Authenticated) then,) =
       __$AuthenticatedCopyWithImpl<$Res>;
   $Res call({User user});
 
@@ -498,7 +498,7 @@ abstract class _$AuthenticatedCopyWith<$Res> {
 class __$AuthenticatedCopyWithImpl<$Res> extends _$AuthStateCopyWithImpl<$Res>
     implements _$AuthenticatedCopyWith<$Res> {
   __$AuthenticatedCopyWithImpl(
-      _Authenticated _value, $Res Function(_Authenticated) _then)
+      _Authenticated _value, $Res Function(_Authenticated) _then,)
       : super(_value, (v) => _then(v as _Authenticated));
 
   @override
@@ -513,7 +513,7 @@ class __$AuthenticatedCopyWithImpl<$Res> extends _$AuthStateCopyWithImpl<$Res>
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
               as User,
-    ));
+    ),);
   }
 
   @override
@@ -635,7 +635,7 @@ abstract class _Authenticated implements AuthState {
 /// @nodoc
 abstract class _$UnauthenticatedCopyWith<$Res> {
   factory _$UnauthenticatedCopyWith(
-          _Unauthenticated value, $Res Function(_Unauthenticated) then) =
+          _Unauthenticated value, $Res Function(_Unauthenticated) then,) =
       __$UnauthenticatedCopyWithImpl<$Res>;
 }
 
@@ -643,7 +643,7 @@ abstract class _$UnauthenticatedCopyWith<$Res> {
 class __$UnauthenticatedCopyWithImpl<$Res> extends _$AuthStateCopyWithImpl<$Res>
     implements _$UnauthenticatedCopyWith<$Res> {
   __$UnauthenticatedCopyWithImpl(
-      _Unauthenticated _value, $Res Function(_Unauthenticated) _then)
+      _Unauthenticated _value, $Res Function(_Unauthenticated) _then,)
       : super(_value, (v) => _then(v as _Unauthenticated));
 
   @override
