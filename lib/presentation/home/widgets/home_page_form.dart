@@ -116,22 +116,10 @@ class _HomePageFormState extends State<HomePageForm> {
                           children: [
                             SizedBox(
                               height: MediaQuery.of(context).size.height * 0.38,
-                              child: SizedBox(
-                                child: Stack(
-                                  children: [
-                                    ProfileView(user: widget.user),
-                                    Positioned(
-                                      top: mediaHeight * 0.03,
-                                      left: mediaWidth * 0.02,
-                                      child: Image.asset(
-                                        "assets/images/logo.png",
-                                        color: Colors.black,
-                                        width: mediaWidth * 0.15,
-                                        height: mediaHeight * 0.12,
-                                      ),
-                                    ),
-                                  ],
-                                ),
+                              child: Stack(
+                                children: [
+                                  ProfileView(user: widget.user),
+                                ],
                               ),
                             ),
                             Expanded(

@@ -1,14 +1,15 @@
+// ignore_for_file: depend_on_referenced_packages
+
 import 'dart:async';
 import 'dart:io';
 
 import 'package:bloc/bloc.dart';
+import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
-import 'package:connectivity_plus/connectivity_plus.dart';
 
-
-part 'connectivity_state.dart';
 part 'connectivity_cubit.freezed.dart';
+part 'connectivity_state.dart';
 
 @injectable
 class InternetCubit extends Cubit<InternetState> {

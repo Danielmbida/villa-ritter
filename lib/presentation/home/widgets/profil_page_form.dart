@@ -55,7 +55,6 @@ class _ProfileViewState extends State<ProfileView> {
     return _pickedImageFile;
   }
 
-
   @override
   Widget build(BuildContext context) {
     final double mediaWidth = MediaQuery.of(context).size.width;
@@ -106,6 +105,38 @@ class _ProfileViewState extends State<ProfileView> {
             ),
             child: Stack(
               children: [
+                Positioned(
+                  top: mediaHeight * 0.09,
+                  left: mediaWidth * 0.28,
+                  child: InkWell(
+                    child: ImageProfilForm(pickedImageFile: _pickedImageFile),
+                    onTap: () {
+                      _addImageModal(context);
+                    },
+                  ),
+                ),
+                Positioned(
+                  left: mediaWidth * 0.02,
+                  child: Image.asset(
+                    "assets/images/logo.png",
+                    color: Colors.black,
+                    width: mediaWidth * 0.15,
+                    height: mediaHeight * 0.12,
+                  ),
+                ),
+                Positioned(
+                  top: mediaHeight * 0.22,
+                  left: mediaWidth * 0.35,
+                  child: CircleAvatar(
+                    radius: mediaHeight * 0.015,
+                    backgroundColor: Colors.blue,
+                    child: const Icon(
+                      Icons.add,
+                      size: 20,
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
@@ -144,82 +175,6 @@ class _ProfileViewState extends State<ProfileView> {
                     ),
                   ],
                 ),
-                InkWell(
-                  onTap: () {
-                    showModalBottomSheet(
-                      context: context,
-                      builder: (BuildContext bc) {
-                        return SizedBox(
-                          child: Wrap(
-                            children: <Widget>[
-                              ListTile(
-                                leading: const Icon(Icons.photo_library),
-                                title:
-                                    const Text("Sélectionner dans la galerie"),
-                                onTap: () {
-                                  _pickImage(false);
-                                  Navigator.of(context).pop();
-                                },
-                              ),
-                              const Divider(),
-                              ListTile(
-                                leading: const Icon(Icons.photo_camera),
-                                title: const Text("Prendre une photo"),
-                                onTap: () {
-                                  _pickImage(true);
-                                  Navigator.of(context).pop();
-                                },
-                              ),
-                              const Divider(),
-                              ListTile(
-                                leading: const Icon(Icons.delete),
-                                title: const Text(
-                                  "Supprimer la photo",
-                                  style: TextStyle(color: Colors.red),
-                                ),
-                                onTap: () {
-                                  _deleteImageFromPreferences();
-                                  Navigator.of(context).pop();
-                                },
-                              ),
-                              const Divider(),
-                              ListTile(
-                                leading: const Icon(Icons.close),
-                                title: const Text("Annuler"),
-                                onTap: () {
-                                  Navigator.of(context).pop();
-                                },
-                              )
-                            ],
-                          ),
-                        );
-                      },
-                    );
-                  },
-                  child: Stack(
-                    children: [
-                      Positioned(
-                        top: mediaHeight * 0.09,
-                        left: mediaWidth * 0.28,
-                        child:
-                            ImageProfilForm(pickedImageFile: _pickedImageFile),
-                      ),
-                      Positioned(
-                        top: mediaHeight * 0.22,
-                        left: mediaWidth * 0.35,
-                        child: CircleAvatar(
-                          radius: mediaHeight * 0.015,
-                          backgroundColor: Colors.blue,
-                          child: const Icon(
-                            Icons.add,
-                            size: 20,
-                            color: Colors.white,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
                 Positioned(
                   top: mediaHeight * 0.18,
                   right: mediaWidth * 0.02,
@@ -239,6 +194,57 @@ class _ProfileViewState extends State<ProfileView> {
                 ),
               ],
             ),
+          ),
+        );
+      },
+    );
+  }
+
+  Future<dynamic> _addImageModal(BuildContext context) {
+    return showModalBottomSheet(
+      context: context,
+      builder: (BuildContext bc) {
+        return SizedBox(
+          child: Wrap(
+            children: <Widget>[
+              ListTile(
+                leading: const Icon(Icons.photo_library),
+                title: const Text("Sélectionner dans la galerie"),
+                onTap: () {
+                  _pickImage(false);
+                  Navigator.of(context).pop();
+                },
+              ),
+              const Divider(),
+              ListTile(
+                leading: const Icon(Icons.photo_camera),
+                title: const Text("Prendre une photo"),
+                onTap: () {
+                  _pickImage(true);
+                  Navigator.of(context).pop();
+                },
+              ),
+              const Divider(),
+              ListTile(
+                leading: const Icon(Icons.delete),
+                title: const Text(
+                  "Supprimer la photo",
+                  style: TextStyle(color: Colors.red),
+                ),
+                onTap: () {
+                  _deleteImageFromPreferences();
+                  Navigator.of(context).pop();
+                },
+              ),
+              const Divider(),
+              ListTile(
+                leading: const Icon(Icons.close),
+                title: const Text("Annuler"),
+                onTap: () {
+                  Navigator.of(context).pop();
+                },
+              )
+            ],
           ),
         );
       },

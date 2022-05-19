@@ -1,7 +1,7 @@
+import 'package:apptest/domain/auth/user.dart';
+import 'package:apptest/domain/core/value_objects.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart' as firebase;
-import '../../domain/auth/user.dart';
-import '../../domain/core/value_objects.dart';
 
 extension FirebaseUserDomainX on firebase.User {
   Future<User> toDomain() async {

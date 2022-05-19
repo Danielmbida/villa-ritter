@@ -20,37 +20,32 @@ class ImageProfilForm extends StatelessWidget {
     final Color? circleColor = Colors.grey[300];
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 15),
-      child:
-          Column(
+      child: Column(
         children: [
-          Stack(
-            children: [
-              if (pickedImageFile != null)
-                CircleAvatar(
-                  radius: radiusCircle,
-                  child: CircleAvatar(
-                    radius: radiusCircle - 2,
-                    backgroundImage: FileImage(
-                      pickedImageFile!,
-                    ),
-                  ),
-                )
-              else
-                CircleAvatar(
-                  radius: radiusCircle,
-                  backgroundColor: circleColor,
-                  child: CircleAvatar(
-                    radius: radiusCircle,
-                    backgroundColor: circleColor,
-                    child: Icon(
-                      addImgIcon,
-                      size: addImgSizeIcon,
-                      color: addImgColorIcon,
-                    ),
-                  ),
+          if (pickedImageFile != null)
+            CircleAvatar(
+              radius: radiusCircle,
+              child: CircleAvatar(
+                radius: radiusCircle - 2,
+                backgroundImage: FileImage(
+                  pickedImageFile!,
                 ),
-            ],
-          ),
+              ),
+            )
+          else
+            CircleAvatar(
+              radius: radiusCircle,
+              backgroundColor: circleColor,
+              child: CircleAvatar(
+                radius: radiusCircle,
+                backgroundColor: circleColor,
+                child: Icon(
+                  addImgIcon,
+                  size: addImgSizeIcon,
+                  color: addImgColorIcon,
+                ),
+              ),
+            ),
         ],
       ),
     );
