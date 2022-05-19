@@ -1,9 +1,8 @@
+// ignore_for_file: depend_on_referenced_packages
 
-// ignore: depend_on_referenced_packages
 import 'package:apptest/presentation/villa/contact/contact_form.dart';
 import 'package:apptest/presentation/villa/hours/display_table_hours_form.dart';
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class ContactHoursPage extends StatefulWidget {
   @override
@@ -57,5 +56,4 @@ class _ContactHoursPageState extends State<ContactHoursPage> {
       ),
     );
   }
-
 }

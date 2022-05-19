@@ -1,3 +1,5 @@
+// ignore_for_file: depend_on_referenced_packages
+
 import 'package:apptest/domain/auth/user.dart';
 import 'package:apptest/presentation/core/url_launcher.dart';
 import 'package:apptest/presentation/core/users/infosDialog/user_infos_item_form.dart';
@@ -19,7 +21,6 @@ class UserInfosDialog extends StatelessWidget {
     return SlideTransition(
       position: Tween(
         begin: const Offset(0, 1),
-        end:  Offset(0, 0),
       ).animate(animation),
       child: Opacity(
         opacity: animation.value,

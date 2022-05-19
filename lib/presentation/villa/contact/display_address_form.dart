@@ -1,3 +1,5 @@
+// ignore_for_file: depend_on_referenced_packages
+import 'package:apptest/presentation/core/url_launcher.dart';
 import 'package:flutter/material.dart';
 
 class DisplayAddressForm extends StatelessWidget {
@@ -18,9 +20,9 @@ class DisplayAddressForm extends StatelessWidget {
       children: [
         GestureDetector(
           onTap: () async {
-            // _launchURL(
-            //   "https://www.google.com/maps/place/Fbg+du+Jura+36,+2502+Bienne,+Suisse/@47.143048,7.248869,14z/data=!4m5!3m4!1s0x478e1eb3a3b72847:0xd2ff59e7143507cc!8m2!3d47.1442591!4d7.2499835?hl=fr-FR",
-            // );
+            UrlLauncher.launchURL(
+              "https://www.google.com/maps/place/Fbg+du+Jura+36,+2502+Bienne,+Suisse/@47.143048,7.248869,14z/data=!4m5!3m4!1s0x478e1eb3a3b72847:0xd2ff59e7143507cc!8m2!3d47.1442591!4d7.2499835?hl=fr-FR",
+            );
           },
           child: Column(
             children: [

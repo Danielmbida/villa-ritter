@@ -1,5 +1,5 @@
 // ignore_for_file: depend_on_referenced_packages
-
+import 'package:apptest/presentation/core/url_launcher.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -24,7 +24,7 @@ class DisplayEmainAndPhoneForm extends StatelessWidget {
           children: [
             GestureDetector(
               onTap: () async {
-                // _launchURL("tel://0323288955");
+                UrlLauncher.launchURL("tel://0323288955");
               },
               child: Column(
                 children: [
@@ -46,7 +46,7 @@ class DisplayEmainAndPhoneForm extends StatelessWidget {
             const SizedBox(height: 2),
             GestureDetector(
               onTap: () async {
-                // _launchURL("mailto://villaritter@bluewin.ch");
+                UrlLauncher.launchURL("mailto://villaritter@bluewin.ch");
               },
               child: Column(
                 children: [

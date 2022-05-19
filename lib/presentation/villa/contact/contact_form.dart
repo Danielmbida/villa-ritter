@@ -1,3 +1,4 @@
+// ignore_for_file: depend_on_referenced_packages
 import 'package:apptest/presentation/villa/contact/display_address_form.dart';
 import 'package:apptest/presentation/villa/contact/display_email_and_phone_form.dart';
 import 'package:apptest/presentation/villa/contact/footer_form.dart';

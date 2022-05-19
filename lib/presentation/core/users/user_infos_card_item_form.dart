@@ -10,14 +10,11 @@ class UserInfosCardItemForm extends StatelessWidget {
   const UserInfosCardItemForm({
     Key? key,
     required this.user,
-    required AnimationController controller,
     required this.allUsers,
-  })  : _controller = controller,
-        super(key: key);
+  })  : super(key: key);
 
   
   final User user;
-  final AnimationController _controller;
   final KtList<User> allUsers;
 
   @override
