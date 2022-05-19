@@ -1,7 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 
 import 'package:apptest/presentation/home/home_page.dart';
-import 'package:apptest/presentation/home/widgets/test_page.dart';
 import 'package:apptest/presentation/scan/scan_page.dart';
 import 'package:apptest/presentation/villa/contact_hours_page.dart';
 import 'package:apptest/presentation/villa/news/post_page.dart';
@@ -27,7 +26,6 @@ import '../sign_in/sign_in_page.dart';
       page: PostPage,
       transitionsBuilder: TransitionsBuilders.slideRight,
     ),
-    AutoRoute(page: TestPage),
     AutoRoute(page: ScanPage),
   ],
 )
