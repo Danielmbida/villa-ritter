@@ -3,8 +3,8 @@ import 'package:apptest/application/auth/auth_bloc.dart';
 import 'package:apptest/application/connect/connectivity_cubit.dart';
 import 'package:apptest/application/user_actor/user_actor_bloc.dart';
 import 'package:apptest/application/user_watcher_me/user_watcher_me_bloc.dart';
+import 'package:apptest/presentation/core/users/alertDialogue/no_internet_dialog.dart';
 import 'package:apptest/presentation/routes/router.gr.dart';
-import 'package:apptest/presentation/core/const.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -199,7 +199,8 @@ class _ProfileViewState extends State<ProfileView> {
 
   ///Sauvegarde l'image de profile de l'utilisateur
   ///dans les sharedPreferences
-  Future<Future<bool>> _setImageFromPreferences(String key, String value) async {
+  Future<Future<bool>> _setImageFromPreferences(
+      String key, String value) async {
     final SharedPreferences prefs = await SharedPreferences.getInstance();
     return prefs.setString(key, value);
   }
@@ -422,7 +423,7 @@ class _ProfileViewState extends State<ProfileView> {
                   ),
                 );
         } else {
-          Const.showNoInternetDialog(context);
+          const NoInternetDialog();
         }
       },
       child: Card(
