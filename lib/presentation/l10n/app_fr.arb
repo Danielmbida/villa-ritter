@@ -55,11 +55,11 @@
     "@invalid_name_string":{
       "description": "le text pour un nom invalid"
     },
-    "invalid_password_string": "Mot de passe incorrect",
+    "invalid_password_string": "Minimum 4 caractères",
     "@invalid_password_string":{
       "description": "le text pour mot de passe incorrect"
     },
-    "invalid_email_string": "Cette email n'est pas valide",
+    "invalid_email_string": "Format: Exemple@gmail.com",
     "@invalid_email_string":{
       "description": "le text pour un email incorrect"
     },
