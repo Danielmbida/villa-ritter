@@ -61,9 +61,9 @@ Either<ValueFailure<String>, String> validateGender(String input) {
 
 //8 caractères : 1 minuscule, 1 majuscule, 1 chiffre, 1 caractère spécial mot de passe
 Either<ValueFailure<String>, String> validatePassword(String input) {
-  const passwordRegex =
-      r"""^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$""";
-  if (RegExp(passwordRegex).hasMatch(input)) {
+  // const passwordRegex =
+      // r"""{4,}$""";
+  if (input.length >=4) {
     return right(input);
   } else {
     return left(ValueFailure.invalidPassword(failedValue: input));

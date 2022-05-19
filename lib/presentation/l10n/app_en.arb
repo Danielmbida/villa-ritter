@@ -12,10 +12,10 @@
  "date_format_string" : "DD/MM/YYYY",
  "invalid_email_and_password_string" : "Invalid name and password combination",
  "non_binary_string" : "Non-binary",
- "invalid_email_string" : "Invalid name",
+ "invalid_email_string" : "Format: Exemple@gmail.com",
  "invalid_locality_string" : "Invalid Locality",
  "invalid_birthday_string" : "Invalid Birthday",
- "invalid_password_string" : "Invalid password",
+ "invalid_password_string" : "at least 4 characters",
  "invalid_name_string" : "Invalid name",
  "invalid_gender_string" : "Select gender"
 

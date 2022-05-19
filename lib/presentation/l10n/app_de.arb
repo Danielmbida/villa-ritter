@@ -13,10 +13,10 @@
  "birthday_string" : "Geburtsdatum",
  "invalid_email_and_password_string" : "Ungültige Kombination aus Name und Passwort",
  "non_binary_string" : "Nicht-binär",
- "invalid_email_string" : "Dieser Name ist ungültig, keine Zahl",
+ "invalid_email_string" : "Format: Exemple@gmail.com",
  "invalid_locality_string" : "Diese Stadt ist ungültig",
  "invalid_birthday_string" : "Das Datumsformat DD/MM/JJJJ wird nicht eingehalten",
- "invalid_password_string" : "Falsches Passwort",
+ "invalid_password_string" : "mindestens 4 Zeichen",
  "invalid_name_string" : "Dieser Name ist ungültig, keine Zahl",
  "invalid_gender_string" : "Wählen Sie ein Genre"
 
