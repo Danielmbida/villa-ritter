@@ -1,5 +1,6 @@
+// ignore_for_file: depend_on_referenced_packages
+
 import 'package:apptest/application/auth/auth_bloc.dart';
-import 'package:apptest/application/connect/connectiv_class.dart';
 import 'package:apptest/application/connect/connectivity_cubit.dart';
 import 'package:apptest/application/news/bloc/watcher_news_bloc.dart';
 import 'package:apptest/application/scan/scan_bloc.dart';
@@ -8,12 +9,12 @@ import 'package:apptest/application/user_watcher_me/user_watcher_me_bloc.dart';
 import 'package:apptest/application/watch_all_users/watch_all_users_bloc.dart';
 import 'package:apptest/application/watch_all_users_present/user_watch_all_bloc.dart';
 import 'package:apptest/injection.dart';
+import 'package:apptest/presentation/routes/router.gr.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:provider/provider.dart';
-import '../routes/router.gr.dart';
 
 class AppWidget extends StatelessWidget {
   final _appRouter = AppRouter();
@@ -76,9 +77,10 @@ class AppWidget extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'Theorie DDD',
         theme: ThemeData(
-          primarySwatch: Colors.blue,
           primaryColorDark: Colors.black,
-          accentColor: Colors.grey.shade400,
+          colorScheme: ColorScheme.fromSwatch().copyWith(
+            secondary: Colors.grey.shade400,
+          ),
         ),
       ),
     );

@@ -1,3 +1,5 @@
+// ignore_for_file: depend_on_referenced_packages
+import 'package:apptest/presentation/core/url_launcher.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -22,7 +24,7 @@ class FooterForm extends StatelessWidget {
               GestureDetector(
                 onTap: () async {
                   const url = "https://www.instagram.com/villabnc/";
-                  // _launchURL(url);
+                   UrlLauncher.launchURL(url);
                 },
                 child: Icon(
                   FontAwesomeIcons.instagram,
@@ -35,7 +37,7 @@ class FooterForm extends StatelessWidget {
               GestureDetector(
                 onTap: () async {
                   const url = "https://www.snapchat.com/add/k.gianoli/";
-                  // _launchURL(url);
+                   UrlLauncher.launchURL(url);
                 },
                 child: Icon(
                   FontAwesomeIcons.snapchat,

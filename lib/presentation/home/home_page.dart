@@ -1,6 +1,7 @@
 import 'package:apptest/application/auth/auth_bloc.dart';
 import 'package:apptest/presentation/home/widgets/home_page_form.dart';
 import 'package:apptest/presentation/sign_in/sign_in_page.dart';
+// ignore: depend_on_referenced_packages
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -16,11 +17,9 @@ class _HomePageState extends State<HomePage> {
     (builder: (context, authState) {
       return authState.maybeMap(
         authenticated: (auth) {
-          print("Bienvenu ${auth.user.name}");
           return HomePageForm(user: auth.user);
         },
         unauthenticated: (_) {
-           print("déconnection hompage");
           return SignInPage();
         },
         orElse: () => Container(),

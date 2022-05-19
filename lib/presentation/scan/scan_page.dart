@@ -1,3 +1,4 @@
+// ignore_for_file: depend_on_referenced_packages, directives_ordering
 import 'dart:async';
 import 'package:apptest/application/scan/scan_bloc.dart';
 import 'package:flutter/material.dart';

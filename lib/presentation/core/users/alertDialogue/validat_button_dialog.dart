@@ -1,3 +1,4 @@
+// ignore_for_file: depend_on_referenced_packages
 import 'package:apptest/application/user_actor/user_actor_bloc.dart';
 import 'package:apptest/domain/auth/user.dart';
 import 'package:flutter/material.dart';

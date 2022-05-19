@@ -1,3 +1,4 @@
+// ignore_for_file: depend_on_referenced_packages
 import 'package:apptest/application/connect/connectivity_cubit.dart';
 import 'package:apptest/application/watch_all_users/watch_all_users_bloc.dart';
 import 'package:apptest/presentation/core/display_no_internet_form.dart';
@@ -70,7 +71,7 @@ class _DisplayAllUserPageState extends State<DisplayAllUserPage>
                                       return UserInfosCardItemForm(
                                         allUsers: users.users,
                                         user: user,
-                                        controller: _controller,
+                                       
                                       );
                                     },
                                   ),

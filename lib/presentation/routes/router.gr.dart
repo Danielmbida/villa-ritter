@@ -20,7 +20,7 @@ import '../sign_in/sign_in_page.dart' as _i2;
 import '../splash/splash_page.dart' as _i1;
 import '../villa/contact_hours_page.dart' as _i6;
 import '../villa/news/post_page.dart' as _i7;
-import '../villa/users/user_manage_user.dart' as _i4;
+import '../villa/users/user_manage_form.dart' as _i4;
 import '../villa/users/user_present_page.dart' as _i5;
 
 class AppRouter extends _i9.RootStackRouter {
