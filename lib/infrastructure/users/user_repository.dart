@@ -18,8 +18,6 @@ class UserRepository implements IUserRepository {
 
   @override
   Stream<Either<UserFailure, KtList<User>>> watchAllUsersPresent() async* {
-    final userOption = await getIt<IAuthFacade>().getSignedInUser();
-    final user = userOption.getOrElse(() => throw NotAuthenticatedError());
     yield* _firestore
         .collection('users')
         .where('present', isEqualTo: true)

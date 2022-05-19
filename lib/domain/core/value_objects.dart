@@ -1,10 +1,8 @@
-import 'package:flutter/cupertino.dart';
- import 'package:uuid/uuid.dart';
-
+import 'package:apptest/domain/core/error.dart';
+import 'package:apptest/domain/core/failures.dart';
 import 'package:dartz/dartz.dart';
-import 'package:flutter/foundation.dart';
-import 'error.dart';
-import 'failures.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:uuid/uuid.dart';
 
 @immutable
 abstract class ValueObject<T> {

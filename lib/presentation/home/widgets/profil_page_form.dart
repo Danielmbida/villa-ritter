@@ -55,7 +55,6 @@ class _ProfileViewState extends State<ProfileView> {
     return _pickedImageFile;
   }
 
-
   @override
   Widget build(BuildContext context) {
     final double mediaWidth = MediaQuery.of(context).size.width;
@@ -106,44 +105,6 @@ class _ProfileViewState extends State<ProfileView> {
             ),
             child: Stack(
               children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    PopupMenuButton(
-                      itemBuilder: (context) => [
-                        PopupMenuItem(
-                          child: GestureDetector(
-                            onTap: () {
-                              context.read<AuthBloc>().add(
-                                    const AuthEvent.signedOut(),
-                                  );
-                            },
-                            child: const Text("Se déconnecter"),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    Column(
-                      children: [
-                        Text(
-                          userName,
-                          style: TextStyle(
-                            color: Theme.of(context).primaryColorDark,
-                            fontSize: textNameSize,
-                            decoration: TextDecoration.none,
-                            fontFamily: textNameFonts,
-                            fontWeight: FontWeight.normal,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
                 InkWell(
                   onTap: () {
                     showModalBottomSheet(
@@ -196,29 +157,68 @@ class _ProfileViewState extends State<ProfileView> {
                       },
                     );
                   },
-                  child: Stack(
-                    children: [
-                      Positioned(
-                        top: mediaHeight * 0.09,
-                        left: mediaWidth * 0.28,
-                        child:
-                            ImageProfilForm(pickedImageFile: _pickedImageFile),
+                  child: Positioned(
+                    top: mediaHeight * 0.09,
+                    left: mediaWidth * 0.28,
+                    child: Container(
+                      color: Colors.red,
+                      child: ImageProfilForm(pickedImageFile: _pickedImageFile),
+                    ),
+                  ),
+                ),
+                Positioned(
+                  top: mediaHeight * 0.22,
+                  left: mediaWidth * 0.35,
+                  child: Container(
+                    color: Colors.red,
+                    child: CircleAvatar(
+                      radius: mediaHeight * 0.015,
+                      backgroundColor: Colors.blue,
+                      child: const Icon(
+                        Icons.add,
+                        size: 20,
+                        color: Colors.white,
                       ),
-                      Positioned(
-                        top: mediaHeight * 0.22,
-                        left: mediaWidth * 0.35,
-                        child: CircleAvatar(
-                          radius: mediaHeight * 0.015,
-                          backgroundColor: Colors.blue,
-                          child: const Icon(
-                            Icons.add,
-                            size: 20,
-                            color: Colors.white,
+                    ),
+                  ),
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    PopupMenuButton(
+                      itemBuilder: (context) => [
+                        PopupMenuItem(
+                          child: GestureDetector(
+                            onTap: () {
+                              context.read<AuthBloc>().add(
+                                    const AuthEvent.signedOut(),
+                                  );
+                            },
+                            child: const Text("Se déconnecter"),
                           ),
                         ),
-                      ),
-                    ],
-                  ),
+                      ],
+                    ),
+                  ],
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Column(
+                      children: [
+                        Text(
+                          userName,
+                          style: TextStyle(
+                            color: Theme.of(context).primaryColorDark,
+                            fontSize: textNameSize,
+                            decoration: TextDecoration.none,
+                            fontFamily: textNameFonts,
+                            fontWeight: FontWeight.normal,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
                 ),
                 Positioned(
                   top: mediaHeight * 0.18,
