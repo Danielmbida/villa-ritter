@@ -1,5 +1,5 @@
-import 'package:apptest/presentation/core/const.dart';
-import 'package:apptest/presentation/villa/url_launcher.dart';
+
+import 'package:apptest/presentation/core/url_launcher.dart';
 // ignore: depend_on_referenced_packages
 import 'package:flutter/material.dart';
 
@@ -15,11 +15,12 @@ class PostPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    String capitalize(String s) => s[0].toUpperCase() + s.substring(1);
     return Scaffold(
       appBar: AppBar(
         backgroundColor: const Color(0xff20544c),
         title: Text(
-          Const.capitalize(
+          capitalize(
             // ignore: avoid_escaping_inner_quotes
             post.title.toString().replaceAll('&rsquo;', '\''),
           ),

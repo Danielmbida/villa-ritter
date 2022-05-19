@@ -6,9 +6,10 @@ import 'package:apptest/application/user_actor/user_actor_bloc.dart';
 import 'package:apptest/application/user_watcher_me/user_watcher_me_bloc.dart';
 import 'package:apptest/application/watch_all_users/watch_all_users_bloc.dart';
 import 'package:apptest/application/watch_all_users_present/user_watch_all_bloc.dart';
+import 'package:apptest/presentation/core/display_no_internet_form.dart';
+import 'package:apptest/presentation/core/url_launcher.dart';
 import 'package:apptest/presentation/home/widgets/profil_page_form.dart';
 import 'package:apptest/presentation/routes/router.gr.dart';
-import 'package:apptest/presentation/core/const.dart';
 import 'package:apptest/presentation/villa/news/display_news.form.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -65,7 +66,7 @@ class _HomePageFormState extends State<HomePageForm> {
               return state.maybeMap(
                 orElse: () => Container(),
                 disconnected: (_) {
-                  return Const.displayNotInternetState();
+                  return const DisplayNoInternetForm();
                 },
                 connected: (s) {
                   return MultiBlocListener(
@@ -240,13 +241,13 @@ SpeedDialChild _speedDialChild(
 Future<String> _networkAction(String iconName, BuildContext context) async {
   switch (iconName) {
     case "insta":
-      Const.launchURL("https://www.instagram.com/villabnc");
+     UrlLauncher.launchURL("https://www.instagram.com/villabnc");
       break;
     case "youtube":
-      Const.launchURL("https://www.youtube.com/user/villaritterbienne");
+      UrlLauncher.launchURL("https://www.youtube.com/user/villaritterbienne");
       break;
     case "facebook":
-      Const.launchURL("https://www.facebook.com/villa.ritter");
+      UrlLauncher.launchURL("https://www.facebook.com/villa.ritter");
       break;
     case "phone":
       context.router.push(

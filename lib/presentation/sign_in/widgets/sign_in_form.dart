@@ -8,7 +8,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import 'package:apptest/application/auth/auth_bloc.dart';
 import 'package:apptest/application/connect/connectivity_cubit.dart';
-import 'package:apptest/presentation/core/const.dart';
+import 'package:apptest/presentation/core/users/alertDialogue/no_internet_dialog.dart';
 import 'package:apptest/presentation/routes/router.gr.dart';
 
 import '../../../application/auth/sign_in_form/sign_in_form_bloc.dart';
@@ -286,7 +286,10 @@ class _SignInFormState extends State<SignInForm> {
                       const SignInFormEvent.signInWithNameAndPasswordPressed(),
                     );
           } else {
-            Const.showNoInternetDialog(context);
+            showDialog(
+              context: context,
+              builder: (BuildContext context) => const NoInternetDialog(),
+            );
           }
         },
         child: Padding(
