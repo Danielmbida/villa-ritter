@@ -88,6 +88,27 @@ class _SignInFormState extends State<SignInForm> {
               ).createShader(bounds),
               blendMode: BlendMode.darken,
               child: Scaffold(
+                bottomNavigationBar: BottomAppBar(
+                  color: const Color(0xff20544c).withOpacity(0),
+                  elevation: 0,
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      primary: const Color(0xff20544c).withOpacity(0),
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: const [
+                        Text(
+                          "Mot de passe oublié",
+                          style: TextStyle(
+                            fontSize: 17,
+                          ),
+                        ),
+                      ],
+                    ),
+                    onPressed: () {},
+                  ),
+                ),
                 backgroundColor: Colors.transparent,
                 body: SingleChildScrollView(
                   child: Container(
