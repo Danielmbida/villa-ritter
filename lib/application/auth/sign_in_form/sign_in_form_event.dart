@@ -25,6 +25,8 @@ class SignInFormEvent with _$SignInFormEvent {
 
   const factory SignInFormEvent.genderChanged(String genderStr) =
       _GenderChanged;
+        const factory SignInFormEvent.resetPasswordWithEmailPressed() =
+      _ResetPasswordWithEmailPressed;
 
 //Register
   const factory SignInFormEvent.registerWithUserFields() =

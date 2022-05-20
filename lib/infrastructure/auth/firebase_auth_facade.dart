@@ -10,26 +10,46 @@ import 'package:firebase_auth/firebase_auth.dart' hide User;
 import 'package:injectable/injectable.dart';
 import 'package:intl/intl.dart';
 
-
 @LazySingleton(as: IAuthFacade)
 class FirebaseAuthFacade implements IAuthFacade {
   final FirebaseAuth _firebaseAuth;
   FirebaseAuthFacade(this._firebaseAuth);
 
   @override
-  Future<Either<AuthFailure, Unit>> signInWithEmailAndPassword(
-      {required EmailAddress emailAddress, required Password password}) async {
+  Future<Either<AuthFailure, Unit>> signInWithEmailAndPassword({
+    required EmailAddress emailAddress,
+    required Password password,
+  }) async {
     final emailAddressStr = emailAddress.getOrCrash();
     final passwordStr = password.getOrCrash();
 
     //Eviter le crash de l'application en cas de mauvaise donnée email et password
     try {
       await _firebaseAuth.signInWithEmailAndPassword(
-          email: emailAddressStr, password: passwordStr);
+        email: emailAddressStr,
+        password: passwordStr,
+      );
 
       return right(unit);
     } on FirebaseAuthException catch (e) {
       if (e.code == 'user-not-found' || e.code == 'wrong-password') {
+        return left(const AuthFailure.invalidNameAndPasswordCombination());
+      } else {
+        return left(const AuthFailure.serverError());
+      }
+    }
+  }
+
+  @override
+  Future<Either<AuthFailure, Unit>> resetPasswordWithEmail({
+    required EmailAddress emailAddress,
+  }) async {
+    final emailAddressStr = emailAddress.getOrCrash();
+    try {
+      await _firebaseAuth.sendPasswordResetEmail(email: emailAddressStr);
+      return right(unit);
+    } on FirebaseAuthException catch (e) {
+      if (e.code == 'user-not-found' || e.code == 'wrong-email') {
         return left(const AuthFailure.invalidNameAndPasswordCombination());
       } else {
         return left(const AuthFailure.serverError());
@@ -49,16 +69,15 @@ class FirebaseAuthFacade implements IAuthFacade {
   }
 
   @override
-  Future<Either<AuthFailure, Unit>> registerWithEmailAndPasswordPressed({
-    required EmailAddress emailAddress,
-    required Password password,
-    required LastName name,
-    required Locality locality,
-    required Gender gender,
-    required BirthDate birthDate,
-    required bool present,
-    required String hour
-  }) async {
+  Future<Either<AuthFailure, Unit>> registerWithEmailAndPasswordPressed(
+      {required EmailAddress emailAddress,
+      required Password password,
+      required LastName name,
+      required Locality locality,
+      required Gender gender,
+      required BirthDate birthDate,
+      required bool present,
+      required String hour}) async {
     final emailAddressStr = emailAddress.getOrCrash();
     final passwordStr = password.getOrCrash();
     final nameStr = name.getOrCrash();
@@ -68,7 +87,9 @@ class FirebaseAuthFacade implements IAuthFacade {
     final hourStr = DateFormat('HH:mm').format(DateTime.now());
     try {
       await _firebaseAuth.createUserWithEmailAndPassword(
-          email: emailAddressStr, password: passwordStr,);
+        email: emailAddressStr,
+        password: passwordStr,
+      );
 
       final authResult = await _firebaseAuth.signInWithEmailAndPassword(
         email: emailAddressStr.trim(),
@@ -86,7 +107,7 @@ class FirebaseAuthFacade implements IAuthFacade {
           'naissance': birthDateStr.trim(),
           'genre': genderStr.trim(),
           'present': present,
-          'arrive':hourStr.trim()
+          'arrive': hourStr.trim()
         },
       );
       return right(unit);
