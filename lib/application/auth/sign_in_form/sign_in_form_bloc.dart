@@ -83,12 +83,39 @@ class SignInFormBloc extends Bloc<SignInFormEvent, SignInFormState> {
       );
     });
 
+    on<_ResetPasswordWithEmailPressed>((event, emit) async {
+      Either<AuthFailure, Unit>? failureOrSuccess;
+      final isEmailValid = state.emailAddress.isValid();
+      if (isEmailValid) {
+         print("emialvalide");
+        emit(
+          state.copyWith(
+            authFailureOrSuccessOption: none(),
+          ),
+        );
+        failureOrSuccess = await _authFacade.resetPasswordWithEmail(
+          emailAddress: state.emailAddress,
+        );
+      }
+      emit(
+        state.copyWith(
+          showErrorMessages: true,
+          authFailureOrSuccessOption: optionOf(failureOrSuccess),
+        ),
+      );
+    });
+
     on<_RegisterWithUserFields>((event, emit) async {
       Either<AuthFailure, Unit>? failureOrSuccess;
-      final islastNameValid = state.lastName.isValid();
+      final isEmailValid = state.emailAddress.isValid();
       final isPasswordValid = state.password.isValid();
+      final islastNameValid = state.lastName.isValid();
+
       final isLocalityValid = state.locality.isValid();
-      if (islastNameValid && isPasswordValid && isLocalityValid) {
+      if (islastNameValid &&
+          isPasswordValid &&
+          isLocalityValid &&
+          isEmailValid) {
         emit(
           state.copyWith(
             isRegister: true,
@@ -128,7 +155,9 @@ class SignInFormBloc extends Bloc<SignInFormEvent, SignInFormState> {
             ),
           );
           failureOrSuccess = await _authFacade.signInWithEmailAndPassword(
-              emailAddress: state.emailAddress, password: state.password,);
+            emailAddress: state.emailAddress,
+            password: state.password,
+          );
         }
         emit(
           state.copyWith(

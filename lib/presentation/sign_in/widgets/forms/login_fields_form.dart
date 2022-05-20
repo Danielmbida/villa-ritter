@@ -31,7 +31,7 @@ class LoginFieldsForm extends StatelessWidget {
           formName: "email",
           labelTextForm: "Email",
           prefixIcon: Icons.email,
-          textInputType: TextInputType.visiblePassword,
+          textInputType: TextInputType.emailAddress,
         ),
         TextFormFieldForm(
           paddingFormElems: paddingFormElems,

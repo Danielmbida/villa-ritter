@@ -37,8 +37,8 @@ class TextFormFieldForm extends StatelessWidget {
         onChanged: (value) => onChanged(value, formName, context),
         validator: (_) => validator(formName, context),
         keyboardType: textInputType,
-        style: const TextStyle(
-          color: Colors.white,
+        style:  TextStyle(
+          color: formName !="reset"?Colors.white:Colors.black,
         ),
       ),
     );
@@ -49,6 +49,11 @@ class TextFormFieldForm extends StatelessWidget {
   void onChanged(String value, String formName, BuildContext context) {
     switch (formName) {
       case "email":
+        context.read<SignInFormBloc>().add(
+              SignInFormEvent.emailAddressChanged(value),
+            );
+        break;
+      case "reset":
         context.read<SignInFormBloc>().add(
               SignInFormEvent.emailAddressChanged(value),
             );
@@ -77,6 +82,16 @@ class TextFormFieldForm extends StatelessWidget {
     String? error;
     switch (formName) {
       case "email":
+        error = context.read<SignInFormBloc>().state.emailAddress.value.fold(
+              (f) => f.maybeMap(
+                invalidEmailAddress: (_) =>
+                    AppLocalizations.of(context)!.invalid_email_string,
+                orElse: () => null,
+              ),
+              (_) => null,
+            );
+        break;
+      case "reset":
         error = context.read<SignInFormBloc>().state.emailAddress.value.fold(
               (f) => f.maybeMap(
                 invalidEmailAddress: (_) =>
@@ -128,18 +143,20 @@ class TextFormFieldForm extends StatelessWidget {
     return InputDecoration(
       border: OutlineInputBorder(
         borderRadius: BorderRadius.all(
-          Radius.circular(radiusBorderFormElems),
+          Radius.circular(formName != "reset" ? radiusBorderFormElems : 0),
         ),
       ),
       filled: true,
-      fillColor: Colors.white54.withOpacity(0.5),
+      fillColor: formName != "reset"
+          ? Colors.white54.withOpacity(0.5)
+          : Colors.grey.shade100,
       prefixIcon: Icon(
         prefixIcon,
-        color: Colors.white,
+        color: formName != "reset" ? Colors.white : Colors.black,
       ),
       labelText: labelTextForm,
-      labelStyle: const TextStyle(
-        color: Colors.white,
+      labelStyle: TextStyle(
+        color: formName != "reset" ? Colors.white : Colors.black,
       ),
     );
   }

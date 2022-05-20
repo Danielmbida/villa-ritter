@@ -6,6 +6,7 @@ import 'package:apptest/application/connect/connectivity_cubit.dart';
 import 'package:apptest/presentation/routes/router.gr.dart';
 import 'package:apptest/presentation/sign_in/widgets/buttons/login_button_form.dart';
 import 'package:apptest/presentation/sign_in/widgets/buttons/register_button_form.dart';
+import 'package:apptest/presentation/sign_in/widgets/reset_password/reset_password_button_form.dart';
 import 'package:apptest/presentation/sign_in/widgets/forms/login_fields_form.dart';
 import 'package:apptest/presentation/sign_in/widgets/forms/register_fields_forms.dart';
 import 'package:auto_route/auto_route.dart';
@@ -88,27 +89,6 @@ class _SignInFormState extends State<SignInForm> {
               ).createShader(bounds),
               blendMode: BlendMode.darken,
               child: Scaffold(
-                bottomNavigationBar: BottomAppBar(
-                  color: const Color(0xff20544c).withOpacity(0),
-                  elevation: 0,
-                  child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      primary: const Color(0xff20544c).withOpacity(0),
-                    ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: const [
-                        Text(
-                          "Mot de passe oublié",
-                          style: TextStyle(
-                            fontSize: 17,
-                          ),
-                        ),
-                      ],
-                    ),
-                    onPressed: () {},
-                  ),
-                ),
                 backgroundColor: Colors.transparent,
                 body: SingleChildScrollView(
                   child: Container(
@@ -150,7 +130,7 @@ class _SignInFormState extends State<SignInForm> {
                                       LoginFieldsForm(
                                         paddingFormElems: paddingFormElems,
                                         rBorderFormElems: rBorderFormElems,
-                                      )
+                                      ),
                                     ] else ...[
                                       RegisterFieldsForm(
                                         paddingFormElems: paddingFormElems,
@@ -178,7 +158,8 @@ class _SignInFormState extends State<SignInForm> {
                                         btnColor: btnColor,
                                         mediaHeight: mediaHeight,
                                         action: "register",
-                                      )
+                                      ),
+                                      const ResetPasswordButtonForm(),
                                     ],
                                     if (state.isSubmitting) ...[
                                       SizedBox(

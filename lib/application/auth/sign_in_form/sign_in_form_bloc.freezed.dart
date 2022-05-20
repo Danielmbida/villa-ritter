@@ -11,7 +11,7 @@ part of 'sign_in_form_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods',);
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 class _$SignInFormEventTearOff {
@@ -63,6 +63,10 @@ class _$SignInFormEventTearOff {
     );
   }
 
+  _ResetPasswordWithEmailPressed resetPasswordWithEmailPressed() {
+    return const _ResetPasswordWithEmailPressed();
+  }
+
   _RegisterWithUserFields registerWithUserFields() {
     return const _RegisterWithUserFields();
   }
@@ -87,6 +91,7 @@ mixin _$SignInFormEvent {
     required TResult Function(String birthDate) birthDateChanged,
     required TResult Function() signInWithNameAndPasswordPressed,
     required TResult Function(String genderStr) genderChanged,
+    required TResult Function() resetPasswordWithEmailPressed,
     required TResult Function() registerWithUserFields,
     required TResult Function() switchRegisterAndLoginPressed,
   }) =>
@@ -101,6 +106,7 @@ mixin _$SignInFormEvent {
     TResult Function(String birthDate)? birthDateChanged,
     TResult Function()? signInWithNameAndPasswordPressed,
     TResult Function(String genderStr)? genderChanged,
+    TResult Function()? resetPasswordWithEmailPressed,
     TResult Function()? registerWithUserFields,
     TResult Function()? switchRegisterAndLoginPressed,
   }) =>
@@ -115,6 +121,7 @@ mixin _$SignInFormEvent {
     TResult Function(String birthDate)? birthDateChanged,
     TResult Function()? signInWithNameAndPasswordPressed,
     TResult Function(String genderStr)? genderChanged,
+    TResult Function()? resetPasswordWithEmailPressed,
     TResult Function()? registerWithUserFields,
     TResult Function()? switchRegisterAndLoginPressed,
     required TResult orElse(),
@@ -131,6 +138,8 @@ mixin _$SignInFormEvent {
     required TResult Function(_SignInWithNameAndPasswordPressed value)
         signInWithNameAndPasswordPressed,
     required TResult Function(_GenderChanged value) genderChanged,
+    required TResult Function(_ResetPasswordWithEmailPressed value)
+        resetPasswordWithEmailPressed,
     required TResult Function(_RegisterWithUserFields value)
         registerWithUserFields,
     required TResult Function(_SwitchRegisterAndLoginPressed value)
@@ -148,6 +157,8 @@ mixin _$SignInFormEvent {
     TResult Function(_SignInWithNameAndPasswordPressed value)?
         signInWithNameAndPasswordPressed,
     TResult Function(_GenderChanged value)? genderChanged,
+    TResult Function(_ResetPasswordWithEmailPressed value)?
+        resetPasswordWithEmailPressed,
     TResult Function(_RegisterWithUserFields value)? registerWithUserFields,
     TResult Function(_SwitchRegisterAndLoginPressed value)?
         switchRegisterAndLoginPressed,
@@ -164,6 +175,8 @@ mixin _$SignInFormEvent {
     TResult Function(_SignInWithNameAndPasswordPressed value)?
         signInWithNameAndPasswordPressed,
     TResult Function(_GenderChanged value)? genderChanged,
+    TResult Function(_ResetPasswordWithEmailPressed value)?
+        resetPasswordWithEmailPressed,
     TResult Function(_RegisterWithUserFields value)? registerWithUserFields,
     TResult Function(_SwitchRegisterAndLoginPressed value)?
         switchRegisterAndLoginPressed,
@@ -175,7 +188,7 @@ mixin _$SignInFormEvent {
 /// @nodoc
 abstract class $SignInFormEventCopyWith<$Res> {
   factory $SignInFormEventCopyWith(
-          SignInFormEvent value, $Res Function(SignInFormEvent) then,) =
+          SignInFormEvent value, $Res Function(SignInFormEvent) then) =
       _$SignInFormEventCopyWithImpl<$Res>;
 }
 
@@ -192,7 +205,7 @@ class _$SignInFormEventCopyWithImpl<$Res>
 /// @nodoc
 abstract class _$LastNameChangedCopyWith<$Res> {
   factory _$LastNameChangedCopyWith(
-          _LastNameChanged value, $Res Function(_LastNameChanged) then,) =
+          _LastNameChanged value, $Res Function(_LastNameChanged) then) =
       __$LastNameChangedCopyWithImpl<$Res>;
   $Res call({String lastNameStr});
 }
@@ -263,6 +276,7 @@ class _$_LastNameChanged implements _LastNameChanged {
     required TResult Function(String birthDate) birthDateChanged,
     required TResult Function() signInWithNameAndPasswordPressed,
     required TResult Function(String genderStr) genderChanged,
+    required TResult Function() resetPasswordWithEmailPressed,
     required TResult Function() registerWithUserFields,
     required TResult Function() switchRegisterAndLoginPressed,
   }) {
@@ -280,6 +294,7 @@ class _$_LastNameChanged implements _LastNameChanged {
     TResult Function(String birthDate)? birthDateChanged,
     TResult Function()? signInWithNameAndPasswordPressed,
     TResult Function(String genderStr)? genderChanged,
+    TResult Function()? resetPasswordWithEmailPressed,
     TResult Function()? registerWithUserFields,
     TResult Function()? switchRegisterAndLoginPressed,
   }) {
@@ -297,6 +312,7 @@ class _$_LastNameChanged implements _LastNameChanged {
     TResult Function(String birthDate)? birthDateChanged,
     TResult Function()? signInWithNameAndPasswordPressed,
     TResult Function(String genderStr)? genderChanged,
+    TResult Function()? resetPasswordWithEmailPressed,
     TResult Function()? registerWithUserFields,
     TResult Function()? switchRegisterAndLoginPressed,
     required TResult orElse(),
@@ -319,6 +335,8 @@ class _$_LastNameChanged implements _LastNameChanged {
     required TResult Function(_SignInWithNameAndPasswordPressed value)
         signInWithNameAndPasswordPressed,
     required TResult Function(_GenderChanged value) genderChanged,
+    required TResult Function(_ResetPasswordWithEmailPressed value)
+        resetPasswordWithEmailPressed,
     required TResult Function(_RegisterWithUserFields value)
         registerWithUserFields,
     required TResult Function(_SwitchRegisterAndLoginPressed value)
@@ -339,6 +357,8 @@ class _$_LastNameChanged implements _LastNameChanged {
     TResult Function(_SignInWithNameAndPasswordPressed value)?
         signInWithNameAndPasswordPressed,
     TResult Function(_GenderChanged value)? genderChanged,
+    TResult Function(_ResetPasswordWithEmailPressed value)?
+        resetPasswordWithEmailPressed,
     TResult Function(_RegisterWithUserFields value)? registerWithUserFields,
     TResult Function(_SwitchRegisterAndLoginPressed value)?
         switchRegisterAndLoginPressed,
@@ -358,6 +378,8 @@ class _$_LastNameChanged implements _LastNameChanged {
     TResult Function(_SignInWithNameAndPasswordPressed value)?
         signInWithNameAndPasswordPressed,
     TResult Function(_GenderChanged value)? genderChanged,
+    TResult Function(_ResetPasswordWithEmailPressed value)?
+        resetPasswordWithEmailPressed,
     TResult Function(_RegisterWithUserFields value)? registerWithUserFields,
     TResult Function(_SwitchRegisterAndLoginPressed value)?
         switchRegisterAndLoginPressed,
@@ -453,6 +475,7 @@ class _$_FirstNameChanged implements _FirstNameChanged {
     required TResult Function(String birthDate) birthDateChanged,
     required TResult Function() signInWithNameAndPasswordPressed,
     required TResult Function(String genderStr) genderChanged,
+    required TResult Function() resetPasswordWithEmailPressed,
     required TResult Function() registerWithUserFields,
     required TResult Function() switchRegisterAndLoginPressed,
   }) {
@@ -470,6 +493,7 @@ class _$_FirstNameChanged implements _FirstNameChanged {
     TResult Function(String birthDate)? birthDateChanged,
     TResult Function()? signInWithNameAndPasswordPressed,
     TResult Function(String genderStr)? genderChanged,
+    TResult Function()? resetPasswordWithEmailPressed,
     TResult Function()? registerWithUserFields,
     TResult Function()? switchRegisterAndLoginPressed,
   }) {
@@ -487,6 +511,7 @@ class _$_FirstNameChanged implements _FirstNameChanged {
     TResult Function(String birthDate)? birthDateChanged,
     TResult Function()? signInWithNameAndPasswordPressed,
     TResult Function(String genderStr)? genderChanged,
+    TResult Function()? resetPasswordWithEmailPressed,
     TResult Function()? registerWithUserFields,
     TResult Function()? switchRegisterAndLoginPressed,
     required TResult orElse(),
@@ -509,6 +534,8 @@ class _$_FirstNameChanged implements _FirstNameChanged {
     required TResult Function(_SignInWithNameAndPasswordPressed value)
         signInWithNameAndPasswordPressed,
     required TResult Function(_GenderChanged value) genderChanged,
+    required TResult Function(_ResetPasswordWithEmailPressed value)
+        resetPasswordWithEmailPressed,
     required TResult Function(_RegisterWithUserFields value)
         registerWithUserFields,
     required TResult Function(_SwitchRegisterAndLoginPressed value)
@@ -529,6 +556,8 @@ class _$_FirstNameChanged implements _FirstNameChanged {
     TResult Function(_SignInWithNameAndPasswordPressed value)?
         signInWithNameAndPasswordPressed,
     TResult Function(_GenderChanged value)? genderChanged,
+    TResult Function(_ResetPasswordWithEmailPressed value)?
+        resetPasswordWithEmailPressed,
     TResult Function(_RegisterWithUserFields value)? registerWithUserFields,
     TResult Function(_SwitchRegisterAndLoginPressed value)?
         switchRegisterAndLoginPressed,
@@ -548,6 +577,8 @@ class _$_FirstNameChanged implements _FirstNameChanged {
     TResult Function(_SignInWithNameAndPasswordPressed value)?
         signInWithNameAndPasswordPressed,
     TResult Function(_GenderChanged value)? genderChanged,
+    TResult Function(_ResetPasswordWithEmailPressed value)?
+        resetPasswordWithEmailPressed,
     TResult Function(_RegisterWithUserFields value)? registerWithUserFields,
     TResult Function(_SwitchRegisterAndLoginPressed value)?
         switchRegisterAndLoginPressed,
@@ -643,6 +674,7 @@ class _$_PasswordChanged implements _PasswordChanged {
     required TResult Function(String birthDate) birthDateChanged,
     required TResult Function() signInWithNameAndPasswordPressed,
     required TResult Function(String genderStr) genderChanged,
+    required TResult Function() resetPasswordWithEmailPressed,
     required TResult Function() registerWithUserFields,
     required TResult Function() switchRegisterAndLoginPressed,
   }) {
@@ -660,6 +692,7 @@ class _$_PasswordChanged implements _PasswordChanged {
     TResult Function(String birthDate)? birthDateChanged,
     TResult Function()? signInWithNameAndPasswordPressed,
     TResult Function(String genderStr)? genderChanged,
+    TResult Function()? resetPasswordWithEmailPressed,
     TResult Function()? registerWithUserFields,
     TResult Function()? switchRegisterAndLoginPressed,
   }) {
@@ -677,6 +710,7 @@ class _$_PasswordChanged implements _PasswordChanged {
     TResult Function(String birthDate)? birthDateChanged,
     TResult Function()? signInWithNameAndPasswordPressed,
     TResult Function(String genderStr)? genderChanged,
+    TResult Function()? resetPasswordWithEmailPressed,
     TResult Function()? registerWithUserFields,
     TResult Function()? switchRegisterAndLoginPressed,
     required TResult orElse(),
@@ -699,6 +733,8 @@ class _$_PasswordChanged implements _PasswordChanged {
     required TResult Function(_SignInWithNameAndPasswordPressed value)
         signInWithNameAndPasswordPressed,
     required TResult Function(_GenderChanged value) genderChanged,
+    required TResult Function(_ResetPasswordWithEmailPressed value)
+        resetPasswordWithEmailPressed,
     required TResult Function(_RegisterWithUserFields value)
         registerWithUserFields,
     required TResult Function(_SwitchRegisterAndLoginPressed value)
@@ -719,6 +755,8 @@ class _$_PasswordChanged implements _PasswordChanged {
     TResult Function(_SignInWithNameAndPasswordPressed value)?
         signInWithNameAndPasswordPressed,
     TResult Function(_GenderChanged value)? genderChanged,
+    TResult Function(_ResetPasswordWithEmailPressed value)?
+        resetPasswordWithEmailPressed,
     TResult Function(_RegisterWithUserFields value)? registerWithUserFields,
     TResult Function(_SwitchRegisterAndLoginPressed value)?
         switchRegisterAndLoginPressed,
@@ -738,6 +776,8 @@ class _$_PasswordChanged implements _PasswordChanged {
     TResult Function(_SignInWithNameAndPasswordPressed value)?
         signInWithNameAndPasswordPressed,
     TResult Function(_GenderChanged value)? genderChanged,
+    TResult Function(_ResetPasswordWithEmailPressed value)?
+        resetPasswordWithEmailPressed,
     TResult Function(_RegisterWithUserFields value)? registerWithUserFields,
     TResult Function(_SwitchRegisterAndLoginPressed value)?
         switchRegisterAndLoginPressed,
@@ -833,6 +873,7 @@ class _$_LocalityChanged implements _LocalityChanged {
     required TResult Function(String birthDate) birthDateChanged,
     required TResult Function() signInWithNameAndPasswordPressed,
     required TResult Function(String genderStr) genderChanged,
+    required TResult Function() resetPasswordWithEmailPressed,
     required TResult Function() registerWithUserFields,
     required TResult Function() switchRegisterAndLoginPressed,
   }) {
@@ -850,6 +891,7 @@ class _$_LocalityChanged implements _LocalityChanged {
     TResult Function(String birthDate)? birthDateChanged,
     TResult Function()? signInWithNameAndPasswordPressed,
     TResult Function(String genderStr)? genderChanged,
+    TResult Function()? resetPasswordWithEmailPressed,
     TResult Function()? registerWithUserFields,
     TResult Function()? switchRegisterAndLoginPressed,
   }) {
@@ -867,6 +909,7 @@ class _$_LocalityChanged implements _LocalityChanged {
     TResult Function(String birthDate)? birthDateChanged,
     TResult Function()? signInWithNameAndPasswordPressed,
     TResult Function(String genderStr)? genderChanged,
+    TResult Function()? resetPasswordWithEmailPressed,
     TResult Function()? registerWithUserFields,
     TResult Function()? switchRegisterAndLoginPressed,
     required TResult orElse(),
@@ -889,6 +932,8 @@ class _$_LocalityChanged implements _LocalityChanged {
     required TResult Function(_SignInWithNameAndPasswordPressed value)
         signInWithNameAndPasswordPressed,
     required TResult Function(_GenderChanged value) genderChanged,
+    required TResult Function(_ResetPasswordWithEmailPressed value)
+        resetPasswordWithEmailPressed,
     required TResult Function(_RegisterWithUserFields value)
         registerWithUserFields,
     required TResult Function(_SwitchRegisterAndLoginPressed value)
@@ -909,6 +954,8 @@ class _$_LocalityChanged implements _LocalityChanged {
     TResult Function(_SignInWithNameAndPasswordPressed value)?
         signInWithNameAndPasswordPressed,
     TResult Function(_GenderChanged value)? genderChanged,
+    TResult Function(_ResetPasswordWithEmailPressed value)?
+        resetPasswordWithEmailPressed,
     TResult Function(_RegisterWithUserFields value)? registerWithUserFields,
     TResult Function(_SwitchRegisterAndLoginPressed value)?
         switchRegisterAndLoginPressed,
@@ -928,6 +975,8 @@ class _$_LocalityChanged implements _LocalityChanged {
     TResult Function(_SignInWithNameAndPasswordPressed value)?
         signInWithNameAndPasswordPressed,
     TResult Function(_GenderChanged value)? genderChanged,
+    TResult Function(_ResetPasswordWithEmailPressed value)?
+        resetPasswordWithEmailPressed,
     TResult Function(_RegisterWithUserFields value)? registerWithUserFields,
     TResult Function(_SwitchRegisterAndLoginPressed value)?
         switchRegisterAndLoginPressed,
@@ -1024,6 +1073,7 @@ class _$_EmailAddressChanged implements _EmailAddressChanged {
     required TResult Function(String birthDate) birthDateChanged,
     required TResult Function() signInWithNameAndPasswordPressed,
     required TResult Function(String genderStr) genderChanged,
+    required TResult Function() resetPasswordWithEmailPressed,
     required TResult Function() registerWithUserFields,
     required TResult Function() switchRegisterAndLoginPressed,
   }) {
@@ -1041,6 +1091,7 @@ class _$_EmailAddressChanged implements _EmailAddressChanged {
     TResult Function(String birthDate)? birthDateChanged,
     TResult Function()? signInWithNameAndPasswordPressed,
     TResult Function(String genderStr)? genderChanged,
+    TResult Function()? resetPasswordWithEmailPressed,
     TResult Function()? registerWithUserFields,
     TResult Function()? switchRegisterAndLoginPressed,
   }) {
@@ -1058,6 +1109,7 @@ class _$_EmailAddressChanged implements _EmailAddressChanged {
     TResult Function(String birthDate)? birthDateChanged,
     TResult Function()? signInWithNameAndPasswordPressed,
     TResult Function(String genderStr)? genderChanged,
+    TResult Function()? resetPasswordWithEmailPressed,
     TResult Function()? registerWithUserFields,
     TResult Function()? switchRegisterAndLoginPressed,
     required TResult orElse(),
@@ -1080,6 +1132,8 @@ class _$_EmailAddressChanged implements _EmailAddressChanged {
     required TResult Function(_SignInWithNameAndPasswordPressed value)
         signInWithNameAndPasswordPressed,
     required TResult Function(_GenderChanged value) genderChanged,
+    required TResult Function(_ResetPasswordWithEmailPressed value)
+        resetPasswordWithEmailPressed,
     required TResult Function(_RegisterWithUserFields value)
         registerWithUserFields,
     required TResult Function(_SwitchRegisterAndLoginPressed value)
@@ -1100,6 +1154,8 @@ class _$_EmailAddressChanged implements _EmailAddressChanged {
     TResult Function(_SignInWithNameAndPasswordPressed value)?
         signInWithNameAndPasswordPressed,
     TResult Function(_GenderChanged value)? genderChanged,
+    TResult Function(_ResetPasswordWithEmailPressed value)?
+        resetPasswordWithEmailPressed,
     TResult Function(_RegisterWithUserFields value)? registerWithUserFields,
     TResult Function(_SwitchRegisterAndLoginPressed value)?
         switchRegisterAndLoginPressed,
@@ -1119,6 +1175,8 @@ class _$_EmailAddressChanged implements _EmailAddressChanged {
     TResult Function(_SignInWithNameAndPasswordPressed value)?
         signInWithNameAndPasswordPressed,
     TResult Function(_GenderChanged value)? genderChanged,
+    TResult Function(_ResetPasswordWithEmailPressed value)?
+        resetPasswordWithEmailPressed,
     TResult Function(_RegisterWithUserFields value)? registerWithUserFields,
     TResult Function(_SwitchRegisterAndLoginPressed value)?
         switchRegisterAndLoginPressed,
@@ -1215,6 +1273,7 @@ class _$_BirthDateChanged implements _BirthDateChanged {
     required TResult Function(String birthDate) birthDateChanged,
     required TResult Function() signInWithNameAndPasswordPressed,
     required TResult Function(String genderStr) genderChanged,
+    required TResult Function() resetPasswordWithEmailPressed,
     required TResult Function() registerWithUserFields,
     required TResult Function() switchRegisterAndLoginPressed,
   }) {
@@ -1232,6 +1291,7 @@ class _$_BirthDateChanged implements _BirthDateChanged {
     TResult Function(String birthDate)? birthDateChanged,
     TResult Function()? signInWithNameAndPasswordPressed,
     TResult Function(String genderStr)? genderChanged,
+    TResult Function()? resetPasswordWithEmailPressed,
     TResult Function()? registerWithUserFields,
     TResult Function()? switchRegisterAndLoginPressed,
   }) {
@@ -1249,6 +1309,7 @@ class _$_BirthDateChanged implements _BirthDateChanged {
     TResult Function(String birthDate)? birthDateChanged,
     TResult Function()? signInWithNameAndPasswordPressed,
     TResult Function(String genderStr)? genderChanged,
+    TResult Function()? resetPasswordWithEmailPressed,
     TResult Function()? registerWithUserFields,
     TResult Function()? switchRegisterAndLoginPressed,
     required TResult orElse(),
@@ -1271,6 +1332,8 @@ class _$_BirthDateChanged implements _BirthDateChanged {
     required TResult Function(_SignInWithNameAndPasswordPressed value)
         signInWithNameAndPasswordPressed,
     required TResult Function(_GenderChanged value) genderChanged,
+    required TResult Function(_ResetPasswordWithEmailPressed value)
+        resetPasswordWithEmailPressed,
     required TResult Function(_RegisterWithUserFields value)
         registerWithUserFields,
     required TResult Function(_SwitchRegisterAndLoginPressed value)
@@ -1291,6 +1354,8 @@ class _$_BirthDateChanged implements _BirthDateChanged {
     TResult Function(_SignInWithNameAndPasswordPressed value)?
         signInWithNameAndPasswordPressed,
     TResult Function(_GenderChanged value)? genderChanged,
+    TResult Function(_ResetPasswordWithEmailPressed value)?
+        resetPasswordWithEmailPressed,
     TResult Function(_RegisterWithUserFields value)? registerWithUserFields,
     TResult Function(_SwitchRegisterAndLoginPressed value)?
         switchRegisterAndLoginPressed,
@@ -1310,6 +1375,8 @@ class _$_BirthDateChanged implements _BirthDateChanged {
     TResult Function(_SignInWithNameAndPasswordPressed value)?
         signInWithNameAndPasswordPressed,
     TResult Function(_GenderChanged value)? genderChanged,
+    TResult Function(_ResetPasswordWithEmailPressed value)?
+        resetPasswordWithEmailPressed,
     TResult Function(_RegisterWithUserFields value)? registerWithUserFields,
     TResult Function(_SwitchRegisterAndLoginPressed value)?
         switchRegisterAndLoginPressed,
@@ -1384,6 +1451,7 @@ class _$_SignInWithNameAndPasswordPressed
     required TResult Function(String birthDate) birthDateChanged,
     required TResult Function() signInWithNameAndPasswordPressed,
     required TResult Function(String genderStr) genderChanged,
+    required TResult Function() resetPasswordWithEmailPressed,
     required TResult Function() registerWithUserFields,
     required TResult Function() switchRegisterAndLoginPressed,
   }) {
@@ -1401,6 +1469,7 @@ class _$_SignInWithNameAndPasswordPressed
     TResult Function(String birthDate)? birthDateChanged,
     TResult Function()? signInWithNameAndPasswordPressed,
     TResult Function(String genderStr)? genderChanged,
+    TResult Function()? resetPasswordWithEmailPressed,
     TResult Function()? registerWithUserFields,
     TResult Function()? switchRegisterAndLoginPressed,
   }) {
@@ -1418,6 +1487,7 @@ class _$_SignInWithNameAndPasswordPressed
     TResult Function(String birthDate)? birthDateChanged,
     TResult Function()? signInWithNameAndPasswordPressed,
     TResult Function(String genderStr)? genderChanged,
+    TResult Function()? resetPasswordWithEmailPressed,
     TResult Function()? registerWithUserFields,
     TResult Function()? switchRegisterAndLoginPressed,
     required TResult orElse(),
@@ -1440,6 +1510,8 @@ class _$_SignInWithNameAndPasswordPressed
     required TResult Function(_SignInWithNameAndPasswordPressed value)
         signInWithNameAndPasswordPressed,
     required TResult Function(_GenderChanged value) genderChanged,
+    required TResult Function(_ResetPasswordWithEmailPressed value)
+        resetPasswordWithEmailPressed,
     required TResult Function(_RegisterWithUserFields value)
         registerWithUserFields,
     required TResult Function(_SwitchRegisterAndLoginPressed value)
@@ -1460,6 +1532,8 @@ class _$_SignInWithNameAndPasswordPressed
     TResult Function(_SignInWithNameAndPasswordPressed value)?
         signInWithNameAndPasswordPressed,
     TResult Function(_GenderChanged value)? genderChanged,
+    TResult Function(_ResetPasswordWithEmailPressed value)?
+        resetPasswordWithEmailPressed,
     TResult Function(_RegisterWithUserFields value)? registerWithUserFields,
     TResult Function(_SwitchRegisterAndLoginPressed value)?
         switchRegisterAndLoginPressed,
@@ -1479,6 +1553,8 @@ class _$_SignInWithNameAndPasswordPressed
     TResult Function(_SignInWithNameAndPasswordPressed value)?
         signInWithNameAndPasswordPressed,
     TResult Function(_GenderChanged value)? genderChanged,
+    TResult Function(_ResetPasswordWithEmailPressed value)?
+        resetPasswordWithEmailPressed,
     TResult Function(_RegisterWithUserFields value)? registerWithUserFields,
     TResult Function(_SwitchRegisterAndLoginPressed value)?
         switchRegisterAndLoginPressed,
@@ -1570,6 +1646,7 @@ class _$_GenderChanged implements _GenderChanged {
     required TResult Function(String birthDate) birthDateChanged,
     required TResult Function() signInWithNameAndPasswordPressed,
     required TResult Function(String genderStr) genderChanged,
+    required TResult Function() resetPasswordWithEmailPressed,
     required TResult Function() registerWithUserFields,
     required TResult Function() switchRegisterAndLoginPressed,
   }) {
@@ -1587,6 +1664,7 @@ class _$_GenderChanged implements _GenderChanged {
     TResult Function(String birthDate)? birthDateChanged,
     TResult Function()? signInWithNameAndPasswordPressed,
     TResult Function(String genderStr)? genderChanged,
+    TResult Function()? resetPasswordWithEmailPressed,
     TResult Function()? registerWithUserFields,
     TResult Function()? switchRegisterAndLoginPressed,
   }) {
@@ -1604,6 +1682,7 @@ class _$_GenderChanged implements _GenderChanged {
     TResult Function(String birthDate)? birthDateChanged,
     TResult Function()? signInWithNameAndPasswordPressed,
     TResult Function(String genderStr)? genderChanged,
+    TResult Function()? resetPasswordWithEmailPressed,
     TResult Function()? registerWithUserFields,
     TResult Function()? switchRegisterAndLoginPressed,
     required TResult orElse(),
@@ -1626,6 +1705,8 @@ class _$_GenderChanged implements _GenderChanged {
     required TResult Function(_SignInWithNameAndPasswordPressed value)
         signInWithNameAndPasswordPressed,
     required TResult Function(_GenderChanged value) genderChanged,
+    required TResult Function(_ResetPasswordWithEmailPressed value)
+        resetPasswordWithEmailPressed,
     required TResult Function(_RegisterWithUserFields value)
         registerWithUserFields,
     required TResult Function(_SwitchRegisterAndLoginPressed value)
@@ -1646,6 +1727,8 @@ class _$_GenderChanged implements _GenderChanged {
     TResult Function(_SignInWithNameAndPasswordPressed value)?
         signInWithNameAndPasswordPressed,
     TResult Function(_GenderChanged value)? genderChanged,
+    TResult Function(_ResetPasswordWithEmailPressed value)?
+        resetPasswordWithEmailPressed,
     TResult Function(_RegisterWithUserFields value)? registerWithUserFields,
     TResult Function(_SwitchRegisterAndLoginPressed value)?
         switchRegisterAndLoginPressed,
@@ -1665,6 +1748,8 @@ class _$_GenderChanged implements _GenderChanged {
     TResult Function(_SignInWithNameAndPasswordPressed value)?
         signInWithNameAndPasswordPressed,
     TResult Function(_GenderChanged value)? genderChanged,
+    TResult Function(_ResetPasswordWithEmailPressed value)?
+        resetPasswordWithEmailPressed,
     TResult Function(_RegisterWithUserFields value)? registerWithUserFields,
     TResult Function(_SwitchRegisterAndLoginPressed value)?
         switchRegisterAndLoginPressed,
@@ -1684,6 +1769,179 @@ abstract class _GenderChanged implements SignInFormEvent {
   @JsonKey(ignore: true)
   _$GenderChangedCopyWith<_GenderChanged> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$ResetPasswordWithEmailPressedCopyWith<$Res> {
+  factory _$ResetPasswordWithEmailPressedCopyWith(
+          _ResetPasswordWithEmailPressed value,
+          $Res Function(_ResetPasswordWithEmailPressed) then) =
+      __$ResetPasswordWithEmailPressedCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$ResetPasswordWithEmailPressedCopyWithImpl<$Res>
+    extends _$SignInFormEventCopyWithImpl<$Res>
+    implements _$ResetPasswordWithEmailPressedCopyWith<$Res> {
+  __$ResetPasswordWithEmailPressedCopyWithImpl(
+      _ResetPasswordWithEmailPressed _value,
+      $Res Function(_ResetPasswordWithEmailPressed) _then)
+      : super(_value, (v) => _then(v as _ResetPasswordWithEmailPressed));
+
+  @override
+  _ResetPasswordWithEmailPressed get _value =>
+      super._value as _ResetPasswordWithEmailPressed;
+}
+
+/// @nodoc
+
+class _$_ResetPasswordWithEmailPressed
+    implements _ResetPasswordWithEmailPressed {
+  const _$_ResetPasswordWithEmailPressed();
+
+  @override
+  String toString() {
+    return 'SignInFormEvent.resetPasswordWithEmailPressed()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _ResetPasswordWithEmailPressed);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String lastNameStr) lastNameChanged,
+    required TResult Function(String fisrtNameStr) firstNameChanged,
+    required TResult Function(String passwordStr) passwordChanged,
+    required TResult Function(String localityStr) localityChanged,
+    required TResult Function(String emailAddress) emailAddressChanged,
+    required TResult Function(String birthDate) birthDateChanged,
+    required TResult Function() signInWithNameAndPasswordPressed,
+    required TResult Function(String genderStr) genderChanged,
+    required TResult Function() resetPasswordWithEmailPressed,
+    required TResult Function() registerWithUserFields,
+    required TResult Function() switchRegisterAndLoginPressed,
+  }) {
+    return resetPasswordWithEmailPressed();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String lastNameStr)? lastNameChanged,
+    TResult Function(String fisrtNameStr)? firstNameChanged,
+    TResult Function(String passwordStr)? passwordChanged,
+    TResult Function(String localityStr)? localityChanged,
+    TResult Function(String emailAddress)? emailAddressChanged,
+    TResult Function(String birthDate)? birthDateChanged,
+    TResult Function()? signInWithNameAndPasswordPressed,
+    TResult Function(String genderStr)? genderChanged,
+    TResult Function()? resetPasswordWithEmailPressed,
+    TResult Function()? registerWithUserFields,
+    TResult Function()? switchRegisterAndLoginPressed,
+  }) {
+    return resetPasswordWithEmailPressed?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String lastNameStr)? lastNameChanged,
+    TResult Function(String fisrtNameStr)? firstNameChanged,
+    TResult Function(String passwordStr)? passwordChanged,
+    TResult Function(String localityStr)? localityChanged,
+    TResult Function(String emailAddress)? emailAddressChanged,
+    TResult Function(String birthDate)? birthDateChanged,
+    TResult Function()? signInWithNameAndPasswordPressed,
+    TResult Function(String genderStr)? genderChanged,
+    TResult Function()? resetPasswordWithEmailPressed,
+    TResult Function()? registerWithUserFields,
+    TResult Function()? switchRegisterAndLoginPressed,
+    required TResult orElse(),
+  }) {
+    if (resetPasswordWithEmailPressed != null) {
+      return resetPasswordWithEmailPressed();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_LastNameChanged value) lastNameChanged,
+    required TResult Function(_FirstNameChanged value) firstNameChanged,
+    required TResult Function(_PasswordChanged value) passwordChanged,
+    required TResult Function(_LocalityChanged value) localityChanged,
+    required TResult Function(_EmailAddressChanged value) emailAddressChanged,
+    required TResult Function(_BirthDateChanged value) birthDateChanged,
+    required TResult Function(_SignInWithNameAndPasswordPressed value)
+        signInWithNameAndPasswordPressed,
+    required TResult Function(_GenderChanged value) genderChanged,
+    required TResult Function(_ResetPasswordWithEmailPressed value)
+        resetPasswordWithEmailPressed,
+    required TResult Function(_RegisterWithUserFields value)
+        registerWithUserFields,
+    required TResult Function(_SwitchRegisterAndLoginPressed value)
+        switchRegisterAndLoginPressed,
+  }) {
+    return resetPasswordWithEmailPressed(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_LastNameChanged value)? lastNameChanged,
+    TResult Function(_FirstNameChanged value)? firstNameChanged,
+    TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult Function(_LocalityChanged value)? localityChanged,
+    TResult Function(_EmailAddressChanged value)? emailAddressChanged,
+    TResult Function(_BirthDateChanged value)? birthDateChanged,
+    TResult Function(_SignInWithNameAndPasswordPressed value)?
+        signInWithNameAndPasswordPressed,
+    TResult Function(_GenderChanged value)? genderChanged,
+    TResult Function(_ResetPasswordWithEmailPressed value)?
+        resetPasswordWithEmailPressed,
+    TResult Function(_RegisterWithUserFields value)? registerWithUserFields,
+    TResult Function(_SwitchRegisterAndLoginPressed value)?
+        switchRegisterAndLoginPressed,
+  }) {
+    return resetPasswordWithEmailPressed?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_LastNameChanged value)? lastNameChanged,
+    TResult Function(_FirstNameChanged value)? firstNameChanged,
+    TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult Function(_LocalityChanged value)? localityChanged,
+    TResult Function(_EmailAddressChanged value)? emailAddressChanged,
+    TResult Function(_BirthDateChanged value)? birthDateChanged,
+    TResult Function(_SignInWithNameAndPasswordPressed value)?
+        signInWithNameAndPasswordPressed,
+    TResult Function(_GenderChanged value)? genderChanged,
+    TResult Function(_ResetPasswordWithEmailPressed value)?
+        resetPasswordWithEmailPressed,
+    TResult Function(_RegisterWithUserFields value)? registerWithUserFields,
+    TResult Function(_SwitchRegisterAndLoginPressed value)?
+        switchRegisterAndLoginPressed,
+    required TResult orElse(),
+  }) {
+    if (resetPasswordWithEmailPressed != null) {
+      return resetPasswordWithEmailPressed(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ResetPasswordWithEmailPressed implements SignInFormEvent {
+  const factory _ResetPasswordWithEmailPressed() =
+      _$_ResetPasswordWithEmailPressed;
 }
 
 /// @nodoc
@@ -1734,6 +1992,7 @@ class _$_RegisterWithUserFields implements _RegisterWithUserFields {
     required TResult Function(String birthDate) birthDateChanged,
     required TResult Function() signInWithNameAndPasswordPressed,
     required TResult Function(String genderStr) genderChanged,
+    required TResult Function() resetPasswordWithEmailPressed,
     required TResult Function() registerWithUserFields,
     required TResult Function() switchRegisterAndLoginPressed,
   }) {
@@ -1751,6 +2010,7 @@ class _$_RegisterWithUserFields implements _RegisterWithUserFields {
     TResult Function(String birthDate)? birthDateChanged,
     TResult Function()? signInWithNameAndPasswordPressed,
     TResult Function(String genderStr)? genderChanged,
+    TResult Function()? resetPasswordWithEmailPressed,
     TResult Function()? registerWithUserFields,
     TResult Function()? switchRegisterAndLoginPressed,
   }) {
@@ -1768,6 +2028,7 @@ class _$_RegisterWithUserFields implements _RegisterWithUserFields {
     TResult Function(String birthDate)? birthDateChanged,
     TResult Function()? signInWithNameAndPasswordPressed,
     TResult Function(String genderStr)? genderChanged,
+    TResult Function()? resetPasswordWithEmailPressed,
     TResult Function()? registerWithUserFields,
     TResult Function()? switchRegisterAndLoginPressed,
     required TResult orElse(),
@@ -1790,6 +2051,8 @@ class _$_RegisterWithUserFields implements _RegisterWithUserFields {
     required TResult Function(_SignInWithNameAndPasswordPressed value)
         signInWithNameAndPasswordPressed,
     required TResult Function(_GenderChanged value) genderChanged,
+    required TResult Function(_ResetPasswordWithEmailPressed value)
+        resetPasswordWithEmailPressed,
     required TResult Function(_RegisterWithUserFields value)
         registerWithUserFields,
     required TResult Function(_SwitchRegisterAndLoginPressed value)
@@ -1810,6 +2073,8 @@ class _$_RegisterWithUserFields implements _RegisterWithUserFields {
     TResult Function(_SignInWithNameAndPasswordPressed value)?
         signInWithNameAndPasswordPressed,
     TResult Function(_GenderChanged value)? genderChanged,
+    TResult Function(_ResetPasswordWithEmailPressed value)?
+        resetPasswordWithEmailPressed,
     TResult Function(_RegisterWithUserFields value)? registerWithUserFields,
     TResult Function(_SwitchRegisterAndLoginPressed value)?
         switchRegisterAndLoginPressed,
@@ -1829,6 +2094,8 @@ class _$_RegisterWithUserFields implements _RegisterWithUserFields {
     TResult Function(_SignInWithNameAndPasswordPressed value)?
         signInWithNameAndPasswordPressed,
     TResult Function(_GenderChanged value)? genderChanged,
+    TResult Function(_ResetPasswordWithEmailPressed value)?
+        resetPasswordWithEmailPressed,
     TResult Function(_RegisterWithUserFields value)? registerWithUserFields,
     TResult Function(_SwitchRegisterAndLoginPressed value)?
         switchRegisterAndLoginPressed,
@@ -1897,6 +2164,7 @@ class _$_SwitchRegisterAndLoginPressed
     required TResult Function(String birthDate) birthDateChanged,
     required TResult Function() signInWithNameAndPasswordPressed,
     required TResult Function(String genderStr) genderChanged,
+    required TResult Function() resetPasswordWithEmailPressed,
     required TResult Function() registerWithUserFields,
     required TResult Function() switchRegisterAndLoginPressed,
   }) {
@@ -1914,6 +2182,7 @@ class _$_SwitchRegisterAndLoginPressed
     TResult Function(String birthDate)? birthDateChanged,
     TResult Function()? signInWithNameAndPasswordPressed,
     TResult Function(String genderStr)? genderChanged,
+    TResult Function()? resetPasswordWithEmailPressed,
     TResult Function()? registerWithUserFields,
     TResult Function()? switchRegisterAndLoginPressed,
   }) {
@@ -1931,6 +2200,7 @@ class _$_SwitchRegisterAndLoginPressed
     TResult Function(String birthDate)? birthDateChanged,
     TResult Function()? signInWithNameAndPasswordPressed,
     TResult Function(String genderStr)? genderChanged,
+    TResult Function()? resetPasswordWithEmailPressed,
     TResult Function()? registerWithUserFields,
     TResult Function()? switchRegisterAndLoginPressed,
     required TResult orElse(),
@@ -1953,6 +2223,8 @@ class _$_SwitchRegisterAndLoginPressed
     required TResult Function(_SignInWithNameAndPasswordPressed value)
         signInWithNameAndPasswordPressed,
     required TResult Function(_GenderChanged value) genderChanged,
+    required TResult Function(_ResetPasswordWithEmailPressed value)
+        resetPasswordWithEmailPressed,
     required TResult Function(_RegisterWithUserFields value)
         registerWithUserFields,
     required TResult Function(_SwitchRegisterAndLoginPressed value)
@@ -1973,6 +2245,8 @@ class _$_SwitchRegisterAndLoginPressed
     TResult Function(_SignInWithNameAndPasswordPressed value)?
         signInWithNameAndPasswordPressed,
     TResult Function(_GenderChanged value)? genderChanged,
+    TResult Function(_ResetPasswordWithEmailPressed value)?
+        resetPasswordWithEmailPressed,
     TResult Function(_RegisterWithUserFields value)? registerWithUserFields,
     TResult Function(_SwitchRegisterAndLoginPressed value)?
         switchRegisterAndLoginPressed,
@@ -1992,6 +2266,8 @@ class _$_SwitchRegisterAndLoginPressed
     TResult Function(_SignInWithNameAndPasswordPressed value)?
         signInWithNameAndPasswordPressed,
     TResult Function(_GenderChanged value)? genderChanged,
+    TResult Function(_ResetPasswordWithEmailPressed value)?
+        resetPasswordWithEmailPressed,
     TResult Function(_RegisterWithUserFields value)? registerWithUserFields,
     TResult Function(_SwitchRegisterAndLoginPressed value)?
         switchRegisterAndLoginPressed,
