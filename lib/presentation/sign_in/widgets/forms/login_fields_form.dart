@@ -2,6 +2,7 @@
 import 'package:apptest/presentation/sign_in/widgets/forms/birthday_form_field.dart';
 import 'package:apptest/presentation/sign_in/widgets/forms/gender_form_field.dart';
 import 'package:apptest/presentation/sign_in/widgets/forms/text_form_field_form.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter/material.dart';
 
 class LoginFieldsForm extends StatelessWidget {
@@ -9,7 +10,6 @@ class LoginFieldsForm extends StatelessWidget {
     Key? key,
     required this.paddingFormElems,
     required this.rBorderFormElems,
-
     this.labelTextForm,
     this.prefixIcon,
     this.textInputType,
@@ -29,7 +29,7 @@ class LoginFieldsForm extends StatelessWidget {
           paddingFormElems: paddingFormElems,
           rBorderFormElems: rBorderFormElems,
           formName: "email",
-          labelTextForm: "Email",
+          labelTextForm: AppLocalizations.of(context)!.email_string,
           prefixIcon: Icons.email,
           textInputType: TextInputType.emailAddress,
         ),
@@ -37,7 +37,7 @@ class LoginFieldsForm extends StatelessWidget {
           paddingFormElems: paddingFormElems,
           rBorderFormElems: rBorderFormElems,
           formName: "password",
-          labelTextForm: "mot de passe",
+          labelTextForm: AppLocalizations.of(context)!.password_string,
           prefixIcon: Icons.lock,
           textInputType: TextInputType.visiblePassword,
         ),

@@ -3,13 +3,13 @@ import 'package:apptest/presentation/sign_in/widgets/forms/birthday_form_field.d
 import 'package:apptest/presentation/sign_in/widgets/forms/gender_form_field.dart';
 import 'package:apptest/presentation/sign_in/widgets/forms/text_form_field_form.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class RegisterFieldsForm extends StatelessWidget {
   const RegisterFieldsForm({
     Key? key,
     required this.paddingFormElems,
     required this.rBorderFormElems,
-
     this.labelTextForm,
     this.prefixIcon,
     this.textInputType,
@@ -29,7 +29,7 @@ class RegisterFieldsForm extends StatelessWidget {
           paddingFormElems: paddingFormElems,
           rBorderFormElems: rBorderFormElems,
           formName: "email",
-          labelTextForm: "Email",
+          labelTextForm: AppLocalizations.of(context)!.email_string,
           prefixIcon: Icons.email,
           textInputType: TextInputType.visiblePassword,
         ),
@@ -37,7 +37,7 @@ class RegisterFieldsForm extends StatelessWidget {
           paddingFormElems: paddingFormElems,
           rBorderFormElems: rBorderFormElems,
           formName: "password",
-          labelTextForm: "mot de passe",
+          labelTextForm: AppLocalizations.of(context)!.password_string,
           prefixIcon: Icons.lock,
           textInputType: TextInputType.visiblePassword,
         ),
@@ -45,7 +45,7 @@ class RegisterFieldsForm extends StatelessWidget {
           paddingFormElems: paddingFormElems,
           rBorderFormElems: rBorderFormElems,
           formName: "name",
-          labelTextForm: "Nom",
+          labelTextForm: AppLocalizations.of(context)!.name_string,
           prefixIcon: Icons.people,
           textInputType: TextInputType.text,
         ),
@@ -58,7 +58,7 @@ class RegisterFieldsForm extends StatelessWidget {
           paddingFormElems: paddingFormElems,
           rBorderFormElems: rBorderFormElems,
           formName: "locality",
-          labelTextForm: "Localité",
+          labelTextForm: AppLocalizations.of(context)!.locality_string,
           prefixIcon: Icons.house,
           textInputType: TextInputType.text,
         ),

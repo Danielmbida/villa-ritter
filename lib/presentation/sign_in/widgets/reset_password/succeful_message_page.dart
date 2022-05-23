@@ -16,68 +16,77 @@ class SuccefulMessagePage extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         body: SizedBox(
-          child: Column(
-            children: [
-              SizedBox(
-                height: MediaQuery.of(context).size.height * 0.05,
-              ),
-              const Text(
-                "Lien de reinitialisation envoyée",
-                softWrap: false,
-                maxLines: 2,
-                overflow: TextOverflow.ellipsis,
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 30,
-                ),
-              ),
-              Column(
-                children: [
-                  //  Text(
-                  //   "Un lien permettant de reinitialisé votre mot de passe à été envoyé à l'adresse $email",
-                  //   style: const TextStyle(
-                  //     fontSize: 20,
-                  //     color: Colors.grey,
-                  //   ),
-                  // ),
-                  // Text(
-                  //   email,
-                  //   style: const TextStyle(
-                  //     fontSize: 20,
-                  //     fontWeight: FontWeight.bold,
-                  //     color: Colors.grey,
-                  //   ),
-                  // ),
-                   Text(
-                    "Un lien permettant de reinitialisé votre mot de passe à été envoyé à l'adresse $email,Vérifier votre boîte de reception et une fois le mot de passe changer, il vous sera possible de vous connecter à l'application",
-                    softWrap: false,
-                    maxLines: 6,
-                    overflow: TextOverflow.ellipsis,
-                    style: TextStyle(
-                      fontSize: 20,
-                      color: Colors.grey,
-                    ),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 15),
+            child: Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Image.asset(
+                    "assets/images/pouce.png",
+                    height: 150,
+                    width: 150,
                   ),
-                  const Divider(),
-                  ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      primary: Colors.black,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(0.0),
-                        side: const BorderSide(color: Colors.white),
+                ),
+                SizedBox(
+                  height: MediaQuery.of(context).size.height * 0.05,
+                ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const Text(
+                      "Lien de reinitialisation envoyé à",
+                      softWrap: false,
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 25,
                       ),
                     ),
-                    onPressed: () {
-                      context.router.push(const SignInRoute());
-                    },
-                    child: const Text(
-                      "Page de connexion",
-                      style: TextStyle(fontSize: 18),
+                    Text(
+                      email,
+                      style: const TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 25,
+                      ),
                     ),
-                  ),
-                ],
-              ),
-            ],
+                  ],
+                ),
+                SizedBox(height: MediaQuery.of(context).size.height * 0.02),
+                Column(
+                  children: [
+                    const Text(
+                      "Un lien permettant de réinitialiser votre mot de passe a été envoyé à votre email. Vérifiez votre boîte de reception et une fois le mot de passe changer, il vous sera possible de vous connecter à l'application",
+                      softWrap: false,
+                      maxLines: 6,
+                      overflow: TextOverflow.ellipsis,
+                      style: TextStyle(
+                        fontSize: 20,
+                        color: Colors.grey,
+                      ),
+                    ),
+                    const Divider(),
+                    ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        primary: Colors.black,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(0.0),
+                          side: const BorderSide(color: Colors.white),
+                        ),
+                      ),
+                      onPressed: () {
+                        context.router.push(const SignInRoute());
+                      },
+                      child: const Text(
+                        "Page de connexion",
+                        style: TextStyle(fontSize: 18),
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
           ),
         ),
       ),
