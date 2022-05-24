@@ -22,8 +22,9 @@ class UserGetOutDialog extends StatelessWidget {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(15),
       ),
-      content: SizedBox(
+      content: Container(
         height: MediaQuery.of(context).size.height * 0.38,
+        color: const Color.fromARGB(1, 255, 251, 241),
         child: Column(
           children: [
             Image.asset(
@@ -46,7 +47,7 @@ class UserGetOutDialog extends StatelessWidget {
             Text(
               user.name != ""
                   ? 'Confirmer la sortie de ${user.name}'
-                  : 'Confirmer la sortie de tous',
+                  : 'Confirmer la sortie pour tous',
             ),
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.03,

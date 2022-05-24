@@ -25,12 +25,12 @@ class ValidateButtonDialog extends StatelessWidget {
         shape: MaterialStateProperty.all<RoundedRectangleBorder>(
           RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(0),
-            side: const BorderSide(
-              color: Colors.blue,
+            side:  BorderSide(
+              color: Theme.of(context).primaryColor,
             ),
           ),
         ),
-        backgroundColor: MaterialStateProperty.all<Color>(Colors.blue),
+        backgroundColor: MaterialStateProperty.all<Color>(Theme.of(context).primaryColor),
       ),
       onPressed: () {
         forAllUsers ==false

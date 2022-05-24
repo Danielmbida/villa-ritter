@@ -19,7 +19,7 @@ class AdminButtonForm extends StatelessWidget {
       },
       child: InkWell(
         child: Card(
-          color: Colors.grey,
+          color: Theme.of(context).primaryColor,
           child: Padding(
             padding: EdgeInsets.all(8.0 / mediaHeight * mediaHeight),
             child: SizedBox(
@@ -28,7 +28,7 @@ class AdminButtonForm extends StatelessWidget {
                   Icon(
                     Icons.people,
                     size: 60 / mediaHeight * mediaHeight,
-                    color: Colors.black,
+                    color: Colors.white,
                   ),
                 ],
               ),

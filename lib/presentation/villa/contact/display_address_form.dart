@@ -25,7 +25,7 @@ class DisplayAddressForm extends StatelessWidget {
             );
           },
           child: Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(2.0),
             child: Column(
               children: [
                 const Icon(
@@ -55,7 +55,7 @@ class DisplayAddressForm extends StatelessWidget {
           ),
         ),
         Padding(
-          padding: const EdgeInsets.symmetric(vertical: 10.0),
+          padding: const EdgeInsets.symmetric(vertical: 5.0),
           child: Container(
             height: MediaQuery.of(context).size.height * 0.25,
             decoration: BoxDecoration(

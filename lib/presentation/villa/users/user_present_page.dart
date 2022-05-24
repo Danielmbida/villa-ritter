@@ -1,5 +1,4 @@
 // ignore_for_file: depend_on_referenced_packages
-
 import 'package:apptest/application/connect/connectivity_cubit.dart';
 import 'package:apptest/application/watch_all_users_present/user_watch_all_bloc.dart';
 import 'package:apptest/domain/auth/user.dart';
@@ -71,70 +70,62 @@ class _UserPresentPageState extends State<UserPresentPage>
                         );
                       }
                       return SingleChildScrollView(
-                        child: Column(
-                          children: [
+                        child:
                             Stack(
-                              children: [
-                                SizedBox(
-                                  height:
-                                      MediaQuery.of(context).size.height * 0.85,
-                                  child: ListView.builder(
-                                    itemCount: users.users.size,
-                                    itemBuilder: (context, index) {
-                                      final user = users.users[index];
-                                      return UserInfosCardItemForm(
-                                        allUsers: users.users,
-                                        user: user,
-                                      );
-                                    },
-                                  ),
-                                ),
-                                UserCountForm(
-                                  users: users.users,
-                                  animation: _animation,
-                                ),
-                                Positioned(
-                                  bottom: 10,
-                                  left: 10,
-                                  child: InkWell(
-                                    child: Card(
-                                      elevation: 20,
-                                      color: Colors.orange,
-                                      shape: RoundedRectangleBorder(
-                                        borderRadius:
-                                            BorderRadius.circular(10.0),
-                                      ),
-                                      child: TextButton(
-                                        style: ButtonStyle(
-                                          backgroundColor:
-                                              MaterialStateProperty.all<Color>(
-                                            Colors.orange,
-                                          ),
-                                        ),
-                                        onPressed: () {
-                                          showDialog(
-                                            context: context,
-                                            builder: (BuildContext context) {
-                                              return UserGetOutDialog(
-                                                user: user,
-                                                allUsers: users.users,
-                                                forAllUsers: true,
-                                              );
-                                            },
+                          children: [
+                            SizedBox(
+                              height: MediaQuery.of(context).size.height * 0.85,
+                              child: ListView.builder(
+                                itemCount: users.users.size,
+                                itemBuilder: (context, index) {
+                                  final user = users.users[index];
+                                  return UserInfosCardItemForm(
+                                    allUsers: users.users,
+                                    user: user,
+                                  );
+                                },
+                              ),
+                            ),
+                            UserCountForm(
+                              users: users.users,
+                              animation: _animation,
+                            ),
+                            Positioned(
+                              bottom: MediaQuery.of(context).size.height * 0.09,
+                              child: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: SizedBox(
+                                  width:
+                                      MediaQuery.of(context).size.width * 0.30,
+                                  child: FloatingActionButton(
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(10.0),
+                                    ),
+                                    backgroundColor:
+                                        Theme.of(context).primaryColor,
+                                    onPressed: () {
+                                      showDialog(
+                                        context: context,
+                                        builder: (BuildContext context) {
+                                          return UserGetOutDialog(
+                                            user: user,
+                                            allUsers: users.users,
+                                            forAllUsers: true,
                                           );
                                         },
-                                        child: const Text(
-                                          "Vider la liste",
-                                          style: TextStyle(
-                                            color: Colors.white,
-                                          ),
-                                        ),
+                                      );
+                                    },
+
+                                    child: const Text(
+                                      "Vider la liste",
+                                      style: TextStyle(
+                                        color: Colors.white,
                                       ),
                                     ),
                                   ),
                                 ),
-                              ],
-                            )
+                              ),
+                            ),
                           ],
                         ),
                       );

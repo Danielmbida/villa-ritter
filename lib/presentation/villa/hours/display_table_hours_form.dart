@@ -55,7 +55,7 @@ class DisplayHoursForm extends StatelessWidget {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 22),
+                          padding:  EdgeInsets.symmetric(vertical: MediaQuery.of(context).size.height*0.024),
                           child: Text(
                             HoursData.firstHours[index],
                             textAlign: TextAlign.center,

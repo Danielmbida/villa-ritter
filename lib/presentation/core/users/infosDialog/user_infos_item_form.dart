@@ -3,7 +3,7 @@
 import 'package:flutter/material.dart';
 
 class UserInfoItemForm extends StatelessWidget {
-  const UserInfoItemForm( {
+  const UserInfoItemForm({
     Key? key,
     required this.field,
     required this.infos,
@@ -46,10 +46,10 @@ class UserInfoItemForm extends StatelessWidget {
             children: [
               Text(
                 field,
-                style: TextStyle(
+                style: const TextStyle(
                   fontWeight: FontWeight.normal,
                   fontSize: 15,
-                  color: Colors.grey[500],
+                  color: Colors.black,
                 ),
               ),
               Text(

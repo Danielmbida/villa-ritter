@@ -16,12 +16,12 @@ class UserCountForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Positioned(
-        bottom: 10,
+        bottom: MediaQuery.of(context).size.height * 0.10,
         right: 10,
         child: RotationTransition(
           turns: _animation,
           child: CircleAvatar(
-            backgroundColor: Colors.orange,
+            backgroundColor: Theme.of(context).primaryColor,
             radius: 20,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -39,4 +39,5 @@ class UserCountForm extends StatelessWidget {
           ),
         ),
       );
+  // );
 }
