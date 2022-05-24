@@ -14,6 +14,20 @@ class VillaStateDisplay extends StatefulWidget {
 class _VillaStateDisplayState extends State<VillaStateDisplay> {
   final bool villaState = false;
   @override
+  void initState() {
+    _checkVillaHours();
+    // print(_checkVillaHours());
+    super.initState();
+  }
+
+  @override
+  void setState(VoidCallback fn) {
+    // TODO: implement setState
+    _checkVillaHours();
+    super.setState(fn);
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Positioned(
       bottom: MediaQuery.of(context).size.height * 0.035,
@@ -35,10 +49,13 @@ class _VillaStateDisplayState extends State<VillaStateDisplay> {
           ),
           TextItem(
             text: Text(
-              _checkVillaHours() ? "Ouverte".toUpperCase() : "Fermée".toUpperCase(),
+              _checkVillaHours() == true
+                  ? "Ouverte".toUpperCase()
+                  : "Fermée".toUpperCase(),
               style: TextStyle(
                 fontSize: 15,
-                color: _checkVillaHours() ? Colors.amberAccent : Colors.redAccent,
+                color:
+                    _checkVillaHours() ? Colors.amberAccent : Colors.redAccent,
                 fontWeight: FontWeight.bold,
               ),
             ),
@@ -58,23 +75,30 @@ class _VillaStateDisplayState extends State<VillaStateDisplay> {
     final int day = DateTime.now().weekday;
     final int hour = DateTime.now().hour;
     final int minute = DateTime.now().minute;
+    // final int hour = 18;
+    // final int minute = 01;
+
     switch (day) {
       case 1:
         return false;
       case 2:
         // if (hour < 14 || hour > 18 || hour > 23) return false;
-        if ((hour > 14 && hour < 18) || (hour > 18 && hour < 23)) return true;
-        break;
+        if ((hour >= 14 && hour < 18) ||
+            ((hour >= 19 && minute == 30) && hour < 23)) return true;
+        return false;
+      // break;
       case 3:
         // if (hour < 14 || hour > 18 || hour > 23) return false;
-        if ((hour > 14 && hour < 18) || (hour > 18 && hour < 23)) return true;
+        if ((hour >= 14 && hour < 18) ||
+            ((hour >= 19 && minute == 30) && hour < 23)) return true;
         break;
       case 4:
-        if ((hour > 19 && minute == 30) && hour < 23) return true;
+        if ((hour >= 19 && minute == 30) && hour < 23) return true;
         break;
       case 5:
         // if (hour < 14 || hour > 18 || hour > 23) return false;
-        if ((hour > 14 && hour < 18) || (hour > 18 && hour < 23)) return true;
+        if ((hour >= 14 && hour < 18) ||
+            ((hour >= 19 && minute == 30) && hour < 0)) return true;
         break;
       case 6:
         return false;
