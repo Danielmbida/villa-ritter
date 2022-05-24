@@ -8,11 +8,13 @@ import 'package:apptest/injection.dart';
 import 'package:apptest/presentation/core/display_no_internet_form.dart';
 import 'package:apptest/presentation/home/widgets/profil_page_form.dart';
 import 'package:apptest/presentation/home/widgets/speedial/speed_dial_form.dart';
+import 'package:apptest/presentation/home/widgets/villa_state_display.dart';
 import 'package:apptest/presentation/villa/news/display_news.form.dart';
 // ignore: depend_on_referenced_packages
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
+
 
 class HomePageForm extends StatefulWidget {
   final User user;
@@ -119,6 +121,7 @@ class _HomePageFormState extends State<HomePageForm> {
                               child: Stack(
                                 children: [
                                   ProfileView(user: widget.user),
+                                  const VillaStateDisplay(),
                                 ],
                               ),
                             ),
@@ -159,3 +162,5 @@ class _HomePageFormState extends State<HomePageForm> {
     );
   }
 }
+
+

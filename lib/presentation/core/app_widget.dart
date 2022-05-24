@@ -75,14 +75,16 @@ class AppWidget extends StatelessWidget {
           return supportedLocales.first;
         },
         debugShowCheckedModeBanner: false,
-        title: 'Theorie DDD',
+        title: 'Villa Ritter',
         theme: ThemeData(
           primaryColorDark: Colors.black,
+          primaryColor: const Color(0xff20544c),
           colorScheme: ColorScheme.fromSwatch().copyWith(
-            secondary: Colors.grey.shade400,
+            secondary: Colors.white,
+          ),
           ),
         ),
-      ),
-    );
+      );
+    
   }
 }

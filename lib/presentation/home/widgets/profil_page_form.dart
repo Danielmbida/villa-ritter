@@ -149,7 +149,13 @@ class _ProfileViewState extends State<ProfileView> {
                                     const AuthEvent.signedOut(),
                                   );
                             },
-                            child: const Text("Se déconnecter"),
+                            child: Text(
+                              "Se déconnecter",
+                              style: TextStyle(
+                                color: Theme.of(context).primaryColorDark,
+                                fontSize: 20,
+                              ),
+                            ),
                           ),
                         ),
                       ],
