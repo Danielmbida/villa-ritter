@@ -20,7 +20,10 @@ import 'package:auto_route/auto_route.dart';
     AutoRoute(page: UserManagePage),
     AutoRoute(page: UserPresentPage),
     AutoRoute(page: ContactHoursPage),
-    AutoRoute(page: ResetPasswordPage),
+    CustomRoute(
+      page: ResetPasswordPage,
+      transitionsBuilder: TransitionsBuilders.fadeIn,
+    ),
     AutoRoute(page: SuccefulMessagePage),
     CustomRoute(
       page: PostPage,

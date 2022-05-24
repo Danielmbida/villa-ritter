@@ -38,7 +38,7 @@ class _ResetPasswordPageState extends State<ResetPasswordPage> {
                   message: failure.map(
                     serverError: (_) => 'Server Error',
                     invalidNameAndPasswordCombination: (_) =>
-                        "Aucun compte n'a été créé avec cette email",
+                        "Aucun compte n'a été créé avec cet email",
                   ),
                   duration: const Duration(seconds: 3),
                 ).show(context);

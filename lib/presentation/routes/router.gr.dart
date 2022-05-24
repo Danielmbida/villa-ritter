@@ -56,8 +56,12 @@ class AppRouter extends _i11.RootStackRouter {
           routeData: routeData, child: _i6.ContactHoursPage());
     },
     ResetPasswordRoute.name: (routeData) {
-      return _i11.MaterialPageX<dynamic>(
-          routeData: routeData, child: const _i7.ResetPasswordPage());
+      return _i11.CustomPage<dynamic>(
+          routeData: routeData,
+          child: const _i7.ResetPasswordPage(),
+          transitionsBuilder: _i11.TransitionsBuilders.fadeIn,
+          opaque: true,
+          barrierDismissible: false);
     },
     SuccefulMessageRoute.name: (routeData) {
       final args = routeData.argsAs<SuccefulMessageRouteArgs>();
