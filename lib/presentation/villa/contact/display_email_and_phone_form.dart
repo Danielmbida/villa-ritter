@@ -33,37 +33,43 @@ class DisplayEmainAndPhoneForm extends StatelessWidget {
                     size: iconSize,
                     color: iconColor,
                   ),
-                  Text(
-                    phonNumber,
-                    style: TextStyle(
-                      color: textColor,
-                      fontSize: textSize,
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(
+                      phonNumber,
+                      style: TextStyle(
+                        color: textColor,
+                        fontSize: textSize,
+                      ),
                     ),
                   ),
                 ],
               ),
             ),
             const SizedBox(height: 2),
-            GestureDetector(
-              onTap: () async {
-                UrlLauncher.launchURL("mailto://villaritter@bluewin.ch");
-              },
-              child: Column(
-                children: [
-                  Icon(
-                    Icons.mail,
-                    size: iconSize,
-                    color: iconColor,
-                  ),
-                  Text(
-                    mailText,
-                    style: TextStyle(
-                      color: Colors.blue,
-                      fontSize: textSize,
-                      decoration: TextDecoration.underline,
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: GestureDetector(
+                onTap: () async {
+                  UrlLauncher.launchURL("mailto://villaritter@bluewin.ch");
+                },
+                child: Column(
+                  children: [
+                    Icon(
+                      Icons.mail,
+                      size: iconSize,
+                      color: iconColor,
                     ),
-                  ),
-                ],
+                    Text(
+                      mailText,
+                      style: TextStyle(
+                        color: Colors.blue,
+                        fontSize: textSize,
+                        decoration: TextDecoration.underline,
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
           ],

@@ -3,6 +3,7 @@ import 'package:apptest/presentation/villa/contact/display_address_form.dart';
 import 'package:apptest/presentation/villa/contact/display_email_and_phone_form.dart';
 import 'package:apptest/presentation/villa/contact/footer_form.dart';
 import 'package:flutter/material.dart';
+
 class ContactForm extends StatelessWidget {
   const ContactForm({
     Key? key,
@@ -17,8 +18,8 @@ class ContactForm extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 20.0),
             child: Column(
               children: const [
-                 DisplayAddressForm(),
-                 DisplayEmainAndPhoneForm(),
+                DisplayAddressForm(),
+                DisplayEmainAndPhoneForm(),
               ],
             ),
           ),

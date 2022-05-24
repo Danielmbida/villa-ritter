@@ -13,12 +13,13 @@ class DisplayHoursForm extends StatelessWidget {
     const String messageText =
         "Dès 20h45 La Villa Ritter est réservée aux jeunes de 15 ans et plus ";
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: const EdgeInsets.all(2),
       child: Column(
         children: [
           const TableHoursHead(),
           Expanded(
             child: ListView.builder(
+              padding: EdgeInsets.zero,
               itemCount: HoursData.days.length,
               itemBuilder: (BuildContext context, int index) {
                 const Color textInTableColor = Colors.black;
@@ -54,7 +55,7 @@ class DisplayHoursForm extends StatelessWidget {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsets.all(15.0),
+                          padding: const EdgeInsets.symmetric(vertical: 22),
                           child: Text(
                             HoursData.firstHours[index],
                             textAlign: TextAlign.center,

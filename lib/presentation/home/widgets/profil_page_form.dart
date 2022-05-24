@@ -62,7 +62,6 @@ class _ProfileViewState extends State<ProfileView> {
     final String userName = widget.user.name;
     const String textNameFonts = 'Open sans';
     final double textNameSize = mediaHeight * 0.04;
-    final double padVertical = 25 / mediaHeight * mediaHeight;
     final double padHorizontal = 5 / mediaWidth * mediaWidth;
 
     return BlocBuilder<InternetCubit, InternetState>(
@@ -100,13 +99,12 @@ class _ProfileViewState extends State<ProfileView> {
           ],
           child: Padding(
             padding: EdgeInsets.symmetric(
-              vertical: padVertical,
               horizontal: padHorizontal,
             ),
             child: Stack(
               children: [
                 Positioned(
-                  top: mediaHeight * 0.09,
+                  top: mediaHeight * 0.06,
                   left: mediaWidth * 0.28,
                   child: InkWell(
                     child: ImageProfilForm(pickedImageFile: _pickedImageFile),
@@ -125,7 +123,7 @@ class _ProfileViewState extends State<ProfileView> {
                   ),
                 ),
                 Positioned(
-                  top: mediaHeight * 0.22,
+                  top: mediaHeight * 0.19,
                   left: mediaWidth * 0.35,
                   child: CircleAvatar(
                     radius: mediaHeight * 0.015,
@@ -182,8 +180,8 @@ class _ProfileViewState extends State<ProfileView> {
                   ],
                 ),
                 Positioned(
-                  top: mediaHeight * 0.18,
-                  right: mediaWidth * 0.02,
+                  top: mediaHeight * 0.15,
+                  right: mediaWidth * 0.03,
                   child: !widget.user.email.contains("admin")
                       ? isPresence == false
                           ? PrensentButtonForm(

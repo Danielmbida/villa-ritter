@@ -16,8 +16,8 @@ class _VillaStateDisplayState extends State<VillaStateDisplay> {
   @override
   Widget build(BuildContext context) {
     return Positioned(
-      bottom: MediaQuery.of(context).size.height * 0.050,
-      left: MediaQuery.of(context).size.width * 0.050,
+      bottom: MediaQuery.of(context).size.height * 0.035,
+      left: MediaQuery.of(context).size.width * 0.015,
       child: CircularText(
         children: [
           TextItem(

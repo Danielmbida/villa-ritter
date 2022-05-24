@@ -1,5 +1,4 @@
 // ignore_for_file: depend_on_referenced_packages
-
 import 'package:apptest/presentation/villa/contact/contact_form.dart';
 import 'package:apptest/presentation/villa/hours/display_table_hours_form.dart';
 import 'package:flutter/material.dart';
@@ -18,40 +17,43 @@ class _ContactHoursPageState extends State<ContactHoursPage> {
 
   @override
   Widget build(BuildContext context) {
-    return DefaultTabController(
-      length: nbTab,
-      child: Scaffold(
-        appBar: AppBar(
-          bottom: TabBar(
-            tabs: [
-              Text(
-                textHour,
-                style: TextStyle(
-                  fontSize: tabTextSize,
-                  fontWeight: FontWeight.bold,
+    return SafeArea(
+      child: DefaultTabController(
+        length: nbTab,
+        child: Scaffold(
+          backgroundColor: Colors.green.shade100,
+          appBar: AppBar(
+            bottom: TabBar(
+              tabs: [
+                Text(
+                  textHour,
+                  style: TextStyle(
+                    fontSize: tabTextSize,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
-              ),
-              Text(
-                textContact,
-                style: TextStyle(
-                  fontSize: tabTextSize,
-                  fontWeight: FontWeight.bold,
+                Text(
+                  textContact,
+                  style: TextStyle(
+                    fontSize: tabTextSize,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
-              ),
+              ],
+            ),
+            flexibleSpace: Image.asset(
+              "assets/images/4.jpg",
+              width: MediaQuery.of(context).size.width,
+              fit: BoxFit.cover,
+              height: imageHeight,
+            ),
+          ),
+          body: const TabBarView(
+            children: [
+              DisplayHoursForm(),
+              ContactForm(),
             ],
           ),
-          flexibleSpace: Image.asset(
-            "assets/images/4.jpg",
-            width: MediaQuery.of(context).size.width,
-            fit: BoxFit.cover,
-            height: imageHeight,
-          ),
-        ),
-        body: const TabBarView(
-          children: [
-            DisplayHoursForm(),
-            ContactForm(),
-          ],
         ),
       ),
     );

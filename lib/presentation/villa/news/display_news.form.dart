@@ -21,7 +21,6 @@ class DisplayNews extends StatefulWidget {
 class _DisplayNewsState extends State<DisplayNews> {
   @override
   Widget build(BuildContext context) {
-    final double mediaHeight = MediaQuery.of(context).size.height;
     return BlocProvider(
       create: (context) => getIt<WatcherNewsBloc>()
         ..add(const WatcherNewsEvent.watchNewsStarted()),
@@ -36,29 +35,60 @@ class _DisplayNewsState extends State<DisplayNews> {
               return const Center(child: CircularProgressIndicator());
             },
             loadSuccess: (data) {
-              return SizedBox(
-                height: mediaHeight * 0.56, //447 56%
-                width: MediaQuery.of(context).size.width,
-                child: ListView.builder(
-                  itemCount: data.listPosts.size,
-                  itemBuilder: (content, index) {
-                    final Post actPost = data.listPosts[index];
-                    return Card(
-                      child: GestureDetector(
-                        onTap: () {
-                          context.router.push(
-                            PostRoute(post: actPost),
-                          );
-                        },
-                        child: SizedBox(
-                          height: mediaHeight * 0.5,
-                          child: NewsForm(
-                            mediaID: actPost.featuredMedia,
+              return Container(
+                color: const Color(0xff20544c),
+                child: Column(
+                  children: [
+                    Row(
+                      children: const [
+                        Padding(
+                          padding: EdgeInsets.symmetric(horizontal: 8),
+                          child: Text(
+                            "ACTUALITÉS",
+                            style: TextStyle(
+                              fontSize: 35,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white,
+                            ),
                           ),
                         ),
+                      ],
+                    ),
+                    const Divider(
+                      color: Colors.white,
+                    ),
+                    Expanded(
+                      child: ListView.builder(
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 11,
+                        ),
+                        itemCount: data.listPosts.size,
+                        itemBuilder: (content, index) {
+                          final Post actPost = data.listPosts[index];
+                          return Column(
+                            children: [
+                              GestureDetector(
+                                onTap: () {
+                                  context.router.push(
+                                    PostRoute(post: actPost),
+                                  );
+                                },
+                                child: NewsForm(
+                                  mediaID: actPost.featuredMedia,
+                                ),
+                              ),
+                              const Padding(
+                                padding: EdgeInsets.symmetric(vertical: 10),
+                                child: Divider(
+                                  color: Colors.white,
+                                ),
+                              )
+                            ],
+                          );
+                        },
                       ),
-                    );
-                  },
+                    ),
+                  ],
                 ),
               );
             },
@@ -67,5 +97,4 @@ class _DisplayNewsState extends State<DisplayNews> {
       ),
     );
   }
-
 }

@@ -10,11 +10,11 @@ import 'package:apptest/presentation/home/widgets/profil_page_form.dart';
 import 'package:apptest/presentation/home/widgets/speedial/speed_dial_form.dart';
 import 'package:apptest/presentation/home/widgets/villa_state_display.dart';
 import 'package:apptest/presentation/villa/news/display_news.form.dart';
+
 // ignore: depend_on_referenced_packages
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
-
 
 class HomePageForm extends StatefulWidget {
   final User user;
@@ -27,12 +27,10 @@ class HomePageForm extends StatefulWidget {
 class _HomePageFormState extends State<HomePageForm> {
   ValueNotifier<bool> isDialOpen = ValueNotifier<bool>(false);
   final Color coloIconMenu = Colors.grey.shade300;
+  bool present = false;
 
   @override
   Widget build(BuildContext context) {
-    final double mediaHeight = MediaQuery.of(context).size.height;
-    final double mediaWidth = MediaQuery.of(context).size.width;
-
     return WillPopScope(
       onWillPop: () async {
         if (isDialOpen.value) {
@@ -60,6 +58,25 @@ class _HomePageFormState extends State<HomePageForm> {
                 connected: (s) {
                   return MultiBlocListener(
                     listeners: [
+                      BlocListener<UserActorBloc, UserActorState>(
+                        listener: (context, state) {
+                          state.map(
+                            initial: (_) {},
+                            updatedSuccess: (_) {
+                              setState(() {
+                                present = true;
+                              });
+                            },
+                            updatedFailure: (_) {},
+                            actionInProgress: (_) {},
+                            isLeft: (_) {
+                              setState(() {
+                                present = false;
+                              });
+                            },
+                          );
+                        },
+                      ),
                       BlocListener<ScanBloc, ScanState>(
                         listener: (context, state) {
                           state.map(
@@ -88,9 +105,9 @@ class _HomePageFormState extends State<HomePageForm> {
                                 message:
                                     "Vous n'avez pas scanné le bon code qr",
                                 duration: const Duration(seconds: 3),
-                                backgroundColor: Colors.white,
-                                titleColor: Colors.blue,
-                                messageColor: Colors.blue,
+                                backgroundColor: Theme.of(context).primaryColor,
+                                titleColor: Colors.white,
+                                messageColor: Colors.white,
                               ).show(context);
                             },
                             scanTimeout: (_) {
@@ -100,10 +117,10 @@ class _HomePageFormState extends State<HomePageForm> {
                               Flushbar(
                                 title: 'Fermeture du scan',
                                 message:
-                                    "La page de scan s'est fermés par manque d'activité",
-                                backgroundColor: Colors.white,
-                                titleColor: Colors.blue,
-                                messageColor: Colors.blue,
+                                    "La page de scan s'est fermée par manque d'activité",
+                                backgroundColor: Theme.of(context).primaryColor,
+                                titleColor: Colors.white,
+                                messageColor: Colors.white,
                                 duration: const Duration(seconds: 3),
                               ).show(context);
                             },
@@ -111,44 +128,46 @@ class _HomePageFormState extends State<HomePageForm> {
                         },
                       ),
                     ],
-                    child: Scaffold(
-                      body: SizedBox(
-                        height: MediaQuery.of(context).size.height,
-                        child: Column(
-                          children: [
-                            SizedBox(
-                              height: MediaQuery.of(context).size.height * 0.38,
-                              child: Stack(
-                                children: [
-                                  ProfileView(user: widget.user),
-                                  const VillaStateDisplay(),
-                                ],
-                              ),
-                            ),
-                            Expanded(
-                              flex: 2,
-                              child: Stack(
-                                children: [
-                                  Positioned(
-                                    left: 8 / mediaHeight * mediaHeight,
-                                    child: Text(
-                                      "ACTUALITÉS",
-                                      style: TextStyle(
-                                        fontSize:
-                                            35 / mediaHeight * mediaHeight,
-                                        fontWeight: FontWeight.bold,
-                                        color: Colors.grey[400],
-                                      ),
+                    child: SafeArea(
+                      child: Scaffold(
+                        body: SizedBox(
+                          height: MediaQuery.of(context).size.height,
+                          child: Column(
+                            children: [
+                              Container(
+                                width: MediaQuery.of(context).size.width,
+                                color: Theme.of(context).primaryColor,
+                                child: Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Text(
+                                    present == false
+                                        ? "Bonjour"
+                                        : "Bienvenue à la Villa ",
+                                    textAlign: TextAlign.center,
+                                    style: const TextStyle(
+                                      fontSize: 25,
+                                      //  fontWeight:FontWeight.bold
+                                      color: Colors.white,
                                     ),
                                   ),
-                                  const Positioned(
-                                    top: 30,
-                                    child: DisplayNews(),
-                                  )
-                                ],
+                                ),
                               ),
-                            )
-                          ],
+                              Container(
+                                color: const Color.fromARGB(1, 255, 251, 241),
+                                height:
+                                    MediaQuery.of(context).size.height * 0.30,
+                                child: Stack(
+                                  children: [
+                                    ProfileView(user: widget.user),
+                                    const VillaStateDisplay(),
+                                  ],
+                                ),
+                              ),
+                              const Expanded(
+                                child: DisplayNews(),
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     ),
@@ -162,5 +181,3 @@ class _HomePageFormState extends State<HomePageForm> {
     );
   }
 }
-
-
