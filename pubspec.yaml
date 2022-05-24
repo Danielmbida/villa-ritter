@@ -53,6 +53,7 @@ dependencies:
   avatar_glow: ^2.0.2
   animate_icons: ^2.0.0
   flutter_speed_dial: ^4.0.0+1
+  flutter_circular_text: ^0.3.1
 
 dev_dependencies:
   flutter_test:
