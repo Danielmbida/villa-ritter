@@ -26,9 +26,9 @@ class SpeedDialForm extends StatelessWidget {
       foregroundColor: Colors.black,
       animationSpeed: 450, //milliseconds
       children: [
+        _speedDialChild(Colors.blue, "villa", context),
         _speedDialChild(Colors.green, "phone", context),
         _speedDialChild(Colors.red, "youtube", context),
-        _speedDialChild(Colors.blue, "facebook", context),
         _speedDialChild(null, "insta", context),
       ],
     );
@@ -51,9 +51,9 @@ class SpeedDialForm extends StatelessWidget {
           : Icon(
               iconName == "youtube"
                   ? FontAwesomeIcons.youtube
-                  : iconName != "facebook"
+                  : iconName != "villa"
                       ? FontAwesomeIcons.phoneAlt
-                      : FontAwesomeIcons.facebookF,
+                      : FontAwesomeIcons.infoCircle,
               color: iconColor,
             ),
       backgroundColor: Colors.grey.shade300,
@@ -73,8 +73,8 @@ class SpeedDialForm extends StatelessWidget {
       case "youtube":
         UrlLauncher.launchURL("https://www.youtube.com/user/villaritterbienne");
         break;
-      case "facebook":
-        UrlLauncher.launchURL("https://www.facebook.com/villa.ritter");
+      case "villa":
+        UrlLauncher.launchURL("https://www.villa-ritter.ch/");
         break;
       case "phone":
         context.router.push(
