@@ -1,5 +1,7 @@
 // ignore: depend_on_referenced_packages
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 class TableHoursHead extends StatelessWidget {
   const TableHoursHead({
     Key? key,
@@ -12,18 +14,18 @@ class TableHoursHead extends StatelessWidget {
       border: TableBorder.all(
         color: Colors.white,
       ),
-      children: const [
+      children: [
         TableRow(
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             color: Color(0XFF20544c),
           ),
           children: [
             Padding(
-              padding: EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(8.0),
               child: Text(
-                "Jour",
+                AppLocalizations.of(context)!.tag_string,
                 textAlign: TextAlign.center,
-                style: TextStyle(
+                style: const TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 18,
                   color: Colors.white,
@@ -31,18 +33,18 @@ class TableHoursHead extends StatelessWidget {
               ),
             ),
             Text(
-              "Période 1",
+              "${AppLocalizations.of(context)!.periode_string} 1",
               textAlign: TextAlign.center,
-              style: TextStyle(
+              style: const TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 18,
                 color: Colors.white,
               ),
             ),
             Text(
-              "Période 2",
+              "${AppLocalizations.of(context)!.periode_string} 2",
               textAlign: TextAlign.center,
-              style: TextStyle(
+              style: const TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 18,
                 color: Colors.white,

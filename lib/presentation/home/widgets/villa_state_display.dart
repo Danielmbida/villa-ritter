@@ -1,6 +1,7 @@
 // ignore_for_file: depend_on_referenced_packages
 import 'package:flutter/material.dart';
 import 'package:flutter_circular_text/circular_text.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class VillaStateDisplay extends StatefulWidget {
   const VillaStateDisplay({
@@ -36,7 +37,7 @@ class _VillaStateDisplayState extends State<VillaStateDisplay> {
         children: [
           TextItem(
             text: Text(
-              "la Villa est".toUpperCase(),
+              AppLocalizations.of(context)!.villa_is_string.toUpperCase(),
               style: const TextStyle(
                 fontSize: 15,
                 color: Colors.white,
@@ -50,8 +51,12 @@ class _VillaStateDisplayState extends State<VillaStateDisplay> {
           TextItem(
             text: Text(
               _checkVillaHours() == true
-                  ? "Ouverte".toUpperCase()
-                  : "Fermée".toUpperCase(),
+                  ? AppLocalizations.of(context)!
+                      .villa_open_string
+                      .toUpperCase()
+                  : AppLocalizations.of(context)!
+                      .villa_close_string
+                      .toUpperCase(),
               style: TextStyle(
                 fontSize: 15,
                 color:

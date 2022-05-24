@@ -2,6 +2,7 @@
 import 'package:apptest/presentation/villa/hours/hours_data.dart';
 import 'package:apptest/presentation/villa/hours/table_hours_head.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class DisplayHoursForm extends StatelessWidget {
   const DisplayHoursForm({
@@ -10,8 +11,29 @@ class DisplayHoursForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const String messageText =
-        "Dès 20h45 La Villa Ritter est réservée aux jeunes de 15 ans et plus ";
+    final String messageText = AppLocalizations.of(context)!.infos_hour_string;
+    final List<String> days = <String>[
+      AppLocalizations.of(context)!.monday_string,
+      AppLocalizations.of(context)!.tuesday_string,
+      AppLocalizations.of(context)!.wednesday_string,
+      AppLocalizations.of(context)!.thursday_string,
+      AppLocalizations.of(context)!.friday_string,
+    ];
+    final List<String> firstHours = <String>[
+      AppLocalizations.of(context)!.villa_close_string,
+      "14:00-18:00",
+      "14:00-18:00",
+      "Fermée",
+      "14:00-18:00",
+    ];
+    final List<String> secondHours = <String>[
+      AppLocalizations.of(context)!.villa_close_string,
+      "19:30-23:00",
+      "19:30-23:00",
+      "19:30-23:00",
+      "19:30-00:00",
+    ];
+    HoursData(context: context);
     return Padding(
       padding: const EdgeInsets.all(2),
       child: Column(
@@ -45,7 +67,7 @@ class DisplayHoursForm extends StatelessWidget {
                         Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Text(
-                            HoursData.days[index],
+                            days[index],
                             textAlign: TextAlign.center,
                             style: const TextStyle(
                               fontWeight: FontWeight.bold,
@@ -55,9 +77,12 @@ class DisplayHoursForm extends StatelessWidget {
                           ),
                         ),
                         Padding(
-                          padding:  EdgeInsets.symmetric(vertical: MediaQuery.of(context).size.height*0.024),
+                          padding: EdgeInsets.symmetric(
+                            vertical:
+                                MediaQuery.of(context).size.height * 0.024,
+                          ),
                           child: Text(
-                            HoursData.firstHours[index],
+                            firstHours[index],
                             textAlign: TextAlign.center,
                             style: const TextStyle(
                               fontWeight: FontWeight.bold,
@@ -67,7 +92,7 @@ class DisplayHoursForm extends StatelessWidget {
                           ),
                         ),
                         Text(
-                          HoursData.secondHours[index],
+                          secondHours[index],
                           textAlign: TextAlign.center,
                           style: const TextStyle(
                             fontWeight: FontWeight.bold,
@@ -85,12 +110,12 @@ class DisplayHoursForm extends StatelessWidget {
           Expanded(
             child: Container(
               color: const Color(0XFF20544c).withOpacity(0.8),
-              child: const Center(
+              child: Center(
                 child: Padding(
-                  padding: EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.all(8.0),
                   child: Text(
                     messageText,
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 25,
                       color: Colors.black,

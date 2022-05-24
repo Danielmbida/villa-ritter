@@ -2,6 +2,7 @@
 import 'package:apptest/presentation/villa/contact/contact_form.dart';
 import 'package:apptest/presentation/villa/hours/display_table_hours_form.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class ContactHoursPage extends StatefulWidget {
   @override
@@ -12,11 +13,11 @@ class _ContactHoursPageState extends State<ContactHoursPage> {
   final double tabTextSize = 30;
   final double imageHeight = 200;
   final int nbTab = 2;
-  final String textHour = "Horaire";
-  final String textContact = "Contact";
 
   @override
   Widget build(BuildContext context) {
+    final String textHour = AppLocalizations.of(context)!.hourly_string;
+    final String textContact = AppLocalizations.of(context)!.contact_string;
     return SafeArea(
       child: DefaultTabController(
         length: nbTab,

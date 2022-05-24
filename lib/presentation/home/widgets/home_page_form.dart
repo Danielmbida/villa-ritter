@@ -10,6 +10,7 @@ import 'package:apptest/presentation/home/widgets/profil_page_form.dart';
 import 'package:apptest/presentation/home/widgets/speedial/speed_dial_form.dart';
 import 'package:apptest/presentation/home/widgets/villa_state_display.dart';
 import 'package:apptest/presentation/villa/news/display_news.form.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 // ignore: depend_on_referenced_packages
 import 'package:flutter/material.dart';
@@ -101,9 +102,10 @@ class _HomePageFormState extends State<HomePageForm> {
                                     const ScanEvent.scanResetted(),
                                   );
                               Flushbar(
-                                title: 'Echec du scan',
-                                message:
-                                    "Vous n'avez pas scanné le bon code qr",
+                                title: AppLocalizations.of(context)!
+                                    .title_fail_scan_string,
+                                message: AppLocalizations.of(context)!
+                                    .fail_scan_message,
                                 duration: const Duration(seconds: 3),
                                 backgroundColor: Theme.of(context).primaryColor,
                                 titleColor: Colors.white,
@@ -115,9 +117,10 @@ class _HomePageFormState extends State<HomePageForm> {
                                   .read<ScanBloc>()
                                   .add(const ScanEvent.scanResetted());
                               Flushbar(
-                                title: 'Fermeture du scan',
-                                message:
-                                    "La page de scan s'est fermée par manque d'activité",
+                                title: AppLocalizations.of(context)!
+                                    .closing_scan_title_string,
+                                message: AppLocalizations.of(context)!
+                                    .closing_scan_message_string,
                                 backgroundColor: Theme.of(context).primaryColor,
                                 titleColor: Colors.white,
                                 messageColor: Colors.white,
@@ -141,8 +144,10 @@ class _HomePageFormState extends State<HomePageForm> {
                                   padding: const EdgeInsets.all(8.0),
                                   child: Text(
                                     present == false
-                                        ? "Bonjour"
-                                        : "Bienvenue à la Villa ",
+                                        ? AppLocalizations.of(context)!
+                                            .hello_string
+                                        : AppLocalizations.of(context)!
+                                            .welcome_string,
                                     textAlign: TextAlign.center,
                                     style: const TextStyle(
                                       fontSize: 25,

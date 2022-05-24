@@ -1,6 +1,7 @@
 // ignore_for_file: depend_on_referenced_packages
 import 'package:apptest/presentation/core/url_launcher.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class DisplayAddressForm extends StatelessWidget {
   const DisplayAddressForm({
@@ -12,7 +13,7 @@ class DisplayAddressForm extends StatelessWidget {
     const double iconSize = 40;
     const Color iconColor = Colors.black;
     final Color? textColor = Colors.grey[600];
-    const String textAdress = "Adresse";
+    final String textAdress = AppLocalizations.of(context)!.address_string;
     const String addre = "Villa\nFaubourg du jura 36\n2502 Bienne";
     const double textSize = 20;
 

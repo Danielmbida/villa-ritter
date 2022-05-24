@@ -8,6 +8,7 @@ import 'package:apptest/presentation/sign_in/widgets/forms/text_form_field_form.
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class ResetPasswordPage extends StatefulWidget {
   const ResetPasswordPage({Key? key}) : super(key: key);
@@ -38,22 +39,17 @@ class _ResetPasswordPageState extends State<ResetPasswordPage> {
                   message: failure.map(
                     serverError: (_) => 'Server Error',
                     invalidNameAndPasswordCombination: (_) =>
-                        "Aucun compte n'a été créé avec cet email",
+                        AppLocalizations.of(context)!.no_email_exist_string,
                   ),
                   duration: const Duration(seconds: 3),
                 ).show(context);
               },
               (_) {
-                 context.router.push(SuccefulMessageRoute(email: state.emailAddress.getOrCrash()));
-                // showDialog(
-                //   context: context,
-                //   builder: (context) {
-                //     return ResetConfirmDialog(
-                //       message: message,
-                //       resetContext: context,
-                //     );
-                //   },
-                // );
+                context.router.push(
+                  SuccefulMessageRoute(
+                    email: state.emailAddress.getOrCrash(),
+                  ),
+                );
               },
             ),
           );
@@ -80,17 +76,17 @@ class _ResetPasswordPageState extends State<ResetPasswordPage> {
                     SizedBox(
                       height: MediaQuery.of(context).size.height * 0.05,
                     ),
-                    const ListTile(
+                    ListTile(
                       title: Text(
-                        "Mot de passe oublié",
-                        style: TextStyle(
+                        AppLocalizations.of(context)!.password_forgot_string,
+                        style: const TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 30,
                         ),
                       ),
                       subtitle: Text(
-                        "Reinitialisez votre mot de passe grâce a votre email",
-                        style: TextStyle(
+                        AppLocalizations.of(context)!.reset_subtitle_string,
+                        style: const TextStyle(
                           fontSize: 15,
                           color: Colors.grey,
                         ),
@@ -102,11 +98,11 @@ class _ResetPasswordPageState extends State<ResetPasswordPage> {
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        const Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 15),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 15),
                           child: Text(
-                            "Entrez votre email",
-                            style: TextStyle(
+                            AppLocalizations.of(context)!.enter_email_string,
+                            style: const TextStyle(
                               fontSize: 15,
                               fontWeight: FontWeight.bold,
                             ),
@@ -145,9 +141,11 @@ class _ResetPasswordPageState extends State<ResetPasswordPage> {
                                       .resetPasswordWithEmailPressed(),
                                 );
                           },
-                          child: const Padding(
-                            padding: EdgeInsets.all(18.0),
-                            child: Text("Envoyer"),
+                          child: Padding(
+                            padding: const EdgeInsets.all(18.0),
+                            child: Text(
+                              AppLocalizations.of(context)!.send_button_string,
+                            ),
                           ),
                         ),
                       ),

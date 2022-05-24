@@ -5,7 +5,7 @@ import 'package:apptest/presentation/villa/users/display_all_user_page.dart';
 import 'package:apptest/presentation/villa/users/user_present_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class UserManagePage extends StatefulWidget {
   const UserManagePage({Key? key}) : super(key: key);
@@ -16,14 +16,15 @@ class UserManagePage extends StatefulWidget {
 
 class _UserManagePageState extends State<UserManagePage> {
   bool firedAll = false;
-  final String textHour = "Présent";
-  final String textContact = "Inscrit";
+
   final double tabTextSize = 30;
   final double imageHeight = 200;
   int nbUserPresent = 0;
   int nbAllUser = 0;
   @override
   Widget build(BuildContext context) {
+    final String textHour = AppLocalizations.of(context)!.present_string;
+    final String textContact = AppLocalizations.of(context)!.register_string;
     return MultiBlocListener(
       listeners: [
         BlocListener<WatchAllUsersBloc, WatchAllUsersState>(
@@ -58,7 +59,7 @@ class _UserManagePageState extends State<UserManagePage> {
         child: Scaffold(
           appBar: AppBar(
             automaticallyImplyLeading: false,
-            leading:  IconButton(
+            leading: IconButton(
               onPressed: () {
                 Navigator.of(context).pop();
               },
