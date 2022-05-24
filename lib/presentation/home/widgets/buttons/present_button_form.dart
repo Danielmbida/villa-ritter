@@ -31,7 +31,7 @@ class PrensentButtonForm extends StatelessWidget {
       colorIcon = Colors.red;
       icon = FontAwesomeIcons.signOutAlt;
     } else {
-      colorIcon = Colors.green.shade800;
+      colorIcon = Theme.of(context).primaryColor;
       icon = Icons.qr_code;
     }
     return InkWell(

@@ -49,8 +49,10 @@ class _ScanPageState extends State<ScanPage> with TickerProviderStateMixin {
     final scanArea = 250.0 / size.height * size.height;
 
     //Le Scan en lui même
-    return Scaffold(
-      body: _scanDisplay(context, scanArea),
+    return SafeArea(
+      child: Scaffold(
+        body: _scanDisplay(context, scanArea),
+      ),
     );
   }
 

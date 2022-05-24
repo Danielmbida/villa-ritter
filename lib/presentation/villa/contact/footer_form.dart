@@ -24,7 +24,7 @@ class FooterForm extends StatelessWidget {
               GestureDetector(
                 onTap: () async {
                   const url = "https://www.instagram.com/villabnc/";
-                   UrlLauncher.launchURL(url);
+                  UrlLauncher.launchURL(url);
                 },
                 child: Icon(
                   FontAwesomeIcons.instagram,
@@ -32,12 +32,11 @@ class FooterForm extends StatelessWidget {
                   size: iconSize,
                 ),
               ),
-
-              const SizedBox(width: 2),
+              const SizedBox(width: 10),
               GestureDetector(
                 onTap: () async {
                   const url = "https://www.snapchat.com/add/k.gianoli/";
-                   UrlLauncher.launchURL(url);
+                  UrlLauncher.launchURL(url);
                 },
                 child: Icon(
                   FontAwesomeIcons.snapchat,
@@ -45,6 +44,7 @@ class FooterForm extends StatelessWidget {
                   size: iconSize,
                 ),
               ),
+              const SizedBox(width: 10),
             ],
           ),
         ),

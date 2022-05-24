@@ -10,21 +10,20 @@ class NewsForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     String? imgUrl;
-    return SizedBox(
-      child: FutureBuilder(
-        future: fetchWpPostImageUrl(mediaID!),
-        builder: (BuildContext context, AsyncSnapshot<Media?> snapshot) {
-          imgUrl = snapshot.data?.sourceUrl;
-          if (imgUrl == null) {
-            return const Center(
-              child: CircularProgressIndicator(),
-            );
-          }
-          return Image.network(
-            imgUrl!,
+    return FutureBuilder(
+      future: fetchWpPostImageUrl(mediaID!),
+      builder: (BuildContext context, AsyncSnapshot<Media?> snapshot) {
+        imgUrl = snapshot.data?.sourceUrl;
+        if (imgUrl == null) {
+          return const Center(
+            child: CircularProgressIndicator(),
           );
-        },
-      ),
+        }
+        return Image.network(
+          imgUrl!,
+          height: MediaQuery.of(context).size.height * 0.50,
+        );
+      },
     );
   }
 
