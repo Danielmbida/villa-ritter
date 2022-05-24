@@ -21,11 +21,13 @@ class UserInfosDialog extends StatelessWidget {
     return SlideTransition(
       position: Tween(
         begin: const Offset(0, 1),
+        end: const Offset(0, 0),
+     
       ).animate(animation),
       child: Opacity(
         opacity: animation.value,
         child: Scaffold(
-          backgroundColor: Colors.white,
+          backgroundColor: Colors.white70,
           body: SizedBox(
             height: MediaQuery.of(context).size.height,
             child: Column(
@@ -40,7 +42,7 @@ class UserInfosDialog extends StatelessWidget {
                         bottomRight: Radius.circular(130),
                       ),
                     ),
-                    color: Colors.lightBlue,
+                    color: Theme.of(context).primaryColor,
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -132,7 +134,7 @@ class UserInfosDialog extends StatelessWidget {
                 Expanded(
                   child: CircleAvatar(
                     radius: MediaQuery.of(context).size.width * 0.07,
-                    backgroundColor: Colors.blue,
+                    backgroundColor: Theme.of(context).primaryColor,
                     child: InkWell(
                       onTap: () {
                         Navigator.of(context).pop();

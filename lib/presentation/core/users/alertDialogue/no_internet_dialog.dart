@@ -19,7 +19,7 @@ class NoInternetDialog extends StatelessWidget {
             Icon(
               Icons.wifi_off_outlined,
               size: MediaQuery.of(context).size.height * 0.12,
-              color: Colors.grey,
+              color: Theme.of(context).primaryColor,
             ),
             const Text('Vérifier votre connexion'),
             SizedBox(
