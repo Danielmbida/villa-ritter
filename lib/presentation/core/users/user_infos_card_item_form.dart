@@ -5,15 +5,15 @@ import 'package:apptest/presentation/core/users/infosDialog/user_infos_dialog.da
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:kt_dart/collection.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class UserInfosCardItemForm extends StatelessWidget {
   const UserInfosCardItemForm({
     Key? key,
     required this.user,
     required this.allUsers,
-  })  : super(key: key);
+  }) : super(key: key);
 
-  
   final User user;
   final KtList<User> allUsers;
 
@@ -36,7 +36,7 @@ class UserInfosCardItemForm extends StatelessWidget {
                     );
                   },
                 );
-              } 
+              }
             },
             onTap: () {
               showGeneralDialog(
@@ -110,16 +110,16 @@ class UserInfosCardItemForm extends StatelessWidget {
                                     ),
                                     const SizedBox(width: 10),
                                     if (user.genre != "Femme")
-                                      const Text(
-                                        "Arrivé à : ",
-                                        style: TextStyle(
+                                      Text(
+                                        "${AppLocalizations.of(context)!.arrive_at_men_string} : ",
+                                        style: const TextStyle(
                                           fontSize: 17,
                                         ),
                                       )
                                     else
-                                      const Text(
-                                        "Arrivée à : ",
-                                        style: TextStyle(
+                                      Text(
+                                        "${AppLocalizations.of(context)!.arrive_at_wommen_string} : ",
+                                        style: const TextStyle(
                                           fontSize: 17,
                                         ),
                                       ),

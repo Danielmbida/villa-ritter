@@ -5,6 +5,7 @@ import 'package:apptest/presentation/core/url_launcher.dart';
 import 'package:apptest/presentation/core/users/infosDialog/user_infos_item_form.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class UserInfosDialog extends StatelessWidget {
   const UserInfosDialog({
@@ -22,7 +23,6 @@ class UserInfosDialog extends StatelessWidget {
       position: Tween(
         begin: const Offset(0, 1),
         end: const Offset(0, 0),
-     
       ).animate(animation),
       child: Opacity(
         opacity: animation.value,
@@ -63,7 +63,7 @@ class UserInfosDialog extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                "Infos sur",
+                                AppLocalizations.of(context)!.infos_for_string,
                                 style: TextStyle(
                                   color: Colors.white,
                                   fontSize:
@@ -92,7 +92,7 @@ class UserInfosDialog extends StatelessWidget {
                       height: MediaQuery.of(context).size.height * 0.025, //20
                     ),
                     UserInfoItemForm(
-                      field: "Nom",
+                      field: AppLocalizations.of(context)!.name_string,
                       infos: user.name,
                       icon: Icons.person_outline_outlined,
                       iconColor: Colors.yellow,
@@ -105,7 +105,7 @@ class UserInfosDialog extends StatelessWidget {
                         UrlLauncher.launchURL("mailto://${user.email}");
                       },
                       child: UserInfoItemForm(
-                        field: "Email",
+                        field: AppLocalizations.of(context)!.email_string,
                         infos: user.email,
                         icon: Icons.email_outlined,
                         iconColor: Colors.blue,
@@ -115,7 +115,7 @@ class UserInfosDialog extends StatelessWidget {
                       height: MediaQuery.of(context).size.height * 0.025,
                     ),
                     UserInfoItemForm(
-                      field: "Date de naissance",
+                      field: AppLocalizations.of(context)!.birthday_string,
                       infos: user.birthDate,
                       icon: FontAwesomeIcons.birthdayCake,
                       iconColor: Colors.pink,
@@ -124,7 +124,7 @@ class UserInfosDialog extends StatelessWidget {
                       height: MediaQuery.of(context).size.height * 0.025,
                     ),
                     UserInfoItemForm(
-                      field: "Genre",
+                      field: AppLocalizations.of(context)!.gender_string,
                       infos: user.genre,
                       icon: FontAwesomeIcons.transgenderAlt,
                       iconColor: Colors.black,

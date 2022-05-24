@@ -4,6 +4,7 @@ import 'package:apptest/presentation/core/users/alertDialogue/validat_button_dia
 // ignore: depend_on_referenced_packages
 import 'package:flutter/material.dart';
 import 'package:kt_dart/collection.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class UserGetOutDialog extends StatelessWidget {
   const UserGetOutDialog({
@@ -35,9 +36,9 @@ class UserGetOutDialog extends StatelessWidget {
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.04, //30
             ),
-            const Text(
-              "Faire sortir",
-              style: TextStyle(
+            Text(
+              AppLocalizations.of(context)!.get_out_string,
+              style: const TextStyle(
                 fontWeight: FontWeight.bold,
               ),
             ),
@@ -46,8 +47,8 @@ class UserGetOutDialog extends StatelessWidget {
             ),
             Text(
               user.name != ""
-                  ? 'Confirmer la sortie de ${user.name}'
-                  : 'Confirmer la sortie pour tous',
+                  ? "${AppLocalizations.of(context)!.get_out_one_string} ${user.name}"
+                  : AppLocalizations.of(context)!.get_out_all_string,
             ),
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.03,

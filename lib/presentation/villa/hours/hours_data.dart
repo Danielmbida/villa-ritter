@@ -1,4 +1,11 @@
-class HoursData{
+import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
+class HoursData {
+  final BuildContext context;
+  HoursData({
+    required this.context,
+  });
   static const List<String> firstHours = <String>[
     "Fermée",
     "14:00-18:00",
@@ -13,7 +20,7 @@ class HoursData{
     "19:30-23:00",
     "19:30-00:00",
   ];
-  static const List<String> days = <String>[
+  static List<String> days = <String>[
     "Lundi",
     "Mardi",
     "Mercredi",

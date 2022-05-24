@@ -10,6 +10,7 @@ import 'package:apptest/presentation/core/users/user_count_form.dart';
 import 'package:apptest/presentation/core/users/user_infos_card_item_form.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class UserPresentPage extends StatefulWidget {
   const UserPresentPage({Key? key}) : super(key: key);
@@ -70,8 +71,7 @@ class _UserPresentPageState extends State<UserPresentPage>
                         );
                       }
                       return SingleChildScrollView(
-                        child:
-                            Stack(
+                        child: Stack(
                           children: [
                             SizedBox(
                               height: MediaQuery.of(context).size.height * 0.85,
@@ -115,10 +115,10 @@ class _UserPresentPageState extends State<UserPresentPage>
                                         },
                                       );
                                     },
-
-                                    child: const Text(
-                                      "Vider la liste",
-                                      style: TextStyle(
+                                    child: Text(
+                                      AppLocalizations.of(context)!
+                                          .empty_list_string,
+                                      style: const TextStyle(
                                         color: Colors.white,
                                       ),
                                     ),

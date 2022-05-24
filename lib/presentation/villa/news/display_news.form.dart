@@ -8,6 +8,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:wordpress_api/wordpress_api.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class DisplayNews extends StatefulWidget {
   const DisplayNews({
@@ -40,12 +41,14 @@ class _DisplayNewsState extends State<DisplayNews> {
                 child: Column(
                   children: [
                     Row(
-                      children: const [
+                      children: [
                         Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 8),
+                          padding: const EdgeInsets.symmetric(horizontal: 8),
                           child: Text(
-                            "ACTUALITÉS",
-                            style: TextStyle(
+                            AppLocalizations.of(context)!
+                                .news_string
+                                .toUpperCase(),
+                            style: const TextStyle(
                               fontSize: 35,
                               fontWeight: FontWeight.bold,
                               color: Colors.white,

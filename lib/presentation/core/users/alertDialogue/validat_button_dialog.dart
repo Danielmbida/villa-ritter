@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:kt_dart/collection.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class ValidateButtonDialog extends StatelessWidget {
   const ValidateButtonDialog({
@@ -25,15 +26,16 @@ class ValidateButtonDialog extends StatelessWidget {
         shape: MaterialStateProperty.all<RoundedRectangleBorder>(
           RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(0),
-            side:  BorderSide(
+            side: BorderSide(
               color: Theme.of(context).primaryColor,
             ),
           ),
         ),
-        backgroundColor: MaterialStateProperty.all<Color>(Theme.of(context).primaryColor),
+        backgroundColor:
+            MaterialStateProperty.all<Color>(Theme.of(context).primaryColor),
       ),
       onPressed: () {
-        forAllUsers ==false
+        forAllUsers == false
             ? BlocProvider.of<UserActorBloc>(context).add(
                 UserActorEvent.left(
                   user.copyWith(present: false),
@@ -54,18 +56,18 @@ class ValidateButtonDialog extends StatelessWidget {
       },
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: const [
-          Icon(
+        children: [
+          const Icon(
             FontAwesomeIcons.check,
             color: Colors.white,
             size: 15,
           ),
-          SizedBox(
+          const SizedBox(
             width: 10,
           ),
           Text(
-            'Confirmer',
-            style: TextStyle(
+            AppLocalizations.of(context)!.confirm_string,
+            style: const TextStyle(
               color: Colors.white,
             ),
           ),

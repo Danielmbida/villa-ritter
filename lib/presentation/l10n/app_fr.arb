@@ -74,6 +74,189 @@
     "invalid_gender_string": "Selectionner un genre",
     "@invalid_gender_string":{
       "description": "le text pour le genre"
+    },
+     "hello_string": "Bonjour",
+     "@hello_string":{
+      "description": "le text Bonjour"
+    },
+    "welcome_string": "Bienvenue à la Villa",
+    "@welcome_string":{
+       "description" : "le text de Bienvenue"
+    },
+    "news_string": "Actualités",
+    "@news_string":{
+       "description" : "le text Actualités"
+    },
+    "villa_is_string": "La Villa est",
+    "@villa_is_string":{
+       "description" : "le text la villa est"
+    },
+    "villa_open_string": "Ouvert",
+    "@villa_open_string":{
+       "description" : "le text villa ouvert"
+    },
+    "villa_close_string": "Fermée",
+    "@villa_close_string":{
+       "description" : "le text villa fermée"
+    },
+    "logout_string": "Se déconnecter",
+    "@logout_string":{
+       "description" : "le text se déconnecter"
+    },
+    "title_fail_scan_string": "Echec du scan",
+    "@title_fail_scan_string":{
+       "description" : "le text se echec du scan"
+    },
+    "fail_scan_message": "Vous n'avez pas scanné le bon code qr",
+    "@title_fail_scan_string":{
+       "description" : "le message echec du scan"
+    },
+    "closing_scan_title_string": "Fermeture du scan",
+    "@closing_scan_title_string":{
+       "description" : "le text"
+    },
+    "closing_scan_message_string": "La page de scan s'est fermée par manque d'activité",
+    "@closing_scan_message_string":{
+       "description" : "texte"
+    },
+    "tag_string": "Jour",
+    "@tag_string":{
+       "description" : "le text"
+    },
+    "periode_string": "Periode",
+    "@periode_string":{
+       "description" : "le text"
+    },
+    "monday_string": "Lundi",
+    "@monday_string":{
+       "description" : "le text"
+    },
+    "tuesday_string": "Mardi",
+    "@tuesday_string":{
+       "description" : "le text"
+    },
+    "wednesday_string": "Mercredi",
+    "@wednesday_string":{
+       "description" : "le text"
+    },
+    "thursday_string": "Jeudi",
+    "@thursday_string":{
+       "description" : "le text"
+    },
+    "friday_string": "Vendredi",
+    "@wednesday_string":{
+       "description" : "le text"
+    },
+    "infos_hour_string": "Dès 20h45 La Villa Ritter est réservée aux jeunes de 15 ans et plus",
+    "@infos_hour_string":{
+       "description" : "le text"
+    },
+    "address_string": "Adresse",
+    "@address_string":{
+       "description" : "le text"
+    },
+    "hourly_string": "Horaire",
+    "@hourly_string":{
+       "description" : "le text"
+    },
+    "contact_string": "Contact",
+    "@contact_string":{
+       "description" : "le text"
+    },
+    "select_gallery_string": "Sélectionner dans la galerie",
+    "@select_gallery_string":{
+       "description" : "le text"
+    },
+    "take_photo_string": "Prendre une photo",
+    "@take_photo_string":{
+       "description" : "le text"
+    },
+     "delete_photo_string": "Supprimer la photo",
+    "@delete_photo_string":{
+       "description" : "le text"
+    },
+    "cancel_string": "Annuler",
+    "@contact_string":{
+       "description" : "le text"
+    },
+    "confirm_string": "Confirmer",
+    "@confirm_string":{
+       "description" : "le text"
+    },
+    "get_out_all_string": "Confirmer la sortie pour tous",
+    "@get_out_all_string":{
+       "description" : "le text"
+    },
+    "get_out_string": "Faire Sortir",
+    "@get_out_string":{
+       "description" : "le text"
+    },
+    "empty_list_string": "Vider la liste",
+    "@empty_list_string":{
+       "description" : "le text"
+    },
+    "get_out_one_string": "Confirmer la sortie de",
+    "@get_out_one_string":{
+       "description" : "le text"
+    },
+    "present_string": "Présent",
+    "@present_string":{
+       "description" : "le text"
+    },
+    "register_string": "inscrit",
+    "@register_string":{
+       "description" : "le text"
+    },
+    "infos_for_string": "Infos sur",
+    "@infos_for_string":{
+       "description" : "le text"
+    },
+    "arrive_at_wommen_string": "Arrivé à",
+    "@arrive_at_wommen_string":{
+       "description" : "le text"
+    },
+    "arrive_at_men_string": "Arrivée à",
+    "@arrive_at_men_string":{
+       "description" : "le text"
+    },
+    "password_forgot_string": "Mot de passe oublié",
+    "@password_forgot_string":{
+       "description" : "le text"
+    },
+    "reset_message_1_string": "Un lien vous a été envoyé pour réinitialiser votre mot de passe",
+    "@reset_message_string":{
+       "description" : "le text"
+    },
+    "reset_message_2_string": "vérifiez votre de boîte de reception",
+    "@reset_message_string":{
+       "description" : "le text"
+    },
+   "reset_subtitle_string": "Réinitialisez  votre mot de passe grâce a votre email",
+    "@reset_subtitle_string":{
+       "description" : "le text"
+    },
+    "no_email_exist_string": "Aucun compte n'a été créé avec cet email",
+    "@no_email_exist_string":{
+       "description" : "le text"
+    },
+    "enter_email_string": "Entrez votre email",
+    "@enter_email_string":{
+       "description" : "le text"
+    },
+   "send_button_string": "Envoyer",
+    "@send_button_string":{
+       "description" : "le text"
+    },
+    "reset_mess_success_string": "Lien de réinitialisation envoyé à",
+    "@reset_mess_success_string":{
+       "description" : "le text"
+    },
+    "sucess_message_string": "Un lien permettant de réinitialiser votre mot de passe a été envoyé à votre email. Vérifiez votre boîte de reception et une fois le mot de passe changer, il vous sera possible de vous connecter à l'application.",
+    "@sucess_message_string":{
+       "description" : "le text"
+    },
+    "connexion_page_string": "Page de connexion",
+    "@connexion_page_string":{
+       "description" : "le text"
     }
-
 }

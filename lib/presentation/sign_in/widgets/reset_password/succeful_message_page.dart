@@ -2,6 +2,7 @@
 import 'package:apptest/presentation/routes/router.gr.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class SuccefulMessagePage extends StatelessWidget {
   const SuccefulMessagePage({
@@ -31,7 +32,7 @@ class SuccefulMessagePage extends StatelessWidget {
                   height: MediaQuery.of(context).size.height * 0.05,
                 ),
                 Text(
-                  "Lien de reinitialisation envoyé à $email",
+                  "${AppLocalizations.of(context)!.reset_mess_success_string}$email",
                   style: const TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 25,
@@ -40,12 +41,12 @@ class SuccefulMessagePage extends StatelessWidget {
                 SizedBox(height: MediaQuery.of(context).size.height * 0.02),
                 Column(
                   children: [
-                    const Text(
-                      "Un lien permettant de réinitialiser votre mot de passe a été envoyé à votre email. Vérifiez votre boîte de reception et une fois le mot de passe changer, il vous sera possible de vous connecter à l'application",
+                    Text(
+                      AppLocalizations.of(context)!.sucess_message_string,
                       softWrap: false,
                       maxLines: 6,
                       overflow: TextOverflow.ellipsis,
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 20,
                         color: Colors.grey,
                       ),
@@ -62,9 +63,9 @@ class SuccefulMessagePage extends StatelessWidget {
                       onPressed: () {
                         context.router.push(const SignInRoute());
                       },
-                      child: const Text(
-                        "Page de connexion",
-                        style: TextStyle(fontSize: 18),
+                      child: Text(
+                        AppLocalizations.of(context)!.connexion_page_string,
+                        style: const TextStyle(fontSize: 18),
                       ),
                     ),
                   ],

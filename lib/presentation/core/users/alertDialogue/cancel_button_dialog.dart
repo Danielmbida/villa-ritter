@@ -1,6 +1,7 @@
 // ignore_for_file: depend_on_referenced_packages
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class CancelButtonDialog extends StatelessWidget {
   const CancelButtonDialog({
@@ -24,18 +25,18 @@ class CancelButtonDialog extends StatelessWidget {
       onPressed: () => Navigator.pop(context, 'Annuler'),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: const [
-          Icon(
+        children: [
+          const Icon(
             FontAwesomeIcons.solidTimesCircle,
             color: Colors.grey,
             size: 15,
           ),
-          SizedBox(
+          const SizedBox(
             width: 10,
           ),
           Text(
-            'Annuler',
-            style: TextStyle(
+            AppLocalizations.of(context)!.cancel_string,
+            style: const TextStyle(
               color: Colors.grey,
             ),
           ),

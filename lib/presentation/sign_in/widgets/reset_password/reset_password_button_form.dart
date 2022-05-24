@@ -2,6 +2,7 @@
 import 'package:apptest/presentation/routes/router.gr.dart';
 import 'package:flutter/material.dart';
 import 'package:auto_route/auto_route.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class ResetPasswordButtonForm extends StatelessWidget {
   const ResetPasswordButtonForm({
@@ -11,8 +12,7 @@ class ResetPasswordButtonForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final mediaHeight = MediaQuery.of(context).size.height;
-    return 
-    InkWell(
+    return InkWell(
       child: Row(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
@@ -24,13 +24,14 @@ class ResetPasswordButtonForm extends StatelessWidget {
               ),
             ),
             onPressed: () {
-               context.router.push(const ResetPasswordRoute());
+              context.router.push(const ResetPasswordRoute());
             },
-            child: const Text(
-              "Mot de passe oublier ?",
-              style: TextStyle(
+            child: Text(
+              "${AppLocalizations.of(context)!.password_forgot_string} ?",
+              style: const TextStyle(
                 color: Colors.white,
                 fontWeight: FontWeight.bold,
+                fontSize: 15,
               ),
             ),
           )

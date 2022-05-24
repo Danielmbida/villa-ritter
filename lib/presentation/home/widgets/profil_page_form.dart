@@ -12,6 +12,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class ProfileView extends StatefulWidget {
   final User user;
@@ -148,7 +149,7 @@ class _ProfileViewState extends State<ProfileView> {
                                   );
                             },
                             child: Text(
-                              "Se déconnecter",
+                              AppLocalizations.of(context)!.logout_string,
                               style: TextStyle(
                                 color: Theme.of(context).primaryColorDark,
                                 fontSize: 20,
@@ -213,7 +214,9 @@ class _ProfileViewState extends State<ProfileView> {
             children: <Widget>[
               ListTile(
                 leading: const Icon(Icons.photo_library),
-                title: const Text("Sélectionner dans la galerie"),
+                title: Text(
+                  AppLocalizations.of(context)!.select_gallery_string,
+                ),
                 onTap: () {
                   _pickImage(false);
                   Navigator.of(context).pop();
@@ -222,7 +225,7 @@ class _ProfileViewState extends State<ProfileView> {
               const Divider(),
               ListTile(
                 leading: const Icon(Icons.photo_camera),
-                title: const Text("Prendre une photo"),
+                title: Text(AppLocalizations.of(context)!.take_photo_string),
                 onTap: () {
                   _pickImage(true);
                   Navigator.of(context).pop();
@@ -231,9 +234,9 @@ class _ProfileViewState extends State<ProfileView> {
               const Divider(),
               ListTile(
                 leading: const Icon(Icons.delete),
-                title: const Text(
-                  "Supprimer la photo",
-                  style: TextStyle(color: Colors.red),
+                title: Text(
+                  AppLocalizations.of(context)!.delete_photo_string,
+                  style: const TextStyle(color: Colors.red),
                 ),
                 onTap: () {
                   _deleteImageFromPreferences();
@@ -243,7 +246,7 @@ class _ProfileViewState extends State<ProfileView> {
               const Divider(),
               ListTile(
                 leading: const Icon(Icons.close),
-                title: const Text("Annuler"),
+                title: Text(AppLocalizations.of(context)!.cancel_string),
                 onTap: () {
                   Navigator.of(context).pop();
                 },
