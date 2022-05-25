@@ -258,5 +258,21 @@
     "connexion_page_string": "Page de connexion",
     "@connexion_page_string":{
        "description" : "le text"
+    },
+    "no_internet_string": "Aucune connexion internet trouvée",
+    "@no_internet_string":{
+       "description" : "le text villa fermée"
+    },
+    "check_connexion_string": "Veuillez vérifier votre connexion",
+    "@check_connexion_string":{
+       "description" : "le text villa fermée"
+    },
+    "no_internet_dia_string": "Vérifier votre connexion",
+    "@no_internet_dia_string":{
+       "description" : "le text villa fermée"
+    },
+    "try_again_string": "Réessayer",
+    "@try_again_string":{
+       "description" : "le text villa fermée"
     }
 }

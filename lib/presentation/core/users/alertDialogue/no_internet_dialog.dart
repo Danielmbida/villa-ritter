@@ -1,5 +1,6 @@
 // ignore: depend_on_referenced_packages
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class NoInternetDialog extends StatelessWidget {
   const NoInternetDialog({
@@ -21,7 +22,9 @@ class NoInternetDialog extends StatelessWidget {
               size: MediaQuery.of(context).size.height * 0.12,
               color: Theme.of(context).primaryColor,
             ),
-            const Text('Vérifier votre connexion'),
+            Text(
+              AppLocalizations.of(context)!.no_internet_dia_string,
+            ),
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.03,
             ),
@@ -31,9 +34,9 @@ class NoInternetDialog extends StatelessWidget {
                 onPressed: () {
                   Navigator.of(context).pop();
                 },
-                child: const Text(
-                  "Réessayer",
-                  style: TextStyle(fontSize: 18),
+                child: Text(
+                  AppLocalizations.of(context)!.try_again_string,
+                  style: const TextStyle(fontSize: 18),
                 ),
               ),
             ),

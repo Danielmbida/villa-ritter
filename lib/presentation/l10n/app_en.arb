@@ -63,6 +63,10 @@
  "send_button_string" : "Send",
  "reset_mess_success_string" : "Reset link sent to",
  "sucess_message_string" :"A link to reset your password has been sent to your email. Check your inbox and once the password is changed, you will be able to log in to the application",
- "connexion_page_string" :"Login page"
+ "connexion_page_string" :"Login page",
+ "no_internet_string" : "No internet connection found",
+ "check_connexion_string" : "Please check your connection",
+ "no_internet_dia_string" : "Check your connection",
+ "try_again_string" : "Try again"
  
 }

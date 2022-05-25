@@ -68,7 +68,7 @@ class _ScanPageState extends State<ScanPage> with TickerProviderStateMixin {
         controller.stopCamera();
         controller.dispose();
         BlocProvider.of<ScanBloc>(context, listen: false)
-            .add(ScanEvent.scanCheckRequested(result.code));
+            .add(ScanEvent.scanCheckRequested(result.code!));
         context.router.popUntilRouteWithName('HomeRoute');
       }
     });

@@ -64,7 +64,11 @@
  "send_button_string" : "Senden",
  "reset_mess_success_string" : "Link zum Zurücksetzen gesendet an ",
  "sucess_message_string" :"Ein Link zum Zurücksetzen Ihres Passworts wurde an Ihre E-Mail-Adresse gesendet. Überprüfen Sie Ihren Posteingang und sobald Sie das Passwort geändert haben, können Sie sich in die Anwendung einloggen.",
- "connexion_page_string" :"Anmeldeseite"
+ "connexion_page_string" :"Anmeldeseite",
+ "no_internet_string" : "Keine Internetverbindung gefunden",
+ "check_connexion_string" : "Bitte überprüfen Sie Ihre Verbindung",
+ "no_internet_dia_string" : "Überprüfen Sie Ihre Verbindung",
+ "try_again_string" : "Versuchen Sie es erneut"
 
 }
 

@@ -1,6 +1,7 @@
+// ignore_for_file: depend_on_referenced_packages
 import 'package:avatar_glow/avatar_glow.dart';
-// ignore: depend_on_referenced_packages
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class DisplayNoInternetForm extends StatelessWidget {
   const DisplayNoInternetForm({
@@ -30,16 +31,16 @@ class DisplayNoInternetForm extends StatelessWidget {
               ),
             ),
           ),
-          const Text(
-            "Aucune connexion internet trouvée",
-            style: TextStyle(
+          Text(
+            AppLocalizations.of(context)!.no_internet_string,
+            style: const TextStyle(
               fontSize: 17,
               color: Colors.black,
             ),
           ),
-          const Text(
-            "Veuillez vérifier votre connexion",
-            style: TextStyle(
+          Text(
+            AppLocalizations.of(context)!.check_connexion_string,
+            style: const TextStyle(
               fontSize: 17,
               color: Colors.black,
             ),
