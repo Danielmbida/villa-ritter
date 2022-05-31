@@ -125,7 +125,7 @@ class UserInfosDialog extends StatelessWidget {
                     ),
                     UserInfoItemForm(
                       field: AppLocalizations.of(context)!.gender_string,
-                      infos: user.genre,
+                      infos: _userGender(user.genre, context),
                       icon: FontAwesomeIcons.transgenderAlt,
                       iconColor: Colors.black,
                     ),
@@ -153,5 +153,19 @@ class UserInfosDialog extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  String _userGender(gender, BuildContext context) {
+    String userGender = "";
+    if (gender == "Non-Binaire" ||
+        gender == "Non-Binary" ||
+        gender == "Nicht-binär") {
+      userGender = AppLocalizations.of(context)!.non_binary_string;
+    } else if (gender == "Femme" || gender == "Women" || gender == "Frau") {
+      userGender = AppLocalizations.of(context)!.wommen_string;
+    } else if (gender == "Homme" || gender == "Men" || gender == "Männlich") {
+      userGender = AppLocalizations.of(context)!.men_string;
+    }
+    return userGender;
   }
 }
