@@ -24,7 +24,7 @@ class _UserManagePageState extends State<UserManagePage> {
   @override
   Widget build(BuildContext context) {
     final String textHour = AppLocalizations.of(context)!.present_string;
-    final String textContact = AppLocalizations.of(context)!.register_string;
+    final String textContact = AppLocalizations.of(context)!.register_tab_string;
     return MultiBlocListener(
       listeners: [
         BlocListener<WatchAllUsersBloc, WatchAllUsersState>(
