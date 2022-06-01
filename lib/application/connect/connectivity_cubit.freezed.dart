@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'connectivity_cubit.dart';
@@ -171,14 +172,14 @@ class _$_Connected implements _Connected {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Connected &&
-            (identical(other.type, type) ||
-                const DeepCollectionEquality().equals(other.type, type)));
+        (other.runtimeType == runtimeType &&
+            other is _Connected &&
+            const DeepCollectionEquality().equals(other.type, type));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(type);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(type));
 
   @JsonKey(ignore: true)
   @override
@@ -252,7 +253,7 @@ abstract class _Connected implements InternetState {
   const factory _Connected(InternetType type) = _$_Connected;
 
   @override
-  InternetType get type => throw _privateConstructorUsedError;
+  InternetType get type;
   @override
   @JsonKey(ignore: true)
   _$ConnectedCopyWith<_Connected> get copyWith =>
@@ -312,14 +313,14 @@ class _$_Disconnected implements _Disconnected {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Disconnected &&
-            (identical(other.type, type) ||
-                const DeepCollectionEquality().equals(other.type, type)));
+        (other.runtimeType == runtimeType &&
+            other is _Disconnected &&
+            const DeepCollectionEquality().equals(other.type, type));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(type);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(type));
 
   @JsonKey(ignore: true)
   @override
@@ -393,7 +394,7 @@ abstract class _Disconnected implements InternetState {
   const factory _Disconnected(InternetType type) = _$_Disconnected;
 
   @override
-  InternetType get type => throw _privateConstructorUsedError;
+  InternetType get type;
   @override
   @JsonKey(ignore: true)
   _$DisconnectedCopyWith<_Disconnected> get copyWith =>
@@ -512,7 +513,8 @@ class _$_Wifi implements _Wifi {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Wifi);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Wifi);
   }
 
   @override
@@ -621,7 +623,8 @@ class _$_MobileData implements _MobileData {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _MobileData);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _MobileData);
   }
 
   @override
@@ -728,7 +731,8 @@ class _$_None implements _None {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _None);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _None);
   }
 
   @override

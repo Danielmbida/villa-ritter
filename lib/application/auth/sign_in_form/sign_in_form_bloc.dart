@@ -87,7 +87,6 @@ class SignInFormBloc extends Bloc<SignInFormEvent, SignInFormState> {
       Either<AuthFailure, Unit>? failureOrSuccess;
       final isEmailValid = state.emailAddress.isValid();
       if (isEmailValid) {
-         print("emialvalide");
         emit(
           state.copyWith(
             authFailureOrSuccessOption: none(),
@@ -122,7 +121,6 @@ class SignInFormBloc extends Bloc<SignInFormEvent, SignInFormState> {
             authFailureOrSuccessOption: none(),
           ),
         );
-        //a revoir
         failureOrSuccess =
             await _authFacade.registerWithEmailAndPasswordPressed(
           emailAddress: state.emailAddress,

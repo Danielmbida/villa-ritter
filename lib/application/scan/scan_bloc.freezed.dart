@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'scan_bloc.dart';
@@ -149,14 +150,14 @@ class _$_ScanCheckRequested implements _ScanCheckRequested {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _ScanCheckRequested &&
-            (identical(other.codeQR, codeQR) ||
-                const DeepCollectionEquality().equals(other.codeQR, codeQR)));
+        (other.runtimeType == runtimeType &&
+            other is _ScanCheckRequested &&
+            const DeepCollectionEquality().equals(other.codeQR, codeQR));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(codeQR);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(codeQR));
 
   @JsonKey(ignore: true)
   @override
@@ -238,7 +239,7 @@ class _$_ScanCheckRequested implements _ScanCheckRequested {
 abstract class _ScanCheckRequested implements ScanEvent {
   const factory _ScanCheckRequested(String codeQR) = _$_ScanCheckRequested;
 
-  String get codeQR => throw _privateConstructorUsedError;
+  String get codeQR;
   @JsonKey(ignore: true)
   _$ScanCheckRequestedCopyWith<_ScanCheckRequested> get copyWith =>
       throw _privateConstructorUsedError;
@@ -276,7 +277,9 @@ class _$_ScanDisplaErrorRequested implements _ScanDisplaErrorRequested {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _ScanDisplaErrorRequested);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _ScanDisplaErrorRequested);
   }
 
   @override
@@ -388,7 +391,8 @@ class _$_ScanResetted implements _ScanResetted {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _ScanResetted);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _ScanResetted);
   }
 
   @override
@@ -593,7 +597,8 @@ class _$_Initial implements _Initial {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Initial);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Initial);
   }
 
   @override
@@ -706,7 +711,8 @@ class _$_ScanFail implements _ScanFail {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _ScanFail);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _ScanFail);
   }
 
   @override
@@ -836,14 +842,14 @@ class _$_Sucess implements _Sucess {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Sucess &&
-            (identical(other.code, code) ||
-                const DeepCollectionEquality().equals(other.code, code)));
+        (other.runtimeType == runtimeType &&
+            other is _Sucess &&
+            const DeepCollectionEquality().equals(other.code, code));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(code);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(code));
 
   @JsonKey(ignore: true)
   @override
@@ -928,7 +934,7 @@ class _$_Sucess implements _Sucess {
 abstract class _Sucess implements ScanState {
   const factory _Sucess(String code) = _$_Sucess;
 
-  String get code => throw _privateConstructorUsedError;
+  String get code;
   @JsonKey(ignore: true)
   _$SucessCopyWith<_Sucess> get copyWith => throw _privateConstructorUsedError;
 }
@@ -963,7 +969,8 @@ class _$_ScanTimeout implements _ScanTimeout {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _ScanTimeout);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _ScanTimeout);
   }
 
   @override

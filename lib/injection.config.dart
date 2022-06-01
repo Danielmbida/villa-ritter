@@ -43,8 +43,8 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
   gh.lazySingleton<_i6.IAuthFacade>(
       () => _i7.FirebaseAuthFacade(get<_i4.FirebaseAuth>()));
   gh.lazySingleton<_i8.INewsRepository>(() => _i9.Newsrepository());
-  gh.lazySingleton<_i10.IUserRepository>(
-      () => _i11.UserRepository(get<_i5.FirebaseFirestore>()));
+  gh.lazySingleton<_i10.IUserRepository>(() => _i11.UserRepository(
+      get<_i5.FirebaseFirestore>(), get<_i4.FirebaseAuth>()));
   gh.factory<_i12.InternetCubit>(
       () => _i12.InternetCubit(connectivity: get<_i13.Connectivity>()));
   gh.factory<_i14.ScanBloc>(() => _i14.ScanBloc());

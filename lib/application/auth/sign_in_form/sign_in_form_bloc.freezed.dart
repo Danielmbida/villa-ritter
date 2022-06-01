@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'sign_in_form_bloc.dart';
@@ -250,15 +251,15 @@ class _$_LastNameChanged implements _LastNameChanged {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _LastNameChanged &&
-            (identical(other.lastNameStr, lastNameStr) ||
-                const DeepCollectionEquality()
-                    .equals(other.lastNameStr, lastNameStr)));
+        (other.runtimeType == runtimeType &&
+            other is _LastNameChanged &&
+            const DeepCollectionEquality()
+                .equals(other.lastNameStr, lastNameStr));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(lastNameStr);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(lastNameStr));
 
   @JsonKey(ignore: true)
   @override
@@ -395,7 +396,7 @@ class _$_LastNameChanged implements _LastNameChanged {
 abstract class _LastNameChanged implements SignInFormEvent {
   const factory _LastNameChanged(String lastNameStr) = _$_LastNameChanged;
 
-  String get lastNameStr => throw _privateConstructorUsedError;
+  String get lastNameStr;
   @JsonKey(ignore: true)
   _$LastNameChangedCopyWith<_LastNameChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -449,15 +450,15 @@ class _$_FirstNameChanged implements _FirstNameChanged {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _FirstNameChanged &&
-            (identical(other.fisrtNameStr, fisrtNameStr) ||
-                const DeepCollectionEquality()
-                    .equals(other.fisrtNameStr, fisrtNameStr)));
+        (other.runtimeType == runtimeType &&
+            other is _FirstNameChanged &&
+            const DeepCollectionEquality()
+                .equals(other.fisrtNameStr, fisrtNameStr));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(fisrtNameStr);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(fisrtNameStr));
 
   @JsonKey(ignore: true)
   @override
@@ -594,7 +595,7 @@ class _$_FirstNameChanged implements _FirstNameChanged {
 abstract class _FirstNameChanged implements SignInFormEvent {
   const factory _FirstNameChanged(String fisrtNameStr) = _$_FirstNameChanged;
 
-  String get fisrtNameStr => throw _privateConstructorUsedError;
+  String get fisrtNameStr;
   @JsonKey(ignore: true)
   _$FirstNameChangedCopyWith<_FirstNameChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -648,15 +649,15 @@ class _$_PasswordChanged implements _PasswordChanged {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _PasswordChanged &&
-            (identical(other.passwordStr, passwordStr) ||
-                const DeepCollectionEquality()
-                    .equals(other.passwordStr, passwordStr)));
+        (other.runtimeType == runtimeType &&
+            other is _PasswordChanged &&
+            const DeepCollectionEquality()
+                .equals(other.passwordStr, passwordStr));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(passwordStr);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(passwordStr));
 
   @JsonKey(ignore: true)
   @override
@@ -793,7 +794,7 @@ class _$_PasswordChanged implements _PasswordChanged {
 abstract class _PasswordChanged implements SignInFormEvent {
   const factory _PasswordChanged(String passwordStr) = _$_PasswordChanged;
 
-  String get passwordStr => throw _privateConstructorUsedError;
+  String get passwordStr;
   @JsonKey(ignore: true)
   _$PasswordChangedCopyWith<_PasswordChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -847,15 +848,15 @@ class _$_LocalityChanged implements _LocalityChanged {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _LocalityChanged &&
-            (identical(other.localityStr, localityStr) ||
-                const DeepCollectionEquality()
-                    .equals(other.localityStr, localityStr)));
+        (other.runtimeType == runtimeType &&
+            other is _LocalityChanged &&
+            const DeepCollectionEquality()
+                .equals(other.localityStr, localityStr));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(localityStr);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(localityStr));
 
   @JsonKey(ignore: true)
   @override
@@ -992,7 +993,7 @@ class _$_LocalityChanged implements _LocalityChanged {
 abstract class _LocalityChanged implements SignInFormEvent {
   const factory _LocalityChanged(String localityStr) = _$_LocalityChanged;
 
-  String get localityStr => throw _privateConstructorUsedError;
+  String get localityStr;
   @JsonKey(ignore: true)
   _$LocalityChangedCopyWith<_LocalityChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1046,15 +1047,15 @@ class _$_EmailAddressChanged implements _EmailAddressChanged {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _EmailAddressChanged &&
-            (identical(other.emailAddress, emailAddress) ||
-                const DeepCollectionEquality()
-                    .equals(other.emailAddress, emailAddress)));
+        (other.runtimeType == runtimeType &&
+            other is _EmailAddressChanged &&
+            const DeepCollectionEquality()
+                .equals(other.emailAddress, emailAddress));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(emailAddress);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(emailAddress));
 
   @JsonKey(ignore: true)
   @override
@@ -1193,7 +1194,7 @@ abstract class _EmailAddressChanged implements SignInFormEvent {
   const factory _EmailAddressChanged(String emailAddress) =
       _$_EmailAddressChanged;
 
-  String get emailAddress => throw _privateConstructorUsedError;
+  String get emailAddress;
   @JsonKey(ignore: true)
   _$EmailAddressChangedCopyWith<_EmailAddressChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1247,15 +1248,14 @@ class _$_BirthDateChanged implements _BirthDateChanged {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _BirthDateChanged &&
-            (identical(other.birthDate, birthDate) ||
-                const DeepCollectionEquality()
-                    .equals(other.birthDate, birthDate)));
+        (other.runtimeType == runtimeType &&
+            other is _BirthDateChanged &&
+            const DeepCollectionEquality().equals(other.birthDate, birthDate));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(birthDate);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(birthDate));
 
   @JsonKey(ignore: true)
   @override
@@ -1392,7 +1392,7 @@ class _$_BirthDateChanged implements _BirthDateChanged {
 abstract class _BirthDateChanged implements SignInFormEvent {
   const factory _BirthDateChanged(String birthDate) = _$_BirthDateChanged;
 
-  String get birthDate => throw _privateConstructorUsedError;
+  String get birthDate;
   @JsonKey(ignore: true)
   _$BirthDateChangedCopyWith<_BirthDateChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1434,7 +1434,8 @@ class _$_SignInWithNameAndPasswordPressed
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _SignInWithNameAndPasswordPressed);
+        (other.runtimeType == runtimeType &&
+            other is _SignInWithNameAndPasswordPressed);
   }
 
   @override
@@ -1620,15 +1621,14 @@ class _$_GenderChanged implements _GenderChanged {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _GenderChanged &&
-            (identical(other.genderStr, genderStr) ||
-                const DeepCollectionEquality()
-                    .equals(other.genderStr, genderStr)));
+        (other.runtimeType == runtimeType &&
+            other is _GenderChanged &&
+            const DeepCollectionEquality().equals(other.genderStr, genderStr));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(genderStr);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(genderStr));
 
   @JsonKey(ignore: true)
   @override
@@ -1765,7 +1765,7 @@ class _$_GenderChanged implements _GenderChanged {
 abstract class _GenderChanged implements SignInFormEvent {
   const factory _GenderChanged(String genderStr) = _$_GenderChanged;
 
-  String get genderStr => throw _privateConstructorUsedError;
+  String get genderStr;
   @JsonKey(ignore: true)
   _$GenderChangedCopyWith<_GenderChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1806,7 +1806,9 @@ class _$_ResetPasswordWithEmailPressed
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _ResetPasswordWithEmailPressed);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _ResetPasswordWithEmailPressed);
   }
 
   @override
@@ -1975,7 +1977,8 @@ class _$_RegisterWithUserFields implements _RegisterWithUserFields {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _RegisterWithUserFields);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _RegisterWithUserFields);
   }
 
   @override
@@ -2147,7 +2150,9 @@ class _$_SwitchRegisterAndLoginPressed
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _SwitchRegisterAndLoginPressed);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _SwitchRegisterAndLoginPressed);
   }
 
   @override
@@ -2609,64 +2614,44 @@ class _$_SignInFormState implements _SignInFormState {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _SignInFormState &&
-            (identical(other.lastName, lastName) ||
-                const DeepCollectionEquality()
-                    .equals(other.lastName, lastName)) &&
-            (identical(other.firstName, firstName) ||
-                const DeepCollectionEquality()
-                    .equals(other.firstName, firstName)) &&
-            (identical(other.locality, locality) ||
-                const DeepCollectionEquality()
-                    .equals(other.locality, locality)) &&
-            (identical(other.emailAddress, emailAddress) ||
-                const DeepCollectionEquality()
-                    .equals(other.emailAddress, emailAddress)) &&
-            (identical(other.birthDate, birthDate) ||
-                const DeepCollectionEquality()
-                    .equals(other.birthDate, birthDate)) &&
-            (identical(other.gender, gender) ||
-                const DeepCollectionEquality().equals(other.gender, gender)) &&
-            (identical(other.password, password) ||
-                const DeepCollectionEquality()
-                    .equals(other.password, password)) &&
-            (identical(other.showErrorMessages, showErrorMessages) ||
-                const DeepCollectionEquality()
-                    .equals(other.showErrorMessages, showErrorMessages)) &&
-            (identical(other.isSubmitting, isSubmitting) ||
-                const DeepCollectionEquality()
-                    .equals(other.isSubmitting, isSubmitting)) &&
-            (identical(other.isMen, isMen) ||
-                const DeepCollectionEquality().equals(other.isMen, isMen)) &&
-            (identical(other.isWommen, isWommen) ||
-                const DeepCollectionEquality()
-                    .equals(other.isWommen, isWommen)) &&
-            (identical(other.authFailureOrSuccessOption,
-                    authFailureOrSuccessOption) ||
-                const DeepCollectionEquality().equals(
-                    other.authFailureOrSuccessOption,
-                    authFailureOrSuccessOption)) &&
-            (identical(other.isRegister, isRegister) ||
-                const DeepCollectionEquality()
-                    .equals(other.isRegister, isRegister)));
+        (other.runtimeType == runtimeType &&
+            other is _SignInFormState &&
+            const DeepCollectionEquality().equals(other.lastName, lastName) &&
+            const DeepCollectionEquality().equals(other.firstName, firstName) &&
+            const DeepCollectionEquality().equals(other.locality, locality) &&
+            const DeepCollectionEquality()
+                .equals(other.emailAddress, emailAddress) &&
+            const DeepCollectionEquality().equals(other.birthDate, birthDate) &&
+            const DeepCollectionEquality().equals(other.gender, gender) &&
+            const DeepCollectionEquality().equals(other.password, password) &&
+            const DeepCollectionEquality()
+                .equals(other.showErrorMessages, showErrorMessages) &&
+            const DeepCollectionEquality()
+                .equals(other.isSubmitting, isSubmitting) &&
+            const DeepCollectionEquality().equals(other.isMen, isMen) &&
+            const DeepCollectionEquality().equals(other.isWommen, isWommen) &&
+            const DeepCollectionEquality().equals(
+                other.authFailureOrSuccessOption, authFailureOrSuccessOption) &&
+            const DeepCollectionEquality()
+                .equals(other.isRegister, isRegister));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(lastName) ^
-      const DeepCollectionEquality().hash(firstName) ^
-      const DeepCollectionEquality().hash(locality) ^
-      const DeepCollectionEquality().hash(emailAddress) ^
-      const DeepCollectionEquality().hash(birthDate) ^
-      const DeepCollectionEquality().hash(gender) ^
-      const DeepCollectionEquality().hash(password) ^
-      const DeepCollectionEquality().hash(showErrorMessages) ^
-      const DeepCollectionEquality().hash(isSubmitting) ^
-      const DeepCollectionEquality().hash(isMen) ^
-      const DeepCollectionEquality().hash(isWommen) ^
-      const DeepCollectionEquality().hash(authFailureOrSuccessOption) ^
-      const DeepCollectionEquality().hash(isRegister);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(lastName),
+      const DeepCollectionEquality().hash(firstName),
+      const DeepCollectionEquality().hash(locality),
+      const DeepCollectionEquality().hash(emailAddress),
+      const DeepCollectionEquality().hash(birthDate),
+      const DeepCollectionEquality().hash(gender),
+      const DeepCollectionEquality().hash(password),
+      const DeepCollectionEquality().hash(showErrorMessages),
+      const DeepCollectionEquality().hash(isSubmitting),
+      const DeepCollectionEquality().hash(isMen),
+      const DeepCollectionEquality().hash(isWommen),
+      const DeepCollectionEquality().hash(authFailureOrSuccessOption),
+      const DeepCollectionEquality().hash(isRegister));
 
   @JsonKey(ignore: true)
   @override
@@ -2691,32 +2676,31 @@ abstract class _SignInFormState implements SignInFormState {
       required bool isRegister}) = _$_SignInFormState;
 
   @override
-  LastName get lastName => throw _privateConstructorUsedError;
+  LastName get lastName;
   @override
-  FirstName get firstName => throw _privateConstructorUsedError;
+  FirstName get firstName;
   @override
-  Locality get locality => throw _privateConstructorUsedError;
+  Locality get locality;
   @override
-  EmailAddress get emailAddress => throw _privateConstructorUsedError;
+  EmailAddress get emailAddress;
   @override
-  BirthDate get birthDate => throw _privateConstructorUsedError;
+  BirthDate get birthDate;
   @override
-  Gender get gender => throw _privateConstructorUsedError;
+  Gender get gender;
   @override
-  Password get password => throw _privateConstructorUsedError;
+  Password get password;
   @override
-  bool get showErrorMessages => throw _privateConstructorUsedError;
+  bool get showErrorMessages;
   @override
-  bool get isSubmitting => throw _privateConstructorUsedError;
+  bool get isSubmitting;
   @override
-  bool get isMen => throw _privateConstructorUsedError;
+  bool get isMen;
   @override
-  bool get isWommen => throw _privateConstructorUsedError;
+  bool get isWommen;
   @override
-  Option<Either<AuthFailure, Unit>> get authFailureOrSuccessOption =>
-      throw _privateConstructorUsedError;
+  Option<Either<AuthFailure, Unit>> get authFailureOrSuccessOption;
   @override //Register
-  bool get isRegister => throw _privateConstructorUsedError;
+  bool get isRegister;
   @override
   @JsonKey(ignore: true)
   _$SignInFormStateCopyWith<_SignInFormState> get copyWith =>

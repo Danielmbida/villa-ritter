@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'watcher_news_bloc.dart';
@@ -124,7 +125,8 @@ class _$_WatchNewsStarted implements _WatchNewsStarted {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _WatchNewsStarted);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _WatchNewsStarted);
   }
 
   @override
@@ -248,16 +250,15 @@ class _$_NewsReceived implements _NewsReceived {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _NewsReceived &&
-            (identical(other.failuresOrNews, failuresOrNews) ||
-                const DeepCollectionEquality()
-                    .equals(other.failuresOrNews, failuresOrNews)));
+        (other.runtimeType == runtimeType &&
+            other is _NewsReceived &&
+            const DeepCollectionEquality()
+                .equals(other.failuresOrNews, failuresOrNews));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(failuresOrNews);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(failuresOrNews));
 
   @JsonKey(ignore: true)
   @override
@@ -334,8 +335,7 @@ abstract class _NewsReceived implements WatcherNewsEvent {
   const factory _NewsReceived(
       Either<NewsFailure, KtList<Post>> failuresOrNews) = _$_NewsReceived;
 
-  Either<NewsFailure, KtList<Post>> get failuresOrNews =>
-      throw _privateConstructorUsedError;
+  Either<NewsFailure, KtList<Post>> get failuresOrNews;
   @JsonKey(ignore: true)
   _$NewsReceivedCopyWith<_NewsReceived> get copyWith =>
       throw _privateConstructorUsedError;
@@ -468,7 +468,8 @@ class _$_Initial implements _Initial {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Initial);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Initial);
   }
 
   @override
@@ -584,7 +585,8 @@ class _$_LoadInProgress implements _LoadInProgress {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _LoadInProgress);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _LoadInProgress);
   }
 
   @override
@@ -717,15 +719,14 @@ class _$_LoadSuccess implements _LoadSuccess {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _LoadSuccess &&
-            (identical(other.listPosts, listPosts) ||
-                const DeepCollectionEquality()
-                    .equals(other.listPosts, listPosts)));
+        (other.runtimeType == runtimeType &&
+            other is _LoadSuccess &&
+            const DeepCollectionEquality().equals(other.listPosts, listPosts));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(listPosts);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(listPosts));
 
   @JsonKey(ignore: true)
   @override
@@ -810,7 +811,7 @@ class _$_LoadSuccess implements _LoadSuccess {
 abstract class _LoadSuccess implements WatcherNewsState {
   const factory _LoadSuccess(KtList<Post> listPosts) = _$_LoadSuccess;
 
-  KtList<Post> get listPosts => throw _privateConstructorUsedError;
+  KtList<Post> get listPosts;
   @JsonKey(ignore: true)
   _$LoadSuccessCopyWith<_LoadSuccess> get copyWith =>
       throw _privateConstructorUsedError;
@@ -873,15 +874,15 @@ class _$_LoadFailure implements _LoadFailure {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _LoadFailure &&
-            (identical(other.newsFailure, newsFailure) ||
-                const DeepCollectionEquality()
-                    .equals(other.newsFailure, newsFailure)));
+        (other.runtimeType == runtimeType &&
+            other is _LoadFailure &&
+            const DeepCollectionEquality()
+                .equals(other.newsFailure, newsFailure));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(newsFailure);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(newsFailure));
 
   @JsonKey(ignore: true)
   @override
@@ -966,7 +967,7 @@ class _$_LoadFailure implements _LoadFailure {
 abstract class _LoadFailure implements WatcherNewsState {
   const factory _LoadFailure(NewsFailure newsFailure) = _$_LoadFailure;
 
-  NewsFailure get newsFailure => throw _privateConstructorUsedError;
+  NewsFailure get newsFailure;
   @JsonKey(ignore: true)
   _$LoadFailureCopyWith<_LoadFailure> get copyWith =>
       throw _privateConstructorUsedError;

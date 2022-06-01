@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'user_actor_bloc.dart';
@@ -28,6 +29,12 @@ class _$UserActorEventTearOff {
       user,
     );
   }
+
+  _UnRegister unRegister(User user) {
+    return _UnRegister(
+      user,
+    );
+  }
 }
 
 /// @nodoc
@@ -41,18 +48,21 @@ mixin _$UserActorEvent {
   TResult when<TResult extends Object?>({
     required TResult Function(User user) present,
     required TResult Function(User user) left,
+    required TResult Function(User user) unRegister,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(User user)? present,
     TResult Function(User user)? left,
+    TResult Function(User user)? unRegister,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(User user)? present,
     TResult Function(User user)? left,
+    TResult Function(User user)? unRegister,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -60,18 +70,21 @@ mixin _$UserActorEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(_Present value) present,
     required TResult Function(_Left value) left,
+    required TResult Function(_UnRegister value) unRegister,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Present value)? present,
     TResult Function(_Left value)? left,
+    TResult Function(_UnRegister value)? unRegister,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Present value)? present,
     TResult Function(_Left value)? left,
+    TResult Function(_UnRegister value)? unRegister,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -170,14 +183,14 @@ class _$_Present implements _Present {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Present &&
-            (identical(other.user, user) ||
-                const DeepCollectionEquality().equals(other.user, user)));
+        (other.runtimeType == runtimeType &&
+            other is _Present &&
+            const DeepCollectionEquality().equals(other.user, user));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(user));
 
   @JsonKey(ignore: true)
   @override
@@ -189,6 +202,7 @@ class _$_Present implements _Present {
   TResult when<TResult extends Object?>({
     required TResult Function(User user) present,
     required TResult Function(User user) left,
+    required TResult Function(User user) unRegister,
   }) {
     return present(user);
   }
@@ -198,6 +212,7 @@ class _$_Present implements _Present {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(User user)? present,
     TResult Function(User user)? left,
+    TResult Function(User user)? unRegister,
   }) {
     return present?.call(user);
   }
@@ -207,6 +222,7 @@ class _$_Present implements _Present {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(User user)? present,
     TResult Function(User user)? left,
+    TResult Function(User user)? unRegister,
     required TResult orElse(),
   }) {
     if (present != null) {
@@ -220,6 +236,7 @@ class _$_Present implements _Present {
   TResult map<TResult extends Object?>({
     required TResult Function(_Present value) present,
     required TResult Function(_Left value) left,
+    required TResult Function(_UnRegister value) unRegister,
   }) {
     return present(this);
   }
@@ -229,6 +246,7 @@ class _$_Present implements _Present {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Present value)? present,
     TResult Function(_Left value)? left,
+    TResult Function(_UnRegister value)? unRegister,
   }) {
     return present?.call(this);
   }
@@ -238,6 +256,7 @@ class _$_Present implements _Present {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Present value)? present,
     TResult Function(_Left value)? left,
+    TResult Function(_UnRegister value)? unRegister,
     required TResult orElse(),
   }) {
     if (present != null) {
@@ -251,7 +270,7 @@ abstract class _Present implements UserActorEvent {
   const factory _Present(User user) = _$_Present;
 
   @override
-  User get user => throw _privateConstructorUsedError;
+  User get user;
   @override
   @JsonKey(ignore: true)
   _$PresentCopyWith<_Present> get copyWith =>
@@ -307,14 +326,14 @@ class _$_Left implements _Left {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Left &&
-            (identical(other.user, user) ||
-                const DeepCollectionEquality().equals(other.user, user)));
+        (other.runtimeType == runtimeType &&
+            other is _Left &&
+            const DeepCollectionEquality().equals(other.user, user));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(user));
 
   @JsonKey(ignore: true)
   @override
@@ -326,6 +345,7 @@ class _$_Left implements _Left {
   TResult when<TResult extends Object?>({
     required TResult Function(User user) present,
     required TResult Function(User user) left,
+    required TResult Function(User user) unRegister,
   }) {
     return left(user);
   }
@@ -335,6 +355,7 @@ class _$_Left implements _Left {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(User user)? present,
     TResult Function(User user)? left,
+    TResult Function(User user)? unRegister,
   }) {
     return left?.call(user);
   }
@@ -344,6 +365,7 @@ class _$_Left implements _Left {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(User user)? present,
     TResult Function(User user)? left,
+    TResult Function(User user)? unRegister,
     required TResult orElse(),
   }) {
     if (left != null) {
@@ -357,6 +379,7 @@ class _$_Left implements _Left {
   TResult map<TResult extends Object?>({
     required TResult Function(_Present value) present,
     required TResult Function(_Left value) left,
+    required TResult Function(_UnRegister value) unRegister,
   }) {
     return left(this);
   }
@@ -366,6 +389,7 @@ class _$_Left implements _Left {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Present value)? present,
     TResult Function(_Left value)? left,
+    TResult Function(_UnRegister value)? unRegister,
   }) {
     return left?.call(this);
   }
@@ -375,6 +399,7 @@ class _$_Left implements _Left {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Present value)? present,
     TResult Function(_Left value)? left,
+    TResult Function(_UnRegister value)? unRegister,
     required TResult orElse(),
   }) {
     if (left != null) {
@@ -388,10 +413,156 @@ abstract class _Left implements UserActorEvent {
   const factory _Left(User user) = _$_Left;
 
   @override
-  User get user => throw _privateConstructorUsedError;
+  User get user;
   @override
   @JsonKey(ignore: true)
   _$LeftCopyWith<_Left> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$UnRegisterCopyWith<$Res>
+    implements $UserActorEventCopyWith<$Res> {
+  factory _$UnRegisterCopyWith(
+          _UnRegister value, $Res Function(_UnRegister) then) =
+      __$UnRegisterCopyWithImpl<$Res>;
+  @override
+  $Res call({User user});
+
+  @override
+  $UserCopyWith<$Res> get user;
+}
+
+/// @nodoc
+class __$UnRegisterCopyWithImpl<$Res> extends _$UserActorEventCopyWithImpl<$Res>
+    implements _$UnRegisterCopyWith<$Res> {
+  __$UnRegisterCopyWithImpl(
+      _UnRegister _value, $Res Function(_UnRegister) _then)
+      : super(_value, (v) => _then(v as _UnRegister));
+
+  @override
+  _UnRegister get _value => super._value as _UnRegister;
+
+  @override
+  $Res call({
+    Object? user = freezed,
+  }) {
+    return _then(_UnRegister(
+      user == freezed
+          ? _value.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as User,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_UnRegister implements _UnRegister {
+  const _$_UnRegister(this.user);
+
+  @override
+  final User user;
+
+  @override
+  String toString() {
+    return 'UserActorEvent.unRegister(user: $user)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _UnRegister &&
+            const DeepCollectionEquality().equals(other.user, user));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(user));
+
+  @JsonKey(ignore: true)
+  @override
+  _$UnRegisterCopyWith<_UnRegister> get copyWith =>
+      __$UnRegisterCopyWithImpl<_UnRegister>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(User user) present,
+    required TResult Function(User user) left,
+    required TResult Function(User user) unRegister,
+  }) {
+    return unRegister(user);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(User user)? present,
+    TResult Function(User user)? left,
+    TResult Function(User user)? unRegister,
+  }) {
+    return unRegister?.call(user);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(User user)? present,
+    TResult Function(User user)? left,
+    TResult Function(User user)? unRegister,
+    required TResult orElse(),
+  }) {
+    if (unRegister != null) {
+      return unRegister(user);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Present value) present,
+    required TResult Function(_Left value) left,
+    required TResult Function(_UnRegister value) unRegister,
+  }) {
+    return unRegister(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Present value)? present,
+    TResult Function(_Left value)? left,
+    TResult Function(_UnRegister value)? unRegister,
+  }) {
+    return unRegister?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Present value)? present,
+    TResult Function(_Left value)? left,
+    TResult Function(_UnRegister value)? unRegister,
+    required TResult orElse(),
+  }) {
+    if (unRegister != null) {
+      return unRegister(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _UnRegister implements UserActorEvent {
+  const factory _UnRegister(User user) = _$_UnRegister;
+
+  @override
+  User get user;
+  @override
+  @JsonKey(ignore: true)
+  _$UnRegisterCopyWith<_UnRegister> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -529,7 +700,8 @@ class _$_Initial implements _Initial {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Initial);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Initial);
   }
 
   @override
@@ -651,7 +823,8 @@ class _$_UpdatedSuccess implements _UpdatedSuccess {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _UpdatedSuccess);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _UpdatedSuccess);
   }
 
   @override
@@ -799,14 +972,14 @@ class _$_UpdatedFailure implements _UpdatedFailure {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _UpdatedFailure &&
-            (identical(other.f, f) ||
-                const DeepCollectionEquality().equals(other.f, f)));
+        (other.runtimeType == runtimeType &&
+            other is _UpdatedFailure &&
+            const DeepCollectionEquality().equals(other.f, f));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(f);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(f));
 
   @JsonKey(ignore: true)
   @override
@@ -897,7 +1070,7 @@ class _$_UpdatedFailure implements _UpdatedFailure {
 abstract class _UpdatedFailure implements UserActorState {
   const factory _UpdatedFailure(UserFailure f) = _$_UpdatedFailure;
 
-  UserFailure get f => throw _privateConstructorUsedError;
+  UserFailure get f;
   @JsonKey(ignore: true)
   _$UpdatedFailureCopyWith<_UpdatedFailure> get copyWith =>
       throw _privateConstructorUsedError;
@@ -934,7 +1107,8 @@ class _$ActionInProgress implements ActionInProgress {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is ActionInProgress);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is ActionInProgress);
   }
 
   @override
@@ -1053,7 +1227,8 @@ class _$IsLeft implements IsLeft {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is IsLeft);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is IsLeft);
   }
 
   @override

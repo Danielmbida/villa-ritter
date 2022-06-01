@@ -7,14 +7,18 @@ import 'package:apptest/infrastructure/users/user_dto.dart';
 import 'package:apptest/injection.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
+import 'package:firebase_auth/firebase_auth.dart' as firebaseAuth;
+// import 'package:firebase_auth/firebase_auth.dart';
 import 'package:injectable/injectable.dart';
 import 'package:kt_dart/kt.dart';
 
 @LazySingleton(as: IUserRepository)
 class UserRepository implements IUserRepository {
   final FirebaseFirestore _firestore;
-
-  UserRepository(this._firestore);
+  // final FirebaseAuth _firebaseAuth;
+  final firebaseAuth.FirebaseAuth _firebaseAuth;
+  UserRepository(this._firestore, this._firebaseAuth);
+  // UserRepository(this._firestore);
 
   @override
   Stream<Either<UserFailure, KtList<User>>> watchAllUsersPresent() async* {
@@ -66,9 +70,12 @@ class UserRepository implements IUserRepository {
   @override
   Future<Either<UserFailure, Unit>> delete(User user) async {
     try {
-      final rideDto = UserDto.fromDomain(user);
-
-      await _firestore.collection('users').doc(rideDto.id).delete();
+      final userDto = UserDto.fromDomain(user);
+      print("supprimé");
+      print(userDto.id);
+      
+      await _firebaseAuth.currentUser!.delete();
+      await _firestore.collection('users').doc(userDto.id).delete();
 
       return right(unit);
     } on FirebaseException catch (e) {

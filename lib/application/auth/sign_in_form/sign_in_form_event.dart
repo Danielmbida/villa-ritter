@@ -16,6 +16,7 @@ class SignInFormEvent with _$SignInFormEvent {
 
   const factory SignInFormEvent.emailAddressChanged(String emailAddress) =
       _EmailAddressChanged;
+   
 
   const factory SignInFormEvent.birthDateChanged(String birthDate) =
       _BirthDateChanged;

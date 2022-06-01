@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'user_dto.dart';
@@ -42,7 +43,7 @@ class _$UserDtoTearOff {
     );
   }
 
-  UserDto fromJson(Map<String, Object> json) {
+  UserDto fromJson(Map<String, Object?> json) {
     return UserDto.fromJson(json);
   }
 }
@@ -254,39 +255,29 @@ class _$_UserDto extends _UserDto {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _UserDto &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.nom, nom) ||
-                const DeepCollectionEquality().equals(other.nom, nom)) &&
-            (identical(other.email, email) ||
-                const DeepCollectionEquality().equals(other.email, email)) &&
-            (identical(other.genre, genre) ||
-                const DeepCollectionEquality().equals(other.genre, genre)) &&
-            (identical(other.localite, localite) ||
-                const DeepCollectionEquality()
-                    .equals(other.localite, localite)) &&
-            (identical(other.naissance, naissance) ||
-                const DeepCollectionEquality()
-                    .equals(other.naissance, naissance)) &&
-            (identical(other.present, present) ||
-                const DeepCollectionEquality()
-                    .equals(other.present, present)) &&
-            (identical(other.arrive, arrive) ||
-                const DeepCollectionEquality().equals(other.arrive, arrive)));
+        (other.runtimeType == runtimeType &&
+            other is _UserDto &&
+            const DeepCollectionEquality().equals(other.id, id) &&
+            const DeepCollectionEquality().equals(other.nom, nom) &&
+            const DeepCollectionEquality().equals(other.email, email) &&
+            const DeepCollectionEquality().equals(other.genre, genre) &&
+            const DeepCollectionEquality().equals(other.localite, localite) &&
+            const DeepCollectionEquality().equals(other.naissance, naissance) &&
+            const DeepCollectionEquality().equals(other.present, present) &&
+            const DeepCollectionEquality().equals(other.arrive, arrive));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(nom) ^
-      const DeepCollectionEquality().hash(email) ^
-      const DeepCollectionEquality().hash(genre) ^
-      const DeepCollectionEquality().hash(localite) ^
-      const DeepCollectionEquality().hash(naissance) ^
-      const DeepCollectionEquality().hash(present) ^
-      const DeepCollectionEquality().hash(arrive);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(id),
+      const DeepCollectionEquality().hash(nom),
+      const DeepCollectionEquality().hash(email),
+      const DeepCollectionEquality().hash(genre),
+      const DeepCollectionEquality().hash(localite),
+      const DeepCollectionEquality().hash(naissance),
+      const DeepCollectionEquality().hash(present),
+      const DeepCollectionEquality().hash(arrive));
 
   @JsonKey(ignore: true)
   @override
@@ -315,21 +306,21 @@ abstract class _UserDto extends UserDto {
 
   @override
   @JsonKey(ignore: true)
-  String? get id => throw _privateConstructorUsedError;
+  String? get id;
   @override
-  String get nom => throw _privateConstructorUsedError;
+  String get nom;
   @override
-  String get email => throw _privateConstructorUsedError;
+  String get email;
   @override
-  String get genre => throw _privateConstructorUsedError;
+  String get genre;
   @override
-  String get localite => throw _privateConstructorUsedError;
+  String get localite;
   @override
-  String get naissance => throw _privateConstructorUsedError;
+  String get naissance;
   @override
-  bool get present => throw _privateConstructorUsedError;
+  bool get present;
   @override
-  String get arrive => throw _privateConstructorUsedError;
+  String get arrive;
   @override
   @JsonKey(ignore: true)
   _$UserDtoCopyWith<_UserDto> get copyWith =>

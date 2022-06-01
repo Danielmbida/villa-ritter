@@ -3,6 +3,7 @@ import 'package:apptest/application/auth/auth_bloc.dart';
 import 'package:apptest/application/connect/connectivity_cubit.dart';
 import 'package:apptest/application/user_actor/user_actor_bloc.dart';
 import 'package:apptest/domain/auth/user.dart';
+import 'package:apptest/presentation/core/users/alertDialogue/un_register_dialog.dart';
 import 'package:apptest/presentation/home/widgets/buttons/admin_button_form.dart';
 import 'package:apptest/presentation/home/widgets/buttons/left_button_form.dart';
 import 'package:apptest/presentation/home/widgets/buttons/present_button_form.dart';
@@ -150,6 +151,44 @@ class _ProfileViewState extends State<ProfileView> {
                             },
                             child: Text(
                               AppLocalizations.of(context)!.logout_string,
+                              style: TextStyle(
+                                color: Theme.of(context).primaryColorDark,
+                                fontSize: 20,
+                              ),
+                            ),
+                          ),
+                        ),
+                        PopupMenuItem(
+                          child: GestureDetector(
+                            onTap: () {
+                              // context.read<AuthBloc>().add(
+                              //       const AuthEvent.signedOut(),
+                              //     );
+                              showGeneralDialog(
+                                context: context,
+                                barrierDismissible: false,
+                                barrierLabel: "Modal",
+                                transitionDuration: const Duration(
+                                  milliseconds: 600,
+                                ),
+                                transitionBuilder: (
+                                  context,
+                                  animation,
+                                  secondaryAnimation,
+                                  widget2,
+                                ) {
+                                  return UnRegisterDialog(
+                                    user: widget.user,
+                                  );
+                                },
+                                pageBuilder:
+                                    (context, _animation1, __animation2) {
+                                  return const Text("");
+                                },
+                              );
+                            },
+                            child: Text(
+                              "Mon profil",
                               style: TextStyle(
                                 color: Theme.of(context).primaryColorDark,
                                 fontSize: 20,
