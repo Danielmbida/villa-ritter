@@ -102,7 +102,10 @@ class UserInfosDialog extends StatelessWidget {
                     ),
                     InkWell(
                       onTap: () {
-                        UrlLauncher.launchURL("mailto://${user.email}");
+                        UrlLauncher.launchURL(
+                          "https://mail.google.com/mail/u/0/#inbox?compose=GTvVlcSBpDwRQrKjcXntRkSnvpNmhFQSRJMKhtCrmTpKKbSfNhKWFGxNBxfqTcCwQGwcChbCgGQCS",
+                          "mailto://${user.email}",
+                        );
                       },
                       child: UserInfoItemForm(
                         field: AppLocalizations.of(context)!.email_string,

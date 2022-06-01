@@ -52,7 +52,7 @@ class SpeedDialForm extends StatelessWidget {
               iconName == "youtube"
                   ? FontAwesomeIcons.youtube
                   : iconName != "villa"
-                      ? FontAwesomeIcons.phoneAlt
+                      ? FontAwesomeIcons.solidContactBook
                       : FontAwesomeIcons.infoCircle,
               color: iconColor,
             ),
@@ -68,13 +68,19 @@ class SpeedDialForm extends StatelessWidget {
   Future<String> _networkAction(String iconName, BuildContext context) async {
     switch (iconName) {
       case "insta":
-        UrlLauncher.launchURL("https://www.instagram.com/villabnc");
+        UrlLauncher.launchURL(
+          "https://www.instagram.com/villabnc",
+          "instagram://user?username=villabnc",
+        );
         break;
       case "youtube":
-        UrlLauncher.launchURL("https://www.youtube.com/user/villaritterbienne");
+        UrlLauncher.launchURL(
+          "https://www.youtube.com/user/villaritterbienne",
+          "youtube://user?username=villaritterbienne",
+        );
         break;
       case "villa":
-        UrlLauncher.launchURL("https://www.villa-ritter.ch/");
+        UrlLauncher.launchURL("https://www.villa-ritter.ch/", "");
         break;
       case "phone":
         context.router.push(

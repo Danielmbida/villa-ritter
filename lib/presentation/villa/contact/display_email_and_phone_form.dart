@@ -24,7 +24,7 @@ class DisplayEmainAndPhoneForm extends StatelessWidget {
           children: [
             GestureDetector(
               onTap: () async {
-                UrlLauncher.launchURL("tel://0323288955");
+                UrlLauncher.launchURL("", "tel://0323288955");
               },
               child: Column(
                 children: [
@@ -51,7 +51,10 @@ class DisplayEmainAndPhoneForm extends StatelessWidget {
               padding: const EdgeInsets.all(8.0),
               child: GestureDetector(
                 onTap: () async {
-                  UrlLauncher.launchURL("mailto://villaritter@bluewin.ch");
+                  UrlLauncher.launchURL(
+                    "https://mail.google.com/mail/u/0/#inbox?compose=GTvVlcSBpDwRQrKjcXntRkSnvpNmhFQSRJMKhtCrmTpKKbSfNhKWFGxNBxfqTcCwQGwcChbCgGQCS",
+                    "mailto://villaritter@bluewin.ch",
+                  );
                 },
                 child: Column(
                   children: [
