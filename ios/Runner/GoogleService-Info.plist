@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>1063613146470-5h57vd3mgbcf35jj8pj1idsinvhsm2ji.apps.googleusercontent.com</string>
+	<string>1063613146470-ifgqpg5sa7ce2nmt75jm0jlnoscbkebl.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.1063613146470-5h57vd3mgbcf35jj8pj1idsinvhsm2ji</string>
+	<string>com.googleusercontent.apps.1063613146470-ifgqpg5sa7ce2nmt75jm0jlnoscbkebl</string>
 	<key>API_KEY</key>
 	<string>AIzaSyDZaqt8ALuVmhICkAwP-5CZGYUpr8O8NpM</string>
 	<key>GCM_SENDER_ID</key>
@@ -13,7 +13,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.example.apptest</string>
+	<string>ch.villa-ritter.app</string>
 	<key>PROJECT_ID</key>
 	<string>villa-ritter</string>
 	<key>STORAGE_BUCKET</key>
@@ -29,7 +29,7 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:1063613146470:ios:7c858dc78d5fbf92da54a7</string>
+	<string>1:1063613146470:ios:94b0322058711cc4da54a7</string>
 	<key>DATABASE_URL</key>
 	<string>https://villa-ritter-default-rtdb.firebaseio.com</string>
 </dict>
