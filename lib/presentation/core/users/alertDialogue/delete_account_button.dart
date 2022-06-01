@@ -43,7 +43,9 @@ class DeleteAccountButton extends StatelessWidget {
             context: context,
             builder: (BuildContext context) {
               return AlertDialog(
-                title: Text("Supprimer mon compte"),
+                title: Text(
+                  AppLocalizations.of(context)!.delete_my_account_string,
+                ),
                 actions: [
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -71,7 +73,6 @@ class DeleteAccountButton extends StatelessWidget {
                             ),
                           );
                           context.router.replace(const SignInRoute());
-                      
                         },
                         child: Text(
                           AppLocalizations.of(context)!.confirm_string,
@@ -86,14 +87,15 @@ class DeleteAccountButton extends StatelessWidget {
                   fontSize: 20,
                 ),
                 content: Text(
-                  "Etes-vous sûr de vouloir supprimer votre compte (cette action est irreversible)",
+                  AppLocalizations.of(context)!
+                      .delete_my_account_confirm_dialog_content,
                 ),
               );
             },
           );
         },
         child: Text(
-          'Supprimer mon compte',
+          AppLocalizations.of(context)!.delete_my_account_string,
           style: const TextStyle(
             color: Colors.white,
           ),

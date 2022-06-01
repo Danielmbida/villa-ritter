@@ -188,7 +188,7 @@ class _ProfileViewState extends State<ProfileView> {
                               );
                             },
                             child: Text(
-                              "Mon profil",
+                              AppLocalizations.of(context)!.my_account_menu_string,
                               style: TextStyle(
                                 color: Theme.of(context).primaryColorDark,
                                 fontSize: 20,

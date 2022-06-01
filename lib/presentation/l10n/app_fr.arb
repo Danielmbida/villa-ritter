@@ -274,5 +274,17 @@
     "try_again_string": "Réessayer",
     "@try_again_string":{
        "description" : "le text villa fermée"
+    },
+    "delete_my_account_string": "Supprimer mon compte",
+    "@delete_my_account_string": {
+       "description": "Le texte utilisé pour la fonctionnalité de suppression du compte (menu, boîte de dialogue)"
+    },
+    "delete_my_account_confirm_dialog_content": "Êtes-vous sûr de vouloir supprimer votre compte (cette action est irréversible)",
+    "@delete_my_account_confirm_dialog_content": {
+       "description": "Le texte utilisé dans la boîte de dialogue nous permettant de confirmer si on veut vraiment supprimer notre compte"
+    },
+    "my_account_menu_string": "Mon profil",
+    "@my_account_menu_string": {
+       "description": "Le texte utilisé dans le menu afin d'accéder à la page de profil"
     }
 }

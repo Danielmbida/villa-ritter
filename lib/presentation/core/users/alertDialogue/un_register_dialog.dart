@@ -79,7 +79,7 @@ class _UnRegisterDialogState extends State<UnRegisterDialog> {
                       horizontal: 15,
                     ),
                     child: Text(
-                      "Mon profil",
+                      AppLocalizations.of(context)!.my_account_menu_string,
                       style: TextStyle(
                         color: Colors.black,
                         fontSize: MediaQuery.of(context).size.width * 0.10,

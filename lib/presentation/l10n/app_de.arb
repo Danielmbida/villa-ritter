@@ -67,7 +67,9 @@
  "no_internet_string" : "Keine Internetverbindung gefunden",
  "check_connexion_string" : "Bitte überprüfen Sie Ihre Verbindung",
  "no_internet_dia_string" : "Überprüfen Sie Ihre Verbindung",
- "try_again_string" : "Versuchen Sie es erneut"
-
+ "try_again_string" : "Versuchen Sie es erneut",
+ "delete_my_account_string": "Meinen Account löschen",
+ "delete_my_account_confirm_dialog_content": "Sind Sie sicher, dass Sie Ihr Account löschen wollen (diese Aktion ist unumkehrbar)",
+ "my_account_menu_string": "Mein Profil"
 }
 
