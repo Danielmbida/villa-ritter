@@ -145,6 +145,7 @@ class _ProfileViewState extends State<ProfileView> {
                         PopupMenuItem(
                           child: GestureDetector(
                             onTap: () {
+                              Navigator.pop(context);
                               context.read<AuthBloc>().add(
                                     const AuthEvent.signedOut(),
                                   );
@@ -161,9 +162,7 @@ class _ProfileViewState extends State<ProfileView> {
                         PopupMenuItem(
                           child: GestureDetector(
                             onTap: () {
-                              // context.read<AuthBloc>().add(
-                              //       const AuthEvent.signedOut(),
-                              //     );
+                              Navigator.pop(context);
                               showGeneralDialog(
                                 context: context,
                                 barrierDismissible: false,
@@ -188,7 +187,8 @@ class _ProfileViewState extends State<ProfileView> {
                               );
                             },
                             child: Text(
-                              AppLocalizations.of(context)!.my_account_menu_string,
+                              AppLocalizations.of(context)!
+                                  .my_account_menu_string,
                               style: TextStyle(
                                 color: Theme.of(context).primaryColorDark,
                                 fontSize: 20,
