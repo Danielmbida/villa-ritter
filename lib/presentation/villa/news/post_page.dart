@@ -46,7 +46,7 @@ class PostPage extends StatelessWidget {
                   Map<String, String> attributes,
                   dom.Element? element,
                 ) {
-                  UrlLauncher.launchURL(url!);
+                  UrlLauncher.launchURL(url!, "");
                 },
               )
             ],

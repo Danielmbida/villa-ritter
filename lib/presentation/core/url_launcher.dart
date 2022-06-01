@@ -4,14 +4,19 @@ import 'package:url_launcher/url_launcher.dart';
 class UrlLauncher {
   ///Permet l'ouverture des liens des application
   // ignore: avoid_void_async
-  static void launchURL(String url) async {
-    final Uri uri = Uri.parse(url);
-    if (await canLaunchUrl(uri)) {
+  static void launchURL(String webUrl, String nativeUrl) async {
+    final Uri webUri = Uri.parse(webUrl);
+    final Uri nativeUri = Uri.parse(nativeUrl);
+    if (await canLaunchUrl(nativeUri)) {
       await launchUrl(
-        uri,
+        nativeUri,
+      );
+    } else if (await canLaunchUrl(webUri)) {
+      await launchUrl(
+        webUri,
       );
     } else {
-      throw 'Could not launch $url';
+      throw 'Could not launch $webUrl';
     }
   }
 }
