@@ -203,7 +203,7 @@
     "@present_string":{
        "description" : "le text"
     },
-    "register_tab_string": "inscrit",
+    "register_tab_string": "Inscrit",
     "@register_tab_string":{
        "description" : "le text"
     },
