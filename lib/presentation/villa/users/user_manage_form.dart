@@ -54,100 +54,102 @@ class _UserManagePageState extends State<UserManagePage> {
           },
         ),
       ],
-      child: DefaultTabController(
-        length: 2,
-        child: Scaffold(
-          appBar: AppBar(
-            automaticallyImplyLeading: false,
-            leading: IconButton(
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
-              icon: const Icon(Icons.arrow_back),
-            ),
-            bottom: TabBar(
-              tabs: [
-                SizedBox(
-                  child: Row(
-                    children: [
-                      Stack(
-                        children: [
-                          if (nbUserPresent != 0)
-                            Row(
-                              children: [
-                                SizedBox(
-                                  width:
-                                      MediaQuery.of(context).size.width * 0.28,
-                                ),
-                                CircleAvatar(
-                                  backgroundColor: Colors.orange,
-                                  radius: 10,
-                                  child: Text(
-                                    nbUserPresent.toString(),
-                                    style: const TextStyle(
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.bold,
+      child: SafeArea(
+        child: DefaultTabController(
+          length: 2,
+          child: Scaffold(
+            appBar: AppBar(
+              automaticallyImplyLeading: false,
+              leading: IconButton(
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+                icon: const Icon(Icons.arrow_back),
+              ),
+              bottom: TabBar(
+                tabs: [
+                  SizedBox(
+                    child: Row(
+                      children: [
+                        Stack(
+                          children: [
+                            if (nbUserPresent != 0)
+                              Row(
+                                children: [
+                                  SizedBox(
+                                    width:
+                                        MediaQuery.of(context).size.width * 0.28,
+                                  ),
+                                  CircleAvatar(
+                                    backgroundColor: Colors.orange,
+                                    radius: 10,
+                                    child: Text(
+                                      nbUserPresent.toString(),
+                                      style: const TextStyle(
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.bold,
+                                      ),
                                     ),
                                   ),
-                                ),
-                              ],
-                            ),
-                          Text(
-                            textHour,
-                            style: TextStyle(
-                              fontSize: tabTextSize,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-                ),
-                Stack(
-                  children: [
-                    if (nbAllUser != 0)
-                      Row(
-                        children: [
-                          SizedBox(
-                            width: MediaQuery.of(context).size.width * 0.23,
-                          ),
-                          CircleAvatar(
-                            backgroundColor: Colors.orange,
-                            radius: 10,
-                            child: Text(
-                              nbAllUser.toString(),
-                              style: const TextStyle(
-                                color: Colors.white,
+                                ],
+                              ),
+                            Text(
+                              textHour,
+                              style: TextStyle(
+                                fontSize: tabTextSize,
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
-                          ),
-                        ],
-                      ),
-                    Text(
-                      textContact,
-                      style: TextStyle(
-                        fontSize: tabTextSize,
-                        fontWeight: FontWeight.bold,
-                      ),
+                          ],
+                        ),
+                      ],
                     ),
-                  ],
-                ),
+                  ),
+                  Stack(
+                    children: [
+                      if (nbAllUser != 0)
+                        Row(
+                          children: [
+                            SizedBox(
+                              width: MediaQuery.of(context).size.width * 0.23,
+                            ),
+                            CircleAvatar(
+                              backgroundColor: Colors.orange,
+                              radius: 10,
+                              child: Text(
+                                nbAllUser.toString(),
+                                style: const TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      Text(
+                        textContact,
+                        style: TextStyle(
+                          fontSize: tabTextSize,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+              flexibleSpace: Image.asset(
+                "assets/images/3.jpg",
+                width: MediaQuery.of(context).size.width,
+                fit: BoxFit.cover,
+                height: imageHeight,
+              ),
+            ),
+            body: const TabBarView(
+              children: [
+                UserPresentPage(),
+                DisplayAllUserPage(),
               ],
             ),
-            flexibleSpace: Image.asset(
-              "assets/images/3.jpg",
-              width: MediaQuery.of(context).size.width,
-              fit: BoxFit.cover,
-              height: imageHeight,
-            ),
-          ),
-          body: const TabBarView(
-            children: [
-              UserPresentPage(),
-              DisplayAllUserPage(),
-            ],
           ),
         ),
       ),
