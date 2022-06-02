@@ -124,19 +124,6 @@ class _ProfileViewState extends State<ProfileView> {
                     height: mediaHeight * 0.12,
                   ),
                 ),
-                Positioned(
-                  top: mediaHeight * 0.19,
-                  left: mediaWidth * .38,
-                  child: CircleAvatar(
-                    radius: mediaHeight * 0.018,
-                    backgroundColor: Colors.blue,
-                    child: const Icon(
-                      Icons.add,
-                      size: 20,
-                      color: Colors.white,
-                    ),
-                  ),
-                ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
