@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_circular_text/circular_text.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:intl/intl.dart';
 
 class VillaStateDisplay extends StatefulWidget {
   const VillaStateDisplay({
@@ -78,32 +79,48 @@ class _VillaStateDisplayState extends State<VillaStateDisplay> {
 
   bool _checkVillaHours() {
     final int day = DateTime.now().weekday;
-    final int hour = DateTime.now().hour;
-    final int minute = DateTime.now().minute;
-    // final int hour = 18;
-    // final int minute = 01;
+    final DateTime now = DateTime.now();
+    final int year = DateTime.now().year;
+    final String month = DateFormat('MM').format(DateTime.now());
+    final String day1 = DateFormat('dd').format(DateTime.now());
+    final DateTime ouverturApresMidi =
+        DateTime.parse("$year-$month-$day1 13:59");
+    final DateTime fermetureApresMidi =
+        DateTime.parse("$year-$month-$day1 18:00");
+    final DateTime ouverturSoir = DateTime.parse("$year-$month-$day1 19:29");
+    final DateTime fermetureSoir = DateTime.parse("$year-$month-$day1 23:00");
+    final DateTime fermetureVendredi =
+        DateTime.parse("$year-$month-$day1 00:00");
+    // final now = DateTime.parse("$year-$month-$day1 23:00"); ///--> for test
 
     switch (day) {
       case 1:
         return false;
       case 2:
-        // if (hour < 14 || hour > 18 || hour > 23) return false;
-        if ((hour >= 14 && hour < 18) ||
-            ((hour >= 19 && minute == 30) && hour < 23)) return true;
+        if ((now.isAfter(ouverturApresMidi) &&
+                now.isBefore(fermetureApresMidi)) ||
+            (now.isAfter(ouverturSoir) && now.isBefore(fermetureSoir))) {
+          return true;
+        }
         return false;
-      // break;
       case 3:
-        // if (hour < 14 || hour > 18 || hour > 23) return false;
-        if ((hour >= 14 && hour < 18) ||
-            ((hour >= 19 && minute == 30) && hour < 23)) return true;
+        if ((now.isAfter(ouverturApresMidi) &&
+                now.isBefore(fermetureApresMidi)) ||
+            (now.isAfter(ouverturSoir) && now.isBefore(fermetureSoir))) {
+          return true;
+        }
         break;
       case 4:
-        if ((hour >= 19 && minute == 30) && hour < 23) return true;
+        if (now.isAfter(ouverturSoir) && now.isBefore(fermetureSoir)) {
+          return true;
+        }
         break;
       case 5:
-        // if (hour < 14 || hour > 18 || hour > 23) return false;
-        if ((hour >= 14 && hour < 18) ||
-            ((hour >= 19 && minute == 30) && hour < 0)) return true;
+        if ((now.isAfter(ouverturApresMidi) &&
+                now.isBefore(fermetureApresMidi)) ||
+            (now.isAfter(ouverturSoir) && now.isBefore(fermetureVendredi))) {
+          return true;
+        }
         break;
       case 6:
         return false;

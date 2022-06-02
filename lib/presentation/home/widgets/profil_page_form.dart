@@ -107,7 +107,7 @@ class _ProfileViewState extends State<ProfileView> {
               children: [
                 Positioned(
                   top: mediaHeight * 0.06,
-                  left: mediaWidth * 0.28,
+                  left: mediaWidth * .32,
                   child: InkWell(
                     child: ImageProfilForm(pickedImageFile: _pickedImageFile),
                     onTap: () {
@@ -126,9 +126,9 @@ class _ProfileViewState extends State<ProfileView> {
                 ),
                 Positioned(
                   top: mediaHeight * 0.19,
-                  left: mediaWidth * 0.35,
+                  left: mediaWidth * .38,
                   child: CircleAvatar(
-                    radius: mediaHeight * 0.015,
+                    radius: mediaHeight * 0.018,
                     backgroundColor: Colors.blue,
                     child: const Icon(
                       Icons.add,
