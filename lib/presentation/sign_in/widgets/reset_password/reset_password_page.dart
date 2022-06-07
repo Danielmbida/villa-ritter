@@ -58,99 +58,101 @@ class _ResetPasswordPageState extends State<ResetPasswordPage> {
           return SafeArea(
             child: Scaffold(
               body: SizedBox(
-                child: Column(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.all(12.0),
-                      child: Row(
+                child: SingleChildScrollView(
+                  child: Column(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(12.0),
+                        child: Row(
+                          children: [
+                            InkWell(
+                              child: const Icon(Icons.close),
+                              onTap: () {
+                                Navigator.of(context).pop();
+                              },
+                            ),
+                          ],
+                        ),
+                      ),
+                      SizedBox(
+                        height: MediaQuery.of(context).size.height * 0.05,
+                      ),
+                      ListTile(
+                        title: Text(
+                          AppLocalizations.of(context)!.password_forgot_string,
+                          style: const TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 30,
+                          ),
+                        ),
+                        subtitle: Text(
+                          AppLocalizations.of(context)!.reset_subtitle_string,
+                          style: const TextStyle(
+                            fontSize: 15,
+                            color: Colors.grey,
+                          ),
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          InkWell(
-                            child: const Icon(Icons.close),
-                            onTap: () {
-                              Navigator.of(context).pop();
-                            },
+                          Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 15),
+                            child: Text(
+                              AppLocalizations.of(context)!.enter_email_string,
+                              style: const TextStyle(
+                                fontSize: 15,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ),
+                          Form(
+                            autovalidateMode: state.showErrorMessages
+                                ? AutovalidateMode.always
+                                : AutovalidateMode.disabled,
+                            child: const TextFormFieldForm(
+                              paddingFormElems: 10,
+                              rBorderFormElems: 1,
+                              formName: "reset",
+                              labelTextForm: "Email",
+                              prefixIcon: Icons.email,
+                              textInputType: TextInputType.text,
+                            ),
                           ),
                         ],
                       ),
-                    ),
-                    SizedBox(
-                      height: MediaQuery.of(context).size.height * 0.05,
-                    ),
-                    ListTile(
-                      title: Text(
-                        AppLocalizations.of(context)!.password_forgot_string,
-                        style: const TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 30,
-                        ),
-                      ),
-                      subtitle: Text(
-                        AppLocalizations.of(context)!.reset_subtitle_string,
-                        style: const TextStyle(
-                          fontSize: 15,
-                          color: Colors.grey,
-                        ),
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 15),
-                          child: Text(
-                            AppLocalizations.of(context)!.enter_email_string,
-                            style: const TextStyle(
-                              fontSize: 15,
-                              fontWeight: FontWeight.bold,
+                      Padding(
+                        padding: const EdgeInsets.all(18.0),
+                        child: Align(
+                          alignment: Alignment.centerRight,
+                          child: ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                              primary: Colors.black,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(0.0),
+                                side: const BorderSide(color: Colors.white),
+                              ),
                             ),
-                          ),
-                        ),
-                        Form(
-                          autovalidateMode: state.showErrorMessages
-                              ? AutovalidateMode.always
-                              : AutovalidateMode.disabled,
-                          child: const TextFormFieldForm(
-                            paddingFormElems: 10,
-                            rBorderFormElems: 1,
-                            formName: "reset",
-                            labelTextForm: "Email",
-                            prefixIcon: Icons.email,
-                            textInputType: TextInputType.text,
-                          ),
-                        ),
-                      ],
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(18.0),
-                      child: Align(
-                        alignment: Alignment.centerRight,
-                        child: ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                            primary: Colors.black,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(0.0),
-                              side: const BorderSide(color: Colors.white),
-                            ),
-                          ),
-                          onPressed: () {
-                            context.read<SignInFormBloc>().add(
-                                  const SignInFormEvent
-                                      .resetPasswordWithEmailPressed(),
-                                );
-                          },
-                          child: Padding(
-                            padding: const EdgeInsets.all(18.0),
-                            child: Text(
-                              AppLocalizations.of(context)!.send_button_string,
+                            onPressed: () {
+                              context.read<SignInFormBloc>().add(
+                                    const SignInFormEvent
+                                        .resetPasswordWithEmailPressed(),
+                                  );
+                            },
+                            child: Padding(
+                              padding: const EdgeInsets.all(18.0),
+                              child: Text(
+                                AppLocalizations.of(context)!.send_button_string,
+                              ),
                             ),
                           ),
                         ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
             ),

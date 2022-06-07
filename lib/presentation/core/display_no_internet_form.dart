@@ -14,19 +14,19 @@ class DisplayNoInternetForm extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          AvatarGlow(
-            glowColor: Colors.blueGrey,
+          const AvatarGlow(
+            glowColor:  Color(0xff20544c),
             endRadius: 100.0,
             child: Material(
               elevation: 8.0,
-              shape: const CircleBorder(),
+              shape: CircleBorder(),
               child: CircleAvatar(
-                backgroundColor: Colors.grey.shade200,
+                backgroundColor: Color(0xff20544c),
                 radius: 50,
-                child: const Icon(
+                child: Icon(
                   Icons.wifi_off,
                   size: 60,
-                  color: Colors.grey,
+                  color: Colors.white,
                 ),
               ),
             ),

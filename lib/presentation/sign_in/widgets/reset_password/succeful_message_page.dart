@@ -17,7 +17,7 @@ class SuccefulMessagePage extends StatelessWidget {
       child: Scaffold(
         body: SizedBox(
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 15),
+            padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
             child: Column(
               children: [
                 Padding(
@@ -32,7 +32,7 @@ class SuccefulMessagePage extends StatelessWidget {
                   height: MediaQuery.of(context).size.height * 0.05,
                 ),
                 Text(
-                  "${AppLocalizations.of(context)!.reset_mess_success_string}$email",
+                  "${AppLocalizations.of(context)!.reset_mess_success_string} $email",
                   style: const TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 25,
@@ -44,7 +44,7 @@ class SuccefulMessagePage extends StatelessWidget {
                     Text(
                       AppLocalizations.of(context)!.sucess_message_string,
                       softWrap: false,
-                      maxLines: 6,
+                      maxLines: 20,
                       overflow: TextOverflow.ellipsis,
                       style: const TextStyle(
                         fontSize: 20,
