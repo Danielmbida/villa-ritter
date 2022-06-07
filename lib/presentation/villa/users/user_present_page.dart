@@ -4,6 +4,7 @@ import 'package:apptest/application/user_actor/user_actor_bloc.dart';
 import 'package:apptest/application/watch_all_users_present/user_watch_all_bloc.dart';
 import 'package:apptest/domain/auth/user.dart';
 import 'package:apptest/domain/core/value_objects.dart';
+import 'package:apptest/injection.dart';
 import 'package:apptest/presentation/core/display_no_internet_form.dart';
 import 'package:apptest/presentation/core/users/alertDialogue/app_alert_dialog.dart';
 // import 'package:apptest/presentation/core/users/alertDialogue/user_get_out_dialog.dart';
@@ -45,117 +46,124 @@ class _UserPresentPageState extends State<UserPresentPage>
   );
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: BlocBuilder<InternetCubit, InternetState>(
-        builder: (context, intState) {
-          return intState.maybeMap(
-            orElse: () => Container(),
-            disconnected: (_) {
-              return const DisplayNoInternetForm();
-            },
-            connected: (s) {
-              return BlocBuilder<UserWatchAllBloc, UserWatchAllState>(
-                builder: (context, state) {
-                  return state.maybeMap(
-                    orElse: () {
-                      return Container();
-                    },
-                    loadInProgress: (_) {
-                      return const Center(
-                        child: CircularProgressIndicator(),
-                      );
-                    },
-                    loadSuccess: (users) {
-                      if (users.users.size < 1) {
-                        return Stack(
-                          children: const [
-                            DisplayNobodyForm(),
-                          ],
+    return BlocProvider(
+      create: (context) => getIt<UserActorBloc>(),
+      child: Scaffold(
+        body: BlocBuilder<InternetCubit, InternetState>(
+          builder: (context, intState) {
+            return intState.maybeMap(
+              orElse: () => Container(),
+              disconnected: (_) {
+                return const DisplayNoInternetForm();
+              },
+              connected: (s) {
+                return BlocBuilder<UserWatchAllBloc, UserWatchAllState>(
+                  builder: (context, state) {
+                    return state.maybeMap(
+                      orElse: () {
+                        return Container();
+                      },
+                      loadInProgress: (_) {
+                        return const Center(
+                          child: CircularProgressIndicator(),
                         );
-                      }
-                      return SingleChildScrollView(
-                        child: Stack(
-                          children: [
-                            SizedBox(
-                              height: MediaQuery.of(context).size.height * 0.85,
-                              child: ListView.builder(
-                                itemCount: users.users.size,
-                                itemBuilder: (context, index) {
-                                  final user = users.users[index];
-                                  return UserInfosCardItemForm(
-                                    allUsers: users.users,
-                                    user: user,
-                                  );
-                                },
+                      },
+                      loadSuccess: (users) {
+                        if (users.users.size < 1) {
+                          return Stack(
+                            children: const [
+                              DisplayNobodyForm(),
+                            ],
+                          );
+                        }
+                        return SingleChildScrollView(
+                          child: Stack(
+                            children: [
+                              SizedBox(
+                                height:
+                                    MediaQuery.of(context).size.height * 0.85,
+                                child: ListView.builder(
+                                  itemCount: users.users.size,
+                                  itemBuilder: (context, index) {
+                                    final user = users.users[index];
+                                    return UserInfosCardItemForm(
+                                      allUsers: users.users,
+                                      user: user,
+                                    );
+                                  },
+                                ),
                               ),
-                            ),
-                            UserCountForm(
-                              users: users.users,
-                              animation: _animation,
-                            ),
-                            Positioned(
-                              bottom: MediaQuery.of(context).size.height * 0.09,
-                              child: Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: SizedBox(
-                                  width:
-                                      MediaQuery.of(context).size.width * 0.30,
-                                  child: FloatingActionButton(
-                                    shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(10.0),
-                                    ),
-                                    backgroundColor:
-                                        Theme.of(context).primaryColor,
-                                    onPressed: () {
-                                      void onPressedCall() {
-                                        users.users.forEach((elem) {
-                                          BlocProvider.of<UserActorBloc>(
-                                            context,
-                                          ).add(
-                                            UserActorEvent.left(
-                                              elem.copyWith(present: false),
-                                            ),
-                                          );
-                                        });
-                                        Navigator.of(context).pop();
-                                      }
+                              UserCountForm(
+                                users: users.users,
+                                animation: _animation,
+                              ),
+                              Positioned(
+                                bottom:
+                                    MediaQuery.of(context).size.height * 0.09,
+                                child: Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: SizedBox(
+                                    width: MediaQuery.of(context).size.width *
+                                        0.30,
+                                    child: FloatingActionButton(
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius:
+                                            BorderRadius.circular(10.0),
+                                      ),
+                                      backgroundColor:
+                                          Theme.of(context).primaryColor,
+                                      onPressed: () {
+                                        void onPressedCall() {
+                                          users.users.forEach((elem) {
+                                            BlocProvider.of<UserActorBloc>(
+                                              context,
+                                            ).add(
+                                              UserActorEvent.left(
+                                                elem.copyWith(present: false),
+                                              ),
+                                            );
+                                          });
+                                          Navigator.of(context).pop();
+                                        }
 
-                                      showDialog(
-                                        context: context,
-                                        builder: (BuildContext context) {
-                                          return AppAlertDialog(
-                                            user: user,
-                                            title: AppLocalizations.of(context)!
-                                                .get_out_string,
-                                            description:
-                                                AppLocalizations.of(context)!
-                                                    .get_out_all_string,
-                                            onPressedCall: onPressedCall,
-                                          );
-                                        },
-                                      );
-                                    },
-                                    child: Text(
-                                      AppLocalizations.of(context)!
-                                          .empty_list_string,
-                                      style: const TextStyle(
-                                        color: Colors.white,
+                                        showDialog(
+                                          context: context,
+                                          builder: (BuildContext context) {
+                                            return AppAlertDialog(
+                                              user: user,
+                                              title:
+                                                  AppLocalizations.of(context)!
+                                                      .get_out_string,
+                                              description:
+                                                  AppLocalizations.of(context)!
+                                                      .get_out_all_string,
+                                              onPressedCall: onPressedCall,
+                                            );
+                                          },
+                                        );
+                                      },
+                                      child: Text(
+                                        AppLocalizations.of(context)!
+                                            .empty_list_string,
+                                        style: const TextStyle(
+                                          color: Colors.white,
+                                        ),
                                       ),
                                     ),
                                   ),
                                 ),
                               ),
-                            ),
-                          ],
-                        ),
-                      );
-                    },
-                  );
-                },
-              );
-            },
-          );
-        },
+                            ],
+                          ),
+                        );
+                      },
+                    );
+                  },
+                );
+              },
+            );
+          },
+        ),
       ),
     );
   }

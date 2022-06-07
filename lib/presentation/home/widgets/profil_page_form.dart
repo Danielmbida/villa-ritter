@@ -91,7 +91,6 @@ class _ProfileViewState extends State<ProfileView> {
                     setState(() {
                     isPresence = true;
                     });
-                    print("présent");
                   },
                   updatedFailure: (_) {},
                   actionInProgress: (_) {},
@@ -99,7 +98,6 @@ class _ProfileViewState extends State<ProfileView> {
                     setState(() {
                     isPresence = false;
                     });
-                    print("pas présent");
                   },
                 );
               },
@@ -218,15 +216,13 @@ class _ProfileViewState extends State<ProfileView> {
                   top: mediaHeight * 0.15,
                   right: mediaWidth * 0.03,
                   child: !widget.user.email.contains("admin")
-                      ? isPresence == false
+                      ? isPresence== false
                           ? PrensentButtonForm(
-                              isConnected: isConnected,
-                              widget: widget,
+                              user: widget.user,
                               isLeft: false,
                             )
                           : LeftButtonForm(
-                              isConnected: isConnected,
-                              widget: widget,
+                              user: widget.user,
                               isLeft: true,
                             )
                       : const AdminButtonForm(),
