@@ -107,7 +107,7 @@ class _ProfileViewState extends State<ProfileView> {
               children: [
                 Positioned(
                   top: mediaHeight * 0.06,
-                  left: mediaWidth * .32,
+                  left: mediaWidth * .27,
                   child: InkWell(
                     child: ImageProfilForm(pickedImageFile: _pickedImageFile),
                     onTap: () {
