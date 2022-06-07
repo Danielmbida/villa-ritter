@@ -1,8 +1,11 @@
+import 'package:apptest/application/user_actor/user_actor_bloc.dart';
 import 'package:apptest/domain/auth/user.dart';
-import 'package:apptest/presentation/core/users/alertDialogue/user_get_out_dialog.dart';
+import 'package:apptest/presentation/core/users/alertDialogue/app_alert_dialog.dart';
+// import 'package:apptest/presentation/core/users/alertDialogue/user_get_out_dialog.dart';
 import 'package:apptest/presentation/core/users/infosDialog/user_infos_dialog.dart';
 // ignore: depend_on_referenced_packages
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:kt_dart/collection.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -25,14 +28,25 @@ class UserInfosCardItemForm extends StatelessWidget {
         child: Material(
           child: InkWell(
             onLongPress: () {
+              void onPressedCall() {
+                BlocProvider.of<UserActorBloc>(context).add(
+                  UserActorEvent.left(
+                    user.copyWith(present: false),
+                  ),
+                );
+                Navigator.of(context).pop();
+              }
+
               if (user.present) {
                 showDialog(
                   context: context,
                   builder: (BuildContext context) {
-                    return UserGetOutDialog(
+                    return AppAlertDialog(
                       user: user,
-                      allUsers: allUsers,
-                      forAllUsers: false,
+                      title: AppLocalizations.of(context)!.get_out_string,
+                      description:
+                          "${AppLocalizations.of(context)!.get_out_one_string} ${user.name}",
+                      onPressedCall: onPressedCall,
                     );
                   },
                 );

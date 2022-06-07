@@ -17,8 +17,12 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class ProfileView extends StatefulWidget {
   final User user;
+  final bool presence;
 
-  const ProfileView({required this.user});
+  const ProfileView({
+    required this.user,
+    required this.presence,
+  });
 
   @override
   _ProfileViewState createState() => _ProfileViewState();
@@ -85,15 +89,17 @@ class _ProfileViewState extends State<ProfileView> {
                   initial: (_) {},
                   updatedSuccess: (_) {
                     setState(() {
-                      isPresence = true;
+                    isPresence = true;
                     });
+                    print("présent");
                   },
                   updatedFailure: (_) {},
                   actionInProgress: (_) {},
                   isLeft: (_) {
                     setState(() {
-                      isPresence = false;
+                    isPresence = false;
                     });
+                    print("pas présent");
                   },
                 );
               },
@@ -109,7 +115,9 @@ class _ProfileViewState extends State<ProfileView> {
                   top: mediaHeight * 0.06,
                   left: mediaWidth * .27,
                   child: InkWell(
-                    child: ImageProfilForm(pickedImageFile: _pickedImageFile),
+                    child: ImageProfilForm(
+                      pickedImageFile: _pickedImageFile,
+                    ),
                     onTap: () {
                       _addImageModal(context);
                     },

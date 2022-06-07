@@ -65,14 +65,14 @@ class _HomePageFormState extends State<HomePageForm> {
                             initial: (_) {},
                             updatedSuccess: (_) {
                               setState(() {
-                                present = true;
+                              present = true;
                               });
                             },
                             updatedFailure: (_) {},
                             actionInProgress: (_) {},
                             isLeft: (_) {
                               setState(() {
-                                present = false;
+                              present = false;
                               });
                             },
                           );
@@ -163,7 +163,10 @@ class _HomePageFormState extends State<HomePageForm> {
                                     MediaQuery.of(context).size.height * 0.30,
                                 child: Stack(
                                   children: [
-                                    ProfileView(user: widget.user),
+                                    ProfileView(
+                                      user: widget.user,
+                                      presence: present,
+                                    ),
                                     const VillaStateDisplay(),
                                   ],
                                 ),

@@ -1,16 +1,19 @@
 // ignore_for_file: depend_on_referenced_packages
 import 'package:apptest/application/connect/connectivity_cubit.dart';
+import 'package:apptest/application/user_actor/user_actor_bloc.dart';
 import 'package:apptest/application/watch_all_users_present/user_watch_all_bloc.dart';
 import 'package:apptest/domain/auth/user.dart';
 import 'package:apptest/domain/core/value_objects.dart';
 import 'package:apptest/presentation/core/display_no_internet_form.dart';
-import 'package:apptest/presentation/core/users/alertDialogue/user_get_out_dialog.dart';
+import 'package:apptest/presentation/core/users/alertDialogue/app_alert_dialog.dart';
+// import 'package:apptest/presentation/core/users/alertDialogue/user_get_out_dialog.dart';
 import 'package:apptest/presentation/core/users/display_nobody_form.dart';
 import 'package:apptest/presentation/core/users/user_count_form.dart';
 import 'package:apptest/presentation/core/users/user_infos_card_item_form.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:kt_dart/collection.dart';
 
 class UserPresentPage extends StatefulWidget {
   const UserPresentPage({Key? key}) : super(key: key);
@@ -104,13 +107,30 @@ class _UserPresentPageState extends State<UserPresentPage>
                                     backgroundColor:
                                         Theme.of(context).primaryColor,
                                     onPressed: () {
+                                      void onPressedCall() {
+                                        users.users.forEach((elem) {
+                                          BlocProvider.of<UserActorBloc>(
+                                            context,
+                                          ).add(
+                                            UserActorEvent.left(
+                                              elem.copyWith(present: false),
+                                            ),
+                                          );
+                                        });
+                                        Navigator.of(context).pop();
+                                      }
+
                                       showDialog(
                                         context: context,
                                         builder: (BuildContext context) {
-                                          return UserGetOutDialog(
+                                          return AppAlertDialog(
                                             user: user,
-                                            allUsers: users.users,
-                                            forAllUsers: true,
+                                            title: AppLocalizations.of(context)!
+                                                .get_out_string,
+                                            description:
+                                                AppLocalizations.of(context)!
+                                                    .get_out_all_string,
+                                            onPressedCall: onPressedCall,
                                           );
                                         },
                                       );
