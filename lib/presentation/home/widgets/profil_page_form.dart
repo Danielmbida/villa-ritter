@@ -98,10 +98,7 @@ class _ProfileViewState extends State<ProfileView> {
                     setState(() {
                     isPresence = false;
                     });
-<<<<<<< Updated upstream
-=======
                     print("partie");
->>>>>>> Stashed changes
                   },
                 );
               },
