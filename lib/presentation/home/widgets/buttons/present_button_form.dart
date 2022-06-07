@@ -1,4 +1,3 @@
-
 import 'package:apptest/application/user_actor/user_actor_bloc.dart';
 import 'package:apptest/presentation/core/users/alertDialogue/no_internet_dialog.dart';
 import 'package:apptest/presentation/home/widgets/profil_page_form.dart';
@@ -9,6 +8,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
 class PrensentButtonForm extends StatelessWidget {
   const PrensentButtonForm({
     Key? key,
@@ -18,9 +18,8 @@ class PrensentButtonForm extends StatelessWidget {
   }) : super(key: key);
 
   final bool isConnected;
-    final bool isLeft;
+  final bool isLeft;
   final ProfileView widget;
-
 
   @override
   Widget build(BuildContext context) {
@@ -36,19 +35,15 @@ class PrensentButtonForm extends StatelessWidget {
     }
     return InkWell(
       onTap: () {
-        if (isConnected == true) {
-          !isLeft
-              ? context.router.push(const ScanRoute())
-              : BlocProvider.of<UserActorBloc>(context).add(
-                  UserActorEvent.left(
-                    widget.user.copyWith(
-                      present: false,
-                    ),
+        !isLeft
+            ? context.router.push(const ScanRoute())
+            : BlocProvider.of<UserActorBloc>(context).add(
+                UserActorEvent.left(
+                  widget.user.copyWith(
+                    present: false,
                   ),
-                );
-        } else {
-          const NoInternetDialog();
-        }
+                ),
+              );
       },
       child: Card(
         color: colorIcon,
