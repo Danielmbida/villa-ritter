@@ -44,7 +44,7 @@ class _VillaStateDisplayState extends State<VillaStateDisplay> {
               text: Text(
                 AppLocalizations.of(context)!.villa_is_string.toUpperCase(),
                 style: const TextStyle(
-                  fontSize: 15,
+                  fontSize: 13,
                   color: Colors.white,
                   fontWeight: FontWeight.bold,
                 ),
@@ -57,7 +57,7 @@ class _VillaStateDisplayState extends State<VillaStateDisplay> {
               text: Text(
                 textState,
                 style: TextStyle(
-                  fontSize: 15,
+                  fontSize: 13,
                   color: colorState,
                   fontWeight: FontWeight.bold,
                 ),
