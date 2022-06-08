@@ -91,9 +91,9 @@
     "@villa_is_string":{
        "description" : "le text la villa est"
     },
-    "villa_open_string": "Ouvert",
+    "villa_open_string": "Ouverte",
     "@villa_open_string":{
-       "description" : "le text villa ouvert"
+       "description" : "le text villa ouverte"
     },
     "villa_close_string": "Fermée",
     "@villa_close_string":{
