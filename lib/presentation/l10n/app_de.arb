@@ -19,7 +19,7 @@
  "invalid_name_string" : "Dieser Name ist ungültig, keine Zahl",
  "invalid_gender_string" : "Wählen Sie ein Genre",
  "hello_string" : "Guten Tag",
- "welcome_string" : "Willkommen in der Villa",
+ "welcome_string" : "Willkommen,",
  "news_string":"Aktuelles",
  "villa_is_string":"Der villa ist",
  "villa_open_string":"Offen",

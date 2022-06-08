@@ -79,7 +79,7 @@
      "@hello_string":{
       "description": "le text Bonjour"
     },
-    "welcome_string": "Bienvenue à la Villa",
+    "welcome_string": "Bienvenue,",
     "@welcome_string":{
        "description" : "le text de Bienvenue"
     },

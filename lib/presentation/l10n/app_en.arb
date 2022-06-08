@@ -19,7 +19,7 @@
  "invalid_name_string" : "Invalid name",
  "invalid_gender_string" : "Select gender",
  "hello_string":"Hello",
- "welcome_string" : "Welcome to Villa",
+ "welcome_string" : "Welcome,",
  "news_string":"Lastest News",
  "villa_is_string" : "The villa is",
  "villa_open_string":"Opens",
