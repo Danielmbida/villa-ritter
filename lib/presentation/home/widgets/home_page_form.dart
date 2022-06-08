@@ -144,10 +144,8 @@ class _HomePageFormState extends State<HomePageForm> {
                                   padding: const EdgeInsets.all(8.0),
                                   child: Text(
                                     present == false
-                                        ? AppLocalizations.of(context)!
-                                            .hello_string
-                                        : AppLocalizations.of(context)!
-                                            .welcome_string,
+                                        ? "${AppLocalizations.of(context)!.hello_string} ${widget.user.name}"
+                                        : "${AppLocalizations.of(context)!.welcome_string} ${widget.user.name}",
                                     textAlign: TextAlign.center,
                                     style: const TextStyle(
                                       fontSize: 25,
