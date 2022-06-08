@@ -32,9 +32,9 @@ class AppWidget extends StatelessWidget {
         BlocProvider(
           create: (context) => getIt<ScanBloc>(),
         ),
-        BlocProvider(
-          create: (context) => getIt<UserActorBloc>(),
-        ),
+        // BlocProvider(
+        //   create: (context) => getIt<UserActorBloc>(),
+        // ),
         BlocProvider(
           create: (context) => getIt<UserWatcherMeBloc>()
             ..add(const UserWatcherMeEvent.watcherMeStarted()),

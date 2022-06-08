@@ -1,7 +1,5 @@
 import 'package:apptest/application/user_actor/user_actor_bloc.dart';
 import 'package:apptest/domain/auth/user.dart';
-import 'package:apptest/presentation/home/widgets/profil_page_form.dart';
-// ignore: depend_on_referenced_packages
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -11,11 +9,8 @@ class LeftButtonForm extends StatelessWidget {
   const LeftButtonForm({
     Key? key,
     required this.user,
-    required this.isLeft,
   }) : super(key: key);
 
-  // final ProfileView widget;
-  final bool isLeft;
   final User user;
 
   @override
@@ -24,7 +19,7 @@ class LeftButtonForm extends StatelessWidget {
     return TextButton(
       onPressed: () {
         BlocProvider.of<UserActorBloc>(context).add(
-          UserActorEvent.left(
+          UserActorEvent.present(
             user.copyWith(
               present: false,
               hour: DateFormat("HH:mm").format(
@@ -43,6 +38,7 @@ class LeftButtonForm extends StatelessWidget {
               child: Column(
                 children: [
                   Icon(
+                    // ignore: deprecated_member_use
                     FontAwesomeIcons.signOutAlt,
                     size: 60 / mediaWidth * mediaWidth,
                     color: Colors.white,

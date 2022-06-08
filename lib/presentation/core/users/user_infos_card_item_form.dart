@@ -1,14 +1,13 @@
+// ignore_for_file: depend_on_referenced_packages, deprecated_member_use
 import 'package:apptest/application/user_actor/user_actor_bloc.dart';
 import 'package:apptest/domain/auth/user.dart';
 import 'package:apptest/presentation/core/users/alertDialogue/app_alert_dialog.dart';
-// import 'package:apptest/presentation/core/users/alertDialogue/user_get_out_dialog.dart';
 import 'package:apptest/presentation/core/users/infosDialog/user_infos_dialog.dart';
-// ignore: depend_on_referenced_packages
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:kt_dart/collection.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class UserInfosCardItemForm extends StatelessWidget {
   const UserInfosCardItemForm({
@@ -36,7 +35,6 @@ class UserInfosCardItemForm extends StatelessWidget {
                 );
                 Navigator.of(context).pop();
               }
-
               if (user.present) {
                 showDialog(
                   context: context,
