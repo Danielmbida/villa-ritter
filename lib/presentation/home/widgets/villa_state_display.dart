@@ -68,7 +68,7 @@ class _VillaStateDisplayState extends State<VillaStateDisplay> {
               direction: CircularTextDirection.anticlockwise,
             ),
           ],
-          radius: MediaQuery.of(context).size.aspectRatio * 100,
+          radius:MediaQuery.of(context).size.height *.060,
           backgroundPaint: Paint()..color = Theme.of(context).primaryColor,
         ),
       );
