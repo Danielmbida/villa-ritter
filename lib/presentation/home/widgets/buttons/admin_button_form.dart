@@ -27,7 +27,7 @@ class AdminButtonForm extends StatelessWidget {
                 children: [
                   Icon(
                     Icons.people,
-                    size: 60 / mediaHeight * mediaHeight,
+                    size: mediaHeight * .075,
                     color: Colors.white,
                   ),
                 ],

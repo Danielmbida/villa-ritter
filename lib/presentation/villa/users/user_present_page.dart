@@ -138,6 +138,7 @@ class _UserPresentPageState extends State<UserPresentPage>
                                     child: Text(
                                       AppLocalizations.of(context)!
                                           .empty_list_string,
+                                          textAlign: TextAlign.center,
                                       style: const TextStyle(
                                         color: Colors.white,
                                       ),

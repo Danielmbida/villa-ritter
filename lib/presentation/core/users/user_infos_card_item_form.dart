@@ -123,14 +123,14 @@ class UserInfosCardItemForm extends StatelessWidget {
                                     const SizedBox(width: 10),
                                     if (user.genre != "Femme")
                                       Text(
-                                        "${AppLocalizations.of(context)!.arrive_at_men_string} : ",
+                                        "${AppLocalizations.of(context)!.arrive_at_men_string} ",
                                         style: const TextStyle(
                                           fontSize: 17,
                                         ),
                                       )
                                     else
                                       Text(
-                                        "${AppLocalizations.of(context)!.arrive_at_wommen_string} : ",
+                                        "${AppLocalizations.of(context)!.arrive_at_wommen_string} ",
                                         style: const TextStyle(
                                           fontSize: 17,
                                         ),

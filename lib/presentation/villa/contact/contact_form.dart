@@ -10,20 +10,21 @@ class ContactForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Column(
-        children: [
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20.0),
-            child: Column(
-              children: const [
-                DisplayAddressForm(),
-                DisplayEmainAndPhoneForm(),
-              ],
-            ),
+    return Stack(
+      children:  [
+        Align(
+          alignment: Alignment.topCenter,
+          child: Positioned(
+            top: MediaQuery.of(context).size.height * .002,
+            child: const DisplayAddressForm(),
           ),
-        ],
-      ),
+        ),
+         Positioned(
+          bottom: MediaQuery.of(context).size.height * .075,
+          left: MediaQuery.of(context).size.width* .20,
+          child: const DisplayEmailAndPhoneForm(),
+        ),
+      ],
     );
   }
 }

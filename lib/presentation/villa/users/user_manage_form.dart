@@ -25,41 +25,13 @@ class _UserManagePageState extends State<UserManagePage> {
   int nbAllUser = 0;
   @override
   Widget build(BuildContext context) {
-    final String textHour = AppLocalizations.of(context)!.present_string;
-    final String textContact =
+    final String textPresent = AppLocalizations.of(context)!.present_string;
+    final String textRegister =
         AppLocalizations.of(context)!.register_tab_string;
     return BlocProvider(
       create: (context) => getIt<UserActorBloc>(),
-      child: MultiBlocListener(
-        listeners: [
-          BlocListener<WatchAllUsersBloc, WatchAllUsersState>(
-            listener: (context, state) {
-              state.maybeMap(
-                orElse: () {},
-                initial: (_) {},
-                loadSuccess: (user) {
-                  setState(() {
-                    nbAllUser = user.users.size;
-                  });
-                },
-              );
-            },
-          ),
-          BlocListener<UserWatchAllBloc, UserWatchAllState>(
-            listener: (context, state) {
-              state.maybeMap(
-                orElse: () {},
-                initial: (_) {},
-                loadSuccess: (user) {
-                  setState(() {
-                    nbUserPresent = user.users.size;
-                  });
-                },
-              );
-            },
-          ),
-        ],
-        child: SafeArea(
+      child:
+         SafeArea(
           child: DefaultTabController(
             length: 2,
             child: Scaffold(
@@ -74,71 +46,20 @@ class _UserManagePageState extends State<UserManagePage> {
                 bottom: TabBar(
                   tabs: [
                     SizedBox(
-                      child: Row(
-                        children: [
-                          Stack(
-                            children: [
-                              if (nbUserPresent != 0)
-                                Row(
-                                  children: [
-                                    SizedBox(
-                                      width: MediaQuery.of(context).size.width *
-                                          0.28,
-                                    ),
-                                    CircleAvatar(
-                                      backgroundColor: Colors.orange,
-                                      radius: 10,
-                                      child: Text(
-                                        nbUserPresent.toString(),
-                                        style: const TextStyle(
-                                          color: Colors.white,
-                                          fontWeight: FontWeight.bold,
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              Text(
-                                textHour,
-                                style: TextStyle(
-                                  fontSize: tabTextSize,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ],
+                      child: Text(
+                        textPresent,
+                        style: TextStyle(
+                          fontSize: tabTextSize,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                     ),
-                    Stack(
-                      children: [
-                        if (nbAllUser != 0)
-                          Row(
-                            children: [
-                              SizedBox(
-                                width: MediaQuery.of(context).size.width * 0.23,
-                              ),
-                              CircleAvatar(
-                                backgroundColor: Colors.orange,
-                                radius: 10,
-                                child: Text(
-                                  nbAllUser.toString(),
-                                  style: const TextStyle(
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        Text(
-                          textContact,
-                          style: TextStyle(
-                            fontSize: tabTextSize,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ],
+                    Text(
+                      textRegister,
+                      style: TextStyle(
+                        fontSize: tabTextSize,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                   ],
                 ),
@@ -158,7 +79,6 @@ class _UserManagePageState extends State<UserManagePage> {
             ),
           ),
         ),
-      ),
-    );
+      );
   }
 }

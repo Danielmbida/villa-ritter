@@ -1,16 +1,17 @@
-// ignore_for_file: depend_on_referenced_packages
+// ignore_for_file: depend_on_referenced_packages, deprecated_member_use
 import 'package:apptest/presentation/core/url_launcher.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-class DisplayEmainAndPhoneForm extends StatelessWidget {
-  const DisplayEmainAndPhoneForm({
+class DisplayEmailAndPhoneForm extends StatelessWidget {
+  const DisplayEmailAndPhoneForm({
     Key? key,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     final mediaWidth = MediaQuery.of(context).size.width;
+    final mediaH = MediaQuery.of(context).size.height;
     final double iconSize = 30 / mediaWidth * mediaWidth;
     final double textSize = 20 / mediaWidth * mediaWidth;
     const Color iconColor = Colors.black;
@@ -19,7 +20,7 @@ class DisplayEmainAndPhoneForm extends StatelessWidget {
     const String mailText = "villaritter@bluewin.ch";
     return SizedBox(
       child: Padding(
-        padding: EdgeInsets.symmetric(vertical: mediaWidth * 0.08),
+        padding: EdgeInsets.symmetric(vertical: mediaWidth * 0.015),
         child: Column(
           children: [
             GestureDetector(
@@ -46,7 +47,7 @@ class DisplayEmainAndPhoneForm extends StatelessWidget {
                 ],
               ),
             ),
-            const SizedBox(height: 2),
+             SizedBox(height: mediaH * .02),
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: GestureDetector(

@@ -26,7 +26,8 @@ class _HomePageState extends State<HomePage> {
                   create: (context) => getIt<UserActorBloc>(),
                 ),
                 BlocProvider(
-                  create: (context) => getIt<UserWatcherMeBloc>(),
+                  create: (context) => getIt<UserWatcherMeBloc>()
+                    ..add(const UserWatcherMeEvent.watcherMeStarted()),
                 ),
               ],
               child: HomePageForm(user: auth.user),

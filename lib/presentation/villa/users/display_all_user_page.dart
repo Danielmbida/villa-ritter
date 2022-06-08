@@ -71,7 +71,6 @@ class _DisplayAllUserPageState extends State<DisplayAllUserPage>
                                       return UserInfosCardItemForm(
                                         allUsers: users.users,
                                         user: user,
-                                       
                                       );
                                     },
                                   ),
