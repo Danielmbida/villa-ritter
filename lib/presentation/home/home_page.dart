@@ -1,5 +1,6 @@
 import 'package:apptest/application/auth/auth_bloc.dart';
 import 'package:apptest/application/user_actor/user_actor_bloc.dart';
+import 'package:apptest/application/user_watcher_me/user_watcher_me_bloc.dart';
 import 'package:apptest/injection.dart';
 import 'package:apptest/presentation/home/widgets/home_page_form.dart';
 import 'package:apptest/presentation/sign_in/sign_in_page.dart';
@@ -19,8 +20,15 @@ class _HomePageState extends State<HomePage> {
       builder: (context, authState) {
         return authState.maybeMap(
           authenticated: (auth) {
-            return BlocProvider(
-              create: (context) => getIt<UserActorBloc>(),
+            return MultiBlocProvider(
+              providers: [
+                BlocProvider(
+                  create: (context) => getIt<UserActorBloc>(),
+                ),
+                BlocProvider(
+                  create: (context) => getIt<UserWatcherMeBloc>(),
+                ),
+              ],
               child: HomePageForm(user: auth.user),
             );
           },

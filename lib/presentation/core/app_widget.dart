@@ -1,13 +1,8 @@
 // ignore_for_file: depend_on_referenced_packages
-
 import 'package:apptest/application/auth/auth_bloc.dart';
-import 'package:apptest/application/auth/sign_in_form/sign_in_form_bloc.dart';
 import 'package:apptest/application/connect/connectivity_cubit.dart';
 import 'package:apptest/application/horaire/horaire_cubit.dart';
-import 'package:apptest/application/news/bloc/watcher_news_bloc.dart';
 import 'package:apptest/application/scan/scan_bloc.dart';
-import 'package:apptest/application/user_actor/user_actor_bloc.dart';
-import 'package:apptest/application/user_watcher_me/user_watcher_me_bloc.dart';
 import 'package:apptest/application/watch_all_users/watch_all_users_bloc.dart';
 import 'package:apptest/application/watch_all_users_present/user_watch_all_bloc.dart';
 import 'package:apptest/injection.dart';
@@ -32,13 +27,6 @@ class AppWidget extends StatelessWidget {
         BlocProvider(
           create: (context) => getIt<ScanBloc>(),
         ),
-        // BlocProvider(
-        //   create: (context) => getIt<UserActorBloc>(),
-        // ),
-        BlocProvider(
-          create: (context) => getIt<UserWatcherMeBloc>()
-            ..add(const UserWatcherMeEvent.watcherMeStarted()),
-        ),
         BlocProvider<UserWatchAllBloc>(
           create: (context) => getIt<UserWatchAllBloc>()
             ..add(
@@ -56,10 +44,6 @@ class AppWidget extends StatelessWidget {
         ),
         BlocProvider(
           create: (context) => HoraireCubit(),
-        ),
-        BlocProvider(
-          create: (context) => getIt<WatcherNewsBloc>()
-            ..add(const WatcherNewsEvent.watchNewsStarted()),
         ),
       ],
       child: MaterialApp.router(
