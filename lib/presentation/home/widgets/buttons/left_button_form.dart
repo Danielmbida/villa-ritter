@@ -16,8 +16,9 @@ class LeftButtonForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final double mediaWidth = MediaQuery.of(context).size.width;
-    return TextButton(
-      onPressed: () {
+    final double mediah = MediaQuery.of(context).size.height;
+    return InkWell(
+      onTap: () {
         BlocProvider.of<UserActorBloc>(context).add(
           UserActorEvent.present(
             user.copyWith(
@@ -29,23 +30,15 @@ class LeftButtonForm extends StatelessWidget {
           ),
         );
       },
-      child: InkWell(
-        child: Card(
-          color: Colors.red,
-          child: Padding(
-            padding: EdgeInsets.all(8.0 / mediaWidth * mediaWidth),
-            child: SizedBox(
-              child: Column(
-                children: [
-                  Icon(
-                    // ignore: deprecated_member_use
-                    FontAwesomeIcons.signOutAlt,
-                    size: 60 / mediaWidth * mediaWidth,
-                    color: Colors.white,
-                  ),
-                ],
-              ),
-            ),
+      child: Card(
+        color: Colors.red,
+        child: Padding(
+          padding: const EdgeInsets.all(4.0),
+          child: Icon(
+            // ignore: deprecated_member_use
+            FontAwesomeIcons.signOutAlt,
+            size: mediah * .090,
+            color: Colors.white,
           ),
         ),
       ),

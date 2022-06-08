@@ -12,13 +12,10 @@ class ContactForm extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children:  [
-        Align(
-          alignment: Alignment.topCenter,
-          child: Positioned(
+           Positioned(
             top: MediaQuery.of(context).size.height * .002,
             child: const DisplayAddressForm(),
           ),
-        ),
          Positioned(
           bottom: MediaQuery.of(context).size.height * .075,
           left: MediaQuery.of(context).size.width* .20,
