@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-class HoursData {
+
+class VillaDatas {
   final BuildContext context;
-  HoursData({
+  VillaDatas({
     required this.context,
   });
   static const List<String> firstHours = <String>[
@@ -25,4 +26,5 @@ class HoursData {
     "Jeudi",
     "Vendredi",
   ];
+  static String villaEmail = "villaritter@bluewin.ch";
 }

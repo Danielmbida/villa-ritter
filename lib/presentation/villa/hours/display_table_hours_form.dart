@@ -1,5 +1,5 @@
 // ignore_for_file: depend_on_referenced_packages
-import 'package:apptest/presentation/villa/hours/hours_data.dart';
+import 'package:apptest/presentation/core/villa_datas.dart';
 import 'package:apptest/presentation/villa/hours/table_hours_head.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -33,7 +33,7 @@ class DisplayHoursForm extends StatelessWidget {
       "19:30-23:00",
       "19:30-00:00",
     ];
-    HoursData(context: context);
+    VillaDatas(context: context);
     return Padding(
       padding: const EdgeInsets.all(2),
       child: Column(
@@ -42,10 +42,10 @@ class DisplayHoursForm extends StatelessWidget {
           Expanded(
             child: ListView.builder(
               padding: EdgeInsets.zero,
-              itemCount: HoursData.days.length,
+              itemCount: VillaDatas.days.length,
               itemBuilder: (BuildContext context, int index) {
                 const Color textInTableColor = Colors.black;
-                final String actDay = HoursData.days[index];
+                final String actDay = VillaDatas.days[index];
                 return Table(
                   defaultVerticalAlignment: TableCellVerticalAlignment.middle,
                   border: TableBorder.all(
@@ -54,7 +54,7 @@ class DisplayHoursForm extends StatelessWidget {
                   children: [
                     TableRow(
                       // ignore: use_is_even_rather_than_modulo
-                      decoration: HoursData.days.indexOf(actDay) % 2 == 0
+                      decoration: VillaDatas.days.indexOf(actDay) % 2 == 0
                           ? BoxDecoration(
                               color: const Color(0XFF20544c).withOpacity(0.7),
                             )

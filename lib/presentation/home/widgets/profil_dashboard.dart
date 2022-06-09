@@ -5,6 +5,7 @@ import 'package:apptest/application/auth/auth_bloc.dart';
 import 'package:apptest/application/connect/connectivity_cubit.dart';
 import 'package:apptest/domain/auth/user.dart';
 import 'package:apptest/presentation/core/users/alertDialogue/un_register_dialog.dart';
+import 'package:apptest/presentation/core/villa_datas.dart';
 import 'package:apptest/presentation/home/widgets/buttons/admin_button_form.dart';
 import 'package:apptest/presentation/home/widgets/buttons/left_button_form.dart';
 import 'package:apptest/presentation/home/widgets/buttons/present_button_form.dart';
@@ -145,7 +146,7 @@ class _ProfileViewState extends State<ProfileView> {
               Positioned(
                 top: mediaHeight * 0.15,
                 right: mediaWidth * 0.03,
-                child: !widget.user.email.contains("admin")
+                child: widget.user.email != VillaDatas.villaEmail
                     ? widget.presence == false
                         ? PrensentButtonForm(
                             user: widget.user,
@@ -242,7 +243,9 @@ class _ProfileViewState extends State<ProfileView> {
   ///Sauvegarde l'image de profile de l'utilisateur
   ///dans les sharedPreferences
   Future<Future<bool>> _setImageFromPreferences(
-      String key, String value,) async {
+    String key,
+    String value,
+  ) async {
     final SharedPreferences prefs = await SharedPreferences.getInstance();
     return prefs.setString(key, value);
   }
@@ -251,7 +254,8 @@ class _ProfileViewState extends State<ProfileView> {
   Future<XFile?>? _pickImage(bool isCamera) async {
     final picker = ImagePicker();
     final pickedImage = await picker.pickImage(
-        source: !isCamera ? ImageSource.gallery : ImageSource.camera,);
+      source: !isCamera ? ImageSource.gallery : ImageSource.camera,
+    );
     prefs = await SharedPreferences.getInstance();
     setState(() {
       if (pickedImage != null) {
