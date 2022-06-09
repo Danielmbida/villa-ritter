@@ -7,6 +7,8 @@ import 'package:apptest/presentation/home/widgets/buttons/admin_button_form.dart
 import 'package:apptest/presentation/home/widgets/buttons/left_button_form.dart';
 import 'package:apptest/presentation/home/widgets/buttons/present_button_form.dart';
 import 'package:apptest/presentation/home/widgets/image_profil_form.dart';
+import 'package:apptest/presentation/routes/router.gr.dart';
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:image_picker/image_picker.dart';
@@ -97,58 +99,36 @@ class _ProfileViewState extends State<ProfileView> {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   PopupMenuButton(
+                    onSelected: (value) {
+                      switch (value) {
+                        case 1:
+                          context.read<AuthBloc>().add(
+                                const AuthEvent.signedOut(),
+                              );
+                          break;
+                        case 2:
+                          _showProfileDialog(context);
+                          break;
+                      }
+                    },
                     itemBuilder: (context) => [
                       PopupMenuItem(
-                        child: GestureDetector(
-                          onTap: () {
-                            Navigator.pop(context);
-                            context.read<AuthBloc>().add(
-                                  const AuthEvent.signedOut(),
-                                );
-                          },
-                          child: Text(
-                            AppLocalizations.of(context)!.logout_string,
-                            style: TextStyle(
-                              color: Theme.of(context).primaryColorDark,
-                              fontSize: 20,
-                            ),
+                        value: 1,
+                        child: Text(
+                          AppLocalizations.of(context)!.logout_string,
+                          style: TextStyle(
+                            color: Theme.of(context).primaryColorDark,
+                            fontSize: 20,
                           ),
                         ),
                       ),
                       PopupMenuItem(
-                        child: GestureDetector(
-                          onTap: () {
-                            Navigator.pop(context);
-                            showGeneralDialog(
-                              context: context,
-                              barrierDismissible: false,
-                              barrierLabel: "Modal",
-                              transitionDuration: const Duration(
-                                milliseconds: 600,
-                              ),
-                              transitionBuilder: (
-                                context,
-                                animation,
-                                secondaryAnimation,
-                                widget2,
-                              ) {
-                                return UnRegisterDialog(
-                                  user: widget.user,
-                                );
-                              },
-                              pageBuilder:
-                                  (context, _animation1, __animation2) {
-                                return const Text("");
-                              },
-                            );
-                          },
-                          child: Text(
-                            AppLocalizations.of(context)!
-                                .my_account_menu_string,
-                            style: TextStyle(
-                              color: Theme.of(context).primaryColorDark,
-                              fontSize: 20,
-                            ),
+                        value: 2,
+                        child: Text(
+                          AppLocalizations.of(context)!.my_account_menu_string,
+                          style: TextStyle(
+                            color: Theme.of(context).primaryColorDark,
+                            fontSize: 20,
                           ),
                         ),
                       ),
@@ -178,6 +158,30 @@ class _ProfileViewState extends State<ProfileView> {
             ],
           ),
         );
+      },
+    );
+  }
+
+  Future<Object?> _showProfileDialog(BuildContext context) {
+    return showGeneralDialog(
+      context: context,
+      barrierDismissible: false,
+      barrierLabel: "Modal",
+      transitionDuration: const Duration(
+        milliseconds: 600,
+      ),
+      transitionBuilder: (
+        context,
+        animation,
+        secondaryAnimation,
+        widget2,
+      ) {
+        return UnRegisterDialog(
+          user: widget.user,
+        );
+      },
+      pageBuilder: (context, _animation1, __animation2) {
+        return const Text("");
       },
     );
   }
