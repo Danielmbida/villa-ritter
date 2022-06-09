@@ -33,10 +33,9 @@ class _UnRegisterDialogState extends State<UnRegisterDialog> {
         internetState.maybeMap(
           orElse: () {},
           disconnected: (_) {
-           setState(() {
+            setState(() {
               isDisable = true;
             });
-
           },
           connected: (s) {
             setState(() {
@@ -47,6 +46,7 @@ class _UnRegisterDialogState extends State<UnRegisterDialog> {
       },
       child: SafeArea(
         child: Scaffold(
+          backgroundColor: const Color.fromARGB(255, 228, 234, 233),
           body: SizedBox(
             height: MediaQuery.of(context).size.height,
             width: MediaQuery.of(context).size.width,
