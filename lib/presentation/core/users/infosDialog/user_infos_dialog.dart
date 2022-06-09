@@ -1,11 +1,11 @@
-// ignore_for_file: depend_on_referenced_packages
+// ignore_for_file: depend_on_referenced_packages, use_named_constants, deprecated_member_use
 
 import 'package:apptest/domain/auth/user.dart';
 import 'package:apptest/presentation/core/url_launcher.dart';
 import 'package:apptest/presentation/core/users/infosDialog/user_infos_item_form.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class UserInfosDialog extends StatelessWidget {
   const UserInfosDialog({

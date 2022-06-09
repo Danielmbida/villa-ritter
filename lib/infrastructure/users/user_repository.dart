@@ -7,7 +7,7 @@ import 'package:apptest/infrastructure/users/user_dto.dart';
 import 'package:apptest/injection.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
-import 'package:firebase_auth/firebase_auth.dart' as firebaseAuth;
+import 'package:firebase_auth/firebase_auth.dart' as firebase_auth;
 // import 'package:firebase_auth/firebase_auth.dart';
 import 'package:injectable/injectable.dart';
 import 'package:kt_dart/kt.dart';
@@ -16,7 +16,7 @@ import 'package:kt_dart/kt.dart';
 class UserRepository implements IUserRepository {
   final FirebaseFirestore _firestore;
   // final FirebaseAuth _firebaseAuth;
-  final firebaseAuth.FirebaseAuth _firebaseAuth;
+  final firebase_auth.FirebaseAuth _firebaseAuth;
   UserRepository(this._firestore, this._firebaseAuth);
   // UserRepository(this._firestore);
 
@@ -71,8 +71,6 @@ class UserRepository implements IUserRepository {
   Future<Either<UserFailure, Unit>> delete(User user) async {
     try {
       final userDto = UserDto.fromDomain(user);
-      print("supprimé");
-      print(userDto.id);
       
       await _firebaseAuth.currentUser!.delete();
       await _firestore.collection('users').doc(userDto.id).delete();

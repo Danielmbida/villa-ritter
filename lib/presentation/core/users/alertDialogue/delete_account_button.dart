@@ -1,5 +1,5 @@
 // ignore_for_file: depend_on_referenced_packages
-import 'package:apptest/application/auth/auth_bloc.dart';
+import 'package:apptest/application/user_actor/user_actor_bloc.dart';
 import 'package:apptest/domain/auth/user.dart';
 import 'package:apptest/presentation/core/users/alertDialogue/app_alert_dialog.dart';
 import 'package:apptest/presentation/routes/router.gr.dart';
@@ -7,9 +7,6 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-
-import 'package:apptest/application/user_actor/user_actor_bloc.dart';
 
 class DeleteAccountButton extends StatelessWidget {
   const DeleteAccountButton({

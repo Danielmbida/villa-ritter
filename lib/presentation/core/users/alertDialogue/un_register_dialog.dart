@@ -1,16 +1,16 @@
+// ignore_for_file: unused_import, depend_on_referenced_packages, deprecated_member_use
 import 'package:another_flushbar/flushbar.dart';
+import 'package:apptest/application/auth/auth_bloc.dart';
+import 'package:apptest/application/auth/sign_in_form/sign_in_form_bloc.dart';
+import 'package:apptest/application/connect/connectivity_cubit.dart';
 import 'package:apptest/domain/auth/user.dart';
 import 'package:apptest/presentation/core/users/alertDialogue/delete_account_button.dart';
+import 'package:apptest/presentation/core/users/infosDialog/user_infos_item_form.dart';
+import 'package:apptest/presentation/routes/router.gr.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-
-import 'package:apptest/application/auth/auth_bloc.dart';
-import 'package:apptest/application/auth/sign_in_form/sign_in_form_bloc.dart';
-import 'package:apptest/application/connect/connectivity_cubit.dart';
-import 'package:apptest/presentation/core/users/infosDialog/user_infos_item_form.dart';
-import 'package:apptest/presentation/routes/router.gr.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class UnRegisterDialog extends StatefulWidget {
@@ -134,8 +134,8 @@ class _UnRegisterDialogState extends State<UnRegisterDialog> {
                 ),
                 if (!isDisable)
                   Positioned(
-                    bottom: MediaQuery.of(context).size.height * .1,
-                    left: MediaQuery.of(context).size.width * .50,
+                    bottom: MediaQuery.of(context).size.height * .05,
+                    left: MediaQuery.of(context).size.width * .45,
                     child: DeleteAccountButton(
                       user: widget.user,
                     ),

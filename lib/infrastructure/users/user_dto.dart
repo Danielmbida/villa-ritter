@@ -18,7 +18,7 @@ abstract class UserDto implements _$UserDto {
     required String localite,
     required String naissance,
     required bool present,
-    required String arrive
+    required String arrive,
 
   }) = _UserDto;
  const UserDto._();
@@ -52,7 +52,7 @@ abstract class UserDto implements _$UserDto {
       localite: user.locality, 
       naissance: user.birthDate,
       present: user.present,
-      arrive: user.hour
+      arrive: user.hour,
     );
   }
 }

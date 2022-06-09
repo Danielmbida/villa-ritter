@@ -95,7 +95,7 @@ class FirebaseAuthFacade implements IAuthFacade {
       required Gender gender,
       required BirthDate birthDate,
       required bool present,
-      required String hour}) async {
+      required String hour,}) async {
     final emailAddressStr = emailAddress.getOrCrash();
     final passwordStr = password.getOrCrash();
     final nameStr = name.getOrCrash();

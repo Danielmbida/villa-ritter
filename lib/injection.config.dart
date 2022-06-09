@@ -4,6 +4,8 @@
 // InjectableConfigGenerator
 // **************************************************************************
 
+// ignore_for_file: always_use_package_imports
+
 import 'package:cloud_firestore/cloud_firestore.dart' as _i5;
 import 'package:connectivity_plus/connectivity_plus.dart' as _i14;
 import 'package:firebase_auth/firebase_auth.dart' as _i4;
@@ -33,35 +35,35 @@ import 'infrastructure/users/user_repository.dart'
 // ignore_for_file: lines_longer_than_80_chars
 /// initializes the registration of provided dependencies inside of [GetIt]
 _i1.GetIt $initGetIt(_i1.GetIt get,
-    {String? environment, _i2.EnvironmentFilter? environmentFilter}) {
+    {String? environment, _i2.EnvironmentFilter? environmentFilter,}) {
   final gh = _i2.GetItHelper(get, environment, environmentFilter);
   final firebaseInjectableModule = _$FirebaseInjectableModule();
   gh.factory<_i3.Connectiv>(() => _i3.Connectiv());
   gh.lazySingleton<_i4.FirebaseAuth>(
-      () => firebaseInjectableModule.firebaseAuth);
+      () => firebaseInjectableModule.firebaseAuth,);
   gh.factory<_i5.FirebaseFirestore>(
-      () => firebaseInjectableModule.firebaseFirestore);
+      () => firebaseInjectableModule.firebaseFirestore,);
   gh.factory<_i6.HoraireCubit>(() => _i6.HoraireCubit());
   gh.lazySingleton<_i7.IAuthFacade>(
-      () => _i8.FirebaseAuthFacade(get<_i4.FirebaseAuth>()));
+      () => _i8.FirebaseAuthFacade(get<_i4.FirebaseAuth>()),);
   gh.lazySingleton<_i9.INewsRepository>(() => _i10.Newsrepository());
   gh.lazySingleton<_i11.IUserRepository>(() => _i12.UserRepository(
-      get<_i5.FirebaseFirestore>(), get<_i4.FirebaseAuth>()));
+      get<_i5.FirebaseFirestore>(), get<_i4.FirebaseAuth>(),),);
   gh.factory<_i13.InternetCubit>(
-      () => _i13.InternetCubit(connectivity: get<_i14.Connectivity>()));
+      () => _i13.InternetCubit(connectivity: get<_i14.Connectivity>()),);
   gh.factory<_i15.ScanBloc>(() => _i15.ScanBloc());
   gh.factory<_i16.SignInFormBloc>(
-      () => _i16.SignInFormBloc(get<_i7.IAuthFacade>()));
+      () => _i16.SignInFormBloc(get<_i7.IAuthFacade>()),);
   gh.factory<_i17.UserActorBloc>(
-      () => _i17.UserActorBloc(get<_i11.IUserRepository>()));
+      () => _i17.UserActorBloc(get<_i11.IUserRepository>()),);
   gh.factory<_i18.UserWatchAllBloc>(
-      () => _i18.UserWatchAllBloc(get<_i11.IUserRepository>()));
+      () => _i18.UserWatchAllBloc(get<_i11.IUserRepository>()),);
   gh.factory<_i19.UserWatcherMeBloc>(
-      () => _i19.UserWatcherMeBloc(get<_i11.IUserRepository>()));
+      () => _i19.UserWatcherMeBloc(get<_i11.IUserRepository>()),);
   gh.factory<_i20.WatchAllUsersBloc>(
-      () => _i20.WatchAllUsersBloc(get<_i11.IUserRepository>()));
+      () => _i20.WatchAllUsersBloc(get<_i11.IUserRepository>()),);
   gh.factory<_i21.WatcherNewsBloc>(
-      () => _i21.WatcherNewsBloc(get<_i9.INewsRepository>()));
+      () => _i21.WatcherNewsBloc(get<_i9.INewsRepository>()),);
   gh.factory<_i22.AuthBloc>(() => _i22.AuthBloc(get<_i7.IAuthFacade>()));
   return get;
 }

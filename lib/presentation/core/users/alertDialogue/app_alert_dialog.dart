@@ -1,12 +1,7 @@
-// ignore_for_file: depend_on_referenced_packages
-import 'package:auto_route/auto_route.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-
-import 'package:apptest/application/user_actor/user_actor_bloc.dart';
+// ignore_for_file: depend_on_referenced_packages, avoid_dynamic_calls
 import 'package:apptest/domain/auth/user.dart';
-import 'package:apptest/presentation/routes/router.gr.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 class AppAlertDialog extends StatelessWidget {
   
   const AppAlertDialog({
@@ -50,12 +45,6 @@ class AppAlertDialog extends StatelessWidget {
               ),
               onPressed: () {
                 onPressedCall();
-                // BlocProvider.of<UserActorBloc>(context).add(
-                //   UserActorEvent.unRegister(
-                //     user,
-                //   ),
-                // );
-                // context.router.replace(const SignInRoute());
               },
               child: Text(
                 AppLocalizations.of(context)!.confirm_string,
