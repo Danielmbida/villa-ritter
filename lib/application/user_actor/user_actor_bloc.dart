@@ -1,4 +1,3 @@
-import 'package:apptest/domain/auth/i_auth_facade.dart';
 import 'package:apptest/domain/auth/user.dart';
 import 'package:apptest/domain/users/i_user_repository.dart';
 import 'package:apptest/domain/users/user_failure.dart';

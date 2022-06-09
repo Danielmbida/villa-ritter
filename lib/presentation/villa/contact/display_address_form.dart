@@ -57,21 +57,16 @@ class DisplayAddressForm extends StatelessWidget {
               ),
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 0.0),
-            child: Container(
-              // height: MediaQuery.of(context).size.height * .050,
-              decoration: BoxDecoration(
-                border: Border.all(
-                  color: Colors.grey.shade300,
-                ),
+          Container(
+            decoration: BoxDecoration(
+              border: Border.all(
+                color: Colors.grey.shade300,
               ),
-              child: Image.asset(
-                "assets/images/img_addr.PNG",
-                // height: MediaQuery.of(context).size.height * 0.003,
-                width: MediaQuery.of(context).size.width,
-                fit: BoxFit.fitWidth,
-              ),
+            ),
+            child: Image.asset(
+              "assets/images/img_addr.PNG",
+              width: MediaQuery.of(context).size.width,
+              fit: BoxFit.fitWidth,
             ),
           ),
         ],

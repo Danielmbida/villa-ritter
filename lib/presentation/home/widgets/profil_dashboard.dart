@@ -1,3 +1,5 @@
+// ignore_for_file: depend_on_referenced_packages
+
 import 'dart:io';
 import 'package:apptest/application/auth/auth_bloc.dart';
 import 'package:apptest/application/connect/connectivity_cubit.dart';
@@ -7,13 +9,11 @@ import 'package:apptest/presentation/home/widgets/buttons/admin_button_form.dart
 import 'package:apptest/presentation/home/widgets/buttons/left_button_form.dart';
 import 'package:apptest/presentation/home/widgets/buttons/present_button_form.dart';
 import 'package:apptest/presentation/home/widgets/image_profil_form.dart';
-import 'package:apptest/presentation/routes/router.gr.dart';
-import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class ProfileView extends StatefulWidget {
   final User user;
@@ -242,7 +242,7 @@ class _ProfileViewState extends State<ProfileView> {
   ///Sauvegarde l'image de profile de l'utilisateur
   ///dans les sharedPreferences
   Future<Future<bool>> _setImageFromPreferences(
-      String key, String value) async {
+      String key, String value,) async {
     final SharedPreferences prefs = await SharedPreferences.getInstance();
     return prefs.setString(key, value);
   }
@@ -251,7 +251,7 @@ class _ProfileViewState extends State<ProfileView> {
   Future<XFile?>? _pickImage(bool isCamera) async {
     final picker = ImagePicker();
     final pickedImage = await picker.pickImage(
-        source: !isCamera ? ImageSource.gallery : ImageSource.camera);
+        source: !isCamera ? ImageSource.gallery : ImageSource.camera,);
     prefs = await SharedPreferences.getInstance();
     setState(() {
       if (pickedImage != null) {

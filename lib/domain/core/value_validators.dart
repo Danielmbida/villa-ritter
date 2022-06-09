@@ -27,7 +27,6 @@ Either<ValueFailure<String>, String> validateBirthDate(String input) {
 
 //validation locality
 Either<ValueFailure<String>, String> validateLocality(String input) {
-  const localityRegex = r"^[a-zA-Z]{1,}$";
 
   if(input.isNotEmpty){
     return right(input);

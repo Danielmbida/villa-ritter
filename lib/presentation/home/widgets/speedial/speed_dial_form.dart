@@ -1,3 +1,5 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:apptest/presentation/core/url_launcher.dart';
 import 'package:apptest/presentation/routes/router.gr.dart';
 // ignore: depend_on_referenced_packages

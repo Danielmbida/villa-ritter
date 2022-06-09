@@ -58,5 +58,3 @@ class InternetCubit extends Cubit<InternetState> {
   void emitDisconnected(InternetType type) =>
       emit(InternetState.disconnected(type));
 }
-
-

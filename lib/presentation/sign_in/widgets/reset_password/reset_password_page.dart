@@ -1,7 +1,6 @@
 // ignore_for_file: depend_on_referenced_packages
 import 'package:another_flushbar/flushbar.dart';
 import 'package:apptest/application/auth/sign_in_form/sign_in_form_bloc.dart';
-import 'package:apptest/domain/auth/value_objects.dart';
 import 'package:apptest/injection.dart';
 import 'package:apptest/presentation/routes/router.gr.dart';
 import 'package:apptest/presentation/sign_in/widgets/forms/text_form_field_form.dart';
@@ -20,8 +19,6 @@ class ResetPasswordPage extends StatefulWidget {
 class _ResetPasswordPageState extends State<ResetPasswordPage> {
   @override
   Widget build(BuildContext context) {
-    String message =
-        "Un lien vous a été envoyer pour réinitialiser votre mot de passe,\n vérifier votre de boit de reception";
     return BlocProvider(
       create: (context) => getIt<SignInFormBloc>(),
       child: BlocConsumer<SignInFormBloc, SignInFormState>(

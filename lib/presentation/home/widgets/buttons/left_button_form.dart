@@ -15,7 +15,6 @@ class LeftButtonForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final double mediaWidth = MediaQuery.of(context).size.width;
     final double mediah = MediaQuery.of(context).size.height;
     return InkWell(
       onTap: () {

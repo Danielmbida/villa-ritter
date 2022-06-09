@@ -12,4 +12,3 @@ class InternetType with _$InternetType {
   const factory InternetType.mobileData() = _MobileData;
   const factory InternetType.none() = _None;
 }
-

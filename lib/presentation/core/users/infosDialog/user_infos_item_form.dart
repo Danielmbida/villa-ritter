@@ -54,9 +54,12 @@ class UserInfoItemForm extends StatelessWidget {
               ),
               Text(
                 infos,
+                softWrap: false,
+                overflow:TextOverflow.ellipsis ,
+                maxLines: 2,
                 style: const TextStyle(
                   fontWeight: FontWeight.bold,
-                  fontSize: 20,
+                  fontSize: 18,
                 ),
               ),
             ],

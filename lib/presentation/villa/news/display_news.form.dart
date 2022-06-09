@@ -1,14 +1,13 @@
+// ignore_for_file: depend_on_referenced_packages
 import 'package:apptest/application/news/bloc/watcher_news_bloc.dart';
 import 'package:apptest/injection.dart';
 import 'package:apptest/presentation/routes/router.gr.dart';
 import 'package:apptest/presentation/villa/news/news_form.dart';
-// ignore: depend_on_referenced_packages
 import 'package:auto_route/auto_route.dart';
-// ignore: depend_on_referenced_packages
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:wordpress_api/wordpress_api.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:wordpress_api/wordpress_api.dart';
 
 class DisplayNews extends StatefulWidget {
   const DisplayNews({

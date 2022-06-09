@@ -1,9 +1,7 @@
 // ignore_for_file: depend_on_referenced_packages
-import 'package:apptest/presentation/sign_in/widgets/forms/birthday_form_field.dart';
-import 'package:apptest/presentation/sign_in/widgets/forms/gender_form_field.dart';
 import 'package:apptest/presentation/sign_in/widgets/forms/text_form_field_form.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class LoginFieldsForm extends StatelessWidget {
   const LoginFieldsForm({

@@ -72,7 +72,7 @@ class _VillaStateDisplayState extends State<VillaStateDisplay> {
           backgroundPaint: Paint()..color = Theme.of(context).primaryColor,
         ),
       );
-      }
+      },
     );
   
   }

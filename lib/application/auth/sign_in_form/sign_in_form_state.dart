@@ -34,7 +34,7 @@ class SignInFormState with _$SignInFormState {
       isRegister: false,
       isMen: true,
       isWommen: false,
-      authFailureOrSuccessOption: none());
+      authFailureOrSuccessOption: none(),);
 
 
 }
