@@ -37,7 +37,7 @@ class DeleteAccountButton extends StatelessWidget {
         ),
         onPressed: () {
           void onPressedCall() {
-            BlocProvider.of<UserActorBloc>(context).add(
+         context.read<UserActorBloc>().add(
               UserActorEvent.unRegister(
                 user,
               ),

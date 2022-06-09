@@ -121,7 +121,7 @@ class _HomePageFormState extends State<HomePageForm> {
                               children: [
                                 Container(
                                   width: MediaQuery.of(context).size.width,
-                                  color: Theme.of(context).primaryColor,
+                                  color: const Color.fromARGB(206, 32, 84, 76),
                                   child: Padding(
                                     padding: const EdgeInsets.all(8.0),
                                     child: Text(

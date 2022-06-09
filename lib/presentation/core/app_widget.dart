@@ -2,7 +2,9 @@
 import 'package:apptest/application/auth/auth_bloc.dart';
 import 'package:apptest/application/connect/connectivity_cubit.dart';
 import 'package:apptest/application/horaire/horaire_cubit.dart';
+import 'package:apptest/application/news/bloc/watcher_news_bloc.dart';
 import 'package:apptest/application/scan/scan_bloc.dart';
+import 'package:apptest/application/user_actor/user_actor_bloc.dart';
 import 'package:apptest/application/watch_all_users/watch_all_users_bloc.dart';
 import 'package:apptest/application/watch_all_users_present/user_watch_all_bloc.dart';
 import 'package:apptest/injection.dart';
@@ -33,6 +35,12 @@ class AppWidget extends StatelessWidget {
               const UserWatchAllEvent.watchAllStarted(),
             ),
         ),
+              BlocProvider<WatcherNewsBloc>(
+          create: (context) => getIt<WatcherNewsBloc>()
+            ..add(
+              const WatcherNewsEvent.watchNewsStarted(),
+            ),
+        ),
         BlocProvider<WatchAllUsersBloc>(
           create: (context) => getIt<WatchAllUsersBloc>()
             ..add(
@@ -44,6 +52,9 @@ class AppWidget extends StatelessWidget {
         ),
         BlocProvider(
           create: (context) => HoraireCubit(),
+        ),
+         BlocProvider(
+          create: (context) => getIt<UserActorBloc>(),
         ),
       ],
       child: MaterialApp.router(
