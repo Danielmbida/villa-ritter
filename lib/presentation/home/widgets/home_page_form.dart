@@ -146,7 +146,9 @@ class _HomePageFormState extends State<HomePageForm> {
                                         user: widget.user,
                                         presence: present,
                                       ),
-                                      const VillaStateDisplay(),
+                                      VillaStateDisplay(
+                                        user: widget.user,
+                                      ),
                                     ],
                                   ),
                                 ),

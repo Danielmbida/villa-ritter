@@ -54,14 +54,11 @@ Either<ValueFailure<String>, String> validateGender(String input) {
 
 //8 caractères : 1 minuscule, 1 majuscule, 1 chiffre, 1 caractère spécial mot de passe
 Either<ValueFailure<String>, String> validatePassword(String input) {
-  // const passwordRegex =
-      // r"""{4,}$""";
-  if (input.length >=4) {
+  if (input.isNotEmpty) {
     return right(input);
   } else {
     return left(ValueFailure.invalidPassword(failedValue: input));
   }
-  // return right(input);
 }
 
 Either<ValueFailure<String>, String> validateQRCode(String input) {

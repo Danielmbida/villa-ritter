@@ -1,10 +1,10 @@
-// ignore_for_file: depend_on_referenced_packages
+// ignore_for_file: depend_on_referenced_packages, avoid_bool_literals_in_conditional_expressions
 import 'package:apptest/application/auth/sign_in_form/sign_in_form_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-class TextFormFieldForm extends StatelessWidget {
+class TextFormFieldForm extends StatefulWidget {
   const TextFormFieldForm({
     Key? key,
     required this.paddingFormElems,
@@ -23,22 +23,28 @@ class TextFormFieldForm extends StatelessWidget {
   final TextInputType? textInputType;
 
   @override
+  State<TextFormFieldForm> createState() => _TextFormFieldFormState();
+}
+
+class _TextFormFieldFormState extends State<TextFormFieldForm> {
+  bool isObscuretext = true;
+  @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.all(paddingFormElems),
+      padding: EdgeInsets.all(widget.paddingFormElems),
       child: TextFormField(
         decoration: formFieldDecoration(
-          rBorderFormElems,
-          prefixIcon,
-          labelTextForm,
+          widget.rBorderFormElems,
+          widget.prefixIcon,
+          widget.labelTextForm,
         ),
-        obscureText: formName == "password",
+        obscureText: widget.formName == "password" ? isObscuretext : false,
         autocorrect: false,
-        onChanged: (value) => onChanged(value, formName, context),
-        validator: (_) => validator(formName, context),
-        keyboardType: textInputType,
-        style:  TextStyle(
-          color: formName !="reset"?Colors.white:Colors.black,
+        onChanged: (value) => onChanged(value, widget.formName, context),
+        validator: (_) => validator(widget.formName, context),
+        keyboardType: widget.textInputType,
+        style: TextStyle(
+          color: widget.formName != "reset" ? Colors.white : Colors.black,
         ),
       ),
     );
@@ -143,20 +149,40 @@ class TextFormFieldForm extends StatelessWidget {
     return InputDecoration(
       border: OutlineInputBorder(
         borderRadius: BorderRadius.all(
-          Radius.circular(formName != "reset" ? radiusBorderFormElems : 0),
+          Radius.circular(
+            widget.formName != "reset" ? radiusBorderFormElems : 0,
+          ),
         ),
       ),
       filled: true,
-      fillColor: formName != "reset"
+      fillColor: widget.formName != "reset"
           ? Colors.white54.withOpacity(0.5)
           : Colors.grey.shade100,
       prefixIcon: Icon(
         prefixIcon,
-        color: formName != "reset" ? Colors.white : Colors.black,
+        color: widget.formName != "reset" ? Colors.white : Colors.black,
       ),
+      suffixIcon: widget.formName == "password"
+          ? GestureDetector(
+              onTap: () {
+                setState(() {
+                  isObscuretext = !isObscuretext;
+                });
+              },
+              child: isObscuretext
+                  ? const Icon(
+                      Icons.visibility_rounded,
+                      color: Colors.white,
+                    )
+                  : const Icon(
+                      Icons.visibility_off_rounded,
+                      color: Colors.white,
+                    ),
+            )
+          : null,
       labelText: labelTextForm,
       labelStyle: TextStyle(
-        color: formName != "reset" ? Colors.white : Colors.black,
+        color: widget.formName != "reset" ? Colors.white : Colors.black,
       ),
     );
   }

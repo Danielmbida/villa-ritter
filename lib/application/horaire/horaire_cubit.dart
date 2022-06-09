@@ -60,7 +60,7 @@ class HoraireCubit extends Cubit<HoraireState> {
         }
         break;
       case 4:
-        if (now.isAfter(ouverturApresMidi) && now.isBefore(fermetureSoir)) {
+        if (now.isAfter(ouverturSoir) && now.isBefore(fermetureSoir)) {
           return true;
         }
         break;
