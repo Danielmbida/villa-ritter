@@ -1,21 +1,9 @@
 // ignore_for_file: avoid_void_async
-
 import 'dart:convert';
-
-import 'package:cloud_functions/cloud_functions.dart';
-import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:http/http.dart' as http;
-import 'package:kt_dart/collection.dart';
-
-import 'package:apptest/application/token/user_token_watcher/user_token_bloc.dart';
-import 'package:apptest/domain/token/token.dart';
-import 'package:apptest/presentation/home/messaging_serivces.dart';
-
-MessagingService _msgService = MessagingService();
 
 class SendNotificationsPage extends StatefulWidget {
   const SendNotificationsPage({
@@ -69,7 +57,6 @@ class _SendNotificationsPageState extends State<SendNotificationsPage> {
       ),
     );
   }
-
 
   void _sendMessage(String body, String title, List<String> tokens) async {
     try {
