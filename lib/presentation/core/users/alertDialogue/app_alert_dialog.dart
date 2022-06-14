@@ -45,6 +45,7 @@ class AppAlertDialog extends StatelessWidget {
               ),
               onPressed: () {
                 onPressedCall();
+                Navigator.of(context).pop();
               },
               child: Text(
                 AppLocalizations.of(context)!.confirm_string,

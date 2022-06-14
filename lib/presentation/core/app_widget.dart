@@ -5,7 +5,6 @@ import 'package:apptest/application/horaire/horaire_cubit.dart';
 import 'package:apptest/application/news/bloc/watcher_news_bloc.dart';
 import 'package:apptest/application/scan/scan_bloc.dart';
 import 'package:apptest/application/token/user_token_actor/user_token_actor_bloc.dart';
-import 'package:apptest/application/token/user_token_watcher/user_token_bloc.dart';
 import 'package:apptest/application/user_actor/user_actor_bloc.dart';
 import 'package:apptest/application/watch_all_users/watch_all_users_bloc.dart';
 import 'package:apptest/application/watch_all_users_present/user_watch_all_bloc.dart';
@@ -43,7 +42,6 @@ class AppWidget extends StatelessWidget {
               const WatcherNewsEvent.watchNewsStarted(),
             ),
         ),
-   
         BlocProvider<WatchAllUsersBloc>(
           create: (context) => getIt<WatchAllUsersBloc>()
             ..add(

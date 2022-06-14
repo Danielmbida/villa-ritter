@@ -78,6 +78,8 @@
  "notification_body_label_string": "Inhalt",
  "notification_button_string": "Senden",
  "notification_flushbar_title_string": "Achtung !",
- "notification_flushbar_content_string": "Felder dürfen nicht leer sein"
+ "notification_flushbar_content_string": "Felder dürfen nicht leer sein",
+ "force_villa_close_question_string" : "Möchten Sie die Villa schließen ?",
+ "force_villa_open_question_string" : "Möchten Sie die Villa öffnen ?"
 }
 

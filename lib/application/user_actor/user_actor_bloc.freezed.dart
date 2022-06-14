@@ -30,6 +30,12 @@ class _$UserActorEventTearOff {
     );
   }
 
+  _ChangeVillaHour changeVillaHour(User user) {
+    return _ChangeVillaHour(
+      user,
+    );
+  }
+
   _UnRegister unRegister(User user) {
     return _UnRegister(
       user,
@@ -48,6 +54,7 @@ mixin _$UserActorEvent {
   TResult when<TResult extends Object?>({
     required TResult Function(User user) present,
     required TResult Function(User user) left,
+    required TResult Function(User user) changeVillaHour,
     required TResult Function(User user) unRegister,
   }) =>
       throw _privateConstructorUsedError;
@@ -55,6 +62,7 @@ mixin _$UserActorEvent {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(User user)? present,
     TResult Function(User user)? left,
+    TResult Function(User user)? changeVillaHour,
     TResult Function(User user)? unRegister,
   }) =>
       throw _privateConstructorUsedError;
@@ -62,6 +70,7 @@ mixin _$UserActorEvent {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(User user)? present,
     TResult Function(User user)? left,
+    TResult Function(User user)? changeVillaHour,
     TResult Function(User user)? unRegister,
     required TResult orElse(),
   }) =>
@@ -70,6 +79,7 @@ mixin _$UserActorEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(_Present value) present,
     required TResult Function(_Left value) left,
+    required TResult Function(_ChangeVillaHour value) changeVillaHour,
     required TResult Function(_UnRegister value) unRegister,
   }) =>
       throw _privateConstructorUsedError;
@@ -77,6 +87,7 @@ mixin _$UserActorEvent {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Present value)? present,
     TResult Function(_Left value)? left,
+    TResult Function(_ChangeVillaHour value)? changeVillaHour,
     TResult Function(_UnRegister value)? unRegister,
   }) =>
       throw _privateConstructorUsedError;
@@ -84,6 +95,7 @@ mixin _$UserActorEvent {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Present value)? present,
     TResult Function(_Left value)? left,
+    TResult Function(_ChangeVillaHour value)? changeVillaHour,
     TResult Function(_UnRegister value)? unRegister,
     required TResult orElse(),
   }) =>
@@ -202,6 +214,7 @@ class _$_Present implements _Present {
   TResult when<TResult extends Object?>({
     required TResult Function(User user) present,
     required TResult Function(User user) left,
+    required TResult Function(User user) changeVillaHour,
     required TResult Function(User user) unRegister,
   }) {
     return present(user);
@@ -212,6 +225,7 @@ class _$_Present implements _Present {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(User user)? present,
     TResult Function(User user)? left,
+    TResult Function(User user)? changeVillaHour,
     TResult Function(User user)? unRegister,
   }) {
     return present?.call(user);
@@ -222,6 +236,7 @@ class _$_Present implements _Present {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(User user)? present,
     TResult Function(User user)? left,
+    TResult Function(User user)? changeVillaHour,
     TResult Function(User user)? unRegister,
     required TResult orElse(),
   }) {
@@ -236,6 +251,7 @@ class _$_Present implements _Present {
   TResult map<TResult extends Object?>({
     required TResult Function(_Present value) present,
     required TResult Function(_Left value) left,
+    required TResult Function(_ChangeVillaHour value) changeVillaHour,
     required TResult Function(_UnRegister value) unRegister,
   }) {
     return present(this);
@@ -246,6 +262,7 @@ class _$_Present implements _Present {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Present value)? present,
     TResult Function(_Left value)? left,
+    TResult Function(_ChangeVillaHour value)? changeVillaHour,
     TResult Function(_UnRegister value)? unRegister,
   }) {
     return present?.call(this);
@@ -256,6 +273,7 @@ class _$_Present implements _Present {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Present value)? present,
     TResult Function(_Left value)? left,
+    TResult Function(_ChangeVillaHour value)? changeVillaHour,
     TResult Function(_UnRegister value)? unRegister,
     required TResult orElse(),
   }) {
@@ -345,6 +363,7 @@ class _$_Left implements _Left {
   TResult when<TResult extends Object?>({
     required TResult Function(User user) present,
     required TResult Function(User user) left,
+    required TResult Function(User user) changeVillaHour,
     required TResult Function(User user) unRegister,
   }) {
     return left(user);
@@ -355,6 +374,7 @@ class _$_Left implements _Left {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(User user)? present,
     TResult Function(User user)? left,
+    TResult Function(User user)? changeVillaHour,
     TResult Function(User user)? unRegister,
   }) {
     return left?.call(user);
@@ -365,6 +385,7 @@ class _$_Left implements _Left {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(User user)? present,
     TResult Function(User user)? left,
+    TResult Function(User user)? changeVillaHour,
     TResult Function(User user)? unRegister,
     required TResult orElse(),
   }) {
@@ -379,6 +400,7 @@ class _$_Left implements _Left {
   TResult map<TResult extends Object?>({
     required TResult Function(_Present value) present,
     required TResult Function(_Left value) left,
+    required TResult Function(_ChangeVillaHour value) changeVillaHour,
     required TResult Function(_UnRegister value) unRegister,
   }) {
     return left(this);
@@ -389,6 +411,7 @@ class _$_Left implements _Left {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Present value)? present,
     TResult Function(_Left value)? left,
+    TResult Function(_ChangeVillaHour value)? changeVillaHour,
     TResult Function(_UnRegister value)? unRegister,
   }) {
     return left?.call(this);
@@ -399,6 +422,7 @@ class _$_Left implements _Left {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Present value)? present,
     TResult Function(_Left value)? left,
+    TResult Function(_ChangeVillaHour value)? changeVillaHour,
     TResult Function(_UnRegister value)? unRegister,
     required TResult orElse(),
   }) {
@@ -417,6 +441,159 @@ abstract class _Left implements UserActorEvent {
   @override
   @JsonKey(ignore: true)
   _$LeftCopyWith<_Left> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$ChangeVillaHourCopyWith<$Res>
+    implements $UserActorEventCopyWith<$Res> {
+  factory _$ChangeVillaHourCopyWith(
+          _ChangeVillaHour value, $Res Function(_ChangeVillaHour) then) =
+      __$ChangeVillaHourCopyWithImpl<$Res>;
+  @override
+  $Res call({User user});
+
+  @override
+  $UserCopyWith<$Res> get user;
+}
+
+/// @nodoc
+class __$ChangeVillaHourCopyWithImpl<$Res>
+    extends _$UserActorEventCopyWithImpl<$Res>
+    implements _$ChangeVillaHourCopyWith<$Res> {
+  __$ChangeVillaHourCopyWithImpl(
+      _ChangeVillaHour _value, $Res Function(_ChangeVillaHour) _then)
+      : super(_value, (v) => _then(v as _ChangeVillaHour));
+
+  @override
+  _ChangeVillaHour get _value => super._value as _ChangeVillaHour;
+
+  @override
+  $Res call({
+    Object? user = freezed,
+  }) {
+    return _then(_ChangeVillaHour(
+      user == freezed
+          ? _value.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as User,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_ChangeVillaHour implements _ChangeVillaHour {
+  const _$_ChangeVillaHour(this.user);
+
+  @override
+  final User user;
+
+  @override
+  String toString() {
+    return 'UserActorEvent.changeVillaHour(user: $user)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _ChangeVillaHour &&
+            const DeepCollectionEquality().equals(other.user, user));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(user));
+
+  @JsonKey(ignore: true)
+  @override
+  _$ChangeVillaHourCopyWith<_ChangeVillaHour> get copyWith =>
+      __$ChangeVillaHourCopyWithImpl<_ChangeVillaHour>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(User user) present,
+    required TResult Function(User user) left,
+    required TResult Function(User user) changeVillaHour,
+    required TResult Function(User user) unRegister,
+  }) {
+    return changeVillaHour(user);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(User user)? present,
+    TResult Function(User user)? left,
+    TResult Function(User user)? changeVillaHour,
+    TResult Function(User user)? unRegister,
+  }) {
+    return changeVillaHour?.call(user);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(User user)? present,
+    TResult Function(User user)? left,
+    TResult Function(User user)? changeVillaHour,
+    TResult Function(User user)? unRegister,
+    required TResult orElse(),
+  }) {
+    if (changeVillaHour != null) {
+      return changeVillaHour(user);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Present value) present,
+    required TResult Function(_Left value) left,
+    required TResult Function(_ChangeVillaHour value) changeVillaHour,
+    required TResult Function(_UnRegister value) unRegister,
+  }) {
+    return changeVillaHour(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Present value)? present,
+    TResult Function(_Left value)? left,
+    TResult Function(_ChangeVillaHour value)? changeVillaHour,
+    TResult Function(_UnRegister value)? unRegister,
+  }) {
+    return changeVillaHour?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Present value)? present,
+    TResult Function(_Left value)? left,
+    TResult Function(_ChangeVillaHour value)? changeVillaHour,
+    TResult Function(_UnRegister value)? unRegister,
+    required TResult orElse(),
+  }) {
+    if (changeVillaHour != null) {
+      return changeVillaHour(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ChangeVillaHour implements UserActorEvent {
+  const factory _ChangeVillaHour(User user) = _$_ChangeVillaHour;
+
+  @override
+  User get user;
+  @override
+  @JsonKey(ignore: true)
+  _$ChangeVillaHourCopyWith<_ChangeVillaHour> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -490,6 +667,7 @@ class _$_UnRegister implements _UnRegister {
   TResult when<TResult extends Object?>({
     required TResult Function(User user) present,
     required TResult Function(User user) left,
+    required TResult Function(User user) changeVillaHour,
     required TResult Function(User user) unRegister,
   }) {
     return unRegister(user);
@@ -500,6 +678,7 @@ class _$_UnRegister implements _UnRegister {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(User user)? present,
     TResult Function(User user)? left,
+    TResult Function(User user)? changeVillaHour,
     TResult Function(User user)? unRegister,
   }) {
     return unRegister?.call(user);
@@ -510,6 +689,7 @@ class _$_UnRegister implements _UnRegister {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(User user)? present,
     TResult Function(User user)? left,
+    TResult Function(User user)? changeVillaHour,
     TResult Function(User user)? unRegister,
     required TResult orElse(),
   }) {
@@ -524,6 +704,7 @@ class _$_UnRegister implements _UnRegister {
   TResult map<TResult extends Object?>({
     required TResult Function(_Present value) present,
     required TResult Function(_Left value) left,
+    required TResult Function(_ChangeVillaHour value) changeVillaHour,
     required TResult Function(_UnRegister value) unRegister,
   }) {
     return unRegister(this);
@@ -534,6 +715,7 @@ class _$_UnRegister implements _UnRegister {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Present value)? present,
     TResult Function(_Left value)? left,
+    TResult Function(_ChangeVillaHour value)? changeVillaHour,
     TResult Function(_UnRegister value)? unRegister,
   }) {
     return unRegister?.call(this);
@@ -544,6 +726,7 @@ class _$_UnRegister implements _UnRegister {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Present value)? present,
     TResult Function(_Left value)? left,
+    TResult Function(_ChangeVillaHour value)? changeVillaHour,
     TResult Function(_UnRegister value)? unRegister,
     required TResult orElse(),
   }) {

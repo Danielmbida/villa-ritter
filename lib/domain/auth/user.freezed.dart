@@ -26,6 +26,7 @@ class _$UserTearOff {
       required String genre,
       required String birthDate,
       required bool present,
+      required bool closeByAdmin,
       required String hour}) {
     return _User(
       id: id,
@@ -35,6 +36,7 @@ class _$UserTearOff {
       genre: genre,
       birthDate: birthDate,
       present: present,
+      closeByAdmin: closeByAdmin,
       hour: hour,
     );
   }
@@ -52,6 +54,7 @@ mixin _$User {
   String get genre => throw _privateConstructorUsedError;
   String get birthDate => throw _privateConstructorUsedError;
   bool get present => throw _privateConstructorUsedError;
+  bool get closeByAdmin => throw _privateConstructorUsedError;
   String get hour => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -70,6 +73,7 @@ abstract class $UserCopyWith<$Res> {
       String genre,
       String birthDate,
       bool present,
+      bool closeByAdmin,
       String hour});
 }
 
@@ -90,6 +94,7 @@ class _$UserCopyWithImpl<$Res> implements $UserCopyWith<$Res> {
     Object? genre = freezed,
     Object? birthDate = freezed,
     Object? present = freezed,
+    Object? closeByAdmin = freezed,
     Object? hour = freezed,
   }) {
     return _then(_value.copyWith(
@@ -121,6 +126,10 @@ class _$UserCopyWithImpl<$Res> implements $UserCopyWith<$Res> {
           ? _value.present
           : present // ignore: cast_nullable_to_non_nullable
               as bool,
+      closeByAdmin: closeByAdmin == freezed
+          ? _value.closeByAdmin
+          : closeByAdmin // ignore: cast_nullable_to_non_nullable
+              as bool,
       hour: hour == freezed
           ? _value.hour
           : hour // ignore: cast_nullable_to_non_nullable
@@ -142,6 +151,7 @@ abstract class _$UserCopyWith<$Res> implements $UserCopyWith<$Res> {
       String genre,
       String birthDate,
       bool present,
+      bool closeByAdmin,
       String hour});
 }
 
@@ -163,6 +173,7 @@ class __$UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res>
     Object? genre = freezed,
     Object? birthDate = freezed,
     Object? present = freezed,
+    Object? closeByAdmin = freezed,
     Object? hour = freezed,
   }) {
     return _then(_User(
@@ -194,6 +205,10 @@ class __$UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res>
           ? _value.present
           : present // ignore: cast_nullable_to_non_nullable
               as bool,
+      closeByAdmin: closeByAdmin == freezed
+          ? _value.closeByAdmin
+          : closeByAdmin // ignore: cast_nullable_to_non_nullable
+              as bool,
       hour: hour == freezed
           ? _value.hour
           : hour // ignore: cast_nullable_to_non_nullable
@@ -213,6 +228,7 @@ class _$_User implements _User {
       required this.genre,
       required this.birthDate,
       required this.present,
+      required this.closeByAdmin,
       required this.hour});
 
   @override
@@ -230,11 +246,13 @@ class _$_User implements _User {
   @override
   final bool present;
   @override
+  final bool closeByAdmin;
+  @override
   final String hour;
 
   @override
   String toString() {
-    return 'User(id: $id, name: $name, email: $email, locality: $locality, genre: $genre, birthDate: $birthDate, present: $present, hour: $hour)';
+    return 'User(id: $id, name: $name, email: $email, locality: $locality, genre: $genre, birthDate: $birthDate, present: $present, closeByAdmin: $closeByAdmin, hour: $hour)';
   }
 
   @override
@@ -249,6 +267,8 @@ class _$_User implements _User {
             const DeepCollectionEquality().equals(other.genre, genre) &&
             const DeepCollectionEquality().equals(other.birthDate, birthDate) &&
             const DeepCollectionEquality().equals(other.present, present) &&
+            const DeepCollectionEquality()
+                .equals(other.closeByAdmin, closeByAdmin) &&
             const DeepCollectionEquality().equals(other.hour, hour));
   }
 
@@ -262,6 +282,7 @@ class _$_User implements _User {
       const DeepCollectionEquality().hash(genre),
       const DeepCollectionEquality().hash(birthDate),
       const DeepCollectionEquality().hash(present),
+      const DeepCollectionEquality().hash(closeByAdmin),
       const DeepCollectionEquality().hash(hour));
 
   @JsonKey(ignore: true)
@@ -279,6 +300,7 @@ abstract class _User implements User {
       required String genre,
       required String birthDate,
       required bool present,
+      required bool closeByAdmin,
       required String hour}) = _$_User;
 
   @override
@@ -295,6 +317,8 @@ abstract class _User implements User {
   String get birthDate;
   @override
   bool get present;
+  @override
+  bool get closeByAdmin;
   @override
   String get hour;
   @override

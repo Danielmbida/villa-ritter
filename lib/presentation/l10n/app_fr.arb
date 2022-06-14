@@ -318,5 +318,13 @@
     "notification_flushbar_content_string": "Les champs ne doivent pas être vides",
     "@notification_flushbar_content_string": {
        "decsription": "Texte pour la flushbar affiché si le contenu de la notification est vide"
+    },
+    "force_villa_close_question_string":"Souhaitez-vous fermer la villa ?",
+    "@force_villa_close_question_string":{
+      "description" : "Text pour demander fermer la villa"
+    },
+    "force_villa_open_question_string":"Souhaitez-vous ouvrir la villa ?",
+    "@force_villa_open_question_string":{
+      "description" : "Text pour demander ouvrir la villa"
     }
 }

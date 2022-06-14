@@ -18,13 +18,15 @@ abstract class IAuthFacade {
   });
   Future<Either<AuthFailure, Unit>> unRegister();
 
-  Future<Either<AuthFailure, Unit>> registerWithEmailAndPasswordPressed(
-      {required EmailAddress emailAddress,
-      required Password password,
-      required LastName name,
-      required Locality locality,
-      required Gender gender,
-      required BirthDate birthDate,
-      required bool present,
-      required String hour});
+  Future<Either<AuthFailure, Unit>> registerWithEmailAndPasswordPressed({
+    required EmailAddress emailAddress,
+    required Password password,
+    required LastName name,
+    required Locality locality,
+    required Gender gender,
+    required BirthDate birthDate,
+    required bool present,
+    required String hour,
+    required bool closeByAdmin,
+  });
 }

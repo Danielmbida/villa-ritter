@@ -12,8 +12,9 @@ part 'user_actor_bloc.freezed.dart';
 @injectable
 class UserActorBloc extends Bloc<UserActorEvent, UserActorState> {
   final IUserRepository _userRepository;
-  //  final IAuthFacade _authFacade;
-  UserActorBloc(this._userRepository,) : super(const UserActorState.initial()) {
+  UserActorBloc(
+    this._userRepository,
+  ) : super(const UserActorState.initial()) {
     on<_Present>((event, emit) async {
       final possibleFailure = await _userRepository.update(event.user);
       emit(
@@ -32,7 +33,16 @@ class UserActorBloc extends Bloc<UserActorEvent, UserActorState> {
         ),
       );
     });
-       on<_UnRegister>((event, emit) async {
+    on<_ChangeVillaHour>((event, emit) async {
+      final possibleFailure = await _userRepository.update(event.user);
+      emit(
+        possibleFailure.fold(
+          (f) => UserActorState.updatedFailure(f),
+          (_) => const UserActorState.updatedSuccess(),
+        ),
+      );
+    });
+    on<_UnRegister>((event, emit) async {
       final possibleFailure = await _userRepository.delete(event.user);
       emit(
         possibleFailure.fold(

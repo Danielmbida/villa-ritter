@@ -78,5 +78,7 @@
  "notification_body_label_string": "Content",
  "notification_button_string": "Send",
  "notification_flushbar_title_string": "Attention !",
- "notification_flushbar_content_string": "Fields must not be empty"
+ "notification_flushbar_content_string": "Fields must not be empty",
+ "force_villa_close_question_string" : "Would you like to close the villa ?",
+ "force_villa_open_question_string" : "Would you like to open the villa ?"
 }
