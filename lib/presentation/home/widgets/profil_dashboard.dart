@@ -148,26 +148,32 @@ class _ProfileViewState extends State<ProfileView> {
                   Column(),
                 ],
               ),
-              Positioned(
-                right: mediaWidth * .38,
-                top: mediaHeight * .20,
-                child: InkWell(
-                  onTap: () {
-                    context.router.push(
-                        SendNotificationsRoute(listToken: widget.listToken),);
-                  },
-                  child: const Card(
-                    color: Colors.red,
-                    child: Padding(
-                      padding: EdgeInsets.all(8.0),
-                      child: Text(
-                        "Notif",
-                        style: TextStyle(fontSize: 25),
+              if (widget.user.email == VillaDatas.villaEmail)
+                Positioned(
+                  right: mediaWidth * .37,
+                  top: mediaHeight * .20,
+                  child: InkWell(
+                    onTap: () {
+                      context.router.push(
+                        SendNotificationsRoute(listToken: widget.listToken),
+                      );
+                    },
+                    child: const Card(
+                      elevation: 5,
+                      color: Color(0xff20544c),
+                      child: Padding(
+                        padding: EdgeInsets.all(8.0),
+                        child: Text(
+                          "Gérer",
+                          style: TextStyle(
+                            fontSize: 25,
+                            color: Colors.white,
+                          ),
+                        ),
                       ),
                     ),
                   ),
                 ),
-              ),
               Positioned(
                 top: mediaHeight * 0.15,
                 right: mediaWidth * 0.03,

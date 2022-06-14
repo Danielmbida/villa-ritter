@@ -36,7 +36,10 @@ class _SendNotificationsPageState extends State<SendNotificationsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Notifications")),
+      appBar: AppBar(
+        title: const Text("Notification "),
+        backgroundColor: const Color(0xff20544c),
+      ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
