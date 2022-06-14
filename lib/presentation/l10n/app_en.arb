@@ -76,5 +76,7 @@
  "notification_form_title_string": "Enter a message",
  "notification_title_label_string": "Title",
  "notification_body_label_string": "Content",
- "notification_button_string": "Send"
+ "notification_button_string": "Send",
+ "notification_flushbar_title_string": "Attention !",
+ "notification_flushbar_content_string": "Fields must not be empty"
 }

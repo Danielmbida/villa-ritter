@@ -1,5 +1,6 @@
 // ignore_for_file: avoid_void_async
 import 'dart:convert';
+import 'package:another_flushbar/flushbar_helper.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -37,77 +38,98 @@ class _SendNotificationsPageState extends State<SendNotificationsPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          AppLocalizations.of(context)!.notification_page_app_bar,
+    return SafeArea(
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text(
+            AppLocalizations.of(context)!.notification_page_app_bar,
+          ),
+          backgroundColor: const Color(0xff20544c),
         ),
-        backgroundColor: const Color(0xff20544c),
-      ),
-      body: Container(
-        color: const Color.fromARGB(216, 32, 84, 76),
-        child: Center(
-          child: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 56.0, horizontal: 16),
-            child: Card(
-              elevation: 8,
-              color: Colors.white70,
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(15.0)),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Text(
-                    AppLocalizations.of(context)!
-                        .notification_form_title_string,
-                    style: const TextStyle(
-                      decoration: TextDecoration.underline,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 22,
-                    ),
+        body: Container(
+          color: const Color.fromARGB(216, 32, 84, 76),
+          child: Center(
+            child: Padding(
+              padding:
+                  const EdgeInsets.symmetric(vertical: 56.0, horizontal: 16),
+              child: SingleChildScrollView(
+                child: Card(
+                  elevation: 8,
+                  color: Colors.white70,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(15.0),
                   ),
-                  const SizedBox(height: 36),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 24),
-                    child: TextField(
-                      decoration: _textFormFieldDecoration(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Text(
                         AppLocalizations.of(context)!
-                            .notification_title_label_string,
+                            .notification_form_title_string,
+                        style: const TextStyle(
+                          decoration: TextDecoration.underline,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 22,
+                        ),
                       ),
-                      cursorColor: const Color(0xff20544c),
-                      controller: titleController,
-                    ),
-                  ),
-                  const SizedBox(height: 48),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 24),
-                    child: TextField(
-                      decoration: _textFormFieldDecoration(
-                        AppLocalizations.of(context)!
-                            .notification_body_label_string,
+                      const SizedBox(height: 36),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 24),
+                        child: TextFormField(
+                          decoration: _textFormFieldDecoration(
+                            AppLocalizations.of(context)!
+                                .notification_title_label_string,
+                          ),
+                          cursorColor: const Color(0xff20544c),
+                          controller: titleController,
+                        ),
                       ),
-                      cursorColor: const Color(0xff20544c),
-                      maxLines: 3,
-                      controller: bodyController,
-                    ),
+                      const SizedBox(height: 48),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 24),
+                        child: TextFormField(
+                          decoration: _textFormFieldDecoration(
+                            AppLocalizations.of(context)!
+                                .notification_body_label_string,
+                          ),
+                          cursorColor: const Color(0xff20544c),
+                          maxLines: 3,
+                          controller: bodyController,
+                        ),
+                      ),
+                      const SizedBox(height: 48),
+                      ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          primary: const Color(0xff20544c),
+                        ),
+                        onPressed: () {
+                          if (titleController.text.isEmpty ||
+                              bodyController.text.isEmpty) {
+                            FlushbarHelper.createError(
+                              title: AppLocalizations.of(context)!
+                                  .notification_flushbar_title_string,
+                              message: AppLocalizations.of(context)!
+                                  .notification_flushbar_content_string,
+                              duration: const Duration(seconds: 3),
+                            ).show(context);
+                          } else {
+                            _sendMessage(
+                              bodyController.text,
+                              titleController.text,
+                              widget.listToken,
+                            );
+                            FocusScope.of(context).unfocus();
+                            titleController.clear();
+                            bodyController.clear();
+                          }
+                        },
+                        child: Text(
+                          AppLocalizations.of(context)!
+                              .notification_button_string,
+                        ),
+                      ),
+                    ],
                   ),
-                  const SizedBox(height: 48),
-                  ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      primary: const Color(0xff20544c),
-                    ),
-                    onPressed: () {
-                      _sendMessage(
-                        bodyController.text,
-                        titleController.text,
-                        widget.listToken,
-                      );
-                    },
-                    child: Text(
-                      AppLocalizations.of(context)!.notification_button_string,
-                    ),
-                  ),
-                ],
+                ),
               ),
             ),
           ),

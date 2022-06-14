@@ -76,6 +76,8 @@
  "notification_form_title_string": "Nachricht eingeben",
  "notification_title_label_string": "Titel",
  "notification_body_label_string": "Inhalt",
- "notification_button_string": "Senden"
+ "notification_button_string": "Senden",
+ "notification_flushbar_title_string": "Achtung !",
+ "notification_flushbar_content_string": "Felder dürfen nicht leer sein"
 }
 

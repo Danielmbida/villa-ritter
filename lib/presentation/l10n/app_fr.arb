@@ -310,5 +310,13 @@
     "notification_button_string": "Envoyer",
     "@notification_button_string": {
        "description": "Le bouton permettant d'envoyer la notifications"
+    },
+    "notification_flushbar_title_string": "Attention !",
+    "@notification_flushbar_title_string": {
+       "decsription": "Texte pour la flushbar affiché si le titre de la notification est vide"
+    },
+    "notification_flushbar_content_string": "Les champs ne doivent pas être vides",
+    "@notification_flushbar_content_string": {
+       "decsription": "Texte pour la flushbar affiché si le contenu de la notification est vide"
     }
 }
