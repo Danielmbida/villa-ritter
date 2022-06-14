@@ -10,19 +10,24 @@ import 'package:apptest/presentation/home/widgets/buttons/admin_button_form.dart
 import 'package:apptest/presentation/home/widgets/buttons/left_button_form.dart';
 import 'package:apptest/presentation/home/widgets/buttons/present_button_form.dart';
 import 'package:apptest/presentation/home/widgets/image_profil_form.dart';
+import 'package:apptest/presentation/routes/router.gr.dart';
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:cloud_functions/cloud_functions.dart';
 
 class ProfileView extends StatefulWidget {
   final User user;
   final bool presence;
+  final List<String> listToken;
 
   const ProfileView({
     required this.user,
     required this.presence,
+    required this.listToken,
   });
 
   @override
@@ -142,6 +147,26 @@ class _ProfileViewState extends State<ProfileView> {
                 children: [
                   Column(),
                 ],
+              ),
+              Positioned(
+                right: mediaWidth * .38,
+                top: mediaHeight * .20,
+                child: InkWell(
+                  onTap: () {
+                    context.router.push(
+                        SendNotificationsRoute(listToken: widget.listToken),);
+                  },
+                  child: const Card(
+                    color: Colors.red,
+                    child: Padding(
+                      padding: EdgeInsets.all(8.0),
+                      child: Text(
+                        "Notif",
+                        style: TextStyle(fontSize: 25),
+                      ),
+                    ),
+                  ),
+                ),
               ),
               Positioned(
                 top: mediaHeight * 0.15,

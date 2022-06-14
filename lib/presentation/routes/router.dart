@@ -1,4 +1,5 @@
 import 'package:apptest/presentation/home/home_page.dart';
+import 'package:apptest/presentation/home/widgets/send_notifications_page.dart';
 import 'package:apptest/presentation/scan/scan_page.dart';
 import 'package:apptest/presentation/sign_in/sign_in_page.dart';
 import 'package:apptest/presentation/sign_in/widgets/reset_password/reset_password_page.dart';
@@ -20,6 +21,7 @@ import 'package:auto_route/auto_route.dart';
     AutoRoute(page: UserManagePage),
     AutoRoute(page: UserPresentPage),
     AutoRoute(page: ContactHoursPage),
+    AutoRoute(page: SendNotificationsPage),
     CustomRoute(
       page: ResetPasswordPage,
       transitionsBuilder: TransitionsBuilders.fadeIn,
