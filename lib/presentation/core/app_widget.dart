@@ -35,12 +35,13 @@ class AppWidget extends StatelessWidget {
               const UserWatchAllEvent.watchAllStarted(),
             ),
         ),
-              BlocProvider<WatcherNewsBloc>(
+        BlocProvider<WatcherNewsBloc>(
           create: (context) => getIt<WatcherNewsBloc>()
             ..add(
               const WatcherNewsEvent.watchNewsStarted(),
             ),
         ),
+   
         BlocProvider<WatchAllUsersBloc>(
           create: (context) => getIt<WatchAllUsersBloc>()
             ..add(
