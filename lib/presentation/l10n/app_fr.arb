@@ -286,5 +286,29 @@
     "my_account_menu_string": "Mon profil",
     "@my_account_menu_string": {
        "description": "Le texte utilisé dans le menu afin d'accéder à la page de profil"
+    },
+    "management_button": "Gérer",
+    "@management_button": {
+       "description": "Bouton permettant d'aller sur la page nous permettant d'envoyer des notifications"
+    },
+    "notification_page_app_bar": "Notifications",
+    "@notification_page_app_bar": {
+       "description": "Titre de la page pour l'envoie des notifications"
+    },
+    "notification_form_title_string": "Entrer un message",
+    "@notification_form_title_string": {
+       "decrsiption": "Le titre du formulaire d'envoie de notifications"
+    },
+    "notification_title_label_string": "Titre",
+    "@notification_title_label_string": {
+       "description": "Le label du TextFormField pour le titre de la notifications"
+    },
+    "notification_body_label_string": "Contenu",
+    "@notification_body_label_string": {
+       "description": "Le label du TextFormField pour le contenu de la notifications"
+    },
+    "notification_button_string": "Envoyer",
+    "@notification_button_string": {
+       "description": "Le bouton permettant d'envoyer la notifications"
     }
 }

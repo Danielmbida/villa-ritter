@@ -70,5 +70,11 @@
  "try_again_string" : "Try again",
  "delete_my_account_string": "Delete my account",
  "delete_my_account_confirm_dialog_content": "Are you sure you want to delete your account (this action is irreversible)",
- "my_account_menu_string": "My profile"
+ "my_account_menu_string": "My profile",
+ "management_button": "Manage",
+ "notification_page_app_bar": "Notifications",
+ "notification_form_title_string": "Enter a message",
+ "notification_title_label_string": "Title",
+ "notification_body_label_string": "Content",
+ "notification_button_string": "Send"
 }

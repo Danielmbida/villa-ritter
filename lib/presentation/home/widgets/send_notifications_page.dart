@@ -2,6 +2,7 @@
 import 'dart:convert';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:http/http.dart' as http;
 
@@ -18,7 +19,8 @@ class SendNotificationsPage extends StatefulWidget {
 }
 
 class _SendNotificationsPageState extends State<SendNotificationsPage> {
-  final TextEditingController ctrl = TextEditingController();
+  final TextEditingController titleController = TextEditingController();
+  final TextEditingController bodyController = TextEditingController();
   String? mtoken = " ";
   AndroidNotificationChannel channel = const AndroidNotificationChannel(
     'high_importance_channel', // id
@@ -37,25 +39,94 @@ class _SendNotificationsPageState extends State<SendNotificationsPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Notification "),
+        title: Text(
+          AppLocalizations.of(context)!.notification_page_app_bar,
+        ),
         backgroundColor: const Color(0xff20544c),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text('Enter your message'),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: TextField(controller: ctrl),
+      body: Container(
+        color: const Color.fromARGB(216, 32, 84, 76),
+        child: Center(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(vertical: 56.0, horizontal: 16),
+            child: Card(
+              elevation: 8,
+              color: Colors.white70,
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(15.0)),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Text(
+                    AppLocalizations.of(context)!
+                        .notification_form_title_string,
+                    style: const TextStyle(
+                      decoration: TextDecoration.underline,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 22,
+                    ),
+                  ),
+                  const SizedBox(height: 36),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 24),
+                    child: TextField(
+                      decoration: _textFormFieldDecoration(
+                        AppLocalizations.of(context)!
+                            .notification_title_label_string,
+                      ),
+                      cursorColor: const Color(0xff20544c),
+                      controller: titleController,
+                    ),
+                  ),
+                  const SizedBox(height: 48),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 24),
+                    child: TextField(
+                      decoration: _textFormFieldDecoration(
+                        AppLocalizations.of(context)!
+                            .notification_body_label_string,
+                      ),
+                      cursorColor: const Color(0xff20544c),
+                      maxLines: 3,
+                      controller: bodyController,
+                    ),
+                  ),
+                  const SizedBox(height: 48),
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      primary: const Color(0xff20544c),
+                    ),
+                    onPressed: () {
+                      _sendMessage(
+                        bodyController.text,
+                        titleController.text,
+                        widget.listToken,
+                      );
+                    },
+                    child: Text(
+                      AppLocalizations.of(context)!.notification_button_string,
+                    ),
+                  ),
+                ],
+              ),
             ),
-            ElevatedButton(
-              onPressed: () {
-                _sendMessage(ctrl.text, "titre", widget.listToken);
-              },
-              child: const Text("Send"),
-            ),
-          ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  InputDecoration _textFormFieldDecoration(String labelText) {
+    return InputDecoration(
+      labelText: labelText,
+      labelStyle: const TextStyle(
+        color: Color(0xff20544c),
+      ),
+      filled: true,
+      fillColor: Colors.white54.withOpacity(0.5),
+      focusedBorder: const OutlineInputBorder(
+        borderSide: BorderSide(
+          color: Color(0xff20544c),
         ),
       ),
     );

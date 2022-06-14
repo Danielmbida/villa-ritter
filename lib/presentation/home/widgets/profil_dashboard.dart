@@ -158,14 +158,14 @@ class _ProfileViewState extends State<ProfileView> {
                         SendNotificationsRoute(listToken: widget.listToken),
                       );
                     },
-                    child: const Card(
+                    child: Card(
                       elevation: 5,
-                      color: Color(0xff20544c),
+                      color: const Color(0xff20544c),
                       child: Padding(
-                        padding: EdgeInsets.all(8.0),
+                        padding: const EdgeInsets.all(8.0),
                         child: Text(
-                          "Gérer",
-                          style: TextStyle(
+                          AppLocalizations.of(context)!.management_button,
+                          style: const TextStyle(
                             fontSize: 25,
                             color: Colors.white,
                           ),

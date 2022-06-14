@@ -70,6 +70,12 @@
  "try_again_string" : "Versuchen Sie es erneut",
  "delete_my_account_string": "Meinen Account löschen",
  "delete_my_account_confirm_dialog_content": "Sind Sie sicher, dass Sie Ihr Account löschen wollen (diese Aktion ist unumkehrbar)",
- "my_account_menu_string": "Mein Profil"
+ "my_account_menu_string": "Mein Profil",
+ "management_button": "Verwalten",
+ "notification_page_app_bar": "Notifikationen",
+ "notification_form_title_string": "Nachricht eingeben",
+ "notification_title_label_string": "Titel",
+ "notification_body_label_string": "Inhalt",
+ "notification_button_string": "Senden"
 }
 
