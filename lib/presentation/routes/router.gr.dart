@@ -11,8 +11,9 @@
 // ignore_for_file: type=lint
 
 import 'package:auto_route/auto_route.dart' as _i12;
+import 'package:flutter/foundation.dart' as _i14;
 import 'package:flutter/material.dart' as _i13;
-import 'package:wordpress_api/wordpress_api.dart' as _i14;
+import 'package:wordpress_api/wordpress_api.dart' as _i15;
 
 import '../home/home_page.dart' as _i3;
 import '../home/widgets/send_notifications_page.dart' as _i7;
@@ -165,7 +166,7 @@ class ContactHoursRoute extends _i12.PageRouteInfo<void> {
 /// [_i7.SendNotificationsPage]
 class SendNotificationsRoute
     extends _i12.PageRouteInfo<SendNotificationsRouteArgs> {
-  SendNotificationsRoute({_i13.Key? key, required List<String> listToken})
+  SendNotificationsRoute({_i14.Key? key, required List<String> listToken})
       : super(SendNotificationsRoute.name,
             path: '/send-notifications-page',
             args: SendNotificationsRouteArgs(key: key, listToken: listToken));
@@ -176,7 +177,7 @@ class SendNotificationsRoute
 class SendNotificationsRouteArgs {
   const SendNotificationsRouteArgs({this.key, required this.listToken});
 
-  final _i13.Key? key;
+  final _i14.Key? key;
 
   final List<String> listToken;
 
@@ -199,7 +200,7 @@ class ResetPasswordRoute extends _i12.PageRouteInfo<void> {
 /// [_i9.SuccefulMessagePage]
 class SuccefulMessageRoute
     extends _i12.PageRouteInfo<SuccefulMessageRouteArgs> {
-  SuccefulMessageRoute({_i13.Key? key, required String email})
+  SuccefulMessageRoute({_i14.Key? key, required String email})
       : super(SuccefulMessageRoute.name,
             path: '/succeful-message-page',
             args: SuccefulMessageRouteArgs(key: key, email: email));
@@ -210,7 +211,7 @@ class SuccefulMessageRoute
 class SuccefulMessageRouteArgs {
   const SuccefulMessageRouteArgs({this.key, required this.email});
 
-  final _i13.Key? key;
+  final _i14.Key? key;
 
   final String email;
 
@@ -223,7 +224,7 @@ class SuccefulMessageRouteArgs {
 /// generated route for
 /// [_i10.PostPage]
 class PostRoute extends _i12.PageRouteInfo<PostRouteArgs> {
-  PostRoute({required _i14.Post post})
+  PostRoute({required _i15.Post post})
       : super(PostRoute.name,
             path: '/post-page', args: PostRouteArgs(post: post));
 
@@ -233,7 +234,7 @@ class PostRoute extends _i12.PageRouteInfo<PostRouteArgs> {
 class PostRouteArgs {
   const PostRouteArgs({required this.post});
 
-  final _i14.Post post;
+  final _i15.Post post;
 
   @override
   String toString() {
