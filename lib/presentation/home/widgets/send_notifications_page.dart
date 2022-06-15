@@ -168,7 +168,6 @@ class _SendNotificationsPageState extends State<SendNotificationsPage> {
             'notification': <String, dynamic>{
               'body': body,
               'title': title,
-              'icon': "assets/icon/ic_villa.png",
             },
             'priority': 'high',
             'data': <String, dynamic>{
