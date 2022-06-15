@@ -127,7 +127,8 @@ class _HomePageState extends State<HomePage> {
             android: AndroidNotificationDetails(
               channel.id,
               channel.name,
-              icon: 'assets/icon/ic_villa.png',
+              // icon: 'assets/icon/ic_villa.png',
+              icon: 'launch_background.xml',
             ),
           ),
         );

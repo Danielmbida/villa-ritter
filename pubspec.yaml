@@ -90,18 +90,18 @@ flutter_icons:
 flutter:
   assets:
   - assets/images/
-  # - assets/images/footer.jpg
-  - assets/images/fond_2.jpg
-  - assets/images/porte2.jpg
-  - assets/images/profil.JPG
-  - assets/images/4.jpg
-  - assets/images/img_addr.PNG
-  - assets/images/logo.png
-  - assets/icon/icon.png
-  - assets/images/img_dlg.PNG
-  - assets/images/nbuser.webp
-  - assets/images/home.png
-  - assets/images/nobody.png
+  # # - assets/images/footer.jpg
+  # - assets/images/fond_2.jpg
+  # - assets/images/porte2.jpg
+  # - assets/images/profil.JPG
+  # - assets/images/4.jpg
+  # - assets/images/img_addr.PNG
+  # - assets/images/logo.png
+  # - assets/icon/icon.png
+  # - assets/images/img_dlg.PNG
+  # - assets/images/nbuser.webp
+  # - assets/images/home.png
+  # - assets/images/nobody.png
 
   fonts:
     - family: Gwendolyn

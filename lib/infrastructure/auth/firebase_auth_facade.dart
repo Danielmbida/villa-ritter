@@ -87,16 +87,17 @@ class FirebaseAuthFacade implements IAuthFacade {
   }
 
   @override
-  Future<Either<AuthFailure, Unit>> registerWithEmailAndPasswordPressed(
-      {required EmailAddress emailAddress,
-      required Password password,
-      required LastName name,
-      required Locality locality,
-      required Gender gender,
-      required BirthDate birthDate,
-      required bool present,
-      required String hour,
-      required bool closeByAdmin}) async {
+  Future<Either<AuthFailure, Unit>> registerWithEmailAndPasswordPressed({
+    required EmailAddress emailAddress,
+    required Password password,
+    required LastName name,
+    required Locality locality,
+    required Gender gender,
+    required BirthDate birthDate,
+    required bool present,
+    required String hour,
+    required bool closeByAdmin,
+  }) async {
     final emailAddressStr = emailAddress.getOrCrash();
     final passwordStr = password.getOrCrash();
     final nameStr = name.getOrCrash();
@@ -126,7 +127,8 @@ class FirebaseAuthFacade implements IAuthFacade {
           'naissance': birthDateStr.trim(),
           'genre': genderStr.trim(),
           'present': present,
-          'arrive': hourStr.trim()
+          'arrive': hourStr.trim(),
+          'closeByAdmin': closeByAdmin
         },
       );
       return right(unit);

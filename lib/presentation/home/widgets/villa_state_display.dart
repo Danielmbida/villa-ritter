@@ -39,7 +39,7 @@ class _VillaStateDisplayState extends State<VillaStateDisplay> {
             users = user.users.asList();
             user.users.asList().forEach((elem) {
               if (elem.email == VillaDatas.villaEmail) {
-                if (elem.closeByAdmin == false) {
+                if (elem.closeByAdmin == true) {
                   forceClosed = false;
                 } else {
                   forceClosed = true;
@@ -64,11 +64,11 @@ class _VillaStateDisplayState extends State<VillaStateDisplay> {
                       .villa_close_string
                       .toUpperCase();
                   colorState = Colors.redAccent;
-                  context.read<UserActorBloc>().add(
-                        UserActorEvent.changeVillaHour(
-                          widget.user.copyWith(present: false),
-                        ),
-                      );
+                  // context.read<UserActorBloc>().add(
+                  //       UserActorEvent.left(
+                  //         widget.user.copyWith(present: false),
+                  //       ),
+                  //     );
                 }
               },
               ferme: (_) {
@@ -77,11 +77,11 @@ class _VillaStateDisplayState extends State<VillaStateDisplay> {
                     .villa_close_string
                     .toUpperCase();
                 colorState = Colors.redAccent;
-                context.read<UserActorBloc>().add(
-                      UserActorEvent.changeVillaHour(
-                        widget.user.copyWith(present: false),
-                      ),
-                    );
+                // context.read<UserActorBloc>().add(
+                //       UserActorEvent.left(
+                //         widget.user.copyWith(present: false),
+                //       ),
+                //     );
               },
             );
             return Positioned(
@@ -90,6 +90,7 @@ class _VillaStateDisplayState extends State<VillaStateDisplay> {
               child: InkWell(
                 onLongPress: () {
                   void onPressedCall() {
+                      //  closeByAdmin(users);
                     if (forceClosed == false) {
                       closeByAdmin(users);
                     } else {
@@ -173,6 +174,7 @@ class _VillaStateDisplayState extends State<VillaStateDisplay> {
   }
 
   void defaultHourBack() {
+    // print("back");
     context.read<UserActorBloc>().add(
           UserActorEvent.changeVillaHour(
             widget.user.copyWith(closeByAdmin: false),
