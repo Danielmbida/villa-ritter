@@ -120,13 +120,14 @@ class _UserPresentPageState extends State<UserPresentPage>
                                         );
                                         Navigator.of(context).pop();
                                       }
+
                                       showDialog(
                                         context: context,
                                         builder: (BuildContext context) {
                                           return AppAlertDialog(
                                             user: user,
                                             title: AppLocalizations.of(context)!
-                                                .get_out_string,
+                                                .get_out_all_title_string,
                                             description:
                                                 AppLocalizations.of(context)!
                                                     .get_out_all_string,
@@ -138,7 +139,7 @@ class _UserPresentPageState extends State<UserPresentPage>
                                     child: Text(
                                       AppLocalizations.of(context)!
                                           .empty_list_string,
-                                          textAlign: TextAlign.center,
+                                      textAlign: TextAlign.center,
                                       style: const TextStyle(
                                         color: Colors.white,
                                       ),

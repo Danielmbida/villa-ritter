@@ -183,19 +183,23 @@
     "@confirm_string":{
        "description" : "le text"
     },
-    "get_out_all_string": "Confirmer la sortie pour tous",
+    "get_out_all_string": "Plus personne ne doit être dans la villa",
     "@get_out_all_string":{
        "description" : "le text"
     },
-    "get_out_string": "Faire Sortir",
+    "get_out_all_title_string": "La Villa ferme",
     "@get_out_string":{
        "description" : "le text"
     },
-    "empty_list_string": "Vider la liste",
+    "get_out_one_title_string": "Je ne vois pas",
+    "@get_out_string":{
+       "description" : "le text"
+    },
+    "empty_list_string": "Sortir tout le monde",
     "@empty_list_string":{
        "description" : "le text"
     },
-    "get_out_one_string": "Confirmer la sortie de",
+    "get_out_one_string": "n'est plus dans la Villa",
     "@get_out_one_string":{
        "description" : "le text"
     },

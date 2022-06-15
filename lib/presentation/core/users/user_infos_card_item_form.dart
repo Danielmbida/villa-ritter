@@ -35,15 +35,17 @@ class UserInfosCardItemForm extends StatelessWidget {
                 );
                 Navigator.of(context).pop();
               }
+
               if (user.present) {
                 showDialog(
                   context: context,
                   builder: (BuildContext context) {
                     return AppAlertDialog(
                       user: user,
-                      title: AppLocalizations.of(context)!.get_out_string,
+                      title:
+                          "${AppLocalizations.of(context)!.get_out_one_title_string} ${user.name} !",
                       description:
-                          "${AppLocalizations.of(context)!.get_out_one_string} ${user.name}",
+                          "${user.name} ${AppLocalizations.of(context)!.get_out_one_string} ",
                       onPressedCall: onPressedCall,
                     );
                   },
