@@ -26,6 +26,7 @@ class _VillaStateDisplayState extends State<VillaStateDisplay> {
   String textState = "";
   Color colorState = Colors.white;
   bool forceClosed = false;
+  bool forceOpen = false;
   bool isOpen = false;
   List<User> users = [];
   @override
@@ -39,11 +40,11 @@ class _VillaStateDisplayState extends State<VillaStateDisplay> {
             users = user.users.asList();
             user.users.asList().forEach((elem) {
               if (elem.email == VillaDatas.villaEmail) {
-                if (elem.closeByAdmin == true) {
-                  forceClosed = false;
-                } else {
-                  forceClosed = true;
-                }
+                // if (elem.closeByAdmin == false) {
+                //   forceClosed = false;
+                // } else {
+                //   forceClosed = true;
+                // }
               }
             });
           },
@@ -52,7 +53,7 @@ class _VillaStateDisplayState extends State<VillaStateDisplay> {
           builder: (context, state) {
             state.map(
               ouvert: (_) {
-                if (!forceClosed) {
+                if (forceClosed ==false) {
                   isOpen = true;
                   textState = AppLocalizations.of(context)!
                       .villa_open_string
@@ -64,11 +65,11 @@ class _VillaStateDisplayState extends State<VillaStateDisplay> {
                       .villa_close_string
                       .toUpperCase();
                   colorState = Colors.redAccent;
-                  // context.read<UserActorBloc>().add(
-                  //       UserActorEvent.left(
-                  //         widget.user.copyWith(present: false),
-                  //       ),
-                  //     );
+                  context.read<UserActorBloc>().add(
+                        UserActorEvent.changeVillaHour(
+                          widget.user.copyWith(present: false),
+                        ),
+                      );
                 }
               },
               ferme: (_) {
@@ -78,7 +79,7 @@ class _VillaStateDisplayState extends State<VillaStateDisplay> {
                     .toUpperCase();
                 colorState = Colors.redAccent;
                 // context.read<UserActorBloc>().add(
-                //       UserActorEvent.left(
+                //       UserActorEvent.changeVillaHour(
                 //         widget.user.copyWith(present: false),
                 //       ),
                 //     );
@@ -90,7 +91,6 @@ class _VillaStateDisplayState extends State<VillaStateDisplay> {
               child: InkWell(
                 onLongPress: () {
                   void onPressedCall() {
-                      //  closeByAdmin(users);
                     if (forceClosed == false) {
                       closeByAdmin(users);
                     } else {
@@ -163,22 +163,21 @@ class _VillaStateDisplayState extends State<VillaStateDisplay> {
 
   void closeByAdmin(List<User> users) {
     for (final user in users) {
-      if (user.email == VillaDatas.villaEmail) {
-        context.read<UserActorBloc>().add(
-              UserActorEvent.changeVillaHour(
-                user.copyWith(closeByAdmin: true),
-              ),
-            );
-      }
+      // if (user.email == VillaDatas.villaEmail) {
+      //   context.read<UserActorBloc>().add(
+      //         UserActorEvent.changeVillaHour(
+      //           user.copyWith(closeByAdmin: false),
+      //         ),
+      //       );
+      // }
     }
   }
 
   void defaultHourBack() {
-    // print("back");
-    context.read<UserActorBloc>().add(
-          UserActorEvent.changeVillaHour(
-            widget.user.copyWith(closeByAdmin: false),
-          ),
-        );
+    // context.read<UserActorBloc>().add(
+    //       UserActorEvent.changeVillaHour(
+    //         // widget.user.copyWith(closeByAdmin: false),
+    //       ),
+    //     );
   }
 }

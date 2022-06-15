@@ -128,7 +128,7 @@ class _HomePageState extends State<HomePage> {
               channel.id,
               channel.name,
               // icon: 'assets/icon/ic_villa.png',
-              icon: 'launch_background.xml',
+              icon: 'launch_background',
             ),
           ),
         );
