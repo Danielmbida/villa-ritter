@@ -96,7 +96,6 @@ class FirebaseAuthFacade implements IAuthFacade {
     required BirthDate birthDate,
     required bool present,
     required String hour,
-    required bool closeByAdmin,
   }) async {
     final emailAddressStr = emailAddress.getOrCrash();
     final passwordStr = password.getOrCrash();
@@ -128,7 +127,6 @@ class FirebaseAuthFacade implements IAuthFacade {
           'genre': genderStr.trim(),
           'present': present,
           'arrive': hourStr.trim(),
-          'closeByAdmin': closeByAdmin
         },
       );
       return right(unit);

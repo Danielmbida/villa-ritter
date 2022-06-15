@@ -30,7 +30,6 @@ class _$UserDtoTearOff {
       required String localite,
       required String naissance,
       required bool present,
-      required bool closeByAdmin,
       required String arrive}) {
     return _UserDto(
       id: id,
@@ -40,7 +39,6 @@ class _$UserDtoTearOff {
       localite: localite,
       naissance: naissance,
       present: present,
-      closeByAdmin: closeByAdmin,
       arrive: arrive,
     );
   }
@@ -63,7 +61,6 @@ mixin _$UserDto {
   String get localite => throw _privateConstructorUsedError;
   String get naissance => throw _privateConstructorUsedError;
   bool get present => throw _privateConstructorUsedError;
-  bool get closeByAdmin => throw _privateConstructorUsedError;
   String get arrive => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -83,7 +80,6 @@ abstract class $UserDtoCopyWith<$Res> {
       String localite,
       String naissance,
       bool present,
-      bool closeByAdmin,
       String arrive});
 }
 
@@ -104,7 +100,6 @@ class _$UserDtoCopyWithImpl<$Res> implements $UserDtoCopyWith<$Res> {
     Object? localite = freezed,
     Object? naissance = freezed,
     Object? present = freezed,
-    Object? closeByAdmin = freezed,
     Object? arrive = freezed,
   }) {
     return _then(_value.copyWith(
@@ -136,10 +131,6 @@ class _$UserDtoCopyWithImpl<$Res> implements $UserDtoCopyWith<$Res> {
           ? _value.present
           : present // ignore: cast_nullable_to_non_nullable
               as bool,
-      closeByAdmin: closeByAdmin == freezed
-          ? _value.closeByAdmin
-          : closeByAdmin // ignore: cast_nullable_to_non_nullable
-              as bool,
       arrive: arrive == freezed
           ? _value.arrive
           : arrive // ignore: cast_nullable_to_non_nullable
@@ -161,7 +152,6 @@ abstract class _$UserDtoCopyWith<$Res> implements $UserDtoCopyWith<$Res> {
       String localite,
       String naissance,
       bool present,
-      bool closeByAdmin,
       String arrive});
 }
 
@@ -183,7 +173,6 @@ class __$UserDtoCopyWithImpl<$Res> extends _$UserDtoCopyWithImpl<$Res>
     Object? localite = freezed,
     Object? naissance = freezed,
     Object? present = freezed,
-    Object? closeByAdmin = freezed,
     Object? arrive = freezed,
   }) {
     return _then(_UserDto(
@@ -215,10 +204,6 @@ class __$UserDtoCopyWithImpl<$Res> extends _$UserDtoCopyWithImpl<$Res>
           ? _value.present
           : present // ignore: cast_nullable_to_non_nullable
               as bool,
-      closeByAdmin: closeByAdmin == freezed
-          ? _value.closeByAdmin
-          : closeByAdmin // ignore: cast_nullable_to_non_nullable
-              as bool,
       arrive: arrive == freezed
           ? _value.arrive
           : arrive // ignore: cast_nullable_to_non_nullable
@@ -238,7 +223,6 @@ class _$_UserDto extends _UserDto {
       required this.localite,
       required this.naissance,
       required this.present,
-      required this.closeByAdmin,
       required this.arrive})
       : super._();
 
@@ -261,13 +245,11 @@ class _$_UserDto extends _UserDto {
   @override
   final bool present;
   @override
-  final bool closeByAdmin;
-  @override
   final String arrive;
 
   @override
   String toString() {
-    return 'UserDto(id: $id, nom: $nom, email: $email, genre: $genre, localite: $localite, naissance: $naissance, present: $present, closeByAdmin: $closeByAdmin, arrive: $arrive)';
+    return 'UserDto(id: $id, nom: $nom, email: $email, genre: $genre, localite: $localite, naissance: $naissance, present: $present, arrive: $arrive)';
   }
 
   @override
@@ -282,8 +264,6 @@ class _$_UserDto extends _UserDto {
             const DeepCollectionEquality().equals(other.localite, localite) &&
             const DeepCollectionEquality().equals(other.naissance, naissance) &&
             const DeepCollectionEquality().equals(other.present, present) &&
-            const DeepCollectionEquality()
-                .equals(other.closeByAdmin, closeByAdmin) &&
             const DeepCollectionEquality().equals(other.arrive, arrive));
   }
 
@@ -297,7 +277,6 @@ class _$_UserDto extends _UserDto {
       const DeepCollectionEquality().hash(localite),
       const DeepCollectionEquality().hash(naissance),
       const DeepCollectionEquality().hash(present),
-      const DeepCollectionEquality().hash(closeByAdmin),
       const DeepCollectionEquality().hash(arrive));
 
   @JsonKey(ignore: true)
@@ -320,7 +299,6 @@ abstract class _UserDto extends UserDto {
       required String localite,
       required String naissance,
       required bool present,
-      required bool closeByAdmin,
       required String arrive}) = _$_UserDto;
   const _UserDto._() : super._();
 
@@ -341,8 +319,6 @@ abstract class _UserDto extends UserDto {
   String get naissance;
   @override
   bool get present;
-  @override
-  bool get closeByAdmin;
   @override
   String get arrive;
   @override

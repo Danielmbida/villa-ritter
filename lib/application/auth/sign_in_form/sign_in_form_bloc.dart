@@ -131,8 +131,6 @@ class SignInFormBloc extends Bloc<SignInFormEvent, SignInFormState> {
           gender: state.gender,
           present: false,
           hour: DateFormat('HH:mm').format(DateTime.now()),
-          closeByAdmin: false
-          
         );
       }
       emit(

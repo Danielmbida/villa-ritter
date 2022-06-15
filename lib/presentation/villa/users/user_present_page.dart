@@ -41,7 +41,6 @@ class _UserPresentPageState extends State<UserPresentPage>
     locality: "",
     name: "",
     present: false,
-    closeByAdmin: false
   );
   @override
   Widget build(BuildContext context) {

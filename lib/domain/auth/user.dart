@@ -11,7 +11,6 @@ required String locality,
 required String genre,
 required String birthDate,
 required bool present,
-required bool closeByAdmin,
 required String hour,
  }) = _User;
 }

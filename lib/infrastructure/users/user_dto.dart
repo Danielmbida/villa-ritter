@@ -18,7 +18,6 @@ abstract class UserDto implements _$UserDto {
     required String localite,
     required String naissance,
     required bool present,
-    required bool closeByAdmin,
     required String arrive,
 
   }) = _UserDto;
@@ -33,7 +32,6 @@ abstract class UserDto implements _$UserDto {
       birthDate:naissance,
       present: present,
       hour: arrive,
-      closeByAdmin: closeByAdmin,
       
     );
   }
@@ -55,7 +53,6 @@ abstract class UserDto implements _$UserDto {
       naissance: user.birthDate,
       present: user.present,
       arrive: user.hour,
-      closeByAdmin: user.closeByAdmin,
     );
   }
 }

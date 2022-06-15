@@ -13,7 +13,6 @@ _$_UserDto _$$_UserDtoFromJson(Map<String, dynamic> json) => _$_UserDto(
       localite: json['localite'] as String,
       naissance: json['naissance'] as String,
       present: json['present'] as bool,
-      closeByAdmin: json['closeByAdmin'] as bool,
       arrive: json['arrive'] as String,
     );
 
@@ -25,6 +24,5 @@ Map<String, dynamic> _$$_UserDtoToJson(_$_UserDto instance) =>
       'localite': instance.localite,
       'naissance': instance.naissance,
       'present': instance.present,
-      'closeByAdmin': instance.closeByAdmin,
       'arrive': instance.arrive,
     };

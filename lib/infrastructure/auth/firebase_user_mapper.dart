@@ -27,7 +27,6 @@ extension FirebaseUserDomainX on firebase.User {
       birthDate: userInfo['naissance'] as String,
       present: userInfo['present'] as bool,
       hour: userInfo['arrive'] as String,
-      closeByAdmin: userInfo['closeByAdmin'] as bool,
     );
   }
 }

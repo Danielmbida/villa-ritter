@@ -27,6 +27,5 @@ abstract class IAuthFacade {
     required BirthDate birthDate,
     required bool present,
     required String hour,
-    required bool closeByAdmin,
   });
 }
