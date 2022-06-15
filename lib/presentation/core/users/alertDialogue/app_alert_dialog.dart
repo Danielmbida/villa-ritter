@@ -2,8 +2,8 @@
 import 'package:apptest/domain/auth/user.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 class AppAlertDialog extends StatelessWidget {
-  
   const AppAlertDialog({
     Key? key,
     required this.user,
@@ -29,8 +29,7 @@ class AppAlertDialog extends StatelessWidget {
           children: [
             ElevatedButton(
               style: ButtonStyle(
-                backgroundColor:
-                    MaterialStateProperty.all<Color>(Colors.red),
+                backgroundColor: MaterialStateProperty.all<Color>(Colors.red),
               ),
               onPressed: () => Navigator.pop(context),
               child: Text(
@@ -45,7 +44,6 @@ class AppAlertDialog extends StatelessWidget {
               ),
               onPressed: () {
                 onPressedCall();
-                Navigator.of(context).pop();
               },
               child: Text(
                 AppLocalizations.of(context)!.confirm_string,
