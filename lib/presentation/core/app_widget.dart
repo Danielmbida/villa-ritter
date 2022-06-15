@@ -1,6 +1,8 @@
 // ignore_for_file: depend_on_referenced_packages
 import 'package:apptest/application/auth/auth_bloc.dart';
 import 'package:apptest/application/connect/connectivity_cubit.dart';
+import 'package:apptest/application/force_hour/force_hour_actor/force_hour_actor_bloc.dart';
+import 'package:apptest/application/force_hour/watch/watch_force_hour_bloc.dart';
 import 'package:apptest/application/horaire/horaire_cubit.dart';
 import 'package:apptest/application/news/bloc/watcher_news_bloc.dart';
 import 'package:apptest/application/scan/scan_bloc.dart';
@@ -59,6 +61,12 @@ class AppWidget extends StatelessWidget {
         ),
         BlocProvider(
           create: (context) => getIt<UserTokenActorBloc>(),
+        ),
+        BlocProvider<WatchForceHourBloc>(
+          create: (context) => getIt<WatchForceHourBloc>()
+            ..add(
+              const WatchForceHourEvent.watchForceHourStarted(),
+            ),
         ),
       ],
       child: MaterialApp.router(
