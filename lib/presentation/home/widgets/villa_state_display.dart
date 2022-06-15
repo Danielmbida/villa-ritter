@@ -112,7 +112,7 @@ class _VillaStateDisplayState extends State<VillaStateDisplay> {
                               ListTile(
                                 leading: const Icon(
                                   FontAwesomeIcons.doorOpen,
-                                  color: Color(0xff20544c),
+                                  color: Colors.amberAccent,
                                 ),
                                 title: Text(
                                   AppLocalizations.of(context)!
@@ -127,7 +127,7 @@ class _VillaStateDisplayState extends State<VillaStateDisplay> {
                               ListTile(
                                 leading: const Icon(
                                   FontAwesomeIcons.doorClosed,
-                                  color: Color(0xff20544c),
+                                  color: Colors.red,
                                 ),
                                 title: Text(
                                   AppLocalizations.of(context)!

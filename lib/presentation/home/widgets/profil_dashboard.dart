@@ -3,6 +3,7 @@
 import 'dart:io';
 import 'package:apptest/application/auth/auth_bloc.dart';
 import 'package:apptest/application/connect/connectivity_cubit.dart';
+import 'package:apptest/application/force_hour/watch/watch_force_hour_bloc.dart';
 import 'package:apptest/domain/auth/user.dart';
 import 'package:apptest/presentation/core/users/alertDialogue/un_register_dialog.dart';
 import 'package:apptest/presentation/core/villa_datas.dart';
@@ -15,6 +16,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:cloud_functions/cloud_functions.dart';
@@ -41,6 +43,10 @@ class _ProfileViewState extends State<ProfileView> {
   bool isConnected = true;
 
   File? _pickedImageFile;
+
+  IconData villaStateIcon = FontAwesomeIcons.clock;
+  Color villaStateIconColor = const Color(0xff20544c);
+
   @override
   void initState() {
     _getImage();
@@ -187,6 +193,35 @@ class _ProfileViewState extends State<ProfileView> {
                           )
                     : const AdminButtonForm(),
               ),
+              if (widget.user.email == VillaDatas.villaEmail)
+                Positioned(
+                  top: mediaHeight * 0.08,
+                  right: mediaWidth * 0.10,
+                  child: BlocBuilder<WatchForceHourBloc, WatchForceHourState>(
+                    builder: (context, state) {
+                      state.maybeMap(
+                        orElse: () {},
+                        loadSuccess: (state) {
+                          if (state.hours[0].close) {
+                            villaStateIcon = FontAwesomeIcons.doorClosed;
+                            villaStateIconColor = Colors.red;
+                          } else if (state.hours[0].open) {
+                            villaStateIcon = FontAwesomeIcons.doorOpen;
+                            villaStateIconColor = Colors.amberAccent;
+                          } else {
+                            villaStateIcon = FontAwesomeIcons.clock;
+                            villaStateIconColor = const Color(0xff20544c);
+                          }
+                        },
+                      );
+                      return Icon(
+                        villaStateIcon,
+                        color: villaStateIconColor,
+                        size: 30,
+                      );
+                    },
+                  ),
+                ),
             ],
           ),
         );
