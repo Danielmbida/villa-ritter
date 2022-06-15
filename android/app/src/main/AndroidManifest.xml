@@ -27,13 +27,9 @@
         android:label="Villa Ritter"
         android:icon="@mipmap/ic_launcher"> 
         android:usesCleartextTraffic="true"
-<<<<<<< HEAD
-  
-=======
         <meta-data
           android:name="com.google.firebase.messaging.default_notification_icon"
-          android:resource="@mipmap/ic_launcher.png" />
->>>>>>> master
+          android:resource="@mipmap/ic_launcher" />
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"
