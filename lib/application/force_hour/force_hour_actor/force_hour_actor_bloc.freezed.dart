@@ -29,6 +29,12 @@ class _$ForceHourActorEventTearOff {
       isForceOpened,
     );
   }
+
+  _DefaultHour defaultHour(Force isForceOpened) {
+    return _DefaultHour(
+      isForceOpened,
+    );
+  }
 }
 
 /// @nodoc
@@ -40,18 +46,21 @@ mixin _$ForceHourActorEvent {
   TResult when<TResult extends Object?>({
     required TResult Function(Force isForceClosed) closeVilla,
     required TResult Function(Force isForceOpened) openVilla,
+    required TResult Function(Force isForceOpened) defaultHour,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(Force isForceClosed)? closeVilla,
     TResult Function(Force isForceOpened)? openVilla,
+    TResult Function(Force isForceOpened)? defaultHour,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Force isForceClosed)? closeVilla,
     TResult Function(Force isForceOpened)? openVilla,
+    TResult Function(Force isForceOpened)? defaultHour,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -59,18 +68,21 @@ mixin _$ForceHourActorEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(_CloseVilla value) closeVilla,
     required TResult Function(_OpenVilla value) openVilla,
+    required TResult Function(_DefaultHour value) defaultHour,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_CloseVilla value)? closeVilla,
     TResult Function(_OpenVilla value)? openVilla,
+    TResult Function(_DefaultHour value)? defaultHour,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_CloseVilla value)? closeVilla,
     TResult Function(_OpenVilla value)? openVilla,
+    TResult Function(_DefaultHour value)? defaultHour,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -170,6 +182,7 @@ class _$_CloseVilla implements _CloseVilla {
   TResult when<TResult extends Object?>({
     required TResult Function(Force isForceClosed) closeVilla,
     required TResult Function(Force isForceOpened) openVilla,
+    required TResult Function(Force isForceOpened) defaultHour,
   }) {
     return closeVilla(isForceClosed);
   }
@@ -179,6 +192,7 @@ class _$_CloseVilla implements _CloseVilla {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(Force isForceClosed)? closeVilla,
     TResult Function(Force isForceOpened)? openVilla,
+    TResult Function(Force isForceOpened)? defaultHour,
   }) {
     return closeVilla?.call(isForceClosed);
   }
@@ -188,6 +202,7 @@ class _$_CloseVilla implements _CloseVilla {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Force isForceClosed)? closeVilla,
     TResult Function(Force isForceOpened)? openVilla,
+    TResult Function(Force isForceOpened)? defaultHour,
     required TResult orElse(),
   }) {
     if (closeVilla != null) {
@@ -201,6 +216,7 @@ class _$_CloseVilla implements _CloseVilla {
   TResult map<TResult extends Object?>({
     required TResult Function(_CloseVilla value) closeVilla,
     required TResult Function(_OpenVilla value) openVilla,
+    required TResult Function(_DefaultHour value) defaultHour,
   }) {
     return closeVilla(this);
   }
@@ -210,6 +226,7 @@ class _$_CloseVilla implements _CloseVilla {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_CloseVilla value)? closeVilla,
     TResult Function(_OpenVilla value)? openVilla,
+    TResult Function(_DefaultHour value)? defaultHour,
   }) {
     return closeVilla?.call(this);
   }
@@ -219,6 +236,7 @@ class _$_CloseVilla implements _CloseVilla {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_CloseVilla value)? closeVilla,
     TResult Function(_OpenVilla value)? openVilla,
+    TResult Function(_DefaultHour value)? defaultHour,
     required TResult orElse(),
   }) {
     if (closeVilla != null) {
@@ -313,6 +331,7 @@ class _$_OpenVilla implements _OpenVilla {
   TResult when<TResult extends Object?>({
     required TResult Function(Force isForceClosed) closeVilla,
     required TResult Function(Force isForceOpened) openVilla,
+    required TResult Function(Force isForceOpened) defaultHour,
   }) {
     return openVilla(isForceOpened);
   }
@@ -322,6 +341,7 @@ class _$_OpenVilla implements _OpenVilla {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(Force isForceClosed)? closeVilla,
     TResult Function(Force isForceOpened)? openVilla,
+    TResult Function(Force isForceOpened)? defaultHour,
   }) {
     return openVilla?.call(isForceOpened);
   }
@@ -331,6 +351,7 @@ class _$_OpenVilla implements _OpenVilla {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Force isForceClosed)? closeVilla,
     TResult Function(Force isForceOpened)? openVilla,
+    TResult Function(Force isForceOpened)? defaultHour,
     required TResult orElse(),
   }) {
     if (openVilla != null) {
@@ -344,6 +365,7 @@ class _$_OpenVilla implements _OpenVilla {
   TResult map<TResult extends Object?>({
     required TResult Function(_CloseVilla value) closeVilla,
     required TResult Function(_OpenVilla value) openVilla,
+    required TResult Function(_DefaultHour value) defaultHour,
   }) {
     return openVilla(this);
   }
@@ -353,6 +375,7 @@ class _$_OpenVilla implements _OpenVilla {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_CloseVilla value)? closeVilla,
     TResult Function(_OpenVilla value)? openVilla,
+    TResult Function(_DefaultHour value)? defaultHour,
   }) {
     return openVilla?.call(this);
   }
@@ -362,6 +385,7 @@ class _$_OpenVilla implements _OpenVilla {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_CloseVilla value)? closeVilla,
     TResult Function(_OpenVilla value)? openVilla,
+    TResult Function(_DefaultHour value)? defaultHour,
     required TResult orElse(),
   }) {
     if (openVilla != null) {
@@ -377,6 +401,156 @@ abstract class _OpenVilla implements ForceHourActorEvent {
   Force get isForceOpened;
   @JsonKey(ignore: true)
   _$OpenVillaCopyWith<_OpenVilla> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$DefaultHourCopyWith<$Res> {
+  factory _$DefaultHourCopyWith(
+          _DefaultHour value, $Res Function(_DefaultHour) then) =
+      __$DefaultHourCopyWithImpl<$Res>;
+  $Res call({Force isForceOpened});
+
+  $ForceCopyWith<$Res> get isForceOpened;
+}
+
+/// @nodoc
+class __$DefaultHourCopyWithImpl<$Res>
+    extends _$ForceHourActorEventCopyWithImpl<$Res>
+    implements _$DefaultHourCopyWith<$Res> {
+  __$DefaultHourCopyWithImpl(
+      _DefaultHour _value, $Res Function(_DefaultHour) _then)
+      : super(_value, (v) => _then(v as _DefaultHour));
+
+  @override
+  _DefaultHour get _value => super._value as _DefaultHour;
+
+  @override
+  $Res call({
+    Object? isForceOpened = freezed,
+  }) {
+    return _then(_DefaultHour(
+      isForceOpened == freezed
+          ? _value.isForceOpened
+          : isForceOpened // ignore: cast_nullable_to_non_nullable
+              as Force,
+    ));
+  }
+
+  @override
+  $ForceCopyWith<$Res> get isForceOpened {
+    return $ForceCopyWith<$Res>(_value.isForceOpened, (value) {
+      return _then(_value.copyWith(isForceOpened: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$_DefaultHour implements _DefaultHour {
+  const _$_DefaultHour(this.isForceOpened);
+
+  @override
+  final Force isForceOpened;
+
+  @override
+  String toString() {
+    return 'ForceHourActorEvent.defaultHour(isForceOpened: $isForceOpened)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _DefaultHour &&
+            const DeepCollectionEquality()
+                .equals(other.isForceOpened, isForceOpened));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(isForceOpened));
+
+  @JsonKey(ignore: true)
+  @override
+  _$DefaultHourCopyWith<_DefaultHour> get copyWith =>
+      __$DefaultHourCopyWithImpl<_DefaultHour>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(Force isForceClosed) closeVilla,
+    required TResult Function(Force isForceOpened) openVilla,
+    required TResult Function(Force isForceOpened) defaultHour,
+  }) {
+    return defaultHour(isForceOpened);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(Force isForceClosed)? closeVilla,
+    TResult Function(Force isForceOpened)? openVilla,
+    TResult Function(Force isForceOpened)? defaultHour,
+  }) {
+    return defaultHour?.call(isForceOpened);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Force isForceClosed)? closeVilla,
+    TResult Function(Force isForceOpened)? openVilla,
+    TResult Function(Force isForceOpened)? defaultHour,
+    required TResult orElse(),
+  }) {
+    if (defaultHour != null) {
+      return defaultHour(isForceOpened);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_CloseVilla value) closeVilla,
+    required TResult Function(_OpenVilla value) openVilla,
+    required TResult Function(_DefaultHour value) defaultHour,
+  }) {
+    return defaultHour(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_CloseVilla value)? closeVilla,
+    TResult Function(_OpenVilla value)? openVilla,
+    TResult Function(_DefaultHour value)? defaultHour,
+  }) {
+    return defaultHour?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_CloseVilla value)? closeVilla,
+    TResult Function(_OpenVilla value)? openVilla,
+    TResult Function(_DefaultHour value)? defaultHour,
+    required TResult orElse(),
+  }) {
+    if (defaultHour != null) {
+      return defaultHour(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _DefaultHour implements ForceHourActorEvent {
+  const factory _DefaultHour(Force isForceOpened) = _$_DefaultHour;
+
+  Force get isForceOpened;
+  @JsonKey(ignore: true)
+  _$DefaultHourCopyWith<_DefaultHour> get copyWith =>
       throw _privateConstructorUsedError;
 }
 

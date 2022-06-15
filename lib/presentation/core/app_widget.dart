@@ -68,6 +68,9 @@ class AppWidget extends StatelessWidget {
               const WatchForceHourEvent.watchForceHourStarted(),
             ),
         ),
+        BlocProvider(
+          create: (context) => getIt<ForceHourActorBloc>(),
+        ),
       ],
       child: MaterialApp.router(
         routerDelegate: _appRouter.delegate(),

@@ -1,8 +1,11 @@
 // ignore_for_file: depend_on_referenced_packages
+import 'package:apptest/application/force_hour/force_hour_actor/force_hour_actor_bloc.dart';
+import 'package:apptest/application/force_hour/watch/watch_force_hour_bloc.dart';
 import 'package:apptest/application/horaire/horaire_cubit.dart';
 import 'package:apptest/application/user_actor/user_actor_bloc.dart';
 import 'package:apptest/application/watch_all_users/watch_all_users_bloc.dart';
 import 'package:apptest/domain/auth/user.dart';
+import 'package:apptest/domain/villa_force/force.dart';
 import 'package:apptest/presentation/core/users/alertDialogue/app_alert_dialog.dart';
 import 'package:apptest/presentation/core/villa_datas.dart';
 import 'package:flutter/material.dart';
@@ -31,87 +34,112 @@ class _VillaStateDisplayState extends State<VillaStateDisplay> {
   List<User> users = [];
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<WatchAllUsersBloc, WatchAllUsersState>(
+    return BlocBuilder<WatchForceHourBloc, WatchForceHourState>(
       builder: (context, state) {
         state.maybeMap(
           orElse: () => Container(),
-          initial: (_) {},
-          loadSuccess: (user) {
-            users = user.users.asList();
-            user.users.asList().forEach((elem) {
-              if (elem.email == VillaDatas.villaEmail) {
-                // if (elem.closeByAdmin == false) {
-                //   forceClosed = false;
-                // } else {
-                //   forceClosed = true;
-                // }
-              }
-            });
+          initial: (_) {
+            forceClosed = false;
+            forceOpen = false;
+          },
+          loadSuccess: (hour) {
+            if (hour.hours[0].close == true) {
+              forceClosed = true;
+              isOpen = false;
+              textState = AppLocalizations.of(context)!
+                  .villa_close_string
+                  .toUpperCase();
+              colorState = Colors.redAccent;
+            } else if (hour.hours[0].open) {
+              forceOpen = true;
+              isOpen = true;
+              textState =
+                  AppLocalizations.of(context)!.villa_open_string.toUpperCase();
+              colorState = Colors.amberAccent;
+            } else {
+              forceClosed = false;
+              forceOpen = false;
+            }
           },
         );
         return BlocBuilder<HoraireCubit, HoraireState>(
           builder: (context, state) {
-            state.map(
-              ouvert: (_) {
-                if (forceClosed ==false) {
+            if (forceClosed == false && forceOpen == false) {
+              state.map(
+                ouvert: (_) {
                   isOpen = true;
                   textState = AppLocalizations.of(context)!
                       .villa_open_string
                       .toUpperCase();
                   colorState = Colors.amberAccent;
-                } else {
+                },
+                ferme: (_) {
                   isOpen = false;
                   textState = AppLocalizations.of(context)!
                       .villa_close_string
                       .toUpperCase();
                   colorState = Colors.redAccent;
-                  context.read<UserActorBloc>().add(
-                        UserActorEvent.changeVillaHour(
-                          widget.user.copyWith(present: false),
-                        ),
-                      );
-                }
-              },
-              ferme: (_) {
-                isOpen = false;
-                textState = AppLocalizations.of(context)!
-                    .villa_close_string
-                    .toUpperCase();
-                colorState = Colors.redAccent;
-                // context.read<UserActorBloc>().add(
-                //       UserActorEvent.changeVillaHour(
-                //         widget.user.copyWith(present: false),
-                //       ),
-                //     );
-              },
-            );
+                },
+              );
+            }
             return Positioned(
               bottom: MediaQuery.of(context).size.height * 0.035,
               left: MediaQuery.of(context).size.width * 0.015,
               child: InkWell(
-                onLongPress: () {
-                  void onPressedCall() {
-                    if (forceClosed == false) {
-                      closeByAdmin(users);
-                    } else {
-                      defaultHourBack();
-                    }
-                  }
+                onTap: () {
                   if (widget.user.email == VillaDatas.villaEmail) {
-                    showDialog(
+                    showModalBottomSheet(
                       context: context,
-                      builder: (context) {
-                        return AppAlertDialog(
-                          user: widget.user,
-                          title: isOpen == false
-                              ? "${AppLocalizations.of(context)!.villa_is_string} ${AppLocalizations.of(context)!.villa_close_string} !"
-                              : "${AppLocalizations.of(context)!.villa_is_string} ${AppLocalizations.of(context)!.villa_open_string} ! ",
-                          description: isOpen == true
-                              ? AppLocalizations.of(context)!
-                                  .force_villa_close_question_string
-                              : AppLocalizations.of(context)!
-                                  .force_villa_open_question_string,
-                          onPressedCall: onPressedCall,
+                      builder: (BuildContext bc) {
+                        return SizedBox(
+                          child: Wrap(
+                            children: <Widget>[
+                              ListTile(
+                                leading: const Icon(Icons.photo_library),
+                                title: Text(
+                                  AppLocalizations.of(context)!
+                                      .force_villa_open_question_string,
+                                ),
+                                onTap: () {
+                                  openByAdmin(users);
+                                  Navigator.of(context).pop();
+                                },
+                              ),
+                              const Divider(),
+                              ListTile(
+                                leading: const Icon(Icons.photo_camera),
+                                title: Text(
+                                  AppLocalizations.of(context)!
+                                      .force_villa_close_question_string,
+                                ),
+                                onTap: () {
+                                  closeByAdmin(users);
+                                  Navigator.of(context).pop();
+                                },
+                              ),
+                              const Divider(),
+                              ListTile(
+                                leading: const Icon(Icons.delete),
+                                title: const Text(
+                                  "Remettre par défaut",
+                                ),
+                                onTap: () {
+                                  defaultHourBack();
+                                  Navigator.of(context).pop();
+                                },
+                              ),
+                              const Divider(),
+                              ListTile(
+                                leading: const Icon(Icons.close),
+                                title: Text(
+                                  AppLocalizations.of(context)!.cancel_string,
+                                ),
+                                onTap: () {
+                                  Navigator.of(context).pop();
+                                },
+                              )
+                            ],
+                          ),
                         );
                       },
                     );
@@ -162,22 +190,36 @@ class _VillaStateDisplayState extends State<VillaStateDisplay> {
   }
 
   void closeByAdmin(List<User> users) {
-    for (final user in users) {
-      // if (user.email == VillaDatas.villaEmail) {
-      //   context.read<UserActorBloc>().add(
-      //         UserActorEvent.changeVillaHour(
-      //           user.copyWith(closeByAdmin: false),
-      //         ),
-      //       );
-      // }
-    }
+    setState(() {
+      isOpen = false;
+    });
+    context.read<ForceHourActorBloc>().add(
+          ForceHourActorEvent.closeVilla(
+            Force(id: widget.user.id, open: false, close: true),
+          ),
+        );
+  }
+
+  void openByAdmin(List<User> users) {
+    setState(() {
+      isOpen = true;
+    });
+    context.read<ForceHourActorBloc>().add(
+          ForceHourActorEvent.openVilla(
+            Force(id: widget.user.id, open: true, close: false),
+          ),
+        );
   }
 
   void defaultHourBack() {
-    // context.read<UserActorBloc>().add(
-    //       UserActorEvent.changeVillaHour(
-    //         // widget.user.copyWith(closeByAdmin: false),
-    //       ),
-    //     );
+    setState(() {
+      forceClosed = false;
+      forceOpen = false;
+    });
+    context.read<ForceHourActorBloc>().add(
+          ForceHourActorEvent.defaultHour(
+            Force(id: widget.user.id, open: false, close: false),
+          ),
+        );
   }
 }
