@@ -5,6 +5,7 @@ import 'package:apptest/application/scan/scan_bloc.dart';
 import 'package:apptest/application/token/user_token_watcher/user_token_bloc.dart';
 import 'package:apptest/application/user_actor/user_actor_bloc.dart';
 import 'package:apptest/application/user_watcher_me/user_watcher_me_bloc.dart';
+import 'package:apptest/application/watch_all_users/watch_all_users_bloc.dart';
 import 'package:apptest/domain/auth/user.dart';
 import 'package:apptest/presentation/core/display_no_internet_form.dart';
 import 'package:apptest/presentation/home/widgets/profil_dashboard.dart';
@@ -30,6 +31,7 @@ class _HomePageFormState extends State<HomePageForm> {
   final Color coloIconMenu = Colors.grey.shade300;
   bool present = false;
   List<String> listToken = [];
+  List<User> listUsers = [];
 
   @override
   Widget build(BuildContext context) {
@@ -138,6 +140,20 @@ class _HomePageFormState extends State<HomePageForm> {
                               );
                             },
                           ),
+                          BlocListener<WatchAllUsersBloc, WatchAllUsersState>(
+                            listener: (context, state) {
+                              state.maybeMap(
+                                orElse: () => Container(
+                                  color: Colors.red,
+                                ),
+                                loadSuccess: (users) {
+                                  setState(() {
+                                    listUsers = users.users.asList();
+                                  });
+                                },
+                              );
+                            },
+                          ),
                         ],
                         child: SafeArea(
                           child: Scaffold(
@@ -177,6 +193,7 @@ class _HomePageFormState extends State<HomePageForm> {
                                         ),
                                         VillaStateDisplay(
                                           user: widget.user,
+                                          users: listUsers,
                                         ),
                                       ],
                                     ),

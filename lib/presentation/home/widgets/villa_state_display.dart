@@ -3,23 +3,24 @@ import 'package:apptest/application/force_hour/force_hour_actor/force_hour_actor
 import 'package:apptest/application/force_hour/watch/watch_force_hour_bloc.dart';
 import 'package:apptest/application/horaire/horaire_cubit.dart';
 import 'package:apptest/application/user_actor/user_actor_bloc.dart';
-import 'package:apptest/application/watch_all_users/watch_all_users_bloc.dart';
 import 'package:apptest/domain/auth/user.dart';
 import 'package:apptest/domain/villa_force/force.dart';
-import 'package:apptest/presentation/core/users/alertDialogue/app_alert_dialog.dart';
 import 'package:apptest/presentation/core/villa_datas.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_circular_text/circular_text.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class VillaStateDisplay extends StatefulWidget {
   const VillaStateDisplay({
     Key? key,
     required this.user,
+    required this.users,
   }) : super(key: key);
 
   final User user;
+  final List<User> users;
 
   @override
   State<VillaStateDisplay> createState() => _VillaStateDisplayState();
@@ -31,7 +32,7 @@ class _VillaStateDisplayState extends State<VillaStateDisplay> {
   bool forceClosed = false;
   bool forceOpen = false;
   bool isOpen = false;
-  List<User> users = [];
+
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<WatchForceHourBloc, WatchForceHourState>(
@@ -50,6 +51,13 @@ class _VillaStateDisplayState extends State<VillaStateDisplay> {
                   .villa_close_string
                   .toUpperCase();
               colorState = Colors.redAccent;
+              for (final element in widget.users) {
+                BlocProvider.of<UserActorBloc>(context).add(
+                  UserActorEvent.left(
+                    element.copyWith(present: false),
+                  ),
+                );
+              }
             } else if (hour.hours[0].open) {
               forceOpen = true;
               isOpen = true;
@@ -79,6 +87,13 @@ class _VillaStateDisplayState extends State<VillaStateDisplay> {
                       .villa_close_string
                       .toUpperCase();
                   colorState = Colors.redAccent;
+                  for (final element in widget.users) {
+                    context.read<UserActorBloc>().add(
+                          UserActorEvent.left(
+                            element.copyWith(present: false),
+                          ),
+                        );
+                  }
                 },
               );
             }
@@ -95,33 +110,43 @@ class _VillaStateDisplayState extends State<VillaStateDisplay> {
                           child: Wrap(
                             children: <Widget>[
                               ListTile(
-                                leading: const Icon(Icons.photo_library),
+                                leading: const Icon(
+                                  FontAwesomeIcons.doorOpen,
+                                  color: Color(0xff20544c),
+                                ),
                                 title: Text(
                                   AppLocalizations.of(context)!
                                       .force_villa_open_question_string,
                                 ),
                                 onTap: () {
-                                  openByAdmin(users);
+                                  openByAdmin();
                                   Navigator.of(context).pop();
                                 },
                               ),
                               const Divider(),
                               ListTile(
-                                leading: const Icon(Icons.photo_camera),
+                                leading: const Icon(
+                                  FontAwesomeIcons.doorClosed,
+                                  color: Color(0xff20544c),
+                                ),
                                 title: Text(
                                   AppLocalizations.of(context)!
                                       .force_villa_close_question_string,
                                 ),
                                 onTap: () {
-                                  closeByAdmin(users);
+                                  closeByAdmin(widget.users);
                                   Navigator.of(context).pop();
                                 },
                               ),
                               const Divider(),
                               ListTile(
-                                leading: const Icon(Icons.delete),
-                                title: const Text(
-                                  "Remettre par défaut",
+                                leading: const Icon(
+                                  FontAwesomeIcons.clock,
+                                  color: Color(0xff20544c),
+                                ),
+                                title: Text(
+                                  AppLocalizations.of(context)!
+                                      .default_hour_string,
                                 ),
                                 onTap: () {
                                   defaultHourBack();
@@ -133,6 +158,7 @@ class _VillaStateDisplayState extends State<VillaStateDisplay> {
                                 leading: const Icon(Icons.close),
                                 title: Text(
                                   AppLocalizations.of(context)!.cancel_string,
+                                  style: const TextStyle(color: Colors.red),
                                 ),
                                 onTap: () {
                                   Navigator.of(context).pop();
@@ -198,9 +224,16 @@ class _VillaStateDisplayState extends State<VillaStateDisplay> {
             Force(id: widget.user.id, open: false, close: true),
           ),
         );
+    for (final element in users) {
+      BlocProvider.of<UserActorBloc>(context).add(
+        UserActorEvent.left(
+          element.copyWith(present: false),
+        ),
+      );
+    }
   }
 
-  void openByAdmin(List<User> users) {
+  void openByAdmin() {
     setState(() {
       isOpen = true;
     });
@@ -216,6 +249,7 @@ class _VillaStateDisplayState extends State<VillaStateDisplay> {
       forceClosed = false;
       forceOpen = false;
     });
+
     context.read<ForceHourActorBloc>().add(
           ForceHourActorEvent.defaultHour(
             Force(id: widget.user.id, open: false, close: false),
