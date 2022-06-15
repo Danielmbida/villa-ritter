@@ -14,8 +14,6 @@ import 'application/auth/auth_bloc.dart' as _i29;
 import 'application/auth/sign_in_form/sign_in_form_bloc.dart' as _i20;
 import 'application/connect/connectiv_class.dart' as _i3;
 import 'application/connect/connectivity_cubit.dart' as _i17;
-import 'application/force_hour/force_hour_actor/force_hour_actor_bloc.dart'
-    as _i30;
 import 'application/force_hour/watch/watch_force_hour_bloc.dart' as _i27;
 import 'application/horaire/horaire_cubit.dart' as _i6;
 import 'application/news/bloc/watcher_news_bloc.dart' as _i28;
@@ -32,7 +30,7 @@ import 'domain/token/i_token_repository.dart' as _i13;
 import 'domain/users/i_user_repository.dart' as _i15;
 import 'domain/villa_force/i_force_hour.dart' as _i9;
 import 'infrastructure/auth/firebase_auth_facade.dart' as _i8;
-import 'infrastructure/core/firebase_injectable_module.dart' as _i31;
+import 'infrastructure/core/firebase_injectable_module.dart' as _i30;
 import 'infrastructure/news/news_repository.dart' as _i12;
 import 'infrastructure/token/token_repository.dart' as _i14;
 import 'infrastructure/users/user_repository.dart' as _i16;
@@ -82,9 +80,7 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
   gh.factory<_i28.WatcherNewsBloc>(
       () => _i28.WatcherNewsBloc(get<_i11.INewsRepository>()));
   gh.factory<_i29.AuthBloc>(() => _i29.AuthBloc(get<_i7.IAuthFacade>()));
-  gh.factory<_i30.ForceHourActorBloc>(
-      () => _i30.ForceHourActorBloc(get<_i9.IForceHourRepository>()));
   return get;
 }
 
-class _$FirebaseInjectableModule extends _i31.FirebaseInjectableModule {}
+class _$FirebaseInjectableModule extends _i30.FirebaseInjectableModule {}

@@ -4,13 +4,11 @@ import 'package:apptest/domain/villa_force/force_hour_failure.dart';
 import 'package:apptest/domain/villa_force/i_force_hour.dart';
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:injectable/injectable.dart';
 
 part 'force_hour_actor_event.dart';
 part 'force_hour_actor_state.dart';
 part 'force_hour_actor_bloc.freezed.dart';
 
-@injectable
 class ForceHourActorBloc
     extends Bloc<ForceHourActorEvent, ForceHourActorState> {
   final IForceHourRepository _forceHourRepository;
