@@ -14,7 +14,6 @@ class TokenRepository implements ITokenRepository {
 
   @override
   Stream<Either<TokenFailure, KtList<Token>>> watchAllTokens() async* {
-    print("récup");
     yield* _firestore.collection('users_token').snapshots().map(
           (snapshot) => right<TokenFailure, KtList<Token>>(
             snapshot.docs
