@@ -31,7 +31,7 @@ class RegisterFieldsForm extends StatelessWidget {
           formName: "email",
           labelTextForm: AppLocalizations.of(context)!.email_string,
           prefixIcon: Icons.email,
-          textInputType: TextInputType.visiblePassword,
+          textInputType: TextInputType.emailAddress,
         ),
         TextFormFieldForm(
           paddingFormElems: paddingFormElems,
