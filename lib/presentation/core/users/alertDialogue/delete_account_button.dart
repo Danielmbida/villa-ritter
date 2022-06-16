@@ -1,5 +1,6 @@
 // ignore_for_file: depend_on_referenced_packages
 import 'package:apptest/application/auth/auth_bloc.dart';
+import 'package:apptest/application/token/user_token_actor/user_token_actor_bloc.dart';
 import 'package:apptest/application/user_actor/user_actor_bloc.dart';
 import 'package:apptest/domain/auth/user.dart';
 import 'package:apptest/presentation/core/users/alertDialogue/app_alert_dialog.dart';
@@ -38,11 +39,17 @@ class DeleteAccountButton extends StatelessWidget {
         ),
         onPressed: () {
           void onPressedCall() {
+            context.read<UserTokenActorBloc>().add(
+                  UserTokenActorEvent.delete(
+                    user,
+                  ),
+                );
             context.read<AuthBloc>().add(
                   AuthEvent.unRegister(
                     user,
                   ),
                 );
+
             context.router.replace(const SignInRoute());
           }
 

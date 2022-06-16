@@ -1,3 +1,4 @@
+import 'package:apptest/domain/auth/user.dart';
 import 'package:apptest/domain/token/i_token_repository.dart';
 import 'package:apptest/domain/token/token.dart';
 import 'package:apptest/domain/token/token_failure.dart';
@@ -16,10 +17,19 @@ class UserTokenActorBloc
   UserTokenActorBloc(this._tokenRepository) : super(const _Initial()) {
     on<_Create>((event, emit) async {
       final possibleFailure = await _tokenRepository.add(event.token);
-           emit(
+      emit(
         possibleFailure.fold(
-          (f) => UserTokenActorState.createFailure(f),
-          (_) => const UserTokenActorState.createSuccess(),
+          (f) => UserTokenActorState.updateFailure(f),
+          (_) => const UserTokenActorState.updateSuccess(),
+        ),
+      );
+    });
+    on<_Delete>((event, emit) async {
+      final possibleFailure = await _tokenRepository.delete(event.user);
+      emit(
+        possibleFailure.fold(
+          (f) => UserTokenActorState.updateFailure(f),
+          (_) => const UserTokenActorState.updateSuccess(),
         ),
       );
     });

@@ -54,7 +54,7 @@ class DisplayEmailAndPhoneForm extends StatelessWidget {
                 onTap: () async {
                   UrlLauncher.launchURL(
                     "https://mail.google.com/mail/u/0/#inbox?compose=GTvVlcSBpDwRQrKjcXntRkSnvpNmhFQSRJMKhtCrmTpKKbSfNhKWFGxNBxfqTcCwQGwcChbCgGQCS",
-                    "mailto://villaritter@bluewin.ch",
+                    "mailto:villaritter@bluewin.ch",
                   );
                 },
                 child: Column(

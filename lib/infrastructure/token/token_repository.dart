@@ -1,3 +1,4 @@
+import 'package:apptest/domain/auth/user.dart';
 import 'package:apptest/domain/token/i_token_repository.dart';
 import 'package:apptest/domain/token/token.dart';
 import 'package:apptest/domain/token/token_failure.dart';
@@ -32,6 +33,28 @@ class TokenRepository implements ITokenRepository {
           .collection("users_token")
           .doc(tokenDto.id)
           .set(tokenDto.toJson());
+
+      return right(unit);
+    } on FirebaseException catch (e) {
+      if (e.message!.contains('PERMISSION DENIED')) {
+        return left(
+          const TokenFailure.serverError(),
+        );
+      } else {
+        return left(
+          const TokenFailure.serverError(),
+        );
+      }
+    }
+  }
+
+  @override
+  Future<Either<TokenFailure, Unit>> delete(User user) async {
+    try {
+      await _firestore
+          .collection("users_token")
+          .doc(user.id.getOrCrash())
+          .delete();
 
       return right(unit);
     } on FirebaseException catch (e) {

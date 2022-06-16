@@ -105,7 +105,7 @@ class UserInfosDialog extends StatelessWidget {
                         onTap: () {
                           UrlLauncher.launchURL(
                             "https://mail.google.com/mail/u/0/#inbox?compose=GTvVlcSBpDwRQrKjcXntRkSnvpNmhFQSRJMKhtCrmTpKKbSfNhKWFGxNBxfqTcCwQGwcChbCgGQCS",
-                            "mailto://${user.email}",
+                            "mailto:${user.email}",
                           );
                         },
                         child: UserInfoItemForm(

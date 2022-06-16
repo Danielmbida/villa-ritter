@@ -2,8 +2,10 @@ import 'package:apptest/domain/auth/auth_failure.dart';
 import 'package:apptest/domain/auth/i_auth_facade.dart';
 import 'package:apptest/domain/auth/user.dart';
 import 'package:apptest/domain/auth/value_objects.dart';
+import 'package:apptest/domain/core/error.dart';
 import 'package:apptest/infrastructure/auth/firebase_user_mapper.dart'
     as firebase_user_domain_x;
+import 'package:apptest/injection.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart' hide User;
@@ -59,11 +61,13 @@ class FirebaseAuthFacade implements IAuthFacade {
 
   @override
   Future<Either<AuthFailure, Unit>> unRegister() async {
+    final userOption = await getIt<IAuthFacade>().getSignedInUser();
+    final user = userOption.getOrElse(() => throw NotAuthenticatedError());
+
     try {
-    
       await FirebaseFirestore.instance
           .collection('users')
-          .doc(_firebaseAuth.currentUser!.uid)
+          .doc(user.id.getOrCrash())
           .delete();
       await _firebaseAuth.currentUser!.delete();
       return right(unit);

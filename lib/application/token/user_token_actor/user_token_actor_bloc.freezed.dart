@@ -23,6 +23,12 @@ class _$UserTokenActorEventTearOff {
       token,
     );
   }
+
+  _Delete delete(User user) {
+    return _Delete(
+      user,
+    );
+  }
 }
 
 /// @nodoc
@@ -30,43 +36,43 @@ const $UserTokenActorEvent = _$UserTokenActorEventTearOff();
 
 /// @nodoc
 mixin _$UserTokenActorEvent {
-  Token get token => throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(Token token) create,
+    required TResult Function(User user) delete,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(Token token)? create,
+    TResult Function(User user)? delete,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Token token)? create,
+    TResult Function(User user)? delete,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Create value) create,
+    required TResult Function(_Delete value) delete,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Create value)? create,
+    TResult Function(_Delete value)? delete,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Create value)? create,
+    TResult Function(_Delete value)? delete,
     required TResult orElse(),
   }) =>
-      throw _privateConstructorUsedError;
-
-  @JsonKey(ignore: true)
-  $UserTokenActorEventCopyWith<UserTokenActorEvent> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -75,9 +81,6 @@ abstract class $UserTokenActorEventCopyWith<$Res> {
   factory $UserTokenActorEventCopyWith(
           UserTokenActorEvent value, $Res Function(UserTokenActorEvent) then) =
       _$UserTokenActorEventCopyWithImpl<$Res>;
-  $Res call({Token token});
-
-  $TokenCopyWith<$Res> get token;
 }
 
 /// @nodoc
@@ -88,36 +91,14 @@ class _$UserTokenActorEventCopyWithImpl<$Res>
   final UserTokenActorEvent _value;
   // ignore: unused_field
   final $Res Function(UserTokenActorEvent) _then;
-
-  @override
-  $Res call({
-    Object? token = freezed,
-  }) {
-    return _then(_value.copyWith(
-      token: token == freezed
-          ? _value.token
-          : token // ignore: cast_nullable_to_non_nullable
-              as Token,
-    ));
-  }
-
-  @override
-  $TokenCopyWith<$Res> get token {
-    return $TokenCopyWith<$Res>(_value.token, (value) {
-      return _then(_value.copyWith(token: value));
-    });
-  }
 }
 
 /// @nodoc
-abstract class _$CreateCopyWith<$Res>
-    implements $UserTokenActorEventCopyWith<$Res> {
+abstract class _$CreateCopyWith<$Res> {
   factory _$CreateCopyWith(_Create value, $Res Function(_Create) then) =
       __$CreateCopyWithImpl<$Res>;
-  @override
   $Res call({Token token});
 
-  @override
   $TokenCopyWith<$Res> get token;
 }
 
@@ -141,6 +122,13 @@ class __$CreateCopyWithImpl<$Res>
           : token // ignore: cast_nullable_to_non_nullable
               as Token,
     ));
+  }
+
+  @override
+  $TokenCopyWith<$Res> get token {
+    return $TokenCopyWith<$Res>(_value.token, (value) {
+      return _then(_value.copyWith(token: value));
+    });
   }
 }
 
@@ -178,6 +166,7 @@ class _$_Create implements _Create {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(Token token) create,
+    required TResult Function(User user) delete,
   }) {
     return create(token);
   }
@@ -186,6 +175,7 @@ class _$_Create implements _Create {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(Token token)? create,
+    TResult Function(User user)? delete,
   }) {
     return create?.call(token);
   }
@@ -194,6 +184,7 @@ class _$_Create implements _Create {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Token token)? create,
+    TResult Function(User user)? delete,
     required TResult orElse(),
   }) {
     if (create != null) {
@@ -206,6 +197,7 @@ class _$_Create implements _Create {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Create value) create,
+    required TResult Function(_Delete value) delete,
   }) {
     return create(this);
   }
@@ -214,6 +206,7 @@ class _$_Create implements _Create {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Create value)? create,
+    TResult Function(_Delete value)? delete,
   }) {
     return create?.call(this);
   }
@@ -222,6 +215,7 @@ class _$_Create implements _Create {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Create value)? create,
+    TResult Function(_Delete value)? delete,
     required TResult orElse(),
   }) {
     if (create != null) {
@@ -234,11 +228,149 @@ class _$_Create implements _Create {
 abstract class _Create implements UserTokenActorEvent {
   const factory _Create(Token token) = _$_Create;
 
-  @override
   Token get token;
-  @override
   @JsonKey(ignore: true)
   _$CreateCopyWith<_Create> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$DeleteCopyWith<$Res> {
+  factory _$DeleteCopyWith(_Delete value, $Res Function(_Delete) then) =
+      __$DeleteCopyWithImpl<$Res>;
+  $Res call({User user});
+
+  $UserCopyWith<$Res> get user;
+}
+
+/// @nodoc
+class __$DeleteCopyWithImpl<$Res>
+    extends _$UserTokenActorEventCopyWithImpl<$Res>
+    implements _$DeleteCopyWith<$Res> {
+  __$DeleteCopyWithImpl(_Delete _value, $Res Function(_Delete) _then)
+      : super(_value, (v) => _then(v as _Delete));
+
+  @override
+  _Delete get _value => super._value as _Delete;
+
+  @override
+  $Res call({
+    Object? user = freezed,
+  }) {
+    return _then(_Delete(
+      user == freezed
+          ? _value.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as User,
+    ));
+  }
+
+  @override
+  $UserCopyWith<$Res> get user {
+    return $UserCopyWith<$Res>(_value.user, (value) {
+      return _then(_value.copyWith(user: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$_Delete implements _Delete {
+  const _$_Delete(this.user);
+
+  @override
+  final User user;
+
+  @override
+  String toString() {
+    return 'UserTokenActorEvent.delete(user: $user)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _Delete &&
+            const DeepCollectionEquality().equals(other.user, user));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(user));
+
+  @JsonKey(ignore: true)
+  @override
+  _$DeleteCopyWith<_Delete> get copyWith =>
+      __$DeleteCopyWithImpl<_Delete>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(Token token) create,
+    required TResult Function(User user) delete,
+  }) {
+    return delete(user);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(Token token)? create,
+    TResult Function(User user)? delete,
+  }) {
+    return delete?.call(user);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Token token)? create,
+    TResult Function(User user)? delete,
+    required TResult orElse(),
+  }) {
+    if (delete != null) {
+      return delete(user);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Create value) create,
+    required TResult Function(_Delete value) delete,
+  }) {
+    return delete(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Create value)? create,
+    TResult Function(_Delete value)? delete,
+  }) {
+    return delete?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Create value)? create,
+    TResult Function(_Delete value)? delete,
+    required TResult orElse(),
+  }) {
+    if (delete != null) {
+      return delete(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _Delete implements UserTokenActorEvent {
+  const factory _Delete(User user) = _$_Delete;
+
+  User get user;
+  @JsonKey(ignore: true)
+  _$DeleteCopyWith<_Delete> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -249,12 +381,12 @@ class _$UserTokenActorStateTearOff {
     return const _Initial();
   }
 
-  _CreateSuccess createSuccess() {
-    return const _CreateSuccess();
+  _UpdateSuccess updateSuccess() {
+    return const _UpdateSuccess();
   }
 
-  _CreateFailure createFailure(TokenFailure tokenFailure) {
-    return _CreateFailure(
+  _UpdateFailure updateFailure(TokenFailure tokenFailure) {
+    return _UpdateFailure(
       tokenFailure,
     );
   }
@@ -268,44 +400,44 @@ mixin _$UserTokenActorState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() createSuccess,
-    required TResult Function(TokenFailure tokenFailure) createFailure,
+    required TResult Function() updateSuccess,
+    required TResult Function(TokenFailure tokenFailure) updateFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? createSuccess,
-    TResult Function(TokenFailure tokenFailure)? createFailure,
+    TResult Function()? updateSuccess,
+    TResult Function(TokenFailure tokenFailure)? updateFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? createSuccess,
-    TResult Function(TokenFailure tokenFailure)? createFailure,
+    TResult Function()? updateSuccess,
+    TResult Function(TokenFailure tokenFailure)? updateFailure,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
-    required TResult Function(_CreateSuccess value) createSuccess,
-    required TResult Function(_CreateFailure value) createFailure,
+    required TResult Function(_UpdateSuccess value) updateSuccess,
+    required TResult Function(_UpdateFailure value) updateFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(_CreateSuccess value)? createSuccess,
-    TResult Function(_CreateFailure value)? createFailure,
+    TResult Function(_UpdateSuccess value)? updateSuccess,
+    TResult Function(_UpdateFailure value)? updateFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(_CreateSuccess value)? createSuccess,
-    TResult Function(_CreateFailure value)? createFailure,
+    TResult Function(_UpdateSuccess value)? updateSuccess,
+    TResult Function(_UpdateFailure value)? updateFailure,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -368,8 +500,8 @@ class _$_Initial implements _Initial {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() createSuccess,
-    required TResult Function(TokenFailure tokenFailure) createFailure,
+    required TResult Function() updateSuccess,
+    required TResult Function(TokenFailure tokenFailure) updateFailure,
   }) {
     return initial();
   }
@@ -378,8 +510,8 @@ class _$_Initial implements _Initial {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? createSuccess,
-    TResult Function(TokenFailure tokenFailure)? createFailure,
+    TResult Function()? updateSuccess,
+    TResult Function(TokenFailure tokenFailure)? updateFailure,
   }) {
     return initial?.call();
   }
@@ -388,8 +520,8 @@ class _$_Initial implements _Initial {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? createSuccess,
-    TResult Function(TokenFailure tokenFailure)? createFailure,
+    TResult Function()? updateSuccess,
+    TResult Function(TokenFailure tokenFailure)? updateFailure,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -402,8 +534,8 @@ class _$_Initial implements _Initial {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
-    required TResult Function(_CreateSuccess value) createSuccess,
-    required TResult Function(_CreateFailure value) createFailure,
+    required TResult Function(_UpdateSuccess value) updateSuccess,
+    required TResult Function(_UpdateFailure value) updateFailure,
   }) {
     return initial(this);
   }
@@ -412,8 +544,8 @@ class _$_Initial implements _Initial {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(_CreateSuccess value)? createSuccess,
-    TResult Function(_CreateFailure value)? createFailure,
+    TResult Function(_UpdateSuccess value)? updateSuccess,
+    TResult Function(_UpdateFailure value)? updateFailure,
   }) {
     return initial?.call(this);
   }
@@ -422,8 +554,8 @@ class _$_Initial implements _Initial {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(_CreateSuccess value)? createSuccess,
-    TResult Function(_CreateFailure value)? createFailure,
+    TResult Function(_UpdateSuccess value)? updateSuccess,
+    TResult Function(_UpdateFailure value)? updateFailure,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -438,38 +570,38 @@ abstract class _Initial implements UserTokenActorState {
 }
 
 /// @nodoc
-abstract class _$CreateSuccessCopyWith<$Res> {
-  factory _$CreateSuccessCopyWith(
-          _CreateSuccess value, $Res Function(_CreateSuccess) then) =
-      __$CreateSuccessCopyWithImpl<$Res>;
+abstract class _$UpdateSuccessCopyWith<$Res> {
+  factory _$UpdateSuccessCopyWith(
+          _UpdateSuccess value, $Res Function(_UpdateSuccess) then) =
+      __$UpdateSuccessCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$CreateSuccessCopyWithImpl<$Res>
+class __$UpdateSuccessCopyWithImpl<$Res>
     extends _$UserTokenActorStateCopyWithImpl<$Res>
-    implements _$CreateSuccessCopyWith<$Res> {
-  __$CreateSuccessCopyWithImpl(
-      _CreateSuccess _value, $Res Function(_CreateSuccess) _then)
-      : super(_value, (v) => _then(v as _CreateSuccess));
+    implements _$UpdateSuccessCopyWith<$Res> {
+  __$UpdateSuccessCopyWithImpl(
+      _UpdateSuccess _value, $Res Function(_UpdateSuccess) _then)
+      : super(_value, (v) => _then(v as _UpdateSuccess));
 
   @override
-  _CreateSuccess get _value => super._value as _CreateSuccess;
+  _UpdateSuccess get _value => super._value as _UpdateSuccess;
 }
 
 /// @nodoc
 
-class _$_CreateSuccess implements _CreateSuccess {
-  const _$_CreateSuccess();
+class _$_UpdateSuccess implements _UpdateSuccess {
+  const _$_UpdateSuccess();
 
   @override
   String toString() {
-    return 'UserTokenActorState.createSuccess()';
+    return 'UserTokenActorState.updateSuccess()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _CreateSuccess);
+        (other.runtimeType == runtimeType && other is _UpdateSuccess);
   }
 
   @override
@@ -479,32 +611,32 @@ class _$_CreateSuccess implements _CreateSuccess {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() createSuccess,
-    required TResult Function(TokenFailure tokenFailure) createFailure,
+    required TResult Function() updateSuccess,
+    required TResult Function(TokenFailure tokenFailure) updateFailure,
   }) {
-    return createSuccess();
+    return updateSuccess();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? createSuccess,
-    TResult Function(TokenFailure tokenFailure)? createFailure,
+    TResult Function()? updateSuccess,
+    TResult Function(TokenFailure tokenFailure)? updateFailure,
   }) {
-    return createSuccess?.call();
+    return updateSuccess?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? createSuccess,
-    TResult Function(TokenFailure tokenFailure)? createFailure,
+    TResult Function()? updateSuccess,
+    TResult Function(TokenFailure tokenFailure)? updateFailure,
     required TResult orElse(),
   }) {
-    if (createSuccess != null) {
-      return createSuccess();
+    if (updateSuccess != null) {
+      return updateSuccess();
     }
     return orElse();
   }
@@ -513,67 +645,67 @@ class _$_CreateSuccess implements _CreateSuccess {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
-    required TResult Function(_CreateSuccess value) createSuccess,
-    required TResult Function(_CreateFailure value) createFailure,
+    required TResult Function(_UpdateSuccess value) updateSuccess,
+    required TResult Function(_UpdateFailure value) updateFailure,
   }) {
-    return createSuccess(this);
+    return updateSuccess(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(_CreateSuccess value)? createSuccess,
-    TResult Function(_CreateFailure value)? createFailure,
+    TResult Function(_UpdateSuccess value)? updateSuccess,
+    TResult Function(_UpdateFailure value)? updateFailure,
   }) {
-    return createSuccess?.call(this);
+    return updateSuccess?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(_CreateSuccess value)? createSuccess,
-    TResult Function(_CreateFailure value)? createFailure,
+    TResult Function(_UpdateSuccess value)? updateSuccess,
+    TResult Function(_UpdateFailure value)? updateFailure,
     required TResult orElse(),
   }) {
-    if (createSuccess != null) {
-      return createSuccess(this);
+    if (updateSuccess != null) {
+      return updateSuccess(this);
     }
     return orElse();
   }
 }
 
-abstract class _CreateSuccess implements UserTokenActorState {
-  const factory _CreateSuccess() = _$_CreateSuccess;
+abstract class _UpdateSuccess implements UserTokenActorState {
+  const factory _UpdateSuccess() = _$_UpdateSuccess;
 }
 
 /// @nodoc
-abstract class _$CreateFailureCopyWith<$Res> {
-  factory _$CreateFailureCopyWith(
-          _CreateFailure value, $Res Function(_CreateFailure) then) =
-      __$CreateFailureCopyWithImpl<$Res>;
+abstract class _$UpdateFailureCopyWith<$Res> {
+  factory _$UpdateFailureCopyWith(
+          _UpdateFailure value, $Res Function(_UpdateFailure) then) =
+      __$UpdateFailureCopyWithImpl<$Res>;
   $Res call({TokenFailure tokenFailure});
 
   $TokenFailureCopyWith<$Res> get tokenFailure;
 }
 
 /// @nodoc
-class __$CreateFailureCopyWithImpl<$Res>
+class __$UpdateFailureCopyWithImpl<$Res>
     extends _$UserTokenActorStateCopyWithImpl<$Res>
-    implements _$CreateFailureCopyWith<$Res> {
-  __$CreateFailureCopyWithImpl(
-      _CreateFailure _value, $Res Function(_CreateFailure) _then)
-      : super(_value, (v) => _then(v as _CreateFailure));
+    implements _$UpdateFailureCopyWith<$Res> {
+  __$UpdateFailureCopyWithImpl(
+      _UpdateFailure _value, $Res Function(_UpdateFailure) _then)
+      : super(_value, (v) => _then(v as _UpdateFailure));
 
   @override
-  _CreateFailure get _value => super._value as _CreateFailure;
+  _UpdateFailure get _value => super._value as _UpdateFailure;
 
   @override
   $Res call({
     Object? tokenFailure = freezed,
   }) {
-    return _then(_CreateFailure(
+    return _then(_UpdateFailure(
       tokenFailure == freezed
           ? _value.tokenFailure
           : tokenFailure // ignore: cast_nullable_to_non_nullable
@@ -591,22 +723,22 @@ class __$CreateFailureCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_CreateFailure implements _CreateFailure {
-  const _$_CreateFailure(this.tokenFailure);
+class _$_UpdateFailure implements _UpdateFailure {
+  const _$_UpdateFailure(this.tokenFailure);
 
   @override
   final TokenFailure tokenFailure;
 
   @override
   String toString() {
-    return 'UserTokenActorState.createFailure(tokenFailure: $tokenFailure)';
+    return 'UserTokenActorState.updateFailure(tokenFailure: $tokenFailure)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _CreateFailure &&
+            other is _UpdateFailure &&
             const DeepCollectionEquality()
                 .equals(other.tokenFailure, tokenFailure));
   }
@@ -617,39 +749,39 @@ class _$_CreateFailure implements _CreateFailure {
 
   @JsonKey(ignore: true)
   @override
-  _$CreateFailureCopyWith<_CreateFailure> get copyWith =>
-      __$CreateFailureCopyWithImpl<_CreateFailure>(this, _$identity);
+  _$UpdateFailureCopyWith<_UpdateFailure> get copyWith =>
+      __$UpdateFailureCopyWithImpl<_UpdateFailure>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() createSuccess,
-    required TResult Function(TokenFailure tokenFailure) createFailure,
+    required TResult Function() updateSuccess,
+    required TResult Function(TokenFailure tokenFailure) updateFailure,
   }) {
-    return createFailure(tokenFailure);
+    return updateFailure(tokenFailure);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? createSuccess,
-    TResult Function(TokenFailure tokenFailure)? createFailure,
+    TResult Function()? updateSuccess,
+    TResult Function(TokenFailure tokenFailure)? updateFailure,
   }) {
-    return createFailure?.call(tokenFailure);
+    return updateFailure?.call(tokenFailure);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? createSuccess,
-    TResult Function(TokenFailure tokenFailure)? createFailure,
+    TResult Function()? updateSuccess,
+    TResult Function(TokenFailure tokenFailure)? updateFailure,
     required TResult orElse(),
   }) {
-    if (createFailure != null) {
-      return createFailure(tokenFailure);
+    if (updateFailure != null) {
+      return updateFailure(tokenFailure);
     }
     return orElse();
   }
@@ -658,42 +790,42 @@ class _$_CreateFailure implements _CreateFailure {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
-    required TResult Function(_CreateSuccess value) createSuccess,
-    required TResult Function(_CreateFailure value) createFailure,
+    required TResult Function(_UpdateSuccess value) updateSuccess,
+    required TResult Function(_UpdateFailure value) updateFailure,
   }) {
-    return createFailure(this);
+    return updateFailure(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(_CreateSuccess value)? createSuccess,
-    TResult Function(_CreateFailure value)? createFailure,
+    TResult Function(_UpdateSuccess value)? updateSuccess,
+    TResult Function(_UpdateFailure value)? updateFailure,
   }) {
-    return createFailure?.call(this);
+    return updateFailure?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(_CreateSuccess value)? createSuccess,
-    TResult Function(_CreateFailure value)? createFailure,
+    TResult Function(_UpdateSuccess value)? updateSuccess,
+    TResult Function(_UpdateFailure value)? updateFailure,
     required TResult orElse(),
   }) {
-    if (createFailure != null) {
-      return createFailure(this);
+    if (updateFailure != null) {
+      return updateFailure(this);
     }
     return orElse();
   }
 }
 
-abstract class _CreateFailure implements UserTokenActorState {
-  const factory _CreateFailure(TokenFailure tokenFailure) = _$_CreateFailure;
+abstract class _UpdateFailure implements UserTokenActorState {
+  const factory _UpdateFailure(TokenFailure tokenFailure) = _$_UpdateFailure;
 
   TokenFailure get tokenFailure;
   @JsonKey(ignore: true)
-  _$CreateFailureCopyWith<_CreateFailure> get copyWith =>
+  _$UpdateFailureCopyWith<_UpdateFailure> get copyWith =>
       throw _privateConstructorUsedError;
 }
