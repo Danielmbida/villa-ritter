@@ -24,5 +24,16 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       await _authFacade.signOut();
       emit(const AuthState.unauthenticated());
     });
+
+      on<_UnRegister>((event, emit) async {
+      print("supprésion");
+       final userOption = await _authFacade.unRegister();
+      emit(
+        userOption.fold(
+          (f) => const AuthState.initial(),
+          (_) =>  const AuthState.unRegisted(),
+        ),
+      );
+    });
   }
 }

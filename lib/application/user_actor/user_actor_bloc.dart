@@ -42,14 +42,15 @@ class UserActorBloc extends Bloc<UserActorEvent, UserActorState> {
         ),
       );
     });
-    on<_UnRegister>((event, emit) async {
-      final possibleFailure = await _userRepository.delete(event.user);
-      emit(
-        possibleFailure.fold(
-          (f) => UserActorState.updatedFailure(f),
-          (_) => const UserActorState.initial(),
-        ),
-      );
-    });
+    // on<_UnRegister>((event, emit) async {
+    //   print("supprésion");
+    //   final possibleFailure = await _userRepository. delete(event.user);
+    //   emit(
+    //     possibleFailure.fold(
+    //       (f) => UserActorState.updatedFailure(f),
+    //       (_) => const UserActorState.updatedSuccess(),
+    //     ),
+    //   );
+    // });
   }
 }

@@ -35,12 +35,6 @@ class _$UserActorEventTearOff {
       user,
     );
   }
-
-  _UnRegister unRegister(User user) {
-    return _UnRegister(
-      user,
-    );
-  }
 }
 
 /// @nodoc
@@ -55,7 +49,6 @@ mixin _$UserActorEvent {
     required TResult Function(User user) present,
     required TResult Function(User user) left,
     required TResult Function(User user) changeVillaHour,
-    required TResult Function(User user) unRegister,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -63,7 +56,6 @@ mixin _$UserActorEvent {
     TResult Function(User user)? present,
     TResult Function(User user)? left,
     TResult Function(User user)? changeVillaHour,
-    TResult Function(User user)? unRegister,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -71,7 +63,6 @@ mixin _$UserActorEvent {
     TResult Function(User user)? present,
     TResult Function(User user)? left,
     TResult Function(User user)? changeVillaHour,
-    TResult Function(User user)? unRegister,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -80,7 +71,6 @@ mixin _$UserActorEvent {
     required TResult Function(_Present value) present,
     required TResult Function(_Left value) left,
     required TResult Function(_ChangeVillaHour value) changeVillaHour,
-    required TResult Function(_UnRegister value) unRegister,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -88,7 +78,6 @@ mixin _$UserActorEvent {
     TResult Function(_Present value)? present,
     TResult Function(_Left value)? left,
     TResult Function(_ChangeVillaHour value)? changeVillaHour,
-    TResult Function(_UnRegister value)? unRegister,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -96,7 +85,6 @@ mixin _$UserActorEvent {
     TResult Function(_Present value)? present,
     TResult Function(_Left value)? left,
     TResult Function(_ChangeVillaHour value)? changeVillaHour,
-    TResult Function(_UnRegister value)? unRegister,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -215,7 +203,6 @@ class _$_Present implements _Present {
     required TResult Function(User user) present,
     required TResult Function(User user) left,
     required TResult Function(User user) changeVillaHour,
-    required TResult Function(User user) unRegister,
   }) {
     return present(user);
   }
@@ -226,7 +213,6 @@ class _$_Present implements _Present {
     TResult Function(User user)? present,
     TResult Function(User user)? left,
     TResult Function(User user)? changeVillaHour,
-    TResult Function(User user)? unRegister,
   }) {
     return present?.call(user);
   }
@@ -237,7 +223,6 @@ class _$_Present implements _Present {
     TResult Function(User user)? present,
     TResult Function(User user)? left,
     TResult Function(User user)? changeVillaHour,
-    TResult Function(User user)? unRegister,
     required TResult orElse(),
   }) {
     if (present != null) {
@@ -252,7 +237,6 @@ class _$_Present implements _Present {
     required TResult Function(_Present value) present,
     required TResult Function(_Left value) left,
     required TResult Function(_ChangeVillaHour value) changeVillaHour,
-    required TResult Function(_UnRegister value) unRegister,
   }) {
     return present(this);
   }
@@ -263,7 +247,6 @@ class _$_Present implements _Present {
     TResult Function(_Present value)? present,
     TResult Function(_Left value)? left,
     TResult Function(_ChangeVillaHour value)? changeVillaHour,
-    TResult Function(_UnRegister value)? unRegister,
   }) {
     return present?.call(this);
   }
@@ -274,7 +257,6 @@ class _$_Present implements _Present {
     TResult Function(_Present value)? present,
     TResult Function(_Left value)? left,
     TResult Function(_ChangeVillaHour value)? changeVillaHour,
-    TResult Function(_UnRegister value)? unRegister,
     required TResult orElse(),
   }) {
     if (present != null) {
@@ -364,7 +346,6 @@ class _$_Left implements _Left {
     required TResult Function(User user) present,
     required TResult Function(User user) left,
     required TResult Function(User user) changeVillaHour,
-    required TResult Function(User user) unRegister,
   }) {
     return left(user);
   }
@@ -375,7 +356,6 @@ class _$_Left implements _Left {
     TResult Function(User user)? present,
     TResult Function(User user)? left,
     TResult Function(User user)? changeVillaHour,
-    TResult Function(User user)? unRegister,
   }) {
     return left?.call(user);
   }
@@ -386,7 +366,6 @@ class _$_Left implements _Left {
     TResult Function(User user)? present,
     TResult Function(User user)? left,
     TResult Function(User user)? changeVillaHour,
-    TResult Function(User user)? unRegister,
     required TResult orElse(),
   }) {
     if (left != null) {
@@ -401,7 +380,6 @@ class _$_Left implements _Left {
     required TResult Function(_Present value) present,
     required TResult Function(_Left value) left,
     required TResult Function(_ChangeVillaHour value) changeVillaHour,
-    required TResult Function(_UnRegister value) unRegister,
   }) {
     return left(this);
   }
@@ -412,7 +390,6 @@ class _$_Left implements _Left {
     TResult Function(_Present value)? present,
     TResult Function(_Left value)? left,
     TResult Function(_ChangeVillaHour value)? changeVillaHour,
-    TResult Function(_UnRegister value)? unRegister,
   }) {
     return left?.call(this);
   }
@@ -423,7 +400,6 @@ class _$_Left implements _Left {
     TResult Function(_Present value)? present,
     TResult Function(_Left value)? left,
     TResult Function(_ChangeVillaHour value)? changeVillaHour,
-    TResult Function(_UnRegister value)? unRegister,
     required TResult orElse(),
   }) {
     if (left != null) {
@@ -516,7 +492,6 @@ class _$_ChangeVillaHour implements _ChangeVillaHour {
     required TResult Function(User user) present,
     required TResult Function(User user) left,
     required TResult Function(User user) changeVillaHour,
-    required TResult Function(User user) unRegister,
   }) {
     return changeVillaHour(user);
   }
@@ -527,7 +502,6 @@ class _$_ChangeVillaHour implements _ChangeVillaHour {
     TResult Function(User user)? present,
     TResult Function(User user)? left,
     TResult Function(User user)? changeVillaHour,
-    TResult Function(User user)? unRegister,
   }) {
     return changeVillaHour?.call(user);
   }
@@ -538,7 +512,6 @@ class _$_ChangeVillaHour implements _ChangeVillaHour {
     TResult Function(User user)? present,
     TResult Function(User user)? left,
     TResult Function(User user)? changeVillaHour,
-    TResult Function(User user)? unRegister,
     required TResult orElse(),
   }) {
     if (changeVillaHour != null) {
@@ -553,7 +526,6 @@ class _$_ChangeVillaHour implements _ChangeVillaHour {
     required TResult Function(_Present value) present,
     required TResult Function(_Left value) left,
     required TResult Function(_ChangeVillaHour value) changeVillaHour,
-    required TResult Function(_UnRegister value) unRegister,
   }) {
     return changeVillaHour(this);
   }
@@ -564,7 +536,6 @@ class _$_ChangeVillaHour implements _ChangeVillaHour {
     TResult Function(_Present value)? present,
     TResult Function(_Left value)? left,
     TResult Function(_ChangeVillaHour value)? changeVillaHour,
-    TResult Function(_UnRegister value)? unRegister,
   }) {
     return changeVillaHour?.call(this);
   }
@@ -575,7 +546,6 @@ class _$_ChangeVillaHour implements _ChangeVillaHour {
     TResult Function(_Present value)? present,
     TResult Function(_Left value)? left,
     TResult Function(_ChangeVillaHour value)? changeVillaHour,
-    TResult Function(_UnRegister value)? unRegister,
     required TResult orElse(),
   }) {
     if (changeVillaHour != null) {
@@ -593,158 +563,6 @@ abstract class _ChangeVillaHour implements UserActorEvent {
   @override
   @JsonKey(ignore: true)
   _$ChangeVillaHourCopyWith<_ChangeVillaHour> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$UnRegisterCopyWith<$Res>
-    implements $UserActorEventCopyWith<$Res> {
-  factory _$UnRegisterCopyWith(
-          _UnRegister value, $Res Function(_UnRegister) then) =
-      __$UnRegisterCopyWithImpl<$Res>;
-  @override
-  $Res call({User user});
-
-  @override
-  $UserCopyWith<$Res> get user;
-}
-
-/// @nodoc
-class __$UnRegisterCopyWithImpl<$Res> extends _$UserActorEventCopyWithImpl<$Res>
-    implements _$UnRegisterCopyWith<$Res> {
-  __$UnRegisterCopyWithImpl(
-      _UnRegister _value, $Res Function(_UnRegister) _then)
-      : super(_value, (v) => _then(v as _UnRegister));
-
-  @override
-  _UnRegister get _value => super._value as _UnRegister;
-
-  @override
-  $Res call({
-    Object? user = freezed,
-  }) {
-    return _then(_UnRegister(
-      user == freezed
-          ? _value.user
-          : user // ignore: cast_nullable_to_non_nullable
-              as User,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$_UnRegister implements _UnRegister {
-  const _$_UnRegister(this.user);
-
-  @override
-  final User user;
-
-  @override
-  String toString() {
-    return 'UserActorEvent.unRegister(user: $user)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _UnRegister &&
-            const DeepCollectionEquality().equals(other.user, user));
-  }
-
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(user));
-
-  @JsonKey(ignore: true)
-  @override
-  _$UnRegisterCopyWith<_UnRegister> get copyWith =>
-      __$UnRegisterCopyWithImpl<_UnRegister>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(User user) present,
-    required TResult Function(User user) left,
-    required TResult Function(User user) changeVillaHour,
-    required TResult Function(User user) unRegister,
-  }) {
-    return unRegister(user);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(User user)? present,
-    TResult Function(User user)? left,
-    TResult Function(User user)? changeVillaHour,
-    TResult Function(User user)? unRegister,
-  }) {
-    return unRegister?.call(user);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(User user)? present,
-    TResult Function(User user)? left,
-    TResult Function(User user)? changeVillaHour,
-    TResult Function(User user)? unRegister,
-    required TResult orElse(),
-  }) {
-    if (unRegister != null) {
-      return unRegister(user);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Present value) present,
-    required TResult Function(_Left value) left,
-    required TResult Function(_ChangeVillaHour value) changeVillaHour,
-    required TResult Function(_UnRegister value) unRegister,
-  }) {
-    return unRegister(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Present value)? present,
-    TResult Function(_Left value)? left,
-    TResult Function(_ChangeVillaHour value)? changeVillaHour,
-    TResult Function(_UnRegister value)? unRegister,
-  }) {
-    return unRegister?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Present value)? present,
-    TResult Function(_Left value)? left,
-    TResult Function(_ChangeVillaHour value)? changeVillaHour,
-    TResult Function(_UnRegister value)? unRegister,
-    required TResult orElse(),
-  }) {
-    if (unRegister != null) {
-      return unRegister(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _UnRegister implements UserActorEvent {
-  const factory _UnRegister(User user) = _$_UnRegister;
-
-  @override
-  User get user;
-  @override
-  @JsonKey(ignore: true)
-  _$UnRegisterCopyWith<_UnRegister> get copyWith =>
       throw _privateConstructorUsedError;
 }
 

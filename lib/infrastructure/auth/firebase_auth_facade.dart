@@ -60,11 +60,12 @@ class FirebaseAuthFacade implements IAuthFacade {
   @override
   Future<Either<AuthFailure, Unit>> unRegister() async {
     try {
-      await _firebaseAuth.currentUser!.delete();
+    
       await FirebaseFirestore.instance
           .collection('users')
           .doc(_firebaseAuth.currentUser!.uid)
           .delete();
+      await _firebaseAuth.currentUser!.delete();
       return right(unit);
     } on FirebaseAuthException catch (e) {
       if (e.code == 'user-not-found' || e.code == 'wrong-email') {
