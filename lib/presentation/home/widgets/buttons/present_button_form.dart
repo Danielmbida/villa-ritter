@@ -26,7 +26,6 @@ class PrensentButtonForm extends StatelessWidget {
           loadSuccess: (state) {
             if (state.hours[0].close) {
               villaIsClose = true;
-              _showVillaIsClosedDialog(context);
             }
           },
         );
@@ -38,7 +37,6 @@ class PrensentButtonForm extends StatelessWidget {
               },
               ferme: (_) {
                 villaIsClose = true;
-                _showVillaIsClosedDialog(context);
               },
             );
           },
@@ -47,6 +45,8 @@ class PrensentButtonForm extends StatelessWidget {
               if (villaIsClose == false) {
                 context.router.push(const ScanRoute());
                 print("ouvert");
+              } else {
+                _showVillaIsClosedDialog(context);
               }
             },
             child: Card(
