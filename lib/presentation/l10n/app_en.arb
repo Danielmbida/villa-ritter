@@ -82,5 +82,6 @@
  "notification_flushbar_content_string": "Fields must not be empty",
  "force_villa_close_question_string" : "Close the villa ?",
  "force_villa_open_question_string" : "Open the villa ?",
- "default_hour_string" : "Reset to default"
+ "default_hour_string" : "Reset to default",
+ "cannot_scan_string": "Impossible to scan, the Villa is closed"
 }

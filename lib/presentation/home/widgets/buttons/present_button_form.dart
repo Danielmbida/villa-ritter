@@ -5,6 +5,7 @@ import 'package:apptest/presentation/routes/router.gr.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class PrensentButtonForm extends StatelessWidget {
   const PrensentButtonForm({
@@ -25,6 +26,7 @@ class PrensentButtonForm extends StatelessWidget {
           loadSuccess: (state) {
             if (state.hours[0].close) {
               villaIsClose = true;
+              _showVillaIsClosedDialog(context);
             }
           },
         );
@@ -36,6 +38,7 @@ class PrensentButtonForm extends StatelessWidget {
               },
               ferme: (_) {
                 villaIsClose = true;
+                _showVillaIsClosedDialog(context);
               },
             );
           },
@@ -61,6 +64,28 @@ class PrensentButtonForm extends StatelessWidget {
               ),
             ),
           ),
+        );
+      },
+    );
+  }
+
+  void _showVillaIsClosedDialog(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          title: Text(
+            "${AppLocalizations.of(context)!.villa_is_string} ${AppLocalizations.of(context)!.villa_close_string}",
+          ),
+          content: Text(
+            AppLocalizations.of(context)!.cannot_scan_string,
+          ),
+          actions: [
+            ElevatedButton(
+              onPressed: () => Navigator.pop(context),
+              child: const Text("Ok"),
+            )
+          ],
         );
       },
     );

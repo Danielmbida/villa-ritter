@@ -334,5 +334,9 @@
    "default_hour_string":"Remettre par défaut?",
     "@default_hour_string":{
       "description" : "Text pour demander ouvrir la villa"
+    },
+    "cannot_scan_string": "Impossible de scanner, la Villa est fermée",
+    "@cannot_scan_string":{
+      "description" : "Text pour la boite de dialogue disant que le scan est impossible"
     }
 }
