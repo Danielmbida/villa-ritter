@@ -186,10 +186,20 @@ class _HomePageFormState extends State<HomePageForm> {
                                         0.30,
                                     child: Stack(
                                       children: [
-                                        ProfileView(
-                                          user: widget.user,
-                                          presence: present,
-                                          listToken: listToken,
+                                        Container(
+                                          decoration: const BoxDecoration(
+                                            image: DecorationImage(
+                                              image: AssetImage(
+                                                "assets/images/image_villa.jpg",
+                                              ),
+                                              fit: BoxFit.cover,
+                                            ),
+                                          ),
+                                          child: ProfileView(
+                                            user: widget.user,
+                                            presence: present,
+                                            listToken: listToken,
+                                          ),
                                         ),
                                         VillaStateDisplay(
                                           user: widget.user,

@@ -111,6 +111,10 @@ class _ProfileViewState extends State<ProfileView> {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   PopupMenuButton(
+                    icon: const Icon(
+                      FontAwesomeIcons.ellipsisVertical,
+                      color: Colors.white,
+                    ),
                     onSelected: (value) {
                       switch (value) {
                         case 1:
